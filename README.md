@@ -23,7 +23,9 @@ Current dataset:
 - **35** deterministic source-aware relationship claim receipts
 - **290** compound evidence receipts: 145 identity + 145 occurrence
 - **7** provisional/search-target records
-- **14** registered scientific sources in the current source ledger\n- **11** governed PubChem 3D conformers rendered through native WebGL2
+- **14** registered scientific sources in the current source ledger
+- **11** governed PubChem 3D conformers rendered through native WebGL2
+- **7** governed molecule-comparison presets
 
 **145 is not a claim that only 145 phytocannabinoids exist.** Different inventories use different inclusion rules; later literature describes broader inventories.
 
@@ -32,7 +34,9 @@ Current dataset:
 **Cannabiverse:** https://michaelwave369.github.io/Cannabiverse/
 
 - Research Explorer: https://michaelwave369.github.io/Cannabiverse/app/explorer/
-- Evidence Explorer: https://michaelwave369.github.io/Cannabiverse/app/evidence/\n- 3D Molecule Viewer: https://michaelwave369.github.io/Cannabiverse/app/molecules/
+- Evidence Explorer: https://michaelwave369.github.io/Cannabiverse/app/evidence/
+- 3D Molecule Viewer: https://michaelwave369.github.io/Cannabiverse/app/molecules/
+- Molecule Compare Lab: https://michaelwave369.github.io/Cannabiverse/app/molecules/compare.html
 
 GitHub Pages serves the static interfaces; the authoritative scientific data and governance contracts remain versioned in this repository.
 
@@ -66,10 +70,12 @@ data/
   graph/              relationships, homologs, process nodes
   evidence/           evidence vocabulary and provisional records
   research/           source, reconciliation, and known-issue ledgers
-  schemas/            JSON contracts\n  structures/         governed 3D structure records + local SDF conformers
+  schemas/            JSON contracts
+  structures/         governed 3D structure records + local SDF conformers
 
 app/explorer/          browser-based Cannabiverse Query Explorer
-app/evidence/          source / claim Evidence Explorer\napp/molecules/         native WebGL2 molecule viewer
+app/evidence/          source / claim Evidence Explorer
+app/molecules/         native WebGL2 molecule viewer
 docs/                  ontology and governance documentation
 scripts/               deterministic validation
 .github/workflows/     scientific-integrity CI
@@ -108,6 +114,16 @@ The conformers are checked into `data/structures/conformers/` and carry PubChem 
 **RENDERABLE STRUCTURE ≠ OCCURRENCE ≠ BIOSYNTHESIS ≠ BIOACTIVITY ≠ HUMAN EFFECT ≠ SAFETY**
 
 See [docs/structure-model.md](docs/structure-model.md).
+
+## Molecule Compare Lab
+
+Cannabiverse v0.5 adds a synchronized dual-WebGL2 comparison workspace.
+
+The Compare Lab can show two governed conformers under the same camera motion, detect an explicit source-backed graph relationship when one exists, detect shared homolog-series membership, and report formula/mass/atom/bond/element-count deltas.
+
+It deliberately does **not** claim atom mapping, molecular superposition, or reaction simulation.
+
+See [app/molecules/COMPARE.md](app/molecules/COMPARE.md).
 
 ## Scientific boundaries
 
