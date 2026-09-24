@@ -1,0 +1,11 @@
+{
+  "name": "cannabiverse",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Governed, source-aware Cannabis phytochemistry knowledge graph",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-atlas.mjs",
+    "test": "node scripts/validate-atlas.mjs"
+  }
+}

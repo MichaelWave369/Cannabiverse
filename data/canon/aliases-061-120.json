@@ -1,0 +1,362 @@
+[
+  {
+    "atlas_id": "CPA-CAN-0031",
+    "alias": "cannabigerol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0031",
+    "alias": "(E)-CBG-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0031",
+    "alias": "CBG",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0032",
+    "alias": "cannabigerolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0032",
+    "alias": "(E)-CBGA-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0032",
+    "alias": "CBGA",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0033",
+    "alias": "cannabigerol monomethyl ether",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0033",
+    "alias": "(E)-CBGM-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0034",
+    "alias": "cannabigerolic acid monomethyl ether",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0034",
+    "alias": "(E)-CBGAM-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0035",
+    "alias": "cannabigerovarin",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0035",
+    "alias": "(E)-CBGV-C3",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0035",
+    "alias": "CBGV",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0036",
+    "alias": "cannabigerovarinic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0036",
+    "alias": "(E)-CBGVA-C3",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0036",
+    "alias": "CBGVA",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0037",
+    "alias": "cannabinerolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0037",
+    "alias": "(Z)-CBGA-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0037",
+    "alias": "Z-CBGA",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0038",
+    "alias": "5-acetyl-4-hydroxy-cannabigerol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0039",
+    "alias": "γ-eudesmyl cannabigerolate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0040",
+    "alias": "α-cadinyl cannabigerolate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0041",
+    "alias": "(±)-6,7-trans-epoxycannabigerolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0042",
+    "alias": "(±)-6,7-cis-epoxycannabigerolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0043",
+    "alias": "(±)-6,7-cis-epoxycannabigerol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0044",
+    "alias": "(±)-6,7-trans-epoxycannabigerol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0045",
+    "alias": "camagerol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0046",
+    "alias": "sesquicannabigerol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0047",
+    "alias": "cannabidiol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0047",
+    "alias": "CBD-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0047",
+    "alias": "CBD",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0048",
+    "alias": "cannabidiolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0048",
+    "alias": "CBDA-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0048",
+    "alias": "CBDA",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0049",
+    "alias": "cannabidiol monomethyl ether",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0049",
+    "alias": "CBDM-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0050",
+    "alias": "cannabidiol-C4",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0050",
+    "alias": "CBD-C4",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0051",
+    "alias": "cannabidivarin",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0051",
+    "alias": "CBDV-C3",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0051",
+    "alias": "CBDV",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0052",
+    "alias": "cannabidivarinic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0052",
+    "alias": "CBDVA-C3",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0052",
+    "alias": "CBDVA",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0053",
+    "alias": "cannabidiorcol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0053",
+    "alias": "CBD-C1",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0053",
+    "alias": "CBD-orcol",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0054",
+    "alias": "cannabidihexol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0054",
+    "alias": "CBDH / CBD-C6",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0054",
+    "alias": "CBDH",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0055",
+    "alias": "cannabidiphorol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0055",
+    "alias": "CBDP / CBD-C7",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0055",
+    "alias": "CBDP",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0056",
+    "alias": "cannabitwinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0056",
+    "alias": "CBDD",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0057",
+    "alias": "cannabinodivirin",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0057",
+    "alias": "CBND-C3",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0058",
+    "alias": "cannabinodiol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0058",
+    "alias": "CBND-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0059",
+    "alias": "cannabielsoin",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  }
+]

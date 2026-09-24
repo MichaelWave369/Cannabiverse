@@ -1,0 +1,58 @@
+[
+  {
+    "issue_id": "ERR-2021-001",
+    "scope": "CBG type / compounds 39–40",
+    "issue": "The 2021 prose assigns γ-eudesmyl cannabigerolate and α-cadinyl cannabigerolate the already-used numbers 37 and 38.",
+    "resolution": "Preserve 37=cannabinerolic acid and 38=5-acetyl-4-hydroxy-cannabigerol; map the two CBGA esters to 39 and 40 in figure/order, with γ-eudesmyl first and α-cadinyl second.",
+    "source_url": "https://doi.org/10.1021/np070454a",
+    "status": "CURATED"
+  },
+  {
+    "issue_id": "ERR-2021-002",
+    "scope": "Miscellaneous / compounds 100 and 104",
+    "issue": "The 2021 prose later calls cannabicitran 'CBT, 104', conflicting with its own list/figure.",
+    "resolution": "Preserve figure/list numbering: 100=cannabicitran; 104=cannabitetrol (CBTT).",
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "status": "CURATED"
+  },
+  {
+    "issue_id": "ERR-2021-003",
+    "scope": "CBT type / compounds 92–93",
+    "issue": "The review explicitly cautions that the two ethoxy cannabitriols are most likely artifacts because ethanol was used during isolation.",
+    "resolution": "Keep them in the immutable 125 baseline, but mark natural-occurrence status as artifact-cautioned instead of treating them as unquestioned plant biosynthetic products.",
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "status": "CURATED"
+  },
+  {
+    "issue_id": "ERR-2021-004",
+    "scope": "CBL type / compound 65",
+    "issue": "The review reports CBLA formation by natural irradiation of CBCA during storage.",
+    "resolution": "Keep in baseline and distinguish occurrence/transformation evidence from direct biosynthetic origin.",
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "status": "CURATED"
+  },
+  {
+    "issue_id": "ISSUE-V04-THCAB",
+    "scope": "Baseline compound 3 / THCA-B",
+    "issue": "Radwan-125 retains THCA-B as a historical cannabinoid record, while later biosynthesis review literature notes subsequent studies did not confirm its occurrence.",
+    "resolution": "Preserve baseline identity/number; lower occurrence confidence and flag as historically catalogued but contested.",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7962319/",
+    "status": "CURATED"
+  },
+  {
+    "issue_id": "ISSUE-V04-GARGIULO7",
+    "scope": "2024 chemotype-IV compound 7",
+    "issue": "Experimental section calls it 6′-hydroxy-Δ7′,8′-dihydrocannabinerol, while the text describes it as a derivative of cannabinerolic acid and the NMR assignment includes a COOH carbon.",
+    "resolution": "Preserve source-reported name verbatim; flag nomenclature inconsistency; do not silently rename it.",
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "status": "CURATED"
+  },
+  {
+    "issue_id": "ISSUE-V04-C10",
+    "scope": "2024 chemotype-IV compound 10",
+    "issue": "The paper fully characterizes compound 10 but does not assign a trivial name.",
+    "resolution": "Use permanent Atlas ID plus source-numbered descriptive label; do not invent a name.",
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "status": "CURATED"
+  }
+]
