@@ -56,3 +56,18 @@ A rendered structure does not upgrade any scientific evidence lane.
 It shares camera rotation and zoom between two independently centered conformers and joins the visual comparison to the governed graph/homolog data.
 
 The Compare Lab reports measured structure deltas but does not perform atom correspondence or reaction mapping.
+
+
+## Transformation Lab
+
+`transform.html` consumes deterministic heavy-atom correspondence receipts.
+
+The first v0.6 release covers four decarboxylation pairs and can highlight:
+
+- retained mapped heavy atoms;
+- receipt-defined removed source C/O/O atoms;
+- source/target formula and mass change;
+- the exact source-backed transformation graph edge;
+- the full source-atom → target-atom mapping table.
+
+**CORRESPONDENCE ≠ MECHANISM.**
