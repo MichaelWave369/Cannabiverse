@@ -2,6 +2,73 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/MichaelWave369/Cannabiverse/data/schemas/bond-delta-receipt.schema.json",
   "title": "Cannabiverse governed bond-delta receipt",
+  "$defs": {
+    "atomPair": {
+      "type": "array",
+      "prefixItems": [
+        {"type":"integer","minimum":1},
+        {"type":"integer","minimum":1}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "elementPair": {
+      "type": "array",
+      "prefixItems": [
+        {"type":"string","minLength":1},
+        {"type":"string","minLength":1}
+      ],
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "retainedBond": {
+      "type":"object",
+      "required":["source_atoms","target_atoms","elements","source_order","target_order"],
+      "properties":{
+        "source_atoms":{"$ref":"#/$defs/atomPair"},
+        "target_atoms":{"$ref":"#/$defs/atomPair"},
+        "elements":{"$ref":"#/$defs/elementPair"},
+        "source_order":{"type":"integer","minimum":1,"maximum":3},
+        "target_order":{"type":"integer","minimum":1,"maximum":3}
+      },
+      "additionalProperties":false
+    },
+    "removedBond": {
+      "type":"object",
+      "required":["source_atoms","elements","source_order","classification"],
+      "properties":{
+        "source_atoms":{"$ref":"#/$defs/atomPair"},
+        "elements":{"$ref":"#/$defs/elementPair"},
+        "source_order":{"type":"integer","minimum":1,"maximum":3},
+        "classification":{"enum":["WITHIN_REMOVED_FRAGMENT","BOUNDARY_TO_RETAINED_SCAFFOLD"]}
+      },
+      "additionalProperties":false
+    },
+    "addedBond": {
+      "type":"object",
+      "required":["target_atoms","elements","target_order","classification"],
+      "properties":{
+        "target_atoms":{"$ref":"#/$defs/atomPair"},
+        "elements":{"$ref":"#/$defs/elementPair"},
+        "target_order":{"type":"integer","minimum":1,"maximum":3},
+        "classification":{"const":"ADDED_TARGET_HEAVY_BOND"}
+      },
+      "additionalProperties":false
+    },
+    "rawOrderDelta": {
+      "type":"object",
+      "required":["source_atoms","target_atoms","elements","source_order","target_order","status"],
+      "properties":{
+        "source_atoms":{"$ref":"#/$defs/atomPair"},
+        "target_atoms":{"$ref":"#/$defs/atomPair"},
+        "elements":{"$ref":"#/$defs/elementPair"},
+        "source_order":{"type":"integer","minimum":1,"maximum":3},
+        "target_order":{"type":"integer","minimum":1,"maximum":3},
+        "status":{"const":"REPRESENTATION_LEVEL_NOT_PROMOTED"}
+      },
+      "additionalProperties":false
+    }
+  },
   "type": "object",
   "required": [
     "bond_receipt_id","transformation_receipt_id","source_compound","target_compound",
@@ -11,23 +78,44 @@
     "promoted_chemical_bond_order_changes","representation_note","governance_note"
   ],
   "properties": {
-    "bond_receipt_id": {"type":"string","pattern":"^CPA-BND-[0-9]{4}$"},
-    "transformation_receipt_id": {"type":"string","pattern":"^CPA-XFM-[0-9]{4}$"},
-    "source_compound": {"type":"string","pattern":"^CPA-CAN-[0-9]{4}$"},
-    "target_compound": {"type":"string","pattern":"^CPA-CAN-[0-9]{4}$"},
-    "relation": {"type":"string","minLength":1},
-    "edge_id": {"type":"string","pattern":"^CPA-EDGE-[0-9]{4}$"},
-    "source_id": {"type":"string","pattern":"^SRC-"},
-    "source_url": {"type":"string","minLength":1},
-    "authority_scope": {"const":"STRUCTURAL_CONNECTIVITY_AND_RAW_SDF_ORDER_ENCODING"},
-    "summary": {"type":"object"},
-    "retained_mapped_heavy_bonds_same_order": {"type":"array"},
-    "removed_source_heavy_bonds": {"type":"array"},
-    "added_target_heavy_bonds": {"type":"array"},
-    "raw_mapped_bond_order_encoding_differences": {"type":"array"},
-    "promoted_chemical_bond_order_changes": {"type":"array"},
-    "representation_note": {"type":"string","minLength":1},
-    "governance_note": {"type":"string","minLength":1}
+    "bond_receipt_id":{"type":"string","pattern":"^CPA-BND-[0-9]{4}$"},
+    "transformation_receipt_id":{"type":"string","pattern":"^CPA-XFM-[0-9]{4}$"},
+    "source_compound":{"type":"string","pattern":"^CPA-CAN-[0-9]{4}$"},
+    "target_compound":{"type":"string","pattern":"^CPA-CAN-[0-9]{4}$"},
+    "relation":{"type":"string","minLength":1},
+    "edge_id":{"type":"string","pattern":"^CPA-EDGE-[0-9]{4}$"},
+    "source_id":{"type":"string","pattern":"^SRC-"},
+    "source_url":{"type":"string","minLength":1},
+    "authority_scope":{"const":"STRUCTURAL_CONNECTIVITY_AND_RAW_SDF_ORDER_ENCODING"},
+    "summary":{
+      "type":"object",
+      "required":[
+        "retained_mapped_heavy_bonds_same_order",
+        "raw_mapped_bond_order_encoding_differences",
+        "removed_source_heavy_bonds",
+        "removed_boundary_bonds",
+        "removed_internal_fragment_bonds",
+        "added_target_heavy_bonds",
+        "promoted_chemical_bond_order_changes"
+      ],
+      "properties":{
+        "retained_mapped_heavy_bonds_same_order":{"type":"integer","minimum":0},
+        "raw_mapped_bond_order_encoding_differences":{"type":"integer","minimum":0},
+        "removed_source_heavy_bonds":{"type":"integer","minimum":0},
+        "removed_boundary_bonds":{"type":"integer","minimum":0},
+        "removed_internal_fragment_bonds":{"type":"integer","minimum":0},
+        "added_target_heavy_bonds":{"type":"integer","minimum":0},
+        "promoted_chemical_bond_order_changes":{"type":"integer","minimum":0}
+      },
+      "additionalProperties":false
+    },
+    "retained_mapped_heavy_bonds_same_order":{"type":"array","items":{"$ref":"#/$defs/retainedBond"}},
+    "removed_source_heavy_bonds":{"type":"array","items":{"$ref":"#/$defs/removedBond"}},
+    "added_target_heavy_bonds":{"type":"array","items":{"$ref":"#/$defs/addedBond"}},
+    "raw_mapped_bond_order_encoding_differences":{"type":"array","items":{"$ref":"#/$defs/rawOrderDelta"}},
+    "promoted_chemical_bond_order_changes":{"type":"array","maxItems":0},
+    "representation_note":{"type":"string","minLength":1},
+    "governance_note":{"type":"string","minLength":1}
   },
   "additionalProperties": false
 }
