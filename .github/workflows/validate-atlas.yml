@@ -2,7 +2,7 @@ name: Validate Atlas
 
 on:
   push:
-    branches: ["main", "v0.6-transformation-lab"]
+    branches: ["main", "v0.7-bond-delta"]
   pull_request:
 
 permissions:
@@ -26,6 +26,9 @@ jobs:
       - name: Check deterministic atom correspondence
         run: node scripts/build-correspondence.mjs --check
 
+      - name: Check deterministic bond deltas
+        run: node scripts/build-bond-deltas.mjs --check
+
       - name: Validate governed atlas
         run: node scripts/validate-atlas.mjs
 
@@ -37,3 +40,6 @@ jobs:
 
       - name: Validate governed transformation correspondence
         run: node scripts/validate-correspondence.mjs
+
+      - name: Validate governed bond deltas
+        run: node scripts/validate-bond-deltas.mjs
