@@ -1,0 +1,486 @@
+[
+  {
+    "receipt_id": "CPA-XFM-0001",
+    "kind": "HEAVY_ATOM_TRANSFORMATION_CORRESPONDENCE",
+    "transformation_class": "DECARBOXYLATION",
+    "source_compound": "CPA-CAN-0002",
+    "target_compound": "CPA-CAN-0001",
+    "source_name": "(−)-Δ9-trans-tetrahydrocannabinolic acid A",
+    "target_name": "(−)-Δ9-trans-tetrahydrocannabinol",
+    "relation": "DECARBOXYLATES_TO",
+    "edge_id": "CPA-EDGE-0007",
+    "evidence_lane": "transformation",
+    "confidence": "HIGH",
+    "source_id": "SRC-BIOSYNTHESIS-2021",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7962319/",
+    "mapping_scope": "DETERMINISTIC_HEAVY_ATOM_GRAPH_ISOMORPHISM_AFTER_CARBOXYL_REMOVAL",
+    "source_conformer_path": "conformers/thca-a.sdf",
+    "target_conformer_path": "conformers/delta9-thc.sdf",
+    "mapped_heavy_atoms": [
+      {
+        "source_atom": 1,
+        "target_atom": 1
+      },
+      {
+        "source_atom": 2,
+        "target_atom": 2
+      },
+      {
+        "source_atom": 5,
+        "target_atom": 3
+      },
+      {
+        "source_atom": 6,
+        "target_atom": 4
+      },
+      {
+        "source_atom": 7,
+        "target_atom": 5
+      },
+      {
+        "source_atom": 8,
+        "target_atom": 6
+      },
+      {
+        "source_atom": 9,
+        "target_atom": 7
+      },
+      {
+        "source_atom": 10,
+        "target_atom": 8
+      },
+      {
+        "source_atom": 11,
+        "target_atom": 9
+      },
+      {
+        "source_atom": 12,
+        "target_atom": 10
+      },
+      {
+        "source_atom": 13,
+        "target_atom": 11
+      },
+      {
+        "source_atom": 14,
+        "target_atom": 12
+      },
+      {
+        "source_atom": 15,
+        "target_atom": 13
+      },
+      {
+        "source_atom": 16,
+        "target_atom": 14
+      },
+      {
+        "source_atom": 17,
+        "target_atom": 15
+      },
+      {
+        "source_atom": 18,
+        "target_atom": 17
+      },
+      {
+        "source_atom": 19,
+        "target_atom": 16
+      },
+      {
+        "source_atom": 20,
+        "target_atom": 18
+      },
+      {
+        "source_atom": 21,
+        "target_atom": 19
+      },
+      {
+        "source_atom": 22,
+        "target_atom": 20
+      },
+      {
+        "source_atom": 24,
+        "target_atom": 21
+      },
+      {
+        "source_atom": 25,
+        "target_atom": 22
+      },
+      {
+        "source_atom": 26,
+        "target_atom": 23
+      }
+    ],
+    "removed_source_heavy_atoms": [
+      3,
+      4,
+      23
+    ],
+    "added_target_heavy_atoms": [],
+    "unmapped_hydrogens_policy": "EXPLICIT_HYDROGENS_ARE_NOT_ATOM-MAPPED_IN_V0.6",
+    "correspondence_note": "Shared heavy-atom graph isomorphism after removal of the source carboxyl carbon and its two oxygen atoms. Bond-order and mechanistic correspondence are not inferred.",
+    "governance_note": "CORRESPONDENCE != MECHANISM. This receipt supports visualization of governed heavy-atom correspondence for this exact checked-in source/target pair only."
+  },
+  {
+    "receipt_id": "CPA-XFM-0002",
+    "kind": "HEAVY_ATOM_TRANSFORMATION_CORRESPONDENCE",
+    "transformation_class": "DECARBOXYLATION",
+    "source_compound": "CPA-CAN-0048",
+    "target_compound": "CPA-CAN-0047",
+    "source_name": "cannabidiolic acid",
+    "target_name": "cannabidiol",
+    "relation": "DECARBOXYLATES_TO",
+    "edge_id": "CPA-EDGE-0008",
+    "evidence_lane": "transformation",
+    "confidence": "HIGH",
+    "source_id": "SRC-BIOSYNTHESIS-2021",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7962319/",
+    "mapping_scope": "DETERMINISTIC_HEAVY_ATOM_GRAPH_ISOMORPHISM_AFTER_CARBOXYL_REMOVAL",
+    "source_conformer_path": "conformers/cbda.sdf",
+    "target_conformer_path": "conformers/cbd.sdf",
+    "mapped_heavy_atoms": [
+      {
+        "source_atom": 1,
+        "target_atom": 1
+      },
+      {
+        "source_atom": 2,
+        "target_atom": 2
+      },
+      {
+        "source_atom": 5,
+        "target_atom": 3
+      },
+      {
+        "source_atom": 6,
+        "target_atom": 4
+      },
+      {
+        "source_atom": 7,
+        "target_atom": 5
+      },
+      {
+        "source_atom": 8,
+        "target_atom": 6
+      },
+      {
+        "source_atom": 9,
+        "target_atom": 7
+      },
+      {
+        "source_atom": 10,
+        "target_atom": 8
+      },
+      {
+        "source_atom": 11,
+        "target_atom": 9
+      },
+      {
+        "source_atom": 12,
+        "target_atom": 10
+      },
+      {
+        "source_atom": 13,
+        "target_atom": 11
+      },
+      {
+        "source_atom": 14,
+        "target_atom": 12
+      },
+      {
+        "source_atom": 15,
+        "target_atom": 13
+      },
+      {
+        "source_atom": 16,
+        "target_atom": 15
+      },
+      {
+        "source_atom": 17,
+        "target_atom": 16
+      },
+      {
+        "source_atom": 18,
+        "target_atom": 14
+      },
+      {
+        "source_atom": 19,
+        "target_atom": 17
+      },
+      {
+        "source_atom": 20,
+        "target_atom": 18
+      },
+      {
+        "source_atom": 21,
+        "target_atom": 19
+      },
+      {
+        "source_atom": 22,
+        "target_atom": 20
+      },
+      {
+        "source_atom": 23,
+        "target_atom": 21
+      },
+      {
+        "source_atom": 25,
+        "target_atom": 22
+      },
+      {
+        "source_atom": 26,
+        "target_atom": 23
+      }
+    ],
+    "removed_source_heavy_atoms": [
+      3,
+      4,
+      24
+    ],
+    "added_target_heavy_atoms": [],
+    "unmapped_hydrogens_policy": "EXPLICIT_HYDROGENS_ARE_NOT_ATOM-MAPPED_IN_V0.6",
+    "correspondence_note": "Shared heavy-atom graph isomorphism after removal of the source carboxyl carbon and its two oxygen atoms. Bond-order and mechanistic correspondence are not inferred.",
+    "governance_note": "CORRESPONDENCE != MECHANISM. This receipt supports visualization of governed heavy-atom correspondence for this exact checked-in source/target pair only."
+  },
+  {
+    "receipt_id": "CPA-XFM-0003",
+    "kind": "HEAVY_ATOM_TRANSFORMATION_CORRESPONDENCE",
+    "transformation_class": "DECARBOXYLATION",
+    "source_compound": "CPA-CAN-0032",
+    "target_compound": "CPA-CAN-0031",
+    "source_name": "cannabigerolic acid",
+    "target_name": "cannabigerol",
+    "relation": "DECARBOXYLATES_TO",
+    "edge_id": "CPA-EDGE-0006",
+    "evidence_lane": "transformation",
+    "confidence": "HIGH",
+    "source_id": "SRC-BIOSYNTHESIS-2021",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7962319/",
+    "mapping_scope": "DETERMINISTIC_HEAVY_ATOM_GRAPH_ISOMORPHISM_AFTER_CARBOXYL_REMOVAL",
+    "source_conformer_path": "conformers/cbga.sdf",
+    "target_conformer_path": "conformers/cbg.sdf",
+    "mapped_heavy_atoms": [
+      {
+        "source_atom": 1,
+        "target_atom": 1
+      },
+      {
+        "source_atom": 2,
+        "target_atom": 2
+      },
+      {
+        "source_atom": 5,
+        "target_atom": 4
+      },
+      {
+        "source_atom": 6,
+        "target_atom": 3
+      },
+      {
+        "source_atom": 7,
+        "target_atom": 6
+      },
+      {
+        "source_atom": 8,
+        "target_atom": 5
+      },
+      {
+        "source_atom": 9,
+        "target_atom": 8
+      },
+      {
+        "source_atom": 10,
+        "target_atom": 10
+      },
+      {
+        "source_atom": 11,
+        "target_atom": 7
+      },
+      {
+        "source_atom": 12,
+        "target_atom": 11
+      },
+      {
+        "source_atom": 13,
+        "target_atom": 12
+      },
+      {
+        "source_atom": 14,
+        "target_atom": 9
+      },
+      {
+        "source_atom": 15,
+        "target_atom": 13
+      },
+      {
+        "source_atom": 16,
+        "target_atom": 16
+      },
+      {
+        "source_atom": 17,
+        "target_atom": 14
+      },
+      {
+        "source_atom": 18,
+        "target_atom": 15
+      },
+      {
+        "source_atom": 19,
+        "target_atom": 18
+      },
+      {
+        "source_atom": 20,
+        "target_atom": 17
+      },
+      {
+        "source_atom": 22,
+        "target_atom": 19
+      },
+      {
+        "source_atom": 23,
+        "target_atom": 20
+      },
+      {
+        "source_atom": 24,
+        "target_atom": 21
+      },
+      {
+        "source_atom": 25,
+        "target_atom": 22
+      },
+      {
+        "source_atom": 26,
+        "target_atom": 23
+      }
+    ],
+    "removed_source_heavy_atoms": [
+      3,
+      4,
+      21
+    ],
+    "added_target_heavy_atoms": [],
+    "unmapped_hydrogens_policy": "EXPLICIT_HYDROGENS_ARE_NOT_ATOM-MAPPED_IN_V0.6",
+    "correspondence_note": "Shared heavy-atom graph isomorphism after removal of the source carboxyl carbon and its two oxygen atoms. Bond-order and mechanistic correspondence are not inferred.",
+    "governance_note": "CORRESPONDENCE != MECHANISM. This receipt supports visualization of governed heavy-atom correspondence for this exact checked-in source/target pair only."
+  },
+  {
+    "receipt_id": "CPA-XFM-0004",
+    "kind": "HEAVY_ATOM_TRANSFORMATION_CORRESPONDENCE",
+    "transformation_class": "DECARBOXYLATION",
+    "source_compound": "CPA-CAN-0068",
+    "target_compound": "CPA-CAN-0067",
+    "source_name": "cannabichromenic acid",
+    "target_name": "cannabichromene",
+    "relation": "DECARBOXYLATES_TO",
+    "edge_id": "CPA-EDGE-0009",
+    "evidence_lane": "transformation",
+    "confidence": "HIGH",
+    "source_id": "SRC-BIOSYNTHESIS-2021",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7962319/",
+    "mapping_scope": "DETERMINISTIC_HEAVY_ATOM_GRAPH_ISOMORPHISM_AFTER_CARBOXYL_REMOVAL",
+    "source_conformer_path": "conformers/cbca.sdf",
+    "target_conformer_path": "conformers/cbc.sdf",
+    "mapped_heavy_atoms": [
+      {
+        "source_atom": 1,
+        "target_atom": 1
+      },
+      {
+        "source_atom": 2,
+        "target_atom": 2
+      },
+      {
+        "source_atom": 5,
+        "target_atom": 3
+      },
+      {
+        "source_atom": 6,
+        "target_atom": 4
+      },
+      {
+        "source_atom": 7,
+        "target_atom": 5
+      },
+      {
+        "source_atom": 8,
+        "target_atom": 6
+      },
+      {
+        "source_atom": 9,
+        "target_atom": 9
+      },
+      {
+        "source_atom": 10,
+        "target_atom": 7
+      },
+      {
+        "source_atom": 11,
+        "target_atom": 8
+      },
+      {
+        "source_atom": 12,
+        "target_atom": 10
+      },
+      {
+        "source_atom": 13,
+        "target_atom": 12
+      },
+      {
+        "source_atom": 14,
+        "target_atom": 11
+      },
+      {
+        "source_atom": 15,
+        "target_atom": 13
+      },
+      {
+        "source_atom": 16,
+        "target_atom": 14
+      },
+      {
+        "source_atom": 17,
+        "target_atom": 16
+      },
+      {
+        "source_atom": 18,
+        "target_atom": 15
+      },
+      {
+        "source_atom": 19,
+        "target_atom": 17
+      },
+      {
+        "source_atom": 20,
+        "target_atom": 18
+      },
+      {
+        "source_atom": 21,
+        "target_atom": 19
+      },
+      {
+        "source_atom": 23,
+        "target_atom": 20
+      },
+      {
+        "source_atom": 24,
+        "target_atom": 21
+      },
+      {
+        "source_atom": 25,
+        "target_atom": 22
+      },
+      {
+        "source_atom": 26,
+        "target_atom": 23
+      }
+    ],
+    "removed_source_heavy_atoms": [
+      3,
+      4,
+      22
+    ],
+    "added_target_heavy_atoms": [],
+    "unmapped_hydrogens_policy": "EXPLICIT_HYDROGENS_ARE_NOT_ATOM-MAPPED_IN_V0.6",
+    "correspondence_note": "Shared heavy-atom graph isomorphism after removal of the source carboxyl carbon and its two oxygen atoms. Bond-order and mechanistic correspondence are not inferred.",
+    "governance_note": "CORRESPONDENCE != MECHANISM. This receipt supports visualization of governed heavy-atom correspondence for this exact checked-in source/target pair only."
+  }
+]
