@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MichaelWave369/Cannabiverse/data/schemas/relationship.schema.json",
+  "title": "Cannabiverse relationship edge",
+  "type": "object",
+  "required": [
+    "edge_id",
+    "source_node",
+    "relation",
+    "target_node",
+    "confidence",
+    "evidence_lane",
+    "source_id",
+    "source_url"
+  ],
+  "properties": {
+    "edge_id": {
+      "type": "string",
+      "pattern": "^CPA-EDGE-[0-9]{4}$"
+    },
+    "source_node": {
+      "type": "string",
+      "minLength": 1
+    },
+    "target_node": {
+      "type": "string",
+      "minLength": 1
+    },
+    "relation": {
+      "type": "string",
+      "minLength": 1
+    },
+    "confidence": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_lane": {
+      "enum": [
+        "biosynthesis",
+        "transformation",
+        "structure",
+        "biosynthesis_hypothesis"
+      ]
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": "string",
+      "minLength": 1
+    },
+    "note": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": true
+}
