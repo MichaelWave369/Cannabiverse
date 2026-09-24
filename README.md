@@ -27,6 +27,15 @@ Current dataset:
 
 **145 is not a claim that only 145 phytocannabinoids exist.** Different inventories use different inclusion rules; later literature describes broader inventories.
 
+## Live site
+
+**Cannabiverse:** https://michaelwave369.github.io/Cannabiverse/
+
+- Research Explorer: https://michaelwave369.github.io/Cannabiverse/app/explorer/
+- Evidence Explorer: https://michaelwave369.github.io/Cannabiverse/app/evidence/
+
+GitHub Pages serves the static interfaces; the authoritative scientific data and governance contracts remain versioned in this repository.
+
 ## Architecture
 
 ```text

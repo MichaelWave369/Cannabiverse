@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cannabiverse — a governed, source-aware map of Cannabis phytochemistry.">
+<title>Cannabiverse</title>
+<style>
+:root{
+  --bg:#07110d;--panel:#102019;--panel2:#15291f;--line:#294638;
+  --text:#edf6f0;--muted:#9fb3a7;--gold:#d6b75f;--green:#70d39a;--blue:#7eaeff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:
+  radial-gradient(circle at 50% -10%,#183428 0,#0b1712 35%,var(--bg) 72%);
+  color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+a{color:inherit}
+.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+nav{height:68px;display:flex;align-items:center;gap:12px;border-bottom:1px solid #29463888}
+.logo{width:36px;height:36px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:800;box-shadow:0 0 28px #d6b75f1f}
+.brand{font-weight:750;letter-spacing:.2px}.brand small{display:block;color:var(--muted);font-weight:400;font-size:11px;margin-top:2px}
+.navlinks{margin-left:auto;display:flex;gap:8px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:38px;padding:0 13px;border-radius:8px;border:1px solid var(--line);text-decoration:none;background:#0d1a15;color:#dcebe2;font-size:13px}
+.btn:hover{border-color:#668f78}.btn.primary{border-color:var(--gold);color:#f2d98e;background:#1b2719}
+.hero{padding:78px 0 48px;display:grid;grid-template-columns:1.2fr .8fr;gap:46px;align-items:center}
+.kicker{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1.4px}
+h1{font-size:clamp(42px,7vw,82px);line-height:.96;margin:10px 0 18px;letter-spacing:-3px}
+.lead{font-size:18px;line-height:1.6;color:#c1d4c8;max-width:720px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:26px}
+.doctrine{border:1px solid #725f32;background:#1c1a10;border-radius:14px;padding:18px;box-shadow:0 16px 50px #0004}
+.doctrine b{display:block;color:#e2c978;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:9px}
+.doctrine p{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1.65;color:#e7eddc;font-size:14px}
+.section{padding:34px 0}
+.section h2{font-size:28px;margin:0 0 8px}.section>p{color:var(--muted);line-height:1.6;max-width:760px;margin-top:0}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+.card{border:1px solid var(--line);background:linear-gradient(180deg,#11231b,#0d1b15);border-radius:14px;padding:20px}
+.card h3{margin:0 0 8px;font-size:18px}.card p{color:#b7cabe;line-height:1.55;font-size:13px}
+.card .btn{margin-top:8px}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:12px 0 28px}
+.stat{border:1px solid var(--line);background:#0e1c16;border-radius:10px;padding:13px}.stat strong{display:block;font-size:24px;color:#edf6f0}.stat span{font-size:11px;color:var(--muted)}
+.rule{border-left:3px solid var(--green);padding:2px 0 2px 14px;color:#bcd1c4;line-height:1.6}
+footer{border-top:1px solid var(--line);margin-top:52px;padding:24px 0 38px;color:var(--muted);font-size:12px;line-height:1.5}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:48px}.grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}.navlinks .repo{display:none}h1{letter-spacing:-2px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <div class="logo">Φ</div>
+  <div class="brand">Cannabiverse<small>Governed Cannabis phytochemistry atlas</small></div>
+  <div class="navlinks">
+    <a class="btn repo" href="https://github.com/MichaelWave369/Cannabiverse">GitHub</a>
+    <a class="btn primary" href="./app/explorer/">Open Explorer</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="kicker">Atlas369 · Open research infrastructure</div>
+    <h1>Map the chemistry.<br>Keep the evidence attached.</h1>
+    <p class="lead">Cannabiverse is a source-aware knowledge graph for Cannabis phytochemistry. It separates molecular identity, natural occurrence, biosynthesis, transformations, hypotheses, and scientific provenance instead of throwing them into one confidence bucket and hoping nobody notices.</p>
+    <div class="actions">
+      <a class="btn primary" href="./app/explorer/">Research Explorer</a>
+      <a class="btn" href="./app/evidence/">Evidence Explorer</a>
+      <a class="btn" href="https://github.com/MichaelWave369/Cannabiverse">Source Repository</a>
+    </div>
+  </div>
+  <div class="doctrine">
+    <b>Core governance doctrine</b>
+    <p>IDENTITY ≠ OCCURRENCE<br>≠ BIOSYNTHESIS<br>≠ BIOACTIVITY<br>≠ HUMAN EFFECT<br>≠ SAFETY</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="stats">
+    <div class="stat"><strong>145</strong><span>canonical compounds</span></div>
+    <div class="stat"><strong>290</strong><span>compound evidence receipts</span></div>
+    <div class="stat"><strong>35</strong><span>typed chemistry relationships</span></div>
+    <div class="stat"><strong>35</strong><span>relationship claim receipts</span></div>
+    <div class="stat"><strong>14</strong><span>registered scientific sources</span></div>
+  </div>
+
+  <h2>Two ways into the atlas</h2>
+  <p>The interfaces consume the governed data layer. They do not create scientific authority merely by drawing something attractively, a bar humanity has somehow still not universally cleared.</p>
+
+  <div class="grid">
+    <article class="card">
+      <h3>Research Explorer</h3>
+      <p>Query compounds by family, source year, side-chain class, identity and occurrence evidence. Traverse typed chemistry relationships, compare compounds, and trace explicit paths through the current graph.</p>
+      <a class="btn primary" href="./app/explorer/">Launch Research Explorer</a>
+    </article>
+    <article class="card">
+      <h3>Evidence Explorer</h3>
+      <p>Inspect molecule-level identity and occurrence receipts, source-backed relationship claims, cautions, hypotheses, and the exact publications currently supporting each claim.</p>
+      <a class="btn primary" href="./app/evidence/">Launch Evidence Explorer</a>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Designed for disagreement</h2>
+  <p class="rule">Historical records remain reproducible. New evidence appends receipts instead of silently rewriting the past. Provisional detections stay provisional. Hypotheses stay hypotheses. Artifact cautions travel with the occurrence claim.</p>
+</section>
+
+<section class="section">
+  <h2>Scope</h2>
+  <p>Cannabiverse is research and educational infrastructure. It is not medical advice, a dosing system, or a mechanism for turning chemical detection into clinical claims. The current 145-record canon is a versioned reconciliation set, not a claim that Cannabis contains exactly 145 phytocannabinoids.</p>
+</section>
+
+<footer>
+  Cannabiverse · MIT-licensed code · Scientific sources retain their original licenses and citation requirements.<br>
+  Repository governance and machine-readable provenance live at <a href="https://github.com/MichaelWave369/Cannabiverse">MichaelWave369/Cannabiverse</a>.
+</footer>
+</div>
+</body></html>
