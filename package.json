@@ -1,6 +1,6 @@
 {
   "name": "cannabiverse",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "description": "Governed, source-aware Cannabis phytochemistry knowledge graph",
   "type": "module",
@@ -8,7 +8,8 @@
     "build:evidence": "node scripts/build-evidence-graph.mjs",
     "check:evidence": "node scripts/build-evidence-graph.mjs --check",
     "validate:structures": "node scripts/validate-structures.mjs",
-    "validate": "node scripts/build-evidence-graph.mjs --check && node scripts/validate-atlas.mjs && node scripts/validate-structures.mjs",
+    "validate:compare": "node scripts/validate-compare-presets.mjs",
+    "validate": "node scripts/build-evidence-graph.mjs --check && node scripts/validate-atlas.mjs && node scripts/validate-structures.mjs && node scripts/validate-compare-presets.mjs",
     "test": "npm run validate"
   }
 }
