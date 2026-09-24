@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MichaelWave369/Cannabiverse/data/schemas/relationship.schema.json",
+  "title": "Cannabiverse typed relationship",
+  "type": "object",
+  "required": [
+    "edge_id","source_node","source_node_type","relation",
+    "target_node","target_node_type","confidence","evidence_lane","source_id"
+  ],
+  "properties": {
+    "edge_id": {"type":"string","pattern":"^CPA-EDGE-[0-9]{4}$"},
+    "source_node": {"type":"string"},
+    "source_node_type": {"type":"string"},
+    "relation": {"type":"string","minLength":1},
+    "target_node": {"type":"string"},
+    "target_node_type": {"type":"string"},
+    "confidence": {"type":"string"},
+    "evidence_lane": {"enum":["biosynthesis","transformation","structure","biosynthesis_hypothesis"]},
+    "source_id": {"type":"string","minLength":1},
+    "source_url": {"type":"string"},
+    "note": {"type":"string"}
+  },
+  "additionalProperties": true
+}
