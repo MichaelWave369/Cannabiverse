@@ -1,0 +1,4642 @@
+[
+  {
+    "claim_id": "CPA-EVC-0001-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0001",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0001-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0001",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0002-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0002",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0002-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0002",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0003-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0003",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0003-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0003",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_HISTORICAL_OCCURRENCE_CONTESTED",
+    "status": "CAUTIONED",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "THCA-B is historically catalogued, but later review literature notes subsequent studies did not confirm its occurrence."
+  },
+  {
+    "claim_id": "CPA-EVC-0004-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0004",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0004-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0004",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0005-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0005",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0005-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0005",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0006-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0006",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0006-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0006",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0007-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0007",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0007-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0007",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0008-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0008",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0008-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0008",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0009-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0009",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0009-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0009",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0010-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0010",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0010-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0010",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0011-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0011",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0011-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0011",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0012-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0012",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0012-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0012",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0013-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0013",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0013-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0013",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0014-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0014",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0014-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0014",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0015-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0015",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0015-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0015",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0016-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0016",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0016-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0016",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0017-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0017",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0017-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0017",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0018-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0018",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0018-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0018",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0019-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0019",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0019-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0019",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0020-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0020",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0020-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0020",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0021-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0021",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0021-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0021",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0022-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0022",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0022-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0022",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0023-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0023",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0023-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0023",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0024-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0024",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0024-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0024",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0025-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0025",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0025-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0025",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0026-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0026",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0026-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0026",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0027-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0027",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0027-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0027",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0028-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0028",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0028-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0028",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0029-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0029",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0029-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0029",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0030-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0030",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0030-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0030",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0031-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0031",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0031-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0031",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0032-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0032",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0032-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0032",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0033-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0033",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0033-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0033",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0034-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0034",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0034-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0034",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0035-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0035",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0035-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0035",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0036-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0036",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0036-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0036",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0037-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0037",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0037-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0037",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0038-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0038",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0038-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0038",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0039-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0039",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "Mapped from Figure 3/order and original ester literature; 2021 prose appears to mis-number these as 37/38."
+  },
+  {
+    "claim_id": "CPA-EVC-0039-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0039",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0040-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0040",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "Mapped from Figure 3/order and original ester literature; 2021 prose appears to mis-number these as 37/38."
+  },
+  {
+    "claim_id": "CPA-EVC-0040-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0040",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0041-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0041",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0041-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0041",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0042-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0042",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0042-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0042",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0043-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0043",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0043-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0043",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0044-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0044",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0044-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0044",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0045-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0045",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0045-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0045",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0046-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0046",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0046-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0046",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0047-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0047",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0047-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0047",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0048-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0048",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0048-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0048",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0049-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0049",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0049-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0049",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0050-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0050",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0050-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0050",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0051-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0051",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0051-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0051",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0052-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0052",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0052-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0052",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0053-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0053",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0053-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0053",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0054-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0054",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0054-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0054",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0055-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0055",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0055-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0055",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0056-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0056",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0056-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0056",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0057-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0057",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0057-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0057",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0058-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0058",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0058-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0058",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0059-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0059",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0059-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0059",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0060-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0060",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0060-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0060",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0061-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0061",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0061-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0061",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0062-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0062",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0062-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0062",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0063-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0063",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0063-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0063",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0064-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0064",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0064-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0064",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0065-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0065",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "2021 review notes CBLA can form by irradiation of CBCA during storage; occurrence should be distinguished from biosynthetic production."
+  },
+  {
+    "claim_id": "CPA-EVC-0065-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0065",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "CAUTIONED",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "Can form by irradiation of CBCA during storage per 2021 review."
+  },
+  {
+    "claim_id": "CPA-EVC-0066-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0066",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0066-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0066",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0067-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0067",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0067-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0067",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0068-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0068",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0068-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0068",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0069-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0069",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0069-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0069",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0070-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0070",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0070-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0070",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0071-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0071",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0071-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0071",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0072-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0072",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0072-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0072",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0073-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0073",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0073-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0073",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0074-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0074",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0074-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0074",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0075-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0075",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0075-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0075",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0076-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0076",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0076-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0076",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0077-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0077",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0077-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0077",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0078-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0078",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0078-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0078",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0079-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0079",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0079-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0079",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0080-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0080",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0080-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0080",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0081-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0081",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0081-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0081",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0082-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0082",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0082-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0082",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0083-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0083",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0083-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0083",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0084-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0084",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0084-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0084",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0085-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0085",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0085-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0085",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0086-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0086",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0086-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0086",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0087-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0087",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0087-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0087",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0088-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0088",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0088-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0088",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0089-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0089",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0089-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0089",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0090-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0090",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0090-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0090",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0091-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0091",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0091-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0091",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0092-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0092",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "2021 review says the ethoxy CBT compounds are most likely isolation artifacts because ethanol was used."
+  },
+  {
+    "claim_id": "CPA-EVC-0092-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0092",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED_ARTIFACT_CAUTION",
+    "status": "CAUTIONED",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "Likely isolation artifact per 2021 review. SOURCE_FLAGGED_LIKELY_ISOLATION_ARTIFACT"
+  },
+  {
+    "claim_id": "CPA-EVC-0093-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0093",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "2021 review says the ethoxy CBT compounds are most likely isolation artifacts because ethanol was used."
+  },
+  {
+    "claim_id": "CPA-EVC-0093-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0093",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED_ARTIFACT_CAUTION",
+    "status": "CAUTIONED",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "Likely isolation artifact per 2021 review. SOURCE_FLAGGED_LIKELY_ISOLATION_ARTIFACT"
+  },
+  {
+    "claim_id": "CPA-EVC-0094-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0094",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0094-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0094",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0095-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0095",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0095-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0095",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0096-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0096",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0096-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0096",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0097-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0097",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0097-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0097",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0098-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0098",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0098-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0098",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0099-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0099",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0099-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0099",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0100-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0100",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "Figure assigns cannabicitran to 100; 2021 prose later contains a numbering inconsistency calling cannabicitran '104'."
+  },
+  {
+    "claim_id": "CPA-EVC-0100-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0100",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0101-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0101",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0101-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0101",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0102-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0102",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0102-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0102",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0103-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0103",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0103-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0103",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0104-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0104",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": "Figure assigns cannabitetrol to 104; preserve figure numbering despite prose inconsistency around cannabicitran."
+  },
+  {
+    "claim_id": "CPA-EVC-0104-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0104",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0105-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0105",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0105-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0105",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0106-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0106",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0106-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0106",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0107-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0107",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0107-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0107",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0108-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0108",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0108-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0108",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0109-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0109",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0109-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0109",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0110-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0110",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0110-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0110",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0111-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0111",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0111-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0111",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0112-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0112",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0112-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0112",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0113-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0113",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0113-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0113",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0114-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0114",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0114-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0114",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0115-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0115",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0115-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0115",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0116-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0116",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0116-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0116",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0117-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0117",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0117-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0117",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0118-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0118",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0118-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0118",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0119-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0119",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0119-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0119",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0120-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0120",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0120-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0120",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0121-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0121",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0121-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0121",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0122-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0122",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0122-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0122",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0123-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0123",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0123-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0123",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0124-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0124",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0124-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0124",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0125-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0125",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I2_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0125-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0125",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O1_REVIEW_CATALOGUED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.3390/molecules26092774",
+    "canonical_status": "BASELINE_2021_LOCKED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0126-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0126",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I3_STANDARD_MATCHED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-LINCIANO-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.1016/j.talanta.2021.122704",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Heptyl acid precursor of CBDP; confirmed against synthesized analytical standard."
+  },
+  {
+    "claim_id": "CPA-EVC-0126-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0126",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O3_STANDARD_MATCHED_IN_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-LINCIANO-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.1016/j.talanta.2021.122704",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0127-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0127",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I3_STANDARD_MATCHED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-LINCIANO-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.1016/j.talanta.2021.122704",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Heptyl acid precursor of THCP; confirmed against synthesized analytical standard."
+  },
+  {
+    "claim_id": "CPA-EVC-0127-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0127",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O3_STANDARD_MATCHED_IN_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-LINCIANO-2021"
+    ],
+    "source_year": 2021,
+    "source_url": "https://doi.org/10.1016/j.talanta.2021.122704",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0128-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0128",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-NRF2-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.1c01198",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Reported as a new hydroxylated CBD analogue."
+  },
+  {
+    "claim_id": "CPA-EVC-0128-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0128",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-NRF2-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.1c01198",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0129-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0129",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-NRF2-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.1c01198",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Reported as a new hydroxylated CBD analogue."
+  },
+  {
+    "claim_id": "CPA-EVC-0129-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0129",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-NRF2-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.1c01198",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0130-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0130",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-NRF2-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.1c01198",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "New hydroxylated CBD-derived phytocannabinoid; trivial name proposed in source."
+  },
+  {
+    "claim_id": "CPA-EVC-0130-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0130",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-NRF2-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.1c01198",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0131-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0131",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-NRF2-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.1c01198",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Structure pre-existed in chemistry; 2022 study reported first isolation as a natural product."
+  },
+  {
+    "claim_id": "CPA-EVC-0131-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0131",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_FIRST_NATURAL_ISOLATION",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-NRF2-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.1c01198",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0132-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0132",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-FUTURA-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.3390/plants11131671",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "New cannabinoid derivative isolated from industrial hemp leaves."
+  },
+  {
+    "claim_id": "CPA-EVC-0132-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0132",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-FUTURA-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.3390/plants11131671",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0133-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0133",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I3_VALIDATED_HPLC_HRMS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-CIS-THCA-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.1016/j.jpba.2022.114958",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "First reported occurrence in Cannabis in 2022; biosynthetic origin still under study."
+  },
+  {
+    "claim_id": "CPA-EVC-0133-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0133",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O3_CONFIRMED_IN_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-CIS-THCA-2022"
+    ],
+    "source_year": 2022,
+    "source_url": "https://doi.org/10.1016/j.jpba.2022.114958",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0134-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0134",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "One of nine new chemotype-IV phytocannabinoids."
+  },
+  {
+    "claim_id": "CPA-EVC-0134-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0134",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0135-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0135",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Source explicitly identifies compound 6 as the decarboxylation product of compound 5."
+  },
+  {
+    "claim_id": "CPA-EVC-0135-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0135",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0136-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0136",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Preserves source-reported name verbatim. Paper describes it as a Z-configured derivative of cannabinerolic acid; formula/NMR include COOH, so the nomenclature is flagged rather than silently corrected."
+  },
+  {
+    "claim_id": "CPA-EVC-0136-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0136",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0137-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0137",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "One of nine new chemotype-IV phytocannabinoids."
+  },
+  {
+    "claim_id": "CPA-EVC-0137-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0137",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0138-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0138",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Acidic counterpart structurally related to known carmagerol."
+  },
+  {
+    "claim_id": "CPA-EVC-0138-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0138",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0139-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0139",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "The source does not assign a trivial name. Atlas deliberately retains a source-numbered label rather than inventing one."
+  },
+  {
+    "claim_id": "CPA-EVC-0139-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0139",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0140-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0140",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Source describes a new skeletal arrangement in phytocannabinoids."
+  },
+  {
+    "claim_id": "CPA-EVC-0140-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0140",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0141-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0141",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Novel CBD-derived structural architecture."
+  },
+  {
+    "claim_id": "CPA-EVC-0141-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0141",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0142-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0142",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "C-1′ epimer of cannabifuranol A."
+  },
+  {
+    "claim_id": "CPA-EVC-0142-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0142",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.3c00831",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0143-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0143",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-EPICBD-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1016/j.talo.2024.100332",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "Isolated from hemp products; structure verified by LC/Q-TOF-MS and NMR."
+  },
+  {
+    "claim_id": "CPA-EVC-0143-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0143",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_HEMP",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-EPICBD-2024"
+    ],
+    "source_year": 2024,
+    "source_url": "https://doi.org/10.1016/j.talo.2024.100332",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0144-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0144",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_NMR_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-CBE-2025"
+    ],
+    "source_year": 2025,
+    "source_url": "https://doi.org/10.3390/ph18040521",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "New CBE-type cannabinoid isolated from Cannabis flowers."
+  },
+  {
+    "claim_id": "CPA-EVC-0144-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0144",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-CBE-2025"
+    ],
+    "source_year": 2025,
+    "source_url": "https://doi.org/10.3390/ph18040521",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-EVC-0145-I",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0145",
+    "predicate": "HAS_IDENTITY_EVIDENCE_LEVEL",
+    "evidence_lane": "identity",
+    "level": "I4_ISOLATED_STANDARD_CONFIRMED",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-CBGD-2025"
+    ],
+    "source_year": 2025,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.5c00826",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": "First isolation; exact match to a synthesized standard; third reported member of the methylene-bridged dimeric cannabinoid class."
+  },
+  {
+    "claim_id": "CPA-EVC-0145-O",
+    "claim_type": "COMPOUND_EVIDENCE_STATE",
+    "subject_id": "CPA-CAN-0145",
+    "predicate": "HAS_OCCURRENCE_EVIDENCE_LEVEL",
+    "evidence_lane": "occurrence",
+    "level": "O4_ISOLATED_FROM_CANNABIS",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-CBGD-2025"
+    ],
+    "source_year": 2025,
+    "source_url": "https://doi.org/10.1021/acs.jnatprod.5c00826",
+    "canonical_status": "POST_BASELINE_CONFIRMED",
+    "note": ""
+  }
+]
