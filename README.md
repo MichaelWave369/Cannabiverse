@@ -26,7 +26,8 @@ Current dataset:
 - **14** registered scientific sources in the current source ledger
 - **11** governed PubChem 3D conformers rendered through native WebGL2
 - **7** governed molecule-comparison presets
-- **4** deterministic heavy-atom transformation correspondence receipts\n- **4** governed bond-delta receipts
+- **4** deterministic heavy-atom transformation correspondence receipts
+- **4** governed bond-delta receipts
 
 **145 is not a claim that only 145 phytocannabinoids exist.** Different inventories use different inclusion rules; later literature describes broader inventories.
 
