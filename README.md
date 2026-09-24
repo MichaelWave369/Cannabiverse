@@ -20,7 +20,8 @@ Current dataset:
 - **278** alias/synonym mappings
 - **38** homolog-series memberships
 - **35** typed graph relationships
-- **35** deterministic source-aware claim receipts
+- **35** deterministic source-aware relationship claim receipts
+- **290** compound evidence receipts: 145 identity + 145 occurrence
 - **7** provisional/search-target records
 - **14** registered scientific sources in the current source ledger
 
@@ -74,6 +75,20 @@ npm run validate
 ```
 
 The validation gate checks permanent IDs, the frozen baseline, source resolution, graph endpoints, evidence vocabulary, provisional separation, hypothesis-edge discipline, and a 1:1 deterministic projection from chemistry relationships into source-backed claim receipts.
+
+## Compound evidence
+
+Every canonical compound now has stable, source-backed evidence receipts:
+
+```text
+CPA-CAN-0133
+  ├── CPA-EVC-0133-I  identity evidence
+  └── CPA-EVC-0133-O  occurrence evidence
+```
+
+Occurrence receipts are marked `CAUTIONED` when the canonical record carries an occurrence warning or artifact flag. Unknown biosynthesis (`B0`) is deliberately not converted into a positive claim.
+
+See [docs/compound-evidence.md](docs/compound-evidence.md).
 
 ## Scientific boundaries
 
