@@ -47,3 +47,12 @@ The viewer is a consumer of sourced structure coordinates.
 **RENDERABLE STRUCTURE ≠ OCCURRENCE ≠ BIOSYNTHESIS ≠ BIOACTIVITY ≠ HUMAN EFFECT ≠ SAFETY**
 
 A rendered structure does not upgrade any scientific evidence lane.
+
+
+## Compare Lab
+
+`compare.html` adds synchronized two-molecule viewing.
+
+It shares camera rotation and zoom between two independently centered conformers and joins the visual comparison to the governed graph/homolog data.
+
+The Compare Lab reports measured structure deltas but does not perform atom correspondence or reaction mapping.
