@@ -1,0 +1,38 @@
+[
+  {
+    "receipt_id": "CPA-XFM-0001",
+    "transformation_class": "DECARBOXYLATION",
+    "source_compound": "CPA-CAN-0002",
+    "target_compound": "CPA-CAN-0001",
+    "edge_id": "CPA-EDGE-0007",
+    "source_conformer_path": "conformers/thca-a.sdf",
+    "target_conformer_path": "conformers/delta9-thc.sdf"
+  },
+  {
+    "receipt_id": "CPA-XFM-0002",
+    "transformation_class": "DECARBOXYLATION",
+    "source_compound": "CPA-CAN-0048",
+    "target_compound": "CPA-CAN-0047",
+    "edge_id": "CPA-EDGE-0008",
+    "source_conformer_path": "conformers/cbda.sdf",
+    "target_conformer_path": "conformers/cbd.sdf"
+  },
+  {
+    "receipt_id": "CPA-XFM-0003",
+    "transformation_class": "DECARBOXYLATION",
+    "source_compound": "CPA-CAN-0032",
+    "target_compound": "CPA-CAN-0031",
+    "edge_id": "CPA-EDGE-0006",
+    "source_conformer_path": "conformers/cbga.sdf",
+    "target_conformer_path": "conformers/cbg.sdf"
+  },
+  {
+    "receipt_id": "CPA-XFM-0004",
+    "transformation_class": "DECARBOXYLATION",
+    "source_compound": "CPA-CAN-0068",
+    "target_compound": "CPA-CAN-0067",
+    "edge_id": "CPA-EDGE-0009",
+    "source_conformer_path": "conformers/cbca.sdf",
+    "target_conformer_path": "conformers/cbc.sdf"
+  }
+]

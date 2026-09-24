@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MichaelWave369/Cannabiverse/data/schemas/correspondence-receipt.schema.json",
+  "title": "Cannabiverse governed transformation correspondence receipt",
+  "type": "object",
+  "required": [
+    "receipt_id","kind","transformation_class","source_compound","target_compound",
+    "source_name","target_name","relation","edge_id","evidence_lane","confidence",
+    "source_id","source_url","mapping_scope","source_conformer_path",
+    "target_conformer_path","mapped_heavy_atoms","removed_source_heavy_atoms",
+    "added_target_heavy_atoms","unmapped_hydrogens_policy","correspondence_note",
+    "governance_note"
+  ],
+  "properties": {
+    "receipt_id": {"type":"string","pattern":"^CPA-XFM-[0-9]{4}$"},
+    "kind": {"const":"HEAVY_ATOM_TRANSFORMATION_CORRESPONDENCE"},
+    "transformation_class": {"const":"DECARBOXYLATION"},
+    "source_compound": {"type":"string","pattern":"^CPA-CAN-[0-9]{4}$"},
+    "target_compound": {"type":"string","pattern":"^CPA-CAN-[0-9]{4}$"},
+    "source_name": {"type":"string","minLength":1},
+    "target_name": {"type":"string","minLength":1},
+    "relation": {"const":"DECARBOXYLATES_TO"},
+    "edge_id": {"type":"string","pattern":"^CPA-EDGE-[0-9]{4}$"},
+    "evidence_lane": {"const":"transformation"},
+    "confidence": {"type":"string","minLength":1},
+    "source_id": {"type":"string","pattern":"^SRC-"},
+    "source_url": {"type":"string","minLength":1},
+    "mapping_scope": {"const":"DETERMINISTIC_HEAVY_ATOM_GRAPH_ISOMORPHISM_AFTER_CARBOXYL_REMOVAL"},
+    "source_conformer_path": {"type":"string","pattern":"^conformers/.+\\.sdf$"},
+    "target_conformer_path": {"type":"string","pattern":"^conformers/.+\\.sdf$"},
+    "mapped_heavy_atoms": {
+      "type":"array","minItems":1,
+      "items":{
+        "type":"object",
+        "required":["source_atom","target_atom"],
+        "properties":{
+          "source_atom":{"type":"integer","minimum":1},
+          "target_atom":{"type":"integer","minimum":1}
+        },
+        "additionalProperties":false
+      }
+    },
+    "removed_source_heavy_atoms": {"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"integer","minimum":1}},
+    "added_target_heavy_atoms": {"type":"array","uniqueItems":true,"items":{"type":"integer","minimum":1}},
+    "unmapped_hydrogens_policy": {"const":"EXPLICIT_HYDROGENS_ARE_NOT_ATOM-MAPPED_IN_V0.6"},
+    "correspondence_note": {"type":"string","minLength":1},
+    "governance_note": {"type":"string","minLength":1}
+  },
+  "additionalProperties": false
+}

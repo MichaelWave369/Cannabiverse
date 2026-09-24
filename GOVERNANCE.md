@@ -61,3 +61,12 @@ Never silently mutate an old claim because newer literature exists.
 ## What CI means
 
 A green validation run means the repository satisfies structural governance contracts. It does **not** mean every scientific claim has been independently replicated.
+
+
+## Correspondence rule
+
+**CORRESPONDENCE ≠ MECHANISM**
+
+A governed structural correspondence may identify an element- and connectivity-preserving mapping between checked-in molecular graphs. That does not establish a reaction mechanism, transition state, kinetic pathway, hydrogen-transfer path, or physical conformational trajectory.
+
+Transformation visualizations must consume explicit correspondence receipts. They may not promote a visual resemblance or animation into mechanistic authority.
