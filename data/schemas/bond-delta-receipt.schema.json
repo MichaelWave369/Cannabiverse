@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MichaelWave369/Cannabiverse/data/schemas/bond-delta-receipt.schema.json",
+  "title": "Cannabiverse governed bond-delta receipt",
+  "type": "object",
+  "required": [
+    "bond_receipt_id","transformation_receipt_id","source_compound","target_compound",
+    "relation","edge_id","source_id","source_url","authority_scope","summary",
+    "retained_mapped_heavy_bonds_same_order","removed_source_heavy_bonds",
+    "added_target_heavy_bonds","raw_mapped_bond_order_encoding_differences",
+    "promoted_chemical_bond_order_changes","representation_note","governance_note"
+  ],
+  "properties": {
+    "bond_receipt_id": {"type":"string","pattern":"^CPA-BND-[0-9]{4}$"},
+    "transformation_receipt_id": {"type":"string","pattern":"^CPA-XFM-[0-9]{4}$"},
+    "source_compound": {"type":"string","pattern":"^CPA-CAN-[0-9]{4}$"},
+    "target_compound": {"type":"string","pattern":"^CPA-CAN-[0-9]{4}$"},
+    "relation": {"type":"string","minLength":1},
+    "edge_id": {"type":"string","pattern":"^CPA-EDGE-[0-9]{4}$"},
+    "source_id": {"type":"string","pattern":"^SRC-"},
+    "source_url": {"type":"string","minLength":1},
+    "authority_scope": {"const":"STRUCTURAL_CONNECTIVITY_AND_RAW_SDF_ORDER_ENCODING"},
+    "summary": {"type":"object"},
+    "retained_mapped_heavy_bonds_same_order": {"type":"array"},
+    "removed_source_heavy_bonds": {"type":"array"},
+    "added_target_heavy_bonds": {"type":"array"},
+    "raw_mapped_bond_order_encoding_differences": {"type":"array"},
+    "promoted_chemical_bond_order_changes": {"type":"array"},
+    "representation_note": {"type":"string","minLength":1},
+    "governance_note": {"type":"string","minLength":1}
+  },
+  "additionalProperties": false
+}
