@@ -1,0 +1,362 @@
+[
+  {
+    "atlas_id": "CPA-CAN-0089",
+    "alias": "(±)-cis-cannabitriol-C5",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0089",
+    "alias": "(±)-cis-CBT-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0089",
+    "alias": "cis-CBT-C5",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0090",
+    "alias": "(±)-trans-cannabitriol-C3",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0090",
+    "alias": "(±)-trans-CBT-C3",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0091",
+    "alias": "cannabitriol-C3 homologue",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0091",
+    "alias": "CBT-C3 homologue",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0092",
+    "alias": "(−)-trans-cannabitriol-OEt-C5",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0092",
+    "alias": "(−)-trans-CBT-OEt-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0093",
+    "alias": "(−)-trans-cannabitriol-OEt-C3",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0093",
+    "alias": "(−)-trans-CBT-OEt-C3",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0094",
+    "alias": "8,9-dihydroxy-cannabitriol-C5",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0094",
+    "alias": "8,9-di-OH-CBT-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0095",
+    "alias": "CBDA-C5 9-hydroxy-CBT-C5 ester",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0095",
+    "alias": "CBDA-C5 9-OH-CBT-C5 ester",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0096",
+    "alias": "dehydrocannabifuran",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0096",
+    "alias": "DCBF-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0097",
+    "alias": "cannabifuran",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0097",
+    "alias": "CBF-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0098",
+    "alias": "8-hydroxy-isohexahydrocannabivirin",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0098",
+    "alias": "OH-iso-HHCV-C3",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0099",
+    "alias": "10-oxo-Δ6a(10a)-tetrahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0099",
+    "alias": "OTHC",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0100",
+    "alias": "cannabicitran",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0100",
+    "alias": "CBCT",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0101",
+    "alias": "(−)-Δ9-cis-(6aS,10aR)-tetrahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0101",
+    "alias": "cis-Δ9-THC",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0102",
+    "alias": "cannabicoumaronone",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0102",
+    "alias": "CBCON-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0103",
+    "alias": "cannabiripsol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0103",
+    "alias": "CBR",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0104",
+    "alias": "cannabitetrol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0104",
+    "alias": "CBTT",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0105",
+    "alias": "cannabichromanone-C5",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0105",
+    "alias": "CBCN-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0106",
+    "alias": "cannabichromanone-C3",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0106",
+    "alias": "CBCN-C3",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0107",
+    "alias": "(±)-Δ7-cis-isotetrahydrocannabivarin-C3",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0107",
+    "alias": "cis-iso-Δ7-THCV",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0108",
+    "alias": "(−)-Δ7-trans-(1R,3R,6R)-isotetrahydrocannabivarin-C3",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0108",
+    "alias": "trans-iso-Δ7-THCV",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0109",
+    "alias": "(−)-Δ7-trans-(1R,3R,6R)-isotetrahydrocannabinol-C5",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0109",
+    "alias": "trans-iso-Δ7-THC",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0110",
+    "alias": "cannabichromanone B",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0111",
+    "alias": "cannabichromanone C",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0112",
+    "alias": "cannabichromanone D",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0113",
+    "alias": "(−)-(7R)-cannabicoumarononic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0114",
+    "alias": "4-acetoxy-2-geranyl-5-hydroxy-3-n-pentylphenol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0115",
+    "alias": "2-geranyl-5-hydroxy-3-n-pentyl-1,4-benzoquinone",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0116",
+    "alias": "5-acetoxy-6-geranyl-3-n-pentyl-1,4-benzoquinone",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0117",
+    "alias": "cannabimovone",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0117",
+    "alias": "CBM",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0118",
+    "alias": "cannabioxepane",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0118",
+    "alias": "CBX",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0119",
+    "alias": "10α-hydroxy-Δ9,11-hexahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0120",
+    "alias": "9β,10β-epoxyhexahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0121",
+    "alias": "9α-hydroxyhexahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0122",
+    "alias": "7-oxo-9α-hydroxyhexahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0123",
+    "alias": "10α-hydroxyhexahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0124",
+    "alias": "10aR-hydroxyhexahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  }
+]
