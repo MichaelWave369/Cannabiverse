@@ -70,3 +70,12 @@ A green validation run means the repository satisfies structural governance cont
 A governed structural correspondence may identify an element- and connectivity-preserving mapping between checked-in molecular graphs. That does not establish a reaction mechanism, transition state, kinetic pathway, hydrogen-transfer path, or physical conformational trajectory.
 
 Transformation visualizations must consume explicit correspondence receipts. They may not promote a visual resemblance or animation into mechanistic authority.
+
+
+## Bond-delta rule
+
+**RAW SDF BOND-ORDER DELTA ≠ CHEMICAL BOND CHANGE ≠ MECHANISM**
+
+A source/target SDF pair may encode the same mapped connectivity with different single/double bond-order assignments. Such differences are first-class representation receipts, not automatically chemical transformation claims.
+
+A bond-order difference may be promoted only by a future normalization or evidence process that explicitly earns that authority. Visualization must preserve the distinction.

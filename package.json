@@ -1,6 +1,6 @@
 {
   "name": "cannabiverse",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "private": true,
   "description": "Governed, source-aware Cannabis phytochemistry knowledge graph",
   "type": "module",
@@ -9,10 +9,13 @@
     "check:evidence": "node scripts/build-evidence-graph.mjs --check",
     "build:correspondence": "node scripts/build-correspondence.mjs",
     "check:correspondence": "node scripts/build-correspondence.mjs --check",
+    "build:bond-deltas": "node scripts/build-bond-deltas.mjs",
+    "check:bond-deltas": "node scripts/build-bond-deltas.mjs --check",
     "validate:structures": "node scripts/validate-structures.mjs",
     "validate:compare": "node scripts/validate-compare-presets.mjs",
     "validate:correspondence": "node scripts/validate-correspondence.mjs",
-    "validate": "node scripts/build-evidence-graph.mjs --check && node scripts/build-correspondence.mjs --check && node scripts/validate-atlas.mjs && node scripts/validate-structures.mjs && node scripts/validate-compare-presets.mjs && node scripts/validate-correspondence.mjs",
+    "validate:bond-deltas": "node scripts/validate-bond-deltas.mjs",
+    "validate": "node scripts/build-evidence-graph.mjs --check && node scripts/build-correspondence.mjs --check && node scripts/build-bond-deltas.mjs --check && node scripts/validate-atlas.mjs && node scripts/validate-structures.mjs && node scripts/validate-compare-presets.mjs && node scripts/validate-correspondence.mjs && node scripts/validate-bond-deltas.mjs",
     "test": "npm run validate"
   }
 }

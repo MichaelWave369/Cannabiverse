@@ -1,0 +1,1826 @@
+[
+  {
+    "bond_receipt_id": "CPA-BND-0001",
+    "transformation_receipt_id": "CPA-XFM-0001",
+    "source_compound": "CPA-CAN-0002",
+    "target_compound": "CPA-CAN-0001",
+    "relation": "DECARBOXYLATES_TO",
+    "edge_id": "CPA-EDGE-0007",
+    "source_id": "SRC-BIOSYNTHESIS-2021",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7962319/",
+    "authority_scope": "STRUCTURAL_CONNECTIVITY_AND_RAW_SDF_ORDER_ENCODING",
+    "summary": {
+      "retained_mapped_heavy_bonds_same_order": 19,
+      "raw_mapped_bond_order_encoding_differences": 6,
+      "removed_source_heavy_bonds": 3,
+      "removed_boundary_bonds": 1,
+      "removed_internal_fragment_bonds": 2,
+      "added_target_heavy_bonds": 0,
+      "promoted_chemical_bond_order_changes": 0
+    },
+    "retained_mapped_heavy_bonds_same_order": [
+      {
+        "source_atoms": [
+          1,
+          7
+        ],
+        "target_atoms": [
+          1,
+          5
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          1,
+          13
+        ],
+        "target_atoms": [
+          1,
+          11
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          2,
+          16
+        ],
+        "target_atoms": [
+          2,
+          14
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          6
+        ],
+        "target_atoms": [
+          3,
+          4
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          7
+        ],
+        "target_atoms": [
+          3,
+          5
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          8
+        ],
+        "target_atoms": [
+          3,
+          6
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          6,
+          9
+        ],
+        "target_atoms": [
+          4,
+          7
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          6,
+          11
+        ],
+        "target_atoms": [
+          4,
+          9
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          7,
+          14
+        ],
+        "target_atoms": [
+          5,
+          12
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          7,
+          15
+        ],
+        "target_atoms": [
+          5,
+          13
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          8,
+          10
+        ],
+        "target_atoms": [
+          6,
+          8
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          10,
+          12
+        ],
+        "target_atoms": [
+          8,
+          10
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          11,
+          12
+        ],
+        "target_atoms": [
+          9,
+          10
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 2
+      },
+      {
+        "source_atoms": [
+          12,
+          19
+        ],
+        "target_atoms": [
+          10,
+          16
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          18,
+          21
+        ],
+        "target_atoms": [
+          17,
+          19
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          21,
+          22
+        ],
+        "target_atoms": [
+          19,
+          20
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          22,
+          24
+        ],
+        "target_atoms": [
+          20,
+          21
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          24,
+          25
+        ],
+        "target_atoms": [
+          21,
+          22
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          25,
+          26
+        ],
+        "target_atoms": [
+          22,
+          23
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      }
+    ],
+    "removed_source_heavy_bonds": [
+      {
+        "source_atoms": [
+          3,
+          23
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "classification": "WITHIN_REMOVED_FRAGMENT"
+      },
+      {
+        "source_atoms": [
+          4,
+          23
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 2,
+        "classification": "WITHIN_REMOVED_FRAGMENT"
+      },
+      {
+        "source_atoms": [
+          20,
+          23
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "classification": "BOUNDARY_TO_RETAINED_SCAFFOLD"
+      }
+    ],
+    "added_target_heavy_bonds": [],
+    "raw_mapped_bond_order_encoding_differences": [
+      {
+        "source_atoms": [
+          9,
+          13
+        ],
+        "target_atoms": [
+          7,
+          11
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          9,
+          16
+        ],
+        "target_atoms": [
+          7,
+          14
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          13,
+          17
+        ],
+        "target_atoms": [
+          11,
+          15
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          16,
+          20
+        ],
+        "target_atoms": [
+          14,
+          18
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          17,
+          18
+        ],
+        "target_atoms": [
+          15,
+          17
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          18,
+          20
+        ],
+        "target_atoms": [
+          17,
+          18
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      }
+    ],
+    "promoted_chemical_bond_order_changes": [],
+    "representation_note": "Raw source/target SDF bond-order encoding differences are recorded but not promoted to chemical bond-change claims. v0.7 does not canonicalize resonance or Kekule-equivalent encodings.",
+    "governance_note": "RAW_SDF_BOND_ORDER_DELTA != CHEMICAL_BOND_CHANGE != MECHANISM. Connectivity deltas may be visualized only at the authority stated in this receipt."
+  },
+  {
+    "bond_receipt_id": "CPA-BND-0002",
+    "transformation_receipt_id": "CPA-XFM-0002",
+    "source_compound": "CPA-CAN-0048",
+    "target_compound": "CPA-CAN-0047",
+    "relation": "DECARBOXYLATES_TO",
+    "edge_id": "CPA-EDGE-0008",
+    "source_id": "SRC-BIOSYNTHESIS-2021",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7962319/",
+    "authority_scope": "STRUCTURAL_CONNECTIVITY_AND_RAW_SDF_ORDER_ENCODING",
+    "summary": {
+      "retained_mapped_heavy_bonds_same_order": 18,
+      "raw_mapped_bond_order_encoding_differences": 6,
+      "removed_source_heavy_bonds": 3,
+      "removed_boundary_bonds": 1,
+      "removed_internal_fragment_bonds": 2,
+      "added_target_heavy_bonds": 0,
+      "promoted_chemical_bond_order_changes": 0
+    },
+    "retained_mapped_heavy_bonds_same_order": [
+      {
+        "source_atoms": [
+          1,
+          13
+        ],
+        "target_atoms": [
+          1,
+          11
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          2,
+          14
+        ],
+        "target_atoms": [
+          2,
+          12
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          6
+        ],
+        "target_atoms": [
+          3,
+          4
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          7
+        ],
+        "target_atoms": [
+          3,
+          5
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          12
+        ],
+        "target_atoms": [
+          3,
+          10
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          6,
+          9
+        ],
+        "target_atoms": [
+          4,
+          7
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          6,
+          10
+        ],
+        "target_atoms": [
+          4,
+          8
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          7,
+          8
+        ],
+        "target_atoms": [
+          5,
+          6
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          8,
+          11
+        ],
+        "target_atoms": [
+          6,
+          9
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          9,
+          11
+        ],
+        "target_atoms": [
+          7,
+          9
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 2
+      },
+      {
+        "source_atoms": [
+          11,
+          15
+        ],
+        "target_atoms": [
+          9,
+          13
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          12,
+          18
+        ],
+        "target_atoms": [
+          10,
+          14
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          12,
+          21
+        ],
+        "target_atoms": [
+          10,
+          19
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 2
+      },
+      {
+        "source_atoms": [
+          16,
+          20
+        ],
+        "target_atoms": [
+          15,
+          18
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          20,
+          22
+        ],
+        "target_atoms": [
+          18,
+          20
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          22,
+          23
+        ],
+        "target_atoms": [
+          20,
+          21
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          23,
+          25
+        ],
+        "target_atoms": [
+          21,
+          22
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          25,
+          26
+        ],
+        "target_atoms": [
+          22,
+          23
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      }
+    ],
+    "removed_source_heavy_bonds": [
+      {
+        "source_atoms": [
+          3,
+          24
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "classification": "WITHIN_REMOVED_FRAGMENT"
+      },
+      {
+        "source_atoms": [
+          4,
+          24
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 2,
+        "classification": "WITHIN_REMOVED_FRAGMENT"
+      },
+      {
+        "source_atoms": [
+          17,
+          24
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "classification": "BOUNDARY_TO_RETAINED_SCAFFOLD"
+      }
+    ],
+    "added_target_heavy_bonds": [],
+    "raw_mapped_bond_order_encoding_differences": [
+      {
+        "source_atoms": [
+          10,
+          13
+        ],
+        "target_atoms": [
+          8,
+          11
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          10,
+          14
+        ],
+        "target_atoms": [
+          8,
+          12
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          13,
+          17
+        ],
+        "target_atoms": [
+          11,
+          16
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          14,
+          19
+        ],
+        "target_atoms": [
+          12,
+          17
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          16,
+          17
+        ],
+        "target_atoms": [
+          15,
+          16
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          16,
+          19
+        ],
+        "target_atoms": [
+          15,
+          17
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      }
+    ],
+    "promoted_chemical_bond_order_changes": [],
+    "representation_note": "Raw source/target SDF bond-order encoding differences are recorded but not promoted to chemical bond-change claims. v0.7 does not canonicalize resonance or Kekule-equivalent encodings.",
+    "governance_note": "RAW_SDF_BOND_ORDER_DELTA != CHEMICAL_BOND_CHANGE != MECHANISM. Connectivity deltas may be visualized only at the authority stated in this receipt."
+  },
+  {
+    "bond_receipt_id": "CPA-BND-0003",
+    "transformation_receipt_id": "CPA-XFM-0003",
+    "source_compound": "CPA-CAN-0032",
+    "target_compound": "CPA-CAN-0031",
+    "relation": "DECARBOXYLATES_TO",
+    "edge_id": "CPA-EDGE-0006",
+    "source_id": "SRC-BIOSYNTHESIS-2021",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7962319/",
+    "authority_scope": "STRUCTURAL_CONNECTIVITY_AND_RAW_SDF_ORDER_ENCODING",
+    "summary": {
+      "retained_mapped_heavy_bonds_same_order": 17,
+      "raw_mapped_bond_order_encoding_differences": 6,
+      "removed_source_heavy_bonds": 3,
+      "removed_boundary_bonds": 1,
+      "removed_internal_fragment_bonds": 2,
+      "added_target_heavy_bonds": 0,
+      "promoted_chemical_bond_order_changes": 0
+    },
+    "retained_mapped_heavy_bonds_same_order": [
+      {
+        "source_atoms": [
+          1,
+          13
+        ],
+        "target_atoms": [
+          1,
+          12
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          2,
+          15
+        ],
+        "target_atoms": [
+          2,
+          13
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          6
+        ],
+        "target_atoms": [
+          3,
+          4
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          7
+        ],
+        "target_atoms": [
+          4,
+          6
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          6,
+          8
+        ],
+        "target_atoms": [
+          3,
+          5
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          8,
+          11
+        ],
+        "target_atoms": [
+          5,
+          7
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          9,
+          14
+        ],
+        "target_atoms": [
+          8,
+          9
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          11,
+          19
+        ],
+        "target_atoms": [
+          7,
+          18
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          14,
+          16
+        ],
+        "target_atoms": [
+          9,
+          16
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          16,
+          17
+        ],
+        "target_atoms": [
+          14,
+          16
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 2
+      },
+      {
+        "source_atoms": [
+          17,
+          18
+        ],
+        "target_atoms": [
+          14,
+          15
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          17,
+          22
+        ],
+        "target_atoms": [
+          14,
+          19
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          18,
+          20
+        ],
+        "target_atoms": [
+          15,
+          17
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          20,
+          23
+        ],
+        "target_atoms": [
+          17,
+          20
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          23,
+          24
+        ],
+        "target_atoms": [
+          20,
+          21
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 2
+      },
+      {
+        "source_atoms": [
+          24,
+          25
+        ],
+        "target_atoms": [
+          21,
+          22
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          24,
+          26
+        ],
+        "target_atoms": [
+          21,
+          23
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      }
+    ],
+    "removed_source_heavy_bonds": [
+      {
+        "source_atoms": [
+          3,
+          21
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "classification": "WITHIN_REMOVED_FRAGMENT"
+      },
+      {
+        "source_atoms": [
+          4,
+          21
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 2,
+        "classification": "WITHIN_REMOVED_FRAGMENT"
+      },
+      {
+        "source_atoms": [
+          10,
+          21
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "classification": "BOUNDARY_TO_RETAINED_SCAFFOLD"
+      }
+    ],
+    "added_target_heavy_bonds": [],
+    "raw_mapped_bond_order_encoding_differences": [
+      {
+        "source_atoms": [
+          7,
+          10
+        ],
+        "target_atoms": [
+          6,
+          10
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          7,
+          12
+        ],
+        "target_atoms": [
+          6,
+          11
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          9,
+          13
+        ],
+        "target_atoms": [
+          8,
+          12
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          9,
+          15
+        ],
+        "target_atoms": [
+          8,
+          13
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          10,
+          13
+        ],
+        "target_atoms": [
+          10,
+          12
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          12,
+          15
+        ],
+        "target_atoms": [
+          11,
+          13
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      }
+    ],
+    "promoted_chemical_bond_order_changes": [],
+    "representation_note": "Raw source/target SDF bond-order encoding differences are recorded but not promoted to chemical bond-change claims. v0.7 does not canonicalize resonance or Kekule-equivalent encodings.",
+    "governance_note": "RAW_SDF_BOND_ORDER_DELTA != CHEMICAL_BOND_CHANGE != MECHANISM. Connectivity deltas may be visualized only at the authority stated in this receipt."
+  },
+  {
+    "bond_receipt_id": "CPA-BND-0004",
+    "transformation_receipt_id": "CPA-XFM-0004",
+    "source_compound": "CPA-CAN-0068",
+    "target_compound": "CPA-CAN-0067",
+    "relation": "DECARBOXYLATES_TO",
+    "edge_id": "CPA-EDGE-0009",
+    "source_id": "SRC-BIOSYNTHESIS-2021",
+    "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7962319/",
+    "authority_scope": "STRUCTURAL_CONNECTIVITY_AND_RAW_SDF_ORDER_ENCODING",
+    "summary": {
+      "retained_mapped_heavy_bonds_same_order": 18,
+      "raw_mapped_bond_order_encoding_differences": 6,
+      "removed_source_heavy_bonds": 3,
+      "removed_boundary_bonds": 1,
+      "removed_internal_fragment_bonds": 2,
+      "added_target_heavy_bonds": 0,
+      "promoted_chemical_bond_order_changes": 0
+    },
+    "retained_mapped_heavy_bonds_same_order": [
+      {
+        "source_atoms": [
+          1,
+          5
+        ],
+        "target_atoms": [
+          1,
+          3
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          1,
+          8
+        ],
+        "target_atoms": [
+          1,
+          6
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          2,
+          18
+        ],
+        "target_atoms": [
+          2,
+          15
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          6
+        ],
+        "target_atoms": [
+          3,
+          4
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          7
+        ],
+        "target_atoms": [
+          3,
+          5
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          5,
+          10
+        ],
+        "target_atoms": [
+          3,
+          7
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          6,
+          11
+        ],
+        "target_atoms": [
+          4,
+          8
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          7,
+          14
+        ],
+        "target_atoms": [
+          5,
+          11
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 2
+      },
+      {
+        "source_atoms": [
+          9,
+          14
+        ],
+        "target_atoms": [
+          9,
+          11
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          11,
+          20
+        ],
+        "target_atoms": [
+          8,
+          18
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          12,
+          13
+        ],
+        "target_atoms": [
+          10,
+          12
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          13,
+          16
+        ],
+        "target_atoms": [
+          12,
+          14
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          16,
+          19
+        ],
+        "target_atoms": [
+          14,
+          17
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          19,
+          21
+        ],
+        "target_atoms": [
+          17,
+          19
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          20,
+          23
+        ],
+        "target_atoms": [
+          18,
+          20
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 2
+      },
+      {
+        "source_atoms": [
+          21,
+          24
+        ],
+        "target_atoms": [
+          19,
+          21
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          23,
+          25
+        ],
+        "target_atoms": [
+          20,
+          22
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      },
+      {
+        "source_atoms": [
+          23,
+          26
+        ],
+        "target_atoms": [
+          20,
+          23
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 1
+      }
+    ],
+    "removed_source_heavy_bonds": [
+      {
+        "source_atoms": [
+          3,
+          22
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 1,
+        "classification": "WITHIN_REMOVED_FRAGMENT"
+      },
+      {
+        "source_atoms": [
+          4,
+          22
+        ],
+        "elements": [
+          "C",
+          "O"
+        ],
+        "source_order": 2,
+        "classification": "WITHIN_REMOVED_FRAGMENT"
+      },
+      {
+        "source_atoms": [
+          17,
+          22
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "classification": "BOUNDARY_TO_RETAINED_SCAFFOLD"
+      }
+    ],
+    "added_target_heavy_bonds": [],
+    "raw_mapped_bond_order_encoding_differences": [
+      {
+        "source_atoms": [
+          8,
+          9
+        ],
+        "target_atoms": [
+          6,
+          9
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          8,
+          15
+        ],
+        "target_atoms": [
+          6,
+          13
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          9,
+          18
+        ],
+        "target_atoms": [
+          9,
+          15
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          12,
+          15
+        ],
+        "target_atoms": [
+          10,
+          13
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          12,
+          17
+        ],
+        "target_atoms": [
+          10,
+          16
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 1,
+        "target_order": 2,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      },
+      {
+        "source_atoms": [
+          17,
+          18
+        ],
+        "target_atoms": [
+          15,
+          16
+        ],
+        "elements": [
+          "C",
+          "C"
+        ],
+        "source_order": 2,
+        "target_order": 1,
+        "status": "REPRESENTATION_LEVEL_NOT_PROMOTED"
+      }
+    ],
+    "promoted_chemical_bond_order_changes": [],
+    "representation_note": "Raw source/target SDF bond-order encoding differences are recorded but not promoted to chemical bond-change claims. v0.7 does not canonicalize resonance or Kekule-equivalent encodings.",
+    "governance_note": "RAW_SDF_BOND_ORDER_DELTA != CHEMICAL_BOND_CHANGE != MECHANISM. Connectivity deltas may be visualized only at the authority stated in this receipt."
+  }
+]
