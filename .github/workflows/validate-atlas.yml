@@ -1,0 +1,32 @@
+name: Validate Atlas
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/**"
+      - "scripts/**"
+      - ".github/workflows/validate-atlas.yml"
+  pull_request:
+    paths:
+      - "data/**"
+      - "scripts/**"
+      - ".github/workflows/validate-atlas.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate governed graph
+        run: python scripts/validate_atlas.py
