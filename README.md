@@ -23,7 +23,7 @@ Current dataset:
 - **35** deterministic source-aware relationship claim receipts
 - **290** compound evidence receipts: 145 identity + 145 occurrence
 - **7** provisional/search-target records
-- **14** registered scientific sources in the current source ledger
+- **14** registered scientific sources in the current source ledger\n- **11** governed PubChem 3D conformers rendered through native WebGL2
 
 **145 is not a claim that only 145 phytocannabinoids exist.** Different inventories use different inclusion rules; later literature describes broader inventories.
 
@@ -32,7 +32,7 @@ Current dataset:
 **Cannabiverse:** https://michaelwave369.github.io/Cannabiverse/
 
 - Research Explorer: https://michaelwave369.github.io/Cannabiverse/app/explorer/
-- Evidence Explorer: https://michaelwave369.github.io/Cannabiverse/app/evidence/
+- Evidence Explorer: https://michaelwave369.github.io/Cannabiverse/app/evidence/\n- 3D Molecule Viewer: https://michaelwave369.github.io/Cannabiverse/app/molecules/
 
 GitHub Pages serves the static interfaces; the authoritative scientific data and governance contracts remain versioned in this repository.
 
@@ -66,10 +66,10 @@ data/
   graph/              relationships, homologs, process nodes
   evidence/           evidence vocabulary and provisional records
   research/           source, reconciliation, and known-issue ledgers
-  schemas/            JSON contracts
+  schemas/            JSON contracts\n  structures/         governed 3D structure records + local SDF conformers
 
 app/explorer/          browser-based Cannabiverse Query Explorer
-app/evidence/          source / claim Evidence Explorer
+app/evidence/          source / claim Evidence Explorer\napp/molecules/         native WebGL2 molecule viewer
 docs/                  ontology and governance documentation
 scripts/               deterministic validation
 .github/workflows/     scientific-integrity CI
@@ -83,7 +83,7 @@ No dependency installation is required.
 npm run validate
 ```
 
-The validation gate checks permanent IDs, the frozen baseline, source resolution, graph endpoints, evidence vocabulary, provisional separation, hypothesis-edge discipline, and a 1:1 deterministic projection from chemistry relationships into source-backed claim receipts.
+The validation gate checks permanent IDs, the frozen baseline, source resolution, graph endpoints, evidence vocabulary, provisional separation, hypothesis-edge discipline, deterministic claim projections, and the governed 3D structure layer including SDF atom/bond counts and non-flat 3D coordinates.
 
 ## Compound evidence
 
@@ -98,6 +98,16 @@ CPA-CAN-0133
 Occurrence receipts are marked `CAUTIONED` when the canonical record carries an occurrence warning or artifact flag. Unknown biosynthesis (`B0`) is deliberately not converted into a positive claim.
 
 See [docs/compound-evidence.md](docs/compound-evidence.md).
+
+## Molecular structures
+
+Cannabiverse v0.4 adds a governed 3D structure layer and a **native WebGL2 renderer**. Initial coverage includes CBGA, THCA-A, Δ9-THC, CBD, CBDA, CBG, CBC, CBCA, CBN, THCV, and THCP.
+
+The conformers are checked into `data/structures/conformers/` and carry PubChem provenance plus stable molecular identifiers.
+
+**RENDERABLE STRUCTURE ≠ OCCURRENCE ≠ BIOSYNTHESIS ≠ BIOACTIVITY ≠ HUMAN EFFECT ≠ SAFETY**
+
+See [docs/structure-model.md](docs/structure-model.md).
 
 ## Scientific boundaries
 
