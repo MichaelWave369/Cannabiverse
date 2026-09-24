@@ -67,3 +67,32 @@ Each registered scientific source is also represented as a source node. This let
 One paper supporting an edge is **not** the same as independent replication.
 
 The current `SUPPORTS_CLAIM` relationship records provenance, not replication count or study quality. Those become separate evidence dimensions in later releases.
+
+
+## v0.3 compound evidence receipts
+
+Relationship claims answer **what connection is supported**.
+
+Compound evidence claims answer **what evidence state is attached to this molecule itself**.
+
+Each canonical compound receives stable identity and occurrence receipts:
+
+```text
+CPA-EVC-####-I
+CPA-EVC-####-O
+```
+
+These identifiers are derived from the permanent compound ID rather than list order.
+
+A compound evidence claim stores:
+
+- canonical compound ID
+- evidence lane
+- exact I/O level
+- scientific source
+- canonical status
+- any occurrence/artifact caution
+
+The generator and CI validator require every one of the 145 canonical compounds to have exactly one identity receipt and exactly one occurrence receipt.
+
+Cannabiverse intentionally does not manufacture compound-level biosynthesis claims from `B0` ("unknown / not assessed").
