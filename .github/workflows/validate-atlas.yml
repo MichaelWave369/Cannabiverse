@@ -2,7 +2,7 @@ name: Validate Atlas
 
 on:
   push:
-    branches: ["main", "bootstrap-v0.1.0"]
+    branches: ["main", "bootstrap-v0.1.0", "v0.2-evidence-engine"]
   pull_request:
 
 permissions:
@@ -19,6 +19,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+
+      - name: Check deterministic evidence projection
+        run: node scripts/build-evidence-graph.mjs --check
 
       - name: Validate governed atlas
         run: node scripts/validate-atlas.mjs
