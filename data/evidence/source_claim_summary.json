@@ -1,0 +1,135 @@
+[
+  {
+    "source_id": "SRC-HANUS-2016",
+    "year": 2016,
+    "title": "Phytocannabinoids: a unified critical inventory",
+    "relationship_claim_count": 4,
+    "hypothesis_claim_count": 0,
+    "lanes": [
+      "transformation"
+    ]
+  },
+  {
+    "source_id": "SRC-RADWAN-2021",
+    "year": 2021,
+    "title": "Cannabinoids, Phenolics, Terpenes and Alkaloids of Cannabis",
+    "relationship_claim_count": 7,
+    "hypothesis_claim_count": 0,
+    "lanes": [
+      "structure"
+    ]
+  },
+  {
+    "source_id": "SRC-LINCIANO-2021",
+    "year": 2021,
+    "title": "The novel heptyl phorolic acid cannabinoids content in different Cannabis sativa L. accessions",
+    "relationship_claim_count": 2,
+    "hypothesis_claim_count": 0,
+    "lanes": [
+      "transformation"
+    ]
+  },
+  {
+    "source_id": "SRC-BIOSYNTHESIS-2021",
+    "year": 2021,
+    "title": "The biosynthesis of the cannabinoids",
+    "relationship_claim_count": 12,
+    "hypothesis_claim_count": 0,
+    "lanes": [
+      "biosynthesis",
+      "transformation"
+    ]
+  },
+  {
+    "source_id": "SRC-NRF2-2022",
+    "year": 2022,
+    "title": "A Nrf-2 Stimulatory Hydroxylated Cannabidiol Derivative from Hemp (Cannabis sativa)",
+    "relationship_claim_count": 0,
+    "hypothesis_claim_count": 0,
+    "lanes": []
+  },
+  {
+    "source_id": "SRC-FUTURA-2022",
+    "year": 2022,
+    "title": "Phytochemical Analysis of the Methanolic Extract and Essential Oil from Leaves of Industrial Hemp Futura 75 Cultivar",
+    "relationship_claim_count": 0,
+    "hypothesis_claim_count": 0,
+    "lanes": []
+  },
+  {
+    "source_id": "SRC-CIS-THCA-2022",
+    "year": 2022,
+    "title": "Cis-Δ9-tetrahydrocannabinolic acid occurrence in Cannabis sativa L.",
+    "relationship_claim_count": 1,
+    "hypothesis_claim_count": 0,
+    "lanes": [
+      "structure"
+    ]
+  },
+  {
+    "source_id": "SRC-WELLING-2022",
+    "year": 2022,
+    "title": "Biosynthetic origins of unusual cannabimimetic phytocannabinoids in Cannabis sativa L: A review",
+    "relationship_claim_count": 3,
+    "hypothesis_claim_count": 0,
+    "lanes": [
+      "transformation"
+    ]
+  },
+  {
+    "source_id": "SRC-GARGIULO-2024",
+    "year": 2024,
+    "title": "Phytochemical Characterization and TRPA1/TRPM8 Modulation Profile of the Cannabigerol-Rich Cannabis sativa L. Chemotype IV",
+    "relationship_claim_count": 4,
+    "hypothesis_claim_count": 1,
+    "lanes": [
+      "biosynthesis_hypothesis",
+      "structure",
+      "transformation"
+    ]
+  },
+  {
+    "source_id": "SRC-EPICBD-2024",
+    "year": 2024,
+    "title": "A novel cannabinoid in hemp: Isolation by flash chromatography and identification by liquid chromatography high resolution mass spectrometry",
+    "relationship_claim_count": 0,
+    "hypothesis_claim_count": 0,
+    "lanes": []
+  },
+  {
+    "source_id": "SRC-CBE-2025",
+    "year": 2025,
+    "title": "New Cannabinoids and Chlorin-Type Metabolites from the Flowers of Cannabis sativa L.",
+    "relationship_claim_count": 0,
+    "hypothesis_claim_count": 0,
+    "lanes": []
+  },
+  {
+    "source_id": "SRC-CBGD-2025",
+    "year": 2025,
+    "title": "Cannabizetol, a Novel Cannabinoid: Chemical Synthesis, Anti-inflammatory Activity and Extraction from Cannabis sativa L.",
+    "relationship_claim_count": 1,
+    "hypothesis_claim_count": 0,
+    "lanes": [
+      "structure"
+    ]
+  },
+  {
+    "source_id": "SRC-CIS-BIO-2026",
+    "year": 2026,
+    "title": "Targeted phytocannabinomics provides new insights into the biosynthetic origin of cis-Δ9-THCA in Cannabis sativa L.",
+    "relationship_claim_count": 1,
+    "hypothesis_claim_count": 1,
+    "lanes": [
+      "biosynthesis_hypothesis"
+    ]
+  },
+  {
+    "source_id": "SRC-PHENOLICS-2025",
+    "year": 2025,
+    "title": "Comprehensive profiling of phenolic compounds in Cannabis sativa using two-dimensional liquid chromatography coupled to high-resolution mass spectrometry",
+    "relationship_claim_count": 0,
+    "hypothesis_claim_count": 0,
+    "lanes": []
+  }
+]
