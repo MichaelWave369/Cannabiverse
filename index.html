@@ -32,11 +32,11 @@ h1{font-size:clamp(42px,7vw,82px);line-height:.96;margin:10px 0 18px;letter-spac
 .doctrine p{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;line-height:1.65;color:#e7eddc;font-size:14px}
 .section{padding:34px 0}
 .section h2{font-size:28px;margin:0 0 8px}.section>p{color:var(--muted);line-height:1.6;max-width:760px;margin-top:0}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:20px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
 .card{border:1px solid var(--line);background:linear-gradient(180deg,#11231b,#0d1b15);border-radius:14px;padding:20px}
 .card h3{margin:0 0 8px;font-size:18px}.card p{color:#b7cabe;line-height:1.55;font-size:13px}
 .card .btn{margin-top:8px}
-.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:12px 0 28px}
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:9px;margin:12px 0 28px}
 .stat{border:1px solid var(--line);background:#0e1c16;border-radius:10px;padding:13px}.stat strong{display:block;font-size:24px;color:#edf6f0}.stat span{font-size:11px;color:var(--muted)}
 .rule{border-left:3px solid var(--green);padding:2px 0 2px 14px;color:#bcd1c4;line-height:1.6}
 footer{border-top:1px solid var(--line);margin-top:52px;padding:24px 0 38px;color:var(--muted);font-size:12px;line-height:1.5}
@@ -61,7 +61,7 @@ footer{border-top:1px solid var(--line);margin-top:52px;padding:24px 0 38px;colo
     <p class="lead">Cannabiverse is a source-aware knowledge graph for Cannabis phytochemistry. It separates molecular identity, natural occurrence, biosynthesis, transformations, hypotheses, and scientific provenance instead of throwing them into one confidence bucket and hoping nobody notices.</p>
     <div class="actions">
       <a class="btn primary" href="./app/explorer/">Research Explorer</a>
-      <a class="btn" href="./app/evidence/">Evidence Explorer</a>
+      <a class="btn" href="./app/evidence/">Evidence Explorer</a>\n      <a class="btn" href="./app/molecules/">3D Molecules</a>
       <a class="btn" href="https://github.com/MichaelWave369/Cannabiverse">Source Repository</a>
     </div>
   </div>
@@ -77,10 +77,10 @@ footer{border-top:1px solid var(--line);margin-top:52px;padding:24px 0 38px;colo
     <div class="stat"><strong>290</strong><span>compound evidence receipts</span></div>
     <div class="stat"><strong>35</strong><span>typed chemistry relationships</span></div>
     <div class="stat"><strong>35</strong><span>relationship claim receipts</span></div>
-    <div class="stat"><strong>14</strong><span>registered scientific sources</span></div>
+    <div class="stat"><strong>14</strong><span>registered scientific sources</span></div>\n    <div class="stat"><strong>11</strong><span>governed 3D conformers</span></div>
   </div>
 
-  <h2>Two ways into the atlas</h2>
+  <h2>Three ways into the atlas</h2>
   <p>The interfaces consume the governed data layer. They do not create scientific authority merely by drawing something attractively, a bar humanity has somehow still not universally cleared.</p>
 
   <div class="grid">
@@ -93,6 +93,11 @@ footer{border-top:1px solid var(--line);margin-top:52px;padding:24px 0 38px;colo
       <h3>Evidence Explorer</h3>
       <p>Inspect molecule-level identity and occurrence receipts, source-backed relationship claims, cautions, hypotheses, and the exact publications currently supporting each claim.</p>
       <a class="btn primary" href="./app/evidence/">Launch Evidence Explorer</a>
+    </article>
+    <article class="card">
+      <h3>3D Molecules · WebGL2</h3>
+      <p>Rotate sourced molecular conformers directly in the browser with a dependency-free native WebGL2 renderer. Switch between ball-and-stick, sticks, and space-filling modes while preserving structure provenance.</p>
+      <a class="btn primary" href="./app/molecules/">Launch 3D Molecule Viewer</a>
     </article>
   </div>
 </section>

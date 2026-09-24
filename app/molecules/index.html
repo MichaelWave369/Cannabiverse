@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cannabiverse native WebGL2 molecular structure viewer.">
+<title>Cannabiverse 3D Molecule Viewer</title>
+<style>
+:root{
+  --bg:#07110d;--panel:#0e1d16;--panel2:#13271e;--line:#294638;
+  --text:#edf6f0;--muted:#9fb3a7;--gold:#d6b75f;--green:#70d39a;
+  --blue:#7eaeff;--danger:#ef9a9a;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+body{overflow:hidden}
+header{height:62px;display:flex;align-items:center;gap:12px;padding:0 15px;border-bottom:1px solid var(--line);background:linear-gradient(#12241c,#0d1a15)}
+.logo{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:800}
+.brand b{font-size:15px}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:2px}
+.sp{flex:1}.badge{border:1px solid var(--line);border-radius:999px;padding:5px 8px;font-size:10px;color:var(--muted)}
+.badge.ok{border-color:#36694d;color:#86dfaa}.badge.bad{border-color:#7a3c3c;color:#efaaaa}
+a.btn,button,select,input{height:34px;border:1px solid var(--line);border-radius:8px;background:#0b1812;color:var(--text);padding:0 9px}
+a.btn{display:inline-flex;align-items:center;text-decoration:none;font-size:12px}button{cursor:pointer}button:hover,a.btn:hover,select:focus,input:focus{border-color:#5f8b73;outline:none}
+.app{height:calc(100vh - 62px);display:grid;grid-template-columns:285px minmax(0,1fr) 355px}
+.side,.detail{background:var(--panel);overflow:auto;padding:13px}.side{border-right:1px solid var(--line)}.detail{border-left:1px solid var(--line)}
+h2{font-size:18px;margin:0 0 7px}h3{font-size:10px;text-transform:uppercase;letter-spacing:1.1px;color:var(--gold);margin:16px 0 7px}
+.note{font-size:11px;color:var(--muted);line-height:1.5}.field{width:100%}
+.molbtn{width:100%;height:auto;min-height:48px;text-align:left;padding:7px 9px;margin:3px 0}.molbtn.active{border-color:var(--gold);background:#1b2719}
+.molbtn b{font-size:12px}.molbtn small{display:block;color:var(--muted);margin-top:2px;font-size:10px}
+.stage{position:relative;overflow:hidden;background:
+  radial-gradient(circle at 50% 45%,#183529 0,#0b1712 48%,#050b08 100%)}
+canvas{width:100%;height:100%;display:block;touch-action:none}
+.toolbar{position:absolute;top:10px;left:10px;right:10px;display:flex;gap:6px;flex-wrap:wrap;z-index:3;pointer-events:none}
+.toolbar>*{pointer-events:auto;background:#09150fdd;backdrop-filter:blur(8px)}
+.toolbar select{min-width:145px}
+.help{position:absolute;bottom:10px;left:10px;z-index:3;border:1px solid var(--line);background:#09150fdd;border-radius:8px;padding:7px 9px;color:var(--muted);font-size:10px;backdrop-filter:blur(8px)}
+.card{border:1px solid var(--line);background:var(--panel2);border-radius:9px;padding:9px 10px;margin:8px 0}
+.card b{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.7px;font-size:10px;margin-bottom:4px}
+.card p{margin:0;color:#c5d7cb;font-size:12px;line-height:1.45;word-break:break-word}
+.id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#8fb69f;font-size:11px}
+.grid{display:grid;grid-template-columns:100px 1fr;gap:6px;font-size:11px}.grid span:nth-child(odd){color:var(--muted)}
+.legend{display:flex;flex-wrap:wrap;gap:6px}.atomtag{border:1px solid var(--line);border-radius:999px;padding:3px 7px;font-size:10px;display:flex;align-items:center;gap:5px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block;border:1px solid #ffffff33}
+.warning{border:1px solid #6e5d2d;background:#1d1a10;color:#ddca83;border-radius:9px;padding:9px;font-size:11px;line-height:1.45}
+.error{position:absolute;inset:0;display:none;place-items:center;padding:30px;text-align:center;background:#07110d;color:#e9b3b3;z-index:8}
+.error.show{display:grid}
+@media(max-width:1000px){.app{grid-template-columns:230px minmax(0,1fr) 290px}}
+@media(max-width:760px){body{overflow:auto}.app{height:auto;display:block}.side,.detail{border:0}.stage{height:65vh}.side{max-height:360px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Φ</div>
+  <div class="brand"><b>Cannabiverse Molecules</b><small>v0.4 · native WebGL2 structure viewer</small></div>
+  <div class="sp"></div>
+  <span id="glBadge" class="badge">WebGL2…</span>
+  <a class="btn" href="../../">Cannabiverse</a>
+  <a class="btn" href="../explorer/">Research Explorer</a>
+</header>
+
+<div class="app">
+  <aside class="side">
+    <h2>3D Structures</h2>
+    <div class="note">Sourced 3D conformers checked into the governed structure layer. Search and rotate them without calling an external rendering service.</div>
+    <h3>Find molecule</h3>
+    <input id="search" class="field" placeholder="THC, CBGA, CBD…">
+    <div id="moleculeList" style="margin-top:8px"></div>
+    <h3>Structure coverage</h3>
+    <div class="note"><span id="coverageCount">0</span> canonical compounds currently have a governed 3D conformer. Coverage will expand without pretending missing coordinates mean missing chemistry.</div>
+  </aside>
+
+  <main class="stage">
+    <canvas id="glcanvas"></canvas>
+    <div class="toolbar">
+      <select id="renderMode">
+        <option value="ballstick">Ball & stick</option>
+        <option value="spacefill">Space filling</option>
+        <option value="sticks">Sticks</option>
+      </select>
+      <button id="hydrogenBtn">Hydrogens: off</button>
+      <button id="rotateBtn">Auto rotate: on</button>
+      <button id="resetBtn">Reset view</button>
+      <button id="pngBtn">Save PNG</button>
+    </div>
+    <div class="help">drag to rotate · wheel to zoom · double-click to reset</div>
+    <div id="errorBox" class="error"></div>
+  </main>
+
+  <aside class="detail" id="detail">
+    <div class="note">Loading governed structure index…</div>
+  </aside>
+</div>
+
+<script>
+(function(){
+"use strict";
+
+var canvas=document.getElementById("glcanvas");
+var gl=canvas.getContext("webgl2",{antialias:true,alpha:false,preserveDrawingBuffer:true});
+var badge=document.getElementById("glBadge");
+var errorBox=document.getElementById("errorBox");
+if(!gl){
+  badge.textContent="WebGL2 unavailable";badge.className="badge bad";
+  errorBox.className="error show";
+  errorBox.innerHTML="<div><h2>WebGL2 is not available in this browser.</h2><p>The structure data is still present in the Atlas, but this GPU viewer needs WebGL2.</p></div>";
+  return;
+}
+badge.textContent="WebGL2 active";badge.className="badge ok";
+
+var records=[],recordById={},current=null,molecule=null;
+var rotationX=-0.25,rotationY=0.65,cameraDistance=18;
+var showHydrogens=false,autoRotate=true,lastTime=0,dragging=false,lastX=0,lastY=0;
+
+var elementColors={
+  H:[0.92,0.96,0.94],C:[0.30,0.42,0.36],O:[0.91,0.27,0.25],N:[0.28,0.48,0.95],
+  S:[0.94,0.78,0.22],P:[0.95,0.52,0.18],F:[0.45,0.90,0.55],Cl:[0.31,0.78,0.38],
+  Br:[0.61,0.24,0.18],I:[0.55,0.33,0.76]
+};
+var vdw={H:1.20,C:1.70,O:1.52,N:1.55,S:1.80,P:1.80,F:1.47,Cl:1.75,Br:1.85,I:1.98};
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c];});}
+function vecSub(a,b){return [a[0]-b[0],a[1]-b[1],a[2]-b[2]];}
+function vecLen(a){return Math.hypot(a[0],a[1],a[2]);}
+function vecNorm(a){var l=vecLen(a)||1;return [a[0]/l,a[1]/l,a[2]/l];}
+function vecCross(a,b){return [a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];}
+
+function m4identity(){return new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]);}
+function m4mul(a,b){
+  var o=new Float32Array(16);
+  for(var c=0;c<4;c++)for(var r=0;r<4;r++){
+    o[c*4+r]=a[r]*b[c*4]+a[4+r]*b[c*4+1]+a[8+r]*b[c*4+2]+a[12+r]*b[c*4+3];
+  }
+  return o;
+}
+function m4translate(x,y,z){var m=m4identity();m[12]=x;m[13]=y;m[14]=z;return m;}
+function m4rotX(a){var c=Math.cos(a),s=Math.sin(a),m=m4identity();m[5]=c;m[6]=s;m[9]=-s;m[10]=c;return m;}
+function m4rotY(a){var c=Math.cos(a),s=Math.sin(a),m=m4identity();m[0]=c;m[2]=-s;m[8]=s;m[10]=c;return m;}
+function perspective(fovy,aspect,near,far){
+  var f=1/Math.tan(fovy/2),nf=1/(near-far),m=new Float32Array(16);
+  m[0]=f/aspect;m[5]=f;m[10]=(far+near)*nf;m[11]=-1;m[14]=2*far*near*nf;
+  return m;
+}
+function atomModel(p,r){
+  var m=m4identity();m[0]=r;m[5]=r;m[10]=r;m[12]=p[0];m[13]=p[1];m[14]=p[2];return m;
+}
+function bondModel(a,b,r){
+  var d=vecSub(b,a),len=vecLen(d),y=vecNorm(d);
+  var helper=Math.abs(y[1])<0.92?[0,1,0]:[1,0,0];
+  var x=vecNorm(vecCross(helper,y)),z=vecNorm(vecCross(y,x));
+  var mid=[(a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2];
+  var m=new Float32Array(16);
+  m[0]=x[0]*r;m[1]=x[1]*r;m[2]=x[2]*r;m[3]=0;
+  m[4]=y[0]*len;m[5]=y[1]*len;m[6]=y[2]*len;m[7]=0;
+  m[8]=z[0]*r;m[9]=z[1]*r;m[10]=z[2]*r;m[11]=0;
+  m[12]=mid[0];m[13]=mid[1];m[14]=mid[2];m[15]=1;
+  return m;
+}
+
+var vs="#version 300 es\nprecision highp float;\nlayout(location=0) in vec3 aPosition;\nlayout(location=1) in vec3 aNormal;\nuniform mat4 uModel;\nuniform mat4 uViewProj;\nout vec3 vNormal;\nout vec3 vWorld;\nvoid main(){vec4 w=uModel*vec4(aPosition,1.0);vWorld=w.xyz;vNormal=normalize(mat3(uModel)*aNormal);gl_Position=uViewProj*w;}";
+var fs="#version 300 es\nprecision highp float;\nin vec3 vNormal;\nin vec3 vWorld;\nuniform vec3 uColor;\nout vec4 outColor;\nvoid main(){vec3 n=normalize(vNormal);vec3 l=normalize(vec3(-0.35,0.72,0.58));float d=max(dot(n,l),0.0);float rim=pow(1.0-max(abs(n.z),0.0),2.0)*0.12;vec3 c=uColor*(0.30+0.70*d)+vec3(rim);outColor=vec4(c,1.0);}";
+
+function shader(type,src){var s=gl.createShader(type);gl.shaderSource(s,src);gl.compileShader(s);if(!gl.getShaderParameter(s,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(s));return s;}
+function program(){
+  var p=gl.createProgram();gl.attachShader(p,shader(gl.VERTEX_SHADER,vs));gl.attachShader(p,shader(gl.FRAGMENT_SHADER,fs));gl.linkProgram(p);
+  if(!gl.getProgramParameter(p,gl.LINK_STATUS))throw new Error(gl.getProgramInfoLog(p));return p;
+}
+var prog=program(),uModel=gl.getUniformLocation(prog,"uModel"),uViewProj=gl.getUniformLocation(prog,"uViewProj"),uColor=gl.getUniformLocation(prog,"uColor");
+
+function makeMesh(pos,norm,idx){
+  var vao=gl.createVertexArray();gl.bindVertexArray(vao);
+  var pb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,pb);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(pos),gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(0);gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);
+  var nb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,nb);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(norm),gl.STATIC_DRAW);
+  gl.enableVertexAttribArray(1);gl.vertexAttribPointer(1,3,gl.FLOAT,false,0,0);
+  var ib=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array(idx),gl.STATIC_DRAW);
+  gl.bindVertexArray(null);return {vao:vao,count:idx.length};
+}
+function sphereMesh(lat,lon){
+  var p=[],n=[],ix=[];
+  for(var y=0;y<=lat;y++){var v=y/lat,ph=v*Math.PI;for(var x=0;x<=lon;x++){var u=x/lon,th=u*Math.PI*2;var sx=Math.sin(ph)*Math.cos(th),sy=Math.cos(ph),sz=Math.sin(ph)*Math.sin(th);p.push(sx,sy,sz);n.push(sx,sy,sz);}}
+  for(var yy=0;yy<lat;yy++)for(var xx=0;xx<lon;xx++){var a=yy*(lon+1)+xx,b=a+lon+1;ix.push(a,b,a+1,b,b+1,a+1);}
+  return makeMesh(p,n,ix);
+}
+function cylinderMesh(seg){
+  var p=[],n=[],ix=[];
+  for(var i=0;i<=seg;i++){var a=i/seg*Math.PI*2,x=Math.cos(a),z=Math.sin(a);p.push(x,-0.5,z,x,0.5,z);n.push(x,0,z,x,0,z);}
+  for(var j=0;j<seg;j++){var k=j*2;ix.push(k,k+1,k+2,k+1,k+3,k+2);}
+  return makeMesh(p,n,ix);
+}
+var sphere=sphereMesh(14,22),cylinder=cylinderMesh(18);
+
+function parseSDF(text){
+  var lines=text.split(/\r?\n/),ci=lines.findIndex(function(l){return l.indexOf("V2000")>=0;});
+  if(ci<0)throw new Error("Only SDF V2000 conformers are supported in v0.4.");
+  var count=lines[ci],na=parseInt(count.slice(0,3),10),nb=parseInt(count.slice(3,6),10);
+  var atoms=[],bonds=[];
+  for(var i=0;i<na;i++){
+    var line=lines[ci+1+i],parts=line.trim().split(/\s+/);
+    atoms.push({x:+parts[0],y:+parts[1],z:+parts[2],el:parts[3]});
+  }
+  for(var j=0;j<nb;j++){
+    var bp=lines[ci+1+na+j].trim().split(/\s+/);
+    bonds.push({a:+bp[0]-1,b:+bp[1]-1,order:+bp[2]});
+  }
+  var heavy=atoms.filter(function(a){return a.el!=="H";}),base=heavy.length?heavy:atoms;
+  var cx=0,cy=0,cz=0;base.forEach(function(a){cx+=a.x;cy+=a.y;cz+=a.z;});cx/=base.length;cy/=base.length;cz/=base.length;
+  atoms.forEach(function(a){a.x-=cx;a.y-=cy;a.z-=cz;});
+  var radius=0;atoms.forEach(function(a){radius=Math.max(radius,Math.hypot(a.x,a.y,a.z));});
+  return {atoms:atoms,bonds:bonds,radius:radius,atomCount:na,bondCount:nb};
+}
+
+function modeValues(el){
+  var mode=document.getElementById("renderMode").value;
+  if(mode==="spacefill") return {atom:(vdw[el]||1.65)*0.58,bond:0.055};
+  if(mode==="sticks") return {atom:0.20,bond:0.18};
+  var base={H:0.25,C:0.40,O:0.46,N:0.44,S:0.52,P:0.52};
+  return {atom:base[el]||0.42,bond:0.12};
+}
+function drawMesh(mesh,model,color,vp){
+  gl.uniformMatrix4fv(uModel,false,model);gl.uniformMatrix4fv(uViewProj,false,vp);gl.uniform3fv(uColor,color);
+  gl.bindVertexArray(mesh.vao);gl.drawElements(gl.TRIANGLES,mesh.count,gl.UNSIGNED_SHORT,0);
+}
+function draw(){
+  var rect=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);
+  var w=Math.max(1,Math.floor(rect.width*dpr)),h=Math.max(1,Math.floor(rect.height*dpr));
+  if(canvas.width!==w||canvas.height!==h){canvas.width=w;canvas.height=h;}
+  gl.viewport(0,0,w,h);gl.clearColor(0.027,0.067,0.047,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);
+  if(!molecule)return;
+  var proj=perspective(Math.PI/4,w/h,0.1,200);
+  var scene=m4mul(m4translate(0,0,-cameraDistance),m4mul(m4rotX(rotationX),m4rotY(rotationY)));
+  var vp=m4mul(proj,scene);
+  gl.useProgram(prog);gl.enable(gl.DEPTH_TEST);gl.enable(gl.CULL_FACE);gl.cullFace(gl.BACK);
+
+  var mode=document.getElementById("renderMode").value;
+  if(mode!=="spacefill"){
+    molecule.bonds.forEach(function(b){
+      var aa=molecule.atoms[b.a],bb=molecule.atoms[b.b];
+      if(!showHydrogens&&(aa.el==="H"||bb.el==="H"))return;
+      var br=modeValues("C").bond*(1+Math.max(0,b.order-1)*0.16);
+      drawMesh(cylinder,bondModel([aa.x,aa.y,aa.z],[bb.x,bb.y,bb.z],br),[0.52,0.62,0.56],vp);
+    });
+  }
+  molecule.atoms.forEach(function(a){
+    if(!showHydrogens&&a.el==="H")return;
+    var mv=modeValues(a.el),col=elementColors[a.el]||[0.72,0.55,0.82];
+    drawMesh(sphere,atomModel([a.x,a.y,a.z],mv.atom),col,vp);
+  });
+}
+function animate(t){
+  var dt=lastTime?t-lastTime:0;lastTime=t;
+  if(autoRotate&&!dragging&&molecule)rotationY+=dt*0.00020;
+  draw();requestAnimationFrame(animate);
+}
+
+function resetView(){
+  rotationX=-0.25;rotationY=0.65;
+  cameraDistance=molecule?Math.max(9,molecule.radius*3.05):18;
+}
+function renderList(){
+  var q=document.getElementById("search").value.toLowerCase();
+  var rows=records.filter(function(r){return !q||[r.canonical_name,r.short_label,r.atlas_id,r.family].join(" ").toLowerCase().indexOf(q)>=0;});
+  document.getElementById("moleculeList").innerHTML=rows.map(function(r){
+    return '<button class="molbtn '+(current&&current.atlas_id===r.atlas_id?'active':'')+'" data-id="'+esc(r.atlas_id)+'"><b>'+esc(r.short_label||r.canonical_name)+'</b><small>'+esc(r.canonical_name)+'</small><small>'+esc(r.atlas_id)+' · PubChem CID '+esc(r.structure_source.pubchem_cid)+'</small></button>';
+  }).join("");
+  Array.from(document.querySelectorAll(".molbtn")).forEach(function(b){b.onclick=function(){loadRecord(b.getAttribute("data-id"));};});
+}
+function renderDetail(r){
+  var i=r.identifiers,c=r.conformer,s=r.structure_source;
+  document.getElementById("detail").innerHTML=
+    '<h2>'+esc(r.short_label||r.canonical_name)+'</h2>'+
+    '<div class="id">'+esc(r.atlas_id)+'</div>'+
+    '<div class="card"><b>Canonical structure record</b><p>'+esc(r.canonical_name)+'<br>'+esc(r.family)+'</p></div>'+
+    '<div class="grid"><span>Formula</span><span>'+esc(i.molecular_formula)+'</span><span>Mass</span><span>'+esc(i.molecular_weight)+' g/mol</span><span>Atoms</span><span>'+esc(c.atom_count)+'</span><span>Bonds</span><span>'+esc(c.bond_count)+'</span><span>Format</span><span>'+esc(c.format)+'</span></div>'+
+    '<h3>Identifiers</h3>'+
+    '<div class="card"><b>InChIKey</b><p>'+esc(i.inchikey)+'</p></div>'+
+    '<div class="card"><b>Isomeric SMILES</b><p>'+esc(i.isomeric_smiles)+'</p></div>'+
+    '<h3>Structure provenance</h3>'+
+    '<div class="card"><b>'+esc(s.provider)+' · CID '+esc(s.pubchem_cid)+'</b><p>3D conformer retrieved '+esc(s.retrieved_date)+'.<br><a href="'+esc(s.record_url)+'" target="_blank" rel="noreferrer">Open source record</a></p></div>'+
+    '<div class="warning"><b>Visualization boundary</b><br>Renderable structure ≠ occurrence ≠ biosynthesis ≠ bioactivity ≠ human effect ≠ safety. A GPU model is a representation of sourced coordinates, not an upgrade to any evidence lane.</div>'+
+    '<h3>Atom colors</h3>'+
+    '<div class="legend"><span class="atomtag"><i class="dot" style="background:#4d6b5c"></i>C</span><span class="atomtag"><i class="dot" style="background:#e84540"></i>O</span><span class="atomtag"><i class="dot" style="background:#ebf5ef"></i>H</span><span class="atomtag"><i class="dot" style="background:#477af2"></i>N</span></div>';
+}
+async function loadRecord(id){
+  var r=recordById[id];if(!r)return;
+  current=r;renderList();
+  document.getElementById("detail").innerHTML='<div class="note">Loading 3D conformer…</div>';
+  try{
+    var res=await fetch("../../data/structures/"+r.conformer.path,{cache:"no-cache"});
+    if(!res.ok)throw new Error("HTTP "+res.status);
+    var text=await res.text();molecule=parseSDF(text);
+    resetView();renderDetail(r);
+    var url=new URL(location.href);url.searchParams.set("id",id);history.replaceState(null,"",url);
+  }catch(e){
+    document.getElementById("detail").innerHTML='<div class="warning">Could not load conformer: '+esc(e.message)+'</div>';
+  }
+}
+
+document.getElementById("search").addEventListener("input",renderList);
+document.getElementById("renderMode").addEventListener("change",draw);
+document.getElementById("hydrogenBtn").onclick=function(){showHydrogens=!showHydrogens;this.textContent="Hydrogens: "+(showHydrogens?"on":"off");};
+document.getElementById("rotateBtn").onclick=function(){autoRotate=!autoRotate;this.textContent="Auto rotate: "+(autoRotate?"on":"off");};
+document.getElementById("resetBtn").onclick=resetView;
+document.getElementById("pngBtn").onclick=function(){draw();var a=document.createElement("a");a.download=(current?(current.short_label||current.atlas_id):"cannabiverse-molecule").replace(/[^a-z0-9_-]+/gi,"-")+".png";a.href=canvas.toDataURL("image/png");a.click();};
+
+canvas.addEventListener("pointerdown",function(e){dragging=true;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId);});
+canvas.addEventListener("pointermove",function(e){if(!dragging)return;var dx=e.clientX-lastX,dy=e.clientY-lastY;lastX=e.clientX;lastY=e.clientY;rotationY+=dx*0.008;rotationX+=dy*0.008;});
+canvas.addEventListener("pointerup",function(){dragging=false;});
+canvas.addEventListener("pointercancel",function(){dragging=false;});
+canvas.addEventListener("wheel",function(e){e.preventDefault();cameraDistance*=e.deltaY>0?1.08:0.92;cameraDistance=Math.max(4,Math.min(70,cameraDistance));},{passive:false});
+canvas.addEventListener("dblclick",resetView);
+
+fetch("../../data/structures/structure_index.json",{cache:"no-cache"}).then(function(r){
+  if(!r.ok)throw new Error("Structure index HTTP "+r.status);return r.json();
+}).then(function(data){
+  records=data;recordById=Object.fromEntries(records.map(function(r){return [r.atlas_id,r];}));
+  document.getElementById("coverageCount").textContent=records.length;renderList();
+  var wanted=new URL(location.href).searchParams.get("id");
+  loadRecord(recordById[wanted]?wanted:"CPA-CAN-0032");
+}).catch(function(e){
+  errorBox.className="error show";errorBox.textContent="Could not load governed structure index: "+e.message;
+});
+
+requestAnimationFrame(animate);
+})();
+</script>
+</body>
+</html>
