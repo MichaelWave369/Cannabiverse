@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MichaelWave369/Cannabiverse/data/schemas/evidence.schema.json",
+  "title": "Cannabiverse evidence lane vocabulary",
+  "type": "object",
+  "properties": {
+    "identity": {
+      "enum": [
+        "I0",
+        "I1",
+        "I2",
+        "I3",
+        "I4"
+      ]
+    },
+    "occurrence": {
+      "enum": [
+        "O0",
+        "O1",
+        "O2",
+        "O3",
+        "O4"
+      ]
+    },
+    "biosynthesis": {
+      "enum": [
+        "B0",
+        "B1",
+        "B2",
+        "B3"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
