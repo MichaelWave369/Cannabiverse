@@ -1,0 +1,42 @@
+[
+  {
+    "class": "Alkyl phytocannabinoids",
+    "ketide_starter": "Aliphatic",
+    "topology": "para",
+    "isoprenyl_residue": "Terpenyl (C10)-type",
+    "Cannabis_relevance": "Primary Cannabis phytocannabinoid framework",
+    "atlas_rule": "Default biogenetic bucket for conventional Cannabis phytocannabinoids unless a more specific bucket is justified."
+  },
+  {
+    "class": "β-Aralkyl phytocannabinoids",
+    "ketide_starter": "Aromatic",
+    "topology": "para",
+    "isoprenyl_residue": "Terpenyl (C10)-type",
+    "Cannabis_relevance": "Hanuš notes these analogues from other natural sources, not Cannabis",
+    "atlas_rule": "Do not import into Cannabis canon solely because they are cannabinoid-like."
+  },
+  {
+    "class": "Abnormal series",
+    "ketide_starter": "Aliphatic or aromatic",
+    "topology": "ortho",
+    "isoprenyl_residue": "Isoprenyl",
+    "Cannabis_relevance": "Some abnormal-series phytocannabinoids occur in Cannabis",
+    "atlas_rule": "Require explicit structural/source evidence; do not infer from family name."
+  },
+  {
+    "class": "Sesqui-series",
+    "ketide_starter": "Aliphatic or aromatic",
+    "topology": "ortho or para",
+    "isoprenyl_residue": "Sesquiterpenyl (C15)",
+    "Cannabis_relevance": "Includes Cannabis sesquicannabinoids such as sesquicannabigerol",
+    "atlas_rule": "Track prenyl-residue length separately from resorcinyl alkyl side-chain length."
+  },
+  {
+    "class": "Deprenyl series",
+    "ketide_starter": "Aliphatic or aromatic",
+    "topology": "ortho or para",
+    "isoprenyl_residue": "Deprenyl (C5)",
+    "Cannabis_relevance": "Framework category",
+    "atlas_rule": "Keep distinct from C1/C3/C4/C5/C6/C7 resorcinyl side-chain homolog notation."
+  }
+]
