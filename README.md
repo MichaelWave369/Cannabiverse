@@ -20,6 +20,7 @@ Current dataset:
 - **278** alias/synonym mappings
 - **38** homolog-series memberships
 - **35** typed graph relationships
+- **35** deterministic source-aware claim receipts
 - **7** provisional/search-target records
 - **14** registered scientific sources in the current source ledger
 
@@ -57,7 +58,8 @@ data/
   research/           source, reconciliation, and known-issue ledgers
   schemas/            JSON contracts
 
-app/explorer/          browser-based Cannabiverse Explorer
+app/explorer/          browser-based Cannabiverse Query Explorer
+app/evidence/          source / claim Evidence Explorer
 docs/                  ontology and governance documentation
 scripts/               deterministic validation
 .github/workflows/     scientific-integrity CI
@@ -68,10 +70,10 @@ scripts/               deterministic validation
 No dependency installation is required.
 
 ```bash
-node scripts/validate-atlas.mjs
+npm run validate
 ```
 
-The validator checks permanent IDs, the frozen baseline, source resolution, graph endpoints, evidence vocabulary, provisional separation, and hypothesis-edge discipline.
+The validation gate checks permanent IDs, the frozen baseline, source resolution, graph endpoints, evidence vocabulary, provisional separation, hypothesis-edge discipline, and a 1:1 deterministic projection from chemistry relationships into source-backed claim receipts.
 
 ## Scientific boundaries
 

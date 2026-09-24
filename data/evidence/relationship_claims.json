@@ -1,0 +1,527 @@
+[
+  {
+    "claim_id": "CPA-CLM-0001",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-PRE-OLA",
+    "predicate": "BIOSYNTHETIC_INPUT_TO",
+    "object_id": "CPA-CAN-0032",
+    "evidence_lane": "biosynthesis",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0001",
+    "note": "OLA + GPP are combined to form CBGA."
+  },
+  {
+    "claim_id": "CPA-CLM-0002",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-PRE-GPP",
+    "predicate": "BIOSYNTHETIC_INPUT_TO",
+    "object_id": "CPA-CAN-0032",
+    "evidence_lane": "biosynthesis",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0002",
+    "note": "OLA + GPP are combined to form CBGA."
+  },
+  {
+    "claim_id": "CPA-CLM-0003",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0032",
+    "predicate": "BIOSYNTHETIC_PRECURSOR_OF",
+    "object_id": "CPA-CAN-0002",
+    "evidence_lane": "biosynthesis",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0003",
+    "note": "Via THCA synthase."
+  },
+  {
+    "claim_id": "CPA-CLM-0004",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0032",
+    "predicate": "BIOSYNTHETIC_PRECURSOR_OF",
+    "object_id": "CPA-CAN-0048",
+    "evidence_lane": "biosynthesis",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0004",
+    "note": "Via CBDA synthase."
+  },
+  {
+    "claim_id": "CPA-CLM-0005",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0032",
+    "predicate": "BIOSYNTHETIC_PRECURSOR_OF",
+    "object_id": "CPA-CAN-0068",
+    "evidence_lane": "biosynthesis",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0005",
+    "note": "Via CBCA synthase."
+  },
+  {
+    "claim_id": "CPA-CLM-0006",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0032",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0031",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0006",
+    "note": "Non-enzymatic decarboxylation can occur with storage/heat."
+  },
+  {
+    "claim_id": "CPA-CLM-0007",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0002",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0001",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0007",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-CLM-0008",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0048",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0047",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0008",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-CLM-0009",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0068",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0067",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0009",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-CLM-0010",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0036",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0035",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-WELLING-2022"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0010",
+    "note": "Varin acid/neutral relationship."
+  },
+  {
+    "claim_id": "CPA-CLM-0011",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0007",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0006",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-WELLING-2022"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0011",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-CLM-0012",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0052",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0051",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-WELLING-2022"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0012",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-CLM-0013",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0127",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0024",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-LINCIANO-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0013",
+    "note": "THCPA is the acid precursor of THCP."
+  },
+  {
+    "claim_id": "CPA-CLM-0014",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0126",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0055",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-LINCIANO-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0014",
+    "note": "CBDPA is the acid precursor of CBDP."
+  },
+  {
+    "claim_id": "CPA-CLM-0015",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0001",
+    "predicate": "OXIDIZES_TO",
+    "object_id": "CPA-CAN-0076",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0015",
+    "note": "Δ9-THC can oxidize/aromatize toward CBN during aging/exposure."
+  },
+  {
+    "claim_id": "CPA-CLM-0016",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0002",
+    "predicate": "OXIDIZES_TO",
+    "object_id": "CPA-CAN-0077",
+    "evidence_lane": "transformation",
+    "authority": "MEDIUM_HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0016",
+    "note": "THCA → CBNA is represented as an oxidation relationship in review literature."
+  },
+  {
+    "claim_id": "CPA-CLM-0017",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0077",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0076",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-BIOSYNTHESIS-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0017",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-CLM-0018",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0001",
+    "predicate": "ISOMERIZES_TO",
+    "object_id": "CPA-CAN-0026",
+    "evidence_lane": "transformation",
+    "authority": "MEDIUM",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-HANUS-2016"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0018",
+    "note": "Δ8-THC can arise through non-enzymatic transformation/isomerization; this edge is not a claim that all Δ8-THC is an artifact."
+  },
+  {
+    "claim_id": "CPA-CLM-0019",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0068",
+    "predicate": "PHOTOCYCLIZES_TO",
+    "object_id": "CPA-CAN-0065",
+    "evidence_lane": "transformation",
+    "authority": "MEDIUM_HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-HANUS-2016"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0019",
+    "note": "CBCA → CBLA under irradiation/photochemical conditions."
+  },
+  {
+    "claim_id": "CPA-CLM-0020",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0067",
+    "predicate": "PHOTOCYCLIZES_TO",
+    "object_id": "CPA-CAN-0064",
+    "evidence_lane": "transformation",
+    "authority": "MEDIUM_HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-HANUS-2016"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0020",
+    "note": "CBC → CBL under irradiation/photochemical conditions."
+  },
+  {
+    "claim_id": "CPA-CLM-0021",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0065",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0064",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-HANUS-2016"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0021",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-CLM-0022",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0001",
+    "predicate": "STEREOISOMER_OF",
+    "object_id": "CPA-CAN-0101",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0022",
+    "note": "trans/cis Δ9-THC records."
+  },
+  {
+    "claim_id": "CPA-CLM-0023",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0002",
+    "predicate": "STEREOISOMER_OF",
+    "object_id": "CPA-CAN-0133",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-CIS-THCA-2022"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0023",
+    "note": "trans- vs cis-Δ9-THCA."
+  },
+  {
+    "claim_id": "CPA-CLM-0024",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0001",
+    "predicate": "POSITIONAL_ISOMER_OF",
+    "object_id": "CPA-CAN-0026",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0024",
+    "note": "Δ9 vs Δ8 double-bond position."
+  },
+  {
+    "claim_id": "CPA-CLM-0025",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0032",
+    "predicate": "GEOMETRIC_ISOMER_OF",
+    "object_id": "CPA-CAN-0037",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0025",
+    "note": "(E)-CBGA vs cannabinerolic acid / (Z)-CBGA."
+  },
+  {
+    "claim_id": "CPA-CLM-0026",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0041",
+    "predicate": "STEREOISOMER_OF",
+    "object_id": "CPA-CAN-0042",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0026",
+    "note": "trans/cis epoxycannabigerolic acid."
+  },
+  {
+    "claim_id": "CPA-CLM-0027",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0043",
+    "predicate": "STEREOISOMER_OF",
+    "object_id": "CPA-CAN-0044",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0027",
+    "note": "cis/trans epoxycannabigerol."
+  },
+  {
+    "claim_id": "CPA-CLM-0028",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0087",
+    "predicate": "ENANTIOMER_OF",
+    "object_id": "CPA-CAN-0088",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0028",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-CLM-0029",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0087",
+    "predicate": "DIASTEREOMERIC_RELATIVE_OF",
+    "object_id": "CPA-CAN-0089",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-RADWAN-2021"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0029",
+    "note": ""
+  },
+  {
+    "claim_id": "CPA-CLM-0030",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0141",
+    "predicate": "EPIMER_OF",
+    "object_id": "CPA-CAN-0142",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0030",
+    "note": "Cannabifuranol B is the C-1′ epimer of A."
+  },
+  {
+    "claim_id": "CPA-CLM-0031",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0134",
+    "predicate": "GEOMETRIC_ISOMER_RELATIVE_OF",
+    "object_id": "CPA-CAN-0136",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0031",
+    "note": "Compound 7 is described as the Z-configured cannabinerolic-acid derivative corresponding to compound 5's E-type scaffold."
+  },
+  {
+    "claim_id": "CPA-CLM-0032",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0134",
+    "predicate": "DECARBOXYLATES_TO",
+    "object_id": "CPA-CAN-0135",
+    "evidence_lane": "transformation",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0032",
+    "note": "Paper explicitly identifies compound 6 as the decarboxylation product of compound 5."
+  },
+  {
+    "claim_id": "CPA-CLM-0033",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0138",
+    "predicate": "PROPOSED_OXIDATIVE_CLEAVAGE_TO",
+    "object_id": "CPA-CAN-0139",
+    "evidence_lane": "biosynthesis_hypothesis",
+    "authority": "HYPOTHESIS",
+    "status": "HYPOTHESIS",
+    "source_ids": [
+      "SRC-GARGIULO-2024"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0033",
+    "note": "Authors state compound 10 could derive from oxidative cleavage of the terminal diol in carmagerolic acid."
+  },
+  {
+    "claim_id": "CPA-CLM-0034",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-CAN-0056",
+    "predicate": "SAME_METHYLENE_BRIDGED_DIMER_CLASS_AS",
+    "object_id": "CPA-CAN-0145",
+    "evidence_lane": "structure",
+    "authority": "HIGH",
+    "status": "ASSERTED_WITH_SOURCE",
+    "source_ids": [
+      "SRC-CBGD-2025"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0034",
+    "note": "Cannabitwinol and cannabizetol belong to the rare methylene-bridged dimeric cannabinoid class."
+  },
+  {
+    "claim_id": "CPA-CLM-0035",
+    "claim_type": "RELATIONSHIP_ASSERTION",
+    "subject_id": "CPA-ENZ-CBCAS",
+    "predicate": "POSSIBLE_ENZYME_INVOLVEMENT_IN",
+    "object_id": "CPA-CAN-0133",
+    "evidence_lane": "biosynthesis_hypothesis",
+    "authority": "HYPOTHESIS_SUPPORTED",
+    "status": "HYPOTHESIS",
+    "source_ids": [
+      "SRC-CIS-BIO-2026"
+    ],
+    "derived_from_edge_id": "CPA-EDGE-0035",
+    "note": "Parallel accumulation of cis-THCA and CBCA suggests possible CBCA synthase involvement; not a confirmed enzymatic mechanism."
+  }
+]
