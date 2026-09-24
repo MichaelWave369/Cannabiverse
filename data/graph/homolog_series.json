@@ -1,0 +1,306 @@
+[
+  {
+    "series": "THC neutral homologs",
+    "atlas_id": "CPA-CAN-0008",
+    "name": "(−)-Δ9-trans-tetrahydrocannabiorcol",
+    "side_chain_carbons": 1,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "THC neutral homologs",
+    "atlas_id": "CPA-CAN-0006",
+    "name": "(−)-Δ9-trans-tetrahydrocannabivarin",
+    "side_chain_carbons": 3,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "THC neutral homologs",
+    "atlas_id": "CPA-CAN-0004",
+    "name": "(−)-Δ9-trans-tetrahydrocannabinol-C4",
+    "side_chain_carbons": 4,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "THC neutral homologs",
+    "atlas_id": "CPA-CAN-0001",
+    "name": "(−)-Δ9-trans-tetrahydrocannabinol",
+    "side_chain_carbons": 5,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "THC neutral homologs",
+    "atlas_id": "CPA-CAN-0025",
+    "name": "(−)-Δ9-trans-tetrahydrocannabihexol",
+    "side_chain_carbons": 6,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "THC neutral homologs",
+    "atlas_id": "CPA-CAN-0024",
+    "name": "(−)-Δ9-trans-tetrahydrocannabiphorol",
+    "side_chain_carbons": 7,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "THC acid homologs",
+    "atlas_id": "CPA-CAN-0009",
+    "name": "(−)-Δ9-trans-tetrahydrocannabiorcolic acid",
+    "side_chain_carbons": 1,
+    "form": "acidic",
+    "note": ""
+  },
+  {
+    "series": "THC acid homologs",
+    "atlas_id": "CPA-CAN-0007",
+    "name": "(−)-Δ9-trans-tetrahydrocannabivarinic acid",
+    "side_chain_carbons": 3,
+    "form": "acidic",
+    "note": ""
+  },
+  {
+    "series": "THC acid homologs",
+    "atlas_id": "CPA-CAN-0005",
+    "name": "(−)-Δ9-trans-tetrahydrocannabinolic acid A-C4",
+    "side_chain_carbons": 4,
+    "form": "acidic",
+    "note": ""
+  },
+  {
+    "series": "THC acid homologs",
+    "atlas_id": "CPA-CAN-0002",
+    "name": "(−)-Δ9-trans-tetrahydrocannabinolic acid A",
+    "side_chain_carbons": 5,
+    "form": "acidic",
+    "note": ""
+  },
+  {
+    "series": "THC acid homologs",
+    "atlas_id": "CPA-CAN-0127",
+    "name": "Δ9-tetrahydrocannabiphorolic acid",
+    "side_chain_carbons": 7,
+    "form": "acidic",
+    "note": ""
+  },
+  {
+    "series": "CBD neutral homologs",
+    "atlas_id": "CPA-CAN-0053",
+    "name": "cannabidiorcol",
+    "side_chain_carbons": 1,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBD neutral homologs",
+    "atlas_id": "CPA-CAN-0051",
+    "name": "cannabidivarin",
+    "side_chain_carbons": 3,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBD neutral homologs",
+    "atlas_id": "CPA-CAN-0050",
+    "name": "cannabidiol-C4",
+    "side_chain_carbons": 4,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBD neutral homologs",
+    "atlas_id": "CPA-CAN-0047",
+    "name": "cannabidiol",
+    "side_chain_carbons": 5,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBD neutral homologs",
+    "atlas_id": "CPA-CAN-0054",
+    "name": "cannabidihexol",
+    "side_chain_carbons": 6,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBD neutral homologs",
+    "atlas_id": "CPA-CAN-0055",
+    "name": "cannabidiphorol",
+    "side_chain_carbons": 7,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBD acid homologs",
+    "atlas_id": "CPA-CAN-0052",
+    "name": "cannabidivarinic acid",
+    "side_chain_carbons": 3,
+    "form": "acidic",
+    "note": ""
+  },
+  {
+    "series": "CBD acid homologs",
+    "atlas_id": "CPA-CAN-0048",
+    "name": "cannabidiolic acid",
+    "side_chain_carbons": 5,
+    "form": "acidic",
+    "note": ""
+  },
+  {
+    "series": "CBD acid homologs",
+    "atlas_id": "CPA-CAN-0126",
+    "name": "cannabidiphorolic acid",
+    "side_chain_carbons": 7,
+    "form": "acidic",
+    "note": ""
+  },
+  {
+    "series": "CBG neutral homologs",
+    "atlas_id": "CPA-CAN-0035",
+    "name": "cannabigerovarin",
+    "side_chain_carbons": 3,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBG neutral homologs",
+    "atlas_id": "CPA-CAN-0031",
+    "name": "cannabigerol",
+    "side_chain_carbons": 5,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBG acid homologs",
+    "atlas_id": "CPA-CAN-0036",
+    "name": "cannabigerovarinic acid",
+    "side_chain_carbons": 3,
+    "form": "acidic",
+    "note": "C7 extension remains provisional as CBGPA."
+  },
+  {
+    "series": "CBG acid homologs",
+    "atlas_id": "CPA-CAN-0032",
+    "name": "cannabigerolic acid",
+    "side_chain_carbons": 5,
+    "form": "acidic",
+    "note": "C7 extension remains provisional as CBGPA."
+  },
+  {
+    "series": "CBC neutral homologs",
+    "atlas_id": "CPA-CAN-0069",
+    "name": "(±)-cannabivarichromene",
+    "side_chain_carbons": 3,
+    "form": "neutral",
+    "note": "Two C3 stereochemical records are retained separately."
+  },
+  {
+    "series": "CBC neutral homologs",
+    "atlas_id": "CPA-CAN-0070",
+    "name": "(+)-cannabichromevarin",
+    "side_chain_carbons": 3,
+    "form": "neutral",
+    "note": "Two C3 stereochemical records are retained separately."
+  },
+  {
+    "series": "CBC neutral homologs",
+    "atlas_id": "CPA-CAN-0067",
+    "name": "cannabichromene",
+    "side_chain_carbons": 5,
+    "form": "neutral",
+    "note": "Two C3 stereochemical records are retained separately."
+  },
+  {
+    "series": "CBC acid homologs",
+    "atlas_id": "CPA-CAN-0071",
+    "name": "cannabichromevarinic acid",
+    "side_chain_carbons": 3,
+    "form": "acidic",
+    "note": "C7 extension remains provisional as CBCPA."
+  },
+  {
+    "series": "CBC acid homologs",
+    "atlas_id": "CPA-CAN-0068",
+    "name": "cannabichromenic acid",
+    "side_chain_carbons": 5,
+    "form": "acidic",
+    "note": "C7 extension remains provisional as CBCPA."
+  },
+  {
+    "series": "CBN neutral homologs",
+    "atlas_id": "CPA-CAN-0081",
+    "name": "cannabinol-C1",
+    "side_chain_carbons": 1,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBN neutral homologs",
+    "atlas_id": "CPA-CAN-0080",
+    "name": "cannabinol-C2",
+    "side_chain_carbons": 2,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBN neutral homologs",
+    "atlas_id": "CPA-CAN-0079",
+    "name": "cannabinol-C3",
+    "side_chain_carbons": 3,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBN neutral homologs",
+    "atlas_id": "CPA-CAN-0078",
+    "name": "cannabinol-C4",
+    "side_chain_carbons": 4,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBN neutral homologs",
+    "atlas_id": "CPA-CAN-0076",
+    "name": "cannabinol",
+    "side_chain_carbons": 5,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBE neutral homologs",
+    "atlas_id": "CPA-CAN-0062",
+    "name": "cannabielsoin-C3",
+    "side_chain_carbons": 3,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBE neutral homologs",
+    "atlas_id": "CPA-CAN-0059",
+    "name": "cannabielsoin",
+    "side_chain_carbons": 5,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBL neutral homologs",
+    "atlas_id": "CPA-CAN-0066",
+    "name": "cannabicyclovarin",
+    "side_chain_carbons": 3,
+    "form": "neutral",
+    "note": ""
+  },
+  {
+    "series": "CBL neutral homologs",
+    "atlas_id": "CPA-CAN-0064",
+    "name": "cannabicyclol",
+    "side_chain_carbons": 5,
+    "form": "neutral",
+    "note": ""
+  }
+]
