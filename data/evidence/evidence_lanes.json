@@ -1,0 +1,77 @@
+[
+  {
+    "lane": "Identity",
+    "level": "I0",
+    "meaning": "Unknown / no reliable structural identification"
+  },
+  {
+    "lane": "Identity",
+    "level": "I1",
+    "meaning": "Analytical signal or unresolved feature"
+  },
+  {
+    "lane": "Identity",
+    "level": "I2",
+    "meaning": "Putative identity from HRMS/fragmentation or review-level historical catalogue"
+  },
+  {
+    "lane": "Identity",
+    "level": "I3",
+    "meaning": "Matched to reference standard and/or validated targeted analytical identity"
+  },
+  {
+    "lane": "Identity",
+    "level": "I4",
+    "meaning": "Isolated and structurally characterized by NMR/MS, or isolated with unequivocal synthetic-standard match"
+  },
+  {
+    "lane": "Occurrence",
+    "level": "O0",
+    "meaning": "Not detected / no Cannabis occurrence evidence in the cited source"
+  },
+  {
+    "lane": "Occurrence",
+    "level": "O1",
+    "meaning": "Historical review-catalogued occurrence; primary evidence not re-audited in this release"
+  },
+  {
+    "lane": "Occurrence",
+    "level": "O2",
+    "meaning": "Putative detection in Cannabis"
+  },
+  {
+    "lane": "Occurrence",
+    "level": "O3",
+    "meaning": "Confirmed analytical occurrence in Cannabis using reference standard / validated method"
+  },
+  {
+    "lane": "Occurrence",
+    "level": "O4",
+    "meaning": "Compound isolated from Cannabis/hemp material and structurally confirmed"
+  },
+  {
+    "lane": "Biosynthesis",
+    "level": "B0",
+    "meaning": "Unknown / not assessed"
+  },
+  {
+    "lane": "Biosynthesis",
+    "level": "B1",
+    "meaning": "Plausible or source-proposed route"
+  },
+  {
+    "lane": "Biosynthesis",
+    "level": "B2",
+    "meaning": "Correlative/targeted metabolomic support"
+  },
+  {
+    "lane": "Biosynthesis",
+    "level": "B3",
+    "meaning": "Established pathway/enzyme evidence"
+  },
+  {
+    "lane": "Rule",
+    "level": "—",
+    "meaning": "IDENTITY ≠ OCCURRENCE ≠ BIOACTIVITY ≠ HUMAN EFFECT ≠ SAFETY"
+  }
+]
