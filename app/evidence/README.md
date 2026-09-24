@@ -1,14 +1,27 @@
 # Evidence Explorer
 
-The Evidence Explorer visualizes the v0.2 source → claim → chemistry projection.
+The v0.3 Evidence Explorer makes two different forms of scientific provenance visible without collapsing them.
 
-It can:
+## Compound evidence
 
-- browse all registered scientific sources;
-- count relationship claims by source;
-- filter claims by evidence lane and status;
-- isolate hypotheses;
-- search compounds, predicates, notes, authors, and titles;
-- inspect the source receipt behind each relationship claim.
+Every canonical molecule has:
 
-The embedded data is a convenience snapshot. Authority remains in `data/`, and CI verifies the checked-in claim projection against the chemistry graph.
+- one identity receipt (`CPA-EVC-####-I`)
+- one occurrence receipt (`CPA-EVC-####-O`)
+
+Occurrence receipts surface artifact or occurrence cautions explicitly.
+
+## Relationship claims
+
+Every typed chemistry edge retains its source-aware relationship claim (`CPA-CLM-####`).
+
+## Source view
+
+Each scientific source can be opened as a ledger showing:
+
+- relationship claims supported by that source;
+- compound identity/occurrence receipts attributed to that source;
+- cautioned occurrence receipts;
+- hypothesis claims.
+
+The explorer is a convenience view. Authority remains under `data/`, and CI checks that all generated claim files remain deterministic projections of the canonical graph.

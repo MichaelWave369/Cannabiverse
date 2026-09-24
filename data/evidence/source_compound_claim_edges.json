@@ -1,0 +1,2032 @@
+[
+  {
+    "edge_id": "CPA-CSUP-0001-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0001-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0001-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0001-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0002-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0002-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0002-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0002-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0003-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0003-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0003-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0003-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0004-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0004-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0004-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0004-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0005-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0005-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0005-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0005-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0006-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0006-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0006-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0006-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0007-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0007-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0007-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0007-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0008-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0008-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0008-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0008-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0009-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0009-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0009-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0009-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0010-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0010-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0010-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0010-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0011-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0011-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0011-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0011-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0012-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0012-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0012-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0012-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0013-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0013-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0013-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0013-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0014-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0014-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0014-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0014-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0015-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0015-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0015-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0015-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0016-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0016-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0016-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0016-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0017-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0017-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0017-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0017-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0018-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0018-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0018-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0018-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0019-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0019-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0019-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0019-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0020-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0020-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0020-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0020-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0021-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0021-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0021-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0021-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0022-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0022-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0022-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0022-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0023-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0023-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0023-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0023-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0024-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0024-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0024-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0024-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0025-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0025-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0025-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0025-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0026-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0026-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0026-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0026-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0027-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0027-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0027-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0027-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0028-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0028-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0028-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0028-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0029-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0029-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0029-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0029-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0030-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0030-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0030-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0030-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0031-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0031-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0031-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0031-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0032-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0032-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0032-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0032-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0033-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0033-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0033-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0033-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0034-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0034-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0034-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0034-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0035-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0035-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0035-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0035-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0036-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0036-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0036-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0036-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0037-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0037-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0037-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0037-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0038-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0038-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0038-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0038-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0039-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0039-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0039-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0039-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0040-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0040-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0040-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0040-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0041-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0041-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0041-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0041-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0042-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0042-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0042-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0042-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0043-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0043-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0043-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0043-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0044-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0044-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0044-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0044-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0045-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0045-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0045-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0045-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0046-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0046-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0046-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0046-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0047-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0047-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0047-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0047-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0048-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0048-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0048-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0048-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0049-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0049-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0049-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0049-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0050-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0050-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0050-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0050-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0051-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0051-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0051-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0051-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0052-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0052-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0052-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0052-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0053-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0053-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0053-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0053-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0054-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0054-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0054-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0054-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0055-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0055-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0055-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0055-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0056-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0056-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0056-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0056-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0057-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0057-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0057-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0057-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0058-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0058-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0058-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0058-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0059-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0059-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0059-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0059-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0060-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0060-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0060-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0060-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0061-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0061-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0061-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0061-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0062-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0062-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0062-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0062-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0063-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0063-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0063-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0063-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0064-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0064-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0064-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0064-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0065-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0065-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0065-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0065-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0066-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0066-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0066-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0066-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0067-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0067-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0067-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0067-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0068-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0068-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0068-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0068-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0069-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0069-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0069-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0069-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0070-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0070-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0070-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0070-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0071-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0071-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0071-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0071-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0072-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0072-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0072-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0072-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0073-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0073-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0073-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0073-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0074-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0074-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0074-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0074-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0075-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0075-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0075-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0075-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0076-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0076-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0076-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0076-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0077-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0077-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0077-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0077-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0078-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0078-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0078-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0078-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0079-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0079-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0079-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0079-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0080-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0080-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0080-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0080-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0081-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0081-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0081-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0081-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0082-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0082-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0082-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0082-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0083-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0083-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0083-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0083-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0084-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0084-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0084-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0084-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0085-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0085-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0085-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0085-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0086-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0086-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0086-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0086-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0087-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0087-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0087-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0087-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0088-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0088-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0088-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0088-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0089-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0089-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0089-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0089-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0090-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0090-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0090-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0090-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0091-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0091-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0091-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0091-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0092-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0092-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0092-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0092-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0093-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0093-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0093-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0093-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0094-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0094-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0094-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0094-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0095-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0095-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0095-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0095-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0096-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0096-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0096-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0096-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0097-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0097-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0097-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0097-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0098-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0098-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0098-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0098-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0099-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0099-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0099-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0099-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0100-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0100-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0100-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0100-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0101-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0101-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0101-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0101-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0102-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0102-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0102-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0102-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0103-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0103-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0103-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0103-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0104-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0104-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0104-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0104-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0105-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0105-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0105-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0105-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0106-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0106-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0106-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0106-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0107-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0107-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0107-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0107-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0108-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0108-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0108-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0108-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0109-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0109-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0109-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0109-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0110-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0110-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0110-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0110-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0111-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0111-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0111-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0111-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0112-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0112-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0112-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0112-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0113-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0113-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0113-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0113-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0114-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0114-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0114-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0114-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0115-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0115-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0115-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0115-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0116-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0116-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0116-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0116-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0117-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0117-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0117-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0117-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0118-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0118-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0118-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0118-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0119-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0119-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0119-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0119-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0120-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0120-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0120-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0120-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0121-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0121-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0121-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0121-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0122-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0122-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0122-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0122-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0123-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0123-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0123-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0123-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0124-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0124-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0124-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0124-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0125-I",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0125-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0125-O",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0125-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0126-I",
+    "source_node": "SRC-LINCIANO-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0126-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0126-O",
+    "source_node": "SRC-LINCIANO-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0126-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0127-I",
+    "source_node": "SRC-LINCIANO-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0127-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0127-O",
+    "source_node": "SRC-LINCIANO-2021",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0127-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0128-I",
+    "source_node": "SRC-NRF2-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0128-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0128-O",
+    "source_node": "SRC-NRF2-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0128-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0129-I",
+    "source_node": "SRC-NRF2-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0129-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0129-O",
+    "source_node": "SRC-NRF2-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0129-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0130-I",
+    "source_node": "SRC-NRF2-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0130-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0130-O",
+    "source_node": "SRC-NRF2-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0130-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0131-I",
+    "source_node": "SRC-NRF2-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0131-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0131-O",
+    "source_node": "SRC-NRF2-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0131-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0132-I",
+    "source_node": "SRC-FUTURA-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0132-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0132-O",
+    "source_node": "SRC-FUTURA-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0132-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0133-I",
+    "source_node": "SRC-CIS-THCA-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0133-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0133-O",
+    "source_node": "SRC-CIS-THCA-2022",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0133-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0134-I",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0134-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0134-O",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0134-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0135-I",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0135-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0135-O",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0135-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0136-I",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0136-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0136-O",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0136-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0137-I",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0137-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0137-O",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0137-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0138-I",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0138-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0138-O",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0138-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0139-I",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0139-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0139-O",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0139-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0140-I",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0140-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0140-O",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0140-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0141-I",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0141-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0141-O",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0141-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0142-I",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0142-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0142-O",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0142-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0143-I",
+    "source_node": "SRC-EPICBD-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0143-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0143-O",
+    "source_node": "SRC-EPICBD-2024",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0143-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0144-I",
+    "source_node": "SRC-CBE-2025",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0144-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0144-O",
+    "source_node": "SRC-CBE-2025",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0144-O",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0145-I",
+    "source_node": "SRC-CBGD-2025",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0145-I",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-CSUP-0145-O",
+    "source_node": "SRC-CBGD-2025",
+    "relation": "SUPPORTS_COMPOUND_EVIDENCE_CLAIM",
+    "target_node": "CPA-EVC-0145-O",
+    "evidence_lane": "source_support"
+  }
+]

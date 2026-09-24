@@ -2,7 +2,7 @@ name: Validate Atlas
 
 on:
   push:
-    branches: ["main", "bootstrap-v0.1.0", "v0.2-evidence-engine"]
+    branches: ["main", "v0.3-compound-evidence"]
   pull_request:
 
 permissions:
