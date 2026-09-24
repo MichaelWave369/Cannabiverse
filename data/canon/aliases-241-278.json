@@ -1,0 +1,230 @@
+[
+  {
+    "atlas_id": "CPA-CAN-0125",
+    "alias": "9α-hydroxy-10-oxo-Δ6a,10a-THC",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0126",
+    "alias": "cannabidiphorolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-LINCIANO-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0126",
+    "alias": "CBDPA",
+    "alias_type": "short_label",
+    "source_id": "SRC-LINCIANO-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0127",
+    "alias": "Δ9-tetrahydrocannabiphorolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-LINCIANO-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0127",
+    "alias": "THCPA / Δ9-THCPA",
+    "alias_type": "short_label",
+    "source_id": "SRC-LINCIANO-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0128",
+    "alias": "1,2-dihydroxycannabidiol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-NRF2-2022"
+  },
+  {
+    "atlas_id": "CPA-CAN-0129",
+    "alias": "3,4-dehydro-1,2-dihydroxycannabidiol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-NRF2-2022"
+  },
+  {
+    "atlas_id": "CPA-CAN-0130",
+    "alias": "hexocannabitriol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-NRF2-2022"
+  },
+  {
+    "atlas_id": "CPA-CAN-0131",
+    "alias": "anhydrocannabimovone",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-NRF2-2022"
+  },
+  {
+    "atlas_id": "CPA-CAN-0132",
+    "alias": "2α-hydroxy-Δ3,7-cannabitriol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-FUTURA-2022"
+  },
+  {
+    "atlas_id": "CPA-CAN-0133",
+    "alias": "cis-Δ9-tetrahydrocannabinolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-CIS-THCA-2022"
+  },
+  {
+    "atlas_id": "CPA-CAN-0133",
+    "alias": "cis-Δ9-THCA",
+    "alias_type": "short_label",
+    "source_id": "SRC-CIS-THCA-2022"
+  },
+  {
+    "atlas_id": "CPA-CAN-0134",
+    "alias": "6′-hydroxy-Δ7′,8′-dihydrocannabigerolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0134",
+    "alias": "Gargiulo compound 5",
+    "alias_type": "short_label",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0135",
+    "alias": "(±)-6′-hydroxy-Δ7′,8′-dihydrocannabigerol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0135",
+    "alias": "Gargiulo compound 6",
+    "alias_type": "short_label",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0136",
+    "alias": "6′-hydroxy-Δ7′,8′-dihydrocannabinerol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0136",
+    "alias": "Gargiulo compound 7",
+    "alias_type": "short_label",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0137",
+    "alias": "6′-oxo-Δ7′,8′-dihydrocannabigerolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0137",
+    "alias": "Gargiulo compound 8",
+    "alias_type": "short_label",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0138",
+    "alias": "carmagerolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0138",
+    "alias": "Gargiulo compound 9",
+    "alias_type": "short_label",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0139",
+    "alias": "Gargiulo compound 10 (unnamed truncated-terpenyl phytocannabinoid; C19H26O6)",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0139",
+    "alias": "Gargiulo compound 10",
+    "alias_type": "short_label",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0140",
+    "alias": "cyclocannabigerol B",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0140",
+    "alias": "Gargiulo compound 11",
+    "alias_type": "short_label",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0141",
+    "alias": "cannabifuranol A",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0141",
+    "alias": "Gargiulo compound 12",
+    "alias_type": "short_label",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0142",
+    "alias": "cannabifuranol B",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0142",
+    "alias": "Gargiulo compound 13",
+    "alias_type": "short_label",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0143",
+    "alias": "epicannabidiol hydrate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-EPICBD-2024"
+  },
+  {
+    "atlas_id": "CPA-CAN-0144",
+    "alias": "cannabielsoxa",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-CBE-2025"
+  },
+  {
+    "atlas_id": "CPA-CAN-0145",
+    "alias": "cannabizetol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-CBGD-2025"
+  },
+  {
+    "atlas_id": "CPA-CAN-0145",
+    "alias": "CBGD",
+    "alias_type": "short_label",
+    "source_id": "SRC-CBGD-2025"
+  },
+  {
+    "atlas_id": "CPA-CAN-0127",
+    "alias": "THCPA",
+    "alias_type": "source_or_common_alias",
+    "source_id": "SRC-LINCIANO-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0127",
+    "alias": "Δ9-THCPA",
+    "alias_type": "source_or_common_alias",
+    "source_id": "SRC-LINCIANO-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0127",
+    "alias": "tetrahydrocannabiphorolic acid",
+    "alias_type": "source_or_common_alias",
+    "source_id": "SRC-LINCIANO-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0133",
+    "alias": "cis-THCA",
+    "alias_type": "source_or_common_alias",
+    "source_id": "SRC-CIS-THCA-2022"
+  }
+]
