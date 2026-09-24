@@ -24,3 +24,13 @@ All four are existing source-backed `DECARBOXYLATES_TO` graph edges.
 The two checked-in conformers are shown under synchronized camera motion. Cannabiverse does not morph one physical 3D conformer through a claimed reaction trajectory.
 
 v0.6 maps heavy atoms only. Explicit hydrogens remain outside the atom-correspondence claim.
+
+
+## v0.7 bond delta
+
+The Transformation Lab now consumes `bond_delta_receipts.json` and adds two views:
+
+- **Bond delta** — highlights receipt-defined removed source heavy bonds, scaffold-boundary bonds, retained mapped connectivity, and any added target heavy bonds.
+- **Raw SDF order encoding** — highlights mapped bonds whose source and target SDF files use different numeric bond-order encodings.
+
+Raw SDF order differences remain representation-level and are not promoted to chemical bond-change claims.
