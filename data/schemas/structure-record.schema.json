@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MichaelWave369/Cannabiverse/data/schemas/structure-record.schema.json",
+  "title": "Cannabiverse renderable molecular structure record",
+  "type": "object",
+  "required": ["atlas_id","canonical_name","family","render_status","structure_source","identifiers","conformer","governance_note"],
+  "properties": {
+    "atlas_id": {"type":"string","pattern":"^CPA-CAN-[0-9]{4}$"},
+    "canonical_name": {"type":"string","minLength":1},
+    "short_label": {"type":"string"},
+    "family": {"type":"string","minLength":1},
+    "render_status": {"enum":["PUBCHEM_3D_SDF_VERIFIED_PRESENT"]},
+    "structure_source": {
+      "type":"object",
+      "required":["provider","pubchem_cid","record_url","conformer_url","retrieved_date"],
+      "properties":{
+        "provider":{"const":"PubChem"},
+        "pubchem_cid":{"type":"integer","minimum":1},
+        "record_url":{"type":"string","format":"uri"},
+        "conformer_url":{"type":"string","format":"uri"},
+        "retrieved_date":{"type":"string","format":"date"}
+      },
+      "additionalProperties":false
+    },
+    "identifiers": {
+      "type":"object",
+      "required":["molecular_formula","molecular_weight","isomeric_smiles","connectivity_smiles","inchi","inchikey"],
+      "properties":{
+        "molecular_formula":{"type":"string","minLength":1},
+        "molecular_weight":{"type":"string","minLength":1},
+        "isomeric_smiles":{"type":"string","minLength":1},
+        "connectivity_smiles":{"type":"string","minLength":1},
+        "inchi":{"type":"string","pattern":"^InChI="},
+        "inchikey":{"type":"string","pattern":"^[A-Z]{14}-[A-Z]{10}-[A-Z]$"}
+      },
+      "additionalProperties":false
+    },
+    "conformer": {
+      "type":"object",
+      "required":["format","path","atom_count","bond_count","includes_explicit_hydrogens"],
+      "properties":{
+        "format":{"const":"SDF_V2000_3D"},
+        "path":{"type":"string","pattern":"^conformers/.+\\.sdf$"},
+        "atom_count":{"type":"integer","minimum":1},
+        "bond_count":{"type":"integer","minimum":1},
+        "includes_explicit_hydrogens":{"type":"boolean"}
+      },
+      "additionalProperties":false
+    },
+    "governance_note":{"type":"string","minLength":1}
+  },
+  "additionalProperties":false
+}
