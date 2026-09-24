@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cannabiverse synchronized WebGL2 molecule comparison lab.">
+<title>Cannabiverse Molecule Compare Lab</title>
+<style>
+:root{--bg:#06100c;--panel:#0d1c15;--panel2:#13271e;--line:#294638;--text:#edf6f0;--muted:#9fb3a7;--gold:#d6b75f;--green:#70d39a;--blue:#7eaeff;--violet:#c69cff}
+*{box-sizing:border-box}html,body{height:100%;margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+body{overflow:hidden}a{color:#8fc7a7}
+header{height:60px;display:flex;align-items:center;gap:12px;padding:0 14px;border-bottom:1px solid var(--line);background:linear-gradient(#12241c,#0c1913)}
+.logo{width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-weight:800}
+.brand b{font-size:15px}.brand small{display:block;color:var(--muted);font-size:11px}.sp{flex:1}
+.badge,.btn,button,select{height:34px;border:1px solid var(--line);border-radius:8px;background:#0a1711;color:var(--text);padding:0 9px}
+.badge{height:auto;padding:5px 8px;border-radius:999px;font-size:10px;color:#87daa7;border-color:#34654b}.btn{display:inline-flex;align-items:center;text-decoration:none;font-size:12px}
+button{cursor:pointer}button:hover,.btn:hover,select:hover{border-color:#608b73}
+.controls{height:56px;display:grid;grid-template-columns:minmax(180px,1fr) auto minmax(180px,1fr) minmax(180px,1fr) auto auto auto auto;gap:7px;padding:10px;border-bottom:1px solid var(--line);background:#0b1712}
+.controls select{min-width:0;width:100%}
+.app{height:calc(100vh - 116px);display:grid;grid-template-columns:minmax(0,1fr) 350px minmax(0,1fr)}
+.viewer{position:relative;overflow:hidden;background:radial-gradient(circle at 50% 45%,#183529 0,#0b1712 48%,#050b08 100%)}
+.viewer.left{border-right:1px solid var(--line)}.viewer.right{border-left:1px solid var(--line)}
+canvas{width:100%;height:100%;display:block;touch-action:none}
+.overlay{position:absolute;top:10px;left:10px;right:10px;z-index:3;display:flex;justify-content:space-between;align-items:flex-start;pointer-events:none}
+.tag{background:#07110ddd;border:1px solid var(--line);border-radius:9px;padding:8px 10px;backdrop-filter:blur(8px)}
+.tag b{display:block;font-size:13px}.tag small{display:block;color:var(--muted);font-size:10px;margin-top:2px}
+.help{position:absolute;bottom:10px;left:10px;border:1px solid var(--line);background:#07110ddd;border-radius:8px;padding:6px 8px;color:var(--muted);font-size:10px}
+.mid{background:var(--panel);overflow:auto;padding:13px}
+h2{font-size:18px;margin:0 0 7px}h3{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--gold);margin:16px 0 7px}
+.note{font-size:11px;color:var(--muted);line-height:1.5}.card{border:1px solid var(--line);background:var(--panel2);border-radius:9px;padding:10px;margin:8px 0}
+.card b{display:block;color:var(--gold);text-transform:uppercase;letter-spacing:.7px;font-size:10px;margin-bottom:5px}.card p{margin:0;color:#c5d7cb;font-size:12px;line-height:1.45}
+.rel{border-color:#5f6831;background:#181b10}.homolog{border-color:#4d5b7e;background:#111827}.none{border-color:#604848;background:#1b1212}
+.delta{display:grid;grid-template-columns:1fr auto auto;gap:5px;border-bottom:1px solid #21372d;padding:6px 0;font-size:11px}.delta span:first-child{color:var(--muted)}.plus{color:#8dd8a6}.minus{color:#e6a4a4}.same{color:#b8c9be}
+.elementGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.el{border:1px solid var(--line);border-radius:7px;padding:6px;text-align:center;font-size:10px}.el b{font-size:13px;color:var(--text);text-transform:none;letter-spacing:0}
+.warning{border:1px solid #6e5d2d;background:#1d1a10;color:#ddca83;border-radius:9px;padding:9px;font-size:11px;line-height:1.45}
+.id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#8fb69f;font-size:10px}
+@media(max-width:1100px){.app{grid-template-columns:minmax(0,1fr) 290px minmax(0,1fr)}.controls{grid-template-columns:1fr auto 1fr 1fr auto auto}.hideSmall{display:none}}
+@media(max-width:780px){body{overflow:auto}.controls{height:auto;grid-template-columns:1fr 1fr}.app{height:auto;display:block}.viewer{height:58vh}.mid{max-height:none}.viewer.left,.viewer.right{border:0}}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">Φ</div><div class="brand"><b>Cannabiverse Compare Lab</b><small>v0.5 · synchronized native WebGL2 molecule comparison</small></div>
+  <div class="sp"></div><span id="glBadge" class="badge">WebGL2 ×2</span>
+  <a class="btn" href="./">Single Viewer</a><a class="btn" href="../../">Cannabiverse</a>
+</header>
+
+<div class="controls">
+  <select id="selectA"></select>
+  <button id="swapBtn">⇄</button>
+  <select id="selectB"></select>
+  <select id="presetSelect"><option value="">Comparison presets…</option></select>
+  <select id="renderMode"><option value="ballstick">Ball & stick</option><option value="sticks">Sticks</option><option value="spacefill">Space filling</option></select>
+  <button id="hydrogenBtn">H: off</button>
+  <button id="rotateBtn">Rotate: on</button>
+  <button id="resetBtn">Reset</button>
+</div>
+
+<div class="app">
+  <section class="viewer left">
+    <canvas id="canvasA"></canvas>
+    <div class="overlay"><div id="tagA" class="tag"></div></div>
+    <div class="help">drag either molecule to rotate both · wheel zooms both</div>
+  </section>
+
+  <aside class="mid">
+    <h2>Comparison receipt</h2>
+    <div class="note">Two sourced conformers under one synchronized camera. This is comparison, not atom-by-atom alignment or reaction simulation.</div>
+    <div id="relationCard" class="card"></div>
+    <h3>Measured deltas</h3>
+    <div id="deltaPanel"></div>
+    <h3>Element counts</h3>
+    <div id="elementPanel" class="elementGrid"></div>
+    <h3>Homolog context</h3>
+    <div id="homologPanel" class="card"></div>
+    <h3>Structure provenance</h3>
+    <div id="sourcePanel"></div>
+    <div class="warning"><b>Comparison boundary</b><br>Synchronized viewing ≠ molecular superposition. Formula and element-count deltas are measured from the checked-in SDF files. Cannabiverse does not claim which individual atom maps to which atom unless a future governed atom-mapping receipt explicitly establishes that correspondence.</div>
+  </aside>
+
+  <section class="viewer right">
+    <canvas id="canvasB"></canvas>
+    <div class="overlay"><div id="tagB" class="tag"></div></div>
+    <div class="help">same camera orientation · independently centered conformers</div>
+  </section>
+</div>
+
+<script>
+(function(){
+"use strict";
+const $=id=>document.getElementById(id), esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[c]));
+let records=[],byId={},relationships=[],homologs=[],presets=[],molA=null,molB=null,recA=null,recB=null;
+let camera={x:-0.25,y:0.65,zoom:1},showH=false,autoRotate=true,lastTime=0,dragging=false,lastX=0,lastY=0;
+
+const elementColors={H:[0.92,0.96,0.94],C:[0.30,0.42,0.36],O:[0.91,0.27,0.25],N:[0.28,0.48,0.95],S:[0.94,0.78,0.22],P:[0.95,0.52,0.18],F:[0.45,0.90,0.55],Cl:[0.31,0.78,0.38],Br:[0.61,0.24,0.18],I:[0.55,0.33,0.76]};
+const vdw={H:1.20,C:1.70,O:1.52,N:1.55,S:1.80,P:1.80,F:1.47,Cl:1.75,Br:1.85,I:1.98};
+
+function vecSub(a,b){return[a[0]-b[0],a[1]-b[1],a[2]-b[2]]}function vecLen(a){return Math.hypot(a[0],a[1],a[2])}function vecNorm(a){let l=vecLen(a)||1;return[a[0]/l,a[1]/l,a[2]/l]}function vecCross(a,b){return[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]]}
+function m4identity(){return new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1])}
+function m4mul(a,b){let o=new Float32Array(16);for(let c=0;c<4;c++)for(let r=0;r<4;r++)o[c*4+r]=a[r]*b[c*4]+a[4+r]*b[c*4+1]+a[8+r]*b[c*4+2]+a[12+r]*b[c*4+3];return o}
+function m4translate(x,y,z){let m=m4identity();m[12]=x;m[13]=y;m[14]=z;return m}function m4rotX(a){let c=Math.cos(a),s=Math.sin(a),m=m4identity();m[5]=c;m[6]=s;m[9]=-s;m[10]=c;return m}function m4rotY(a){let c=Math.cos(a),s=Math.sin(a),m=m4identity();m[0]=c;m[2]=-s;m[8]=s;m[10]=c;return m}
+function perspective(fovy,aspect,near,far){let f=1/Math.tan(fovy/2),nf=1/(near-far),m=new Float32Array(16);m[0]=f/aspect;m[5]=f;m[10]=(far+near)*nf;m[11]=-1;m[14]=2*far*near*nf;return m}
+function atomModel(p,r){let m=m4identity();m[0]=r;m[5]=r;m[10]=r;m[12]=p[0];m[13]=p[1];m[14]=p[2];return m}
+function bondModel(a,b,r){let d=vecSub(b,a),len=vecLen(d),y=vecNorm(d),helper=Math.abs(y[1])<0.92?[0,1,0]:[1,0,0],x=vecNorm(vecCross(helper,y)),z=vecNorm(vecCross(y,x)),mid=[(a[0]+b[0])/2,(a[1]+b[1])/2,(a[2]+b[2])/2],m=new Float32Array(16);m[0]=x[0]*r;m[1]=x[1]*r;m[2]=x[2]*r;m[4]=y[0]*len;m[5]=y[1]*len;m[6]=y[2]*len;m[8]=z[0]*r;m[9]=z[1]*r;m[10]=z[2]*r;m[12]=mid[0];m[13]=mid[1];m[14]=mid[2];m[15]=1;return m}
+
+class Renderer{
+  constructor(canvas){
+    this.canvas=canvas;this.gl=canvas.getContext("webgl2",{antialias:true,alpha:false,preserveDrawingBuffer:true});
+    if(!this.gl)throw new Error("WebGL2 unavailable");
+    const gl=this.gl,vs="#version 300 es\nprecision highp float;layout(location=0)in vec3 aPosition;layout(location=1)in vec3 aNormal;uniform mat4 uModel;uniform mat4 uViewProj;out vec3 vNormal;void main(){vec4 w=uModel*vec4(aPosition,1.0);vNormal=normalize(mat3(uModel)*aNormal);gl_Position=uViewProj*w;}",fs="#version 300 es\nprecision highp float;in vec3 vNormal;uniform vec3 uColor;out vec4 outColor;void main(){vec3 n=normalize(vNormal),l=normalize(vec3(-.35,.72,.58));float d=max(dot(n,l),0.0),rim=pow(1.0-max(abs(n.z),0.0),2.0)*.12;outColor=vec4(uColor*(.30+.70*d)+vec3(rim),1.0);}";
+    const sh=(t,s)=>{let q=gl.createShader(t);gl.shaderSource(q,s);gl.compileShader(q);if(!gl.getShaderParameter(q,gl.COMPILE_STATUS))throw new Error(gl.getShaderInfoLog(q));return q};
+    this.p=gl.createProgram();gl.attachShader(this.p,sh(gl.VERTEX_SHADER,vs));gl.attachShader(this.p,sh(gl.FRAGMENT_SHADER,fs));gl.linkProgram(this.p);
+    this.uM=gl.getUniformLocation(this.p,"uModel");this.uVP=gl.getUniformLocation(this.p,"uViewProj");this.uC=gl.getUniformLocation(this.p,"uColor");
+    this.sphere=this.makeSphere(14,22);this.cyl=this.makeCylinder(18);
+  }
+  mesh(pos,norm,idx){const gl=this.gl,vao=gl.createVertexArray();gl.bindVertexArray(vao);let b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(pos),gl.STATIC_DRAW);gl.enableVertexAttribArray(0);gl.vertexAttribPointer(0,3,gl.FLOAT,false,0,0);b=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,b);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(norm),gl.STATIC_DRAW);gl.enableVertexAttribArray(1);gl.vertexAttribPointer(1,3,gl.FLOAT,false,0,0);b=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,b);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array(idx),gl.STATIC_DRAW);gl.bindVertexArray(null);return{vao,count:idx.length}}
+  makeSphere(lat,lon){let p=[],n=[],ix=[];for(let y=0;y<=lat;y++){let v=y/lat,ph=v*Math.PI;for(let x=0;x<=lon;x++){let u=x/lon,th=u*Math.PI*2,sx=Math.sin(ph)*Math.cos(th),sy=Math.cos(ph),sz=Math.sin(ph)*Math.sin(th);p.push(sx,sy,sz);n.push(sx,sy,sz)}}for(let y=0;y<lat;y++)for(let x=0;x<lon;x++){let a=y*(lon+1)+x,b=a+lon+1;ix.push(a,b,a+1,b,b+1,a+1)}return this.mesh(p,n,ix)}
+  makeCylinder(seg){let p=[],n=[],ix=[];for(let i=0;i<=seg;i++){let a=i/seg*Math.PI*2,x=Math.cos(a),z=Math.sin(a);p.push(x,-.5,z,x,.5,z);n.push(x,0,z,x,0,z)}for(let j=0;j<seg;j++){let k=j*2;ix.push(k,k+1,k+2,k+1,k+3,k+2)}return this.mesh(p,n,ix)}
+  drawMesh(mesh,model,color,vp){const gl=this.gl;gl.uniformMatrix4fv(this.uM,false,model);gl.uniformMatrix4fv(this.uVP,false,vp);gl.uniform3fv(this.uC,color);gl.bindVertexArray(mesh.vao);gl.drawElements(gl.TRIANGLES,mesh.count,gl.UNSIGNED_SHORT,0)}
+  draw(mol){const gl=this.gl,rect=this.canvas.getBoundingClientRect(),dpr=Math.min(devicePixelRatio||1,2),w=Math.max(1,Math.floor(rect.width*dpr)),h=Math.max(1,Math.floor(rect.height*dpr));if(this.canvas.width!==w||this.canvas.height!==h){this.canvas.width=w;this.canvas.height=h}gl.viewport(0,0,w,h);gl.clearColor(.027,.067,.047,1);gl.clear(gl.COLOR_BUFFER_BIT|gl.DEPTH_BUFFER_BIT);if(!mol)return;let dist=Math.max(8,mol.radius*3.05)*camera.zoom,proj=perspective(Math.PI/4,w/h,.1,200),scene=m4mul(m4translate(0,0,-dist),m4mul(m4rotX(camera.x),m4rotY(camera.y))),vp=m4mul(proj,scene);gl.useProgram(this.p);gl.enable(gl.DEPTH_TEST);gl.enable(gl.CULL_FACE);let mode=$("renderMode").value,atomR=el=>mode==="spacefill"?(vdw[el]||1.65)*.58:mode==="sticks"?.20:({H:.25,C:.40,O:.46,N:.44,S:.52,P:.52}[el]||.42),bondR=mode==="sticks"?.18:.12;if(mode!=="spacefill")mol.bonds.forEach(b=>{let a=mol.atoms[b.a],c=mol.atoms[b.b];if(!showH&&(a.el==="H"||c.el==="H"))return;this.drawMesh(this.cyl,bondModel([a.x,a.y,a.z],[c.x,c.y,c.z],bondR*(1+Math.max(0,b.order-1)*.16)),[.52,.62,.56],vp)});mol.atoms.forEach(a=>{if(!showH&&a.el==="H")return;this.drawMesh(this.sphere,atomModel([a.x,a.y,a.z],atomR(a.el)),elementColors[a.el]||[.72,.55,.82],vp)})}
+}
+function parseSDF(text){let lines=text.split(/\r?\n/),ci=lines.findIndex(l=>l.includes("V2000"));if(ci<0)throw new Error("V2000 SDF required");let na=+lines[ci].slice(0,3).trim(),nb=+lines[ci].slice(3,6).trim(),atoms=[],bonds=[],counts={};for(let i=0;i<na;i++){let p=lines[ci+1+i].trim().split(/\s+/),a={x:+p[0],y:+p[1],z:+p[2],el:p[3]};atoms.push(a);counts[a.el]=(counts[a.el]||0)+1}for(let j=0;j<nb;j++){let p=lines[ci+1+na+j].trim().split(/\s+/);bonds.push({a:+p[0]-1,b:+p[1]-1,order:+p[2]})}let base=atoms.filter(a=>a.el!=="H");if(!base.length)base=atoms;let cx=0,cy=0,cz=0;base.forEach(a=>{cx+=a.x;cy+=a.y;cz+=a.z});cx/=base.length;cy/=base.length;cz/=base.length;atoms.forEach(a=>{a.x-=cx;a.y-=cy;a.z-=cz});let radius=0;atoms.forEach(a=>radius=Math.max(radius,Math.hypot(a.x,a.y,a.z)));return{atoms,bonds,radius,counts,atomCount:na,bondCount:nb}}
+const RA=new Renderer($("canvasA")),RB=new Renderer($("canvasB"));
+
+async function loadMol(rec){let r=await fetch("../../data/structures/"+rec.conformer.path,{cache:"no-cache"});if(!r.ok)throw new Error("HTTP "+r.status);return parseSDF(await r.text())}
+function label(r){return r.short_label||r.canonical_name}
+function relationBetween(a,b){return relationships.find(e=>(e.source_node===a&&e.target_node===b)||(e.source_node===b&&e.target_node===a))}
+function sharedHomolog(a,b){let aa=homologs.filter(h=>h.atlas_id===a),bb=homologs.filter(h=>h.atlas_id===b);return aa.find(x=>bb.some(y=>y.series===x.series))?.series||null}
+function homologRecord(id,series){return homologs.find(h=>h.atlas_id===id&&h.series===series)}
+function deltaRow(name,a,b,unit){let da=Number(a),db=Number(b),d=db-da,cls=d>0?"plus":d<0?"minus":"same",sg=d>0?"+":"";return '<div class="delta"><span>'+esc(name)+'</span><span>'+esc(a)+(unit||"")+'</span><span class="'+cls+'">'+sg+(Number.isFinite(d)?d.toFixed(name==="Mass"?1:0):"—")+(unit||"")+'</span></div>'}
+function updatePanels(){
+  $("tagA").innerHTML="<b>A · "+esc(label(recA))+"</b><small>"+esc(recA.atlas_id)+" · "+esc(recA.identifiers.molecular_formula)+"</small>";
+  $("tagB").innerHTML="<b>B · "+esc(label(recB))+"</b><small>"+esc(recB.atlas_id)+" · "+esc(recB.identifiers.molecular_formula)+"</small>";
+  let edge=relationBetween(recA.atlas_id,recB.atlas_id),series=sharedHomolog(recA.atlas_id,recB.atlas_id);
+  if(edge){let forward=edge.source_node===recA.atlas_id,arrow=forward?"A → B":"B → A";$("relationCard").className="card rel";$("relationCard").innerHTML="<b>Explicit Cannabiverse graph relationship · "+arrow+"</b><p>"+esc(edge.relation.replaceAll("_"," "))+"<br>"+esc(edge.evidence_lane)+" · "+esc(edge.confidence)+"<br><span class='id'>"+esc(edge.edge_id)+" · "+esc(edge.source_id)+"</span><br>"+(edge.note?esc(edge.note)+"<br>":"")+"<a href='"+esc(edge.source_url)+"' target='_blank' rel='noreferrer'>Open supporting source</a></p>"}
+  else if(series){$("relationCard").className="card homolog";$("relationCard").innerHTML="<b>Shared homolog series</b><p>"+esc(series)+"<br>No direct graph edge between these selected structures is required for homolog membership.</p>"}
+  else{$("relationCard").className="card none";$("relationCard").innerHTML="<b>No encoded pair relationship</b><p>Cannabiverse has not encoded a direct graph edge or shared homolog-series membership for this pair. Visual similarity alone does not create one.</p>"}
+  $("deltaPanel").innerHTML=deltaRow("Mass",recA.identifiers.molecular_weight,recB.identifiers.molecular_weight," g/mol")+deltaRow("Atoms",molA.atomCount,molB.atomCount,"")+deltaRow("Bonds",molA.bondCount,molB.bondCount,"");
+  let els=[...new Set([...Object.keys(molA.counts),...Object.keys(molB.counts)])].sort((x,y)=>(x==="C"?-1:y==="C"?1:x==="H"?-1:y==="H"?1:x.localeCompare(y)));
+  $("elementPanel").innerHTML=els.map(el=>{let a=molA.counts[el]||0,b=molB.counts[el]||0,d=b-a,mark=d===0?"same":d>0?"plus":"minus";return '<div class="el"><b>'+esc(el)+'</b><br>A '+a+' · B '+b+'<br><span class="'+mark+'">'+(d>0?"+":"")+d+'</span></div>'}).join("");
+  if(series){let ha=homologRecord(recA.atlas_id,series),hb=homologRecord(recB.atlas_id,series);$("homologPanel").innerHTML="<b>"+esc(series)+"</b><p>A side chain: C"+esc(ha?.side_chain_carbons??"?")+"<br>B side chain: C"+esc(hb?.side_chain_carbons??"?")+"</p>"}
+  else{$("homologPanel").innerHTML="<b>No shared governed homolog series</b><p>The pair may still have an explicit transformation/structure relationship above.</p>"}
+  $("sourcePanel").innerHTML=[recA,recB].map((r,i)=>'<div class="card"><b>'+(i?"B":"A")+' · '+esc(label(r))+'</b><p>PubChem CID '+esc(r.structure_source.pubchem_cid)+'<br>'+esc(r.identifiers.inchikey)+'<br><a href="'+esc(r.structure_source.record_url)+'" target="_blank" rel="noreferrer">Open source record</a></p></div>').join("");
+}
+async function setPair(a,b){if(!byId[a]||!byId[b])return;recA=byId[a];recB=byId[b];$("selectA").value=a;$("selectB").value=b;[molA,molB]=await Promise.all([loadMol(recA),loadMol(recB)]);camera={x:-.25,y:.65,zoom:1};updatePanels();let u=new URL(location.href);u.searchParams.set("a",a);u.searchParams.set("b",b);history.replaceState(null,"",u)}
+function populate(){
+  [$("selectA"),$("selectB")].forEach(sel=>{sel.innerHTML=records.map(r=>'<option value="'+esc(r.atlas_id)+'">'+esc(label(r))+' · '+esc(r.atlas_id)+'</option>').join("")});
+  $("presetSelect").innerHTML='<option value="">Comparison presets…</option>'+presets.map(p=>'<option value="'+esc(p.preset_id)+'">'+esc(p.label)+'</option>').join("");
+}
+function pointerSetup(canvas){canvas.addEventListener("pointerdown",e=>{dragging=true;lastX=e.clientX;lastY=e.clientY;canvas.setPointerCapture(e.pointerId)});canvas.addEventListener("pointermove",e=>{if(!dragging)return;camera.y+=(e.clientX-lastX)*.008;camera.x+=(e.clientY-lastY)*.008;lastX=e.clientX;lastY=e.clientY});canvas.addEventListener("pointerup",()=>dragging=false);canvas.addEventListener("pointercancel",()=>dragging=false);canvas.addEventListener("wheel",e=>{e.preventDefault();camera.zoom*=e.deltaY>0?1.08:.92;camera.zoom=Math.max(.45,Math.min(2.7,camera.zoom))},{passive:false});canvas.addEventListener("dblclick",()=>camera={x:-.25,y:.65,zoom:1})}
+pointerSetup($("canvasA"));pointerSetup($("canvasB"));
+$("selectA").onchange=()=>setPair($("selectA").value,$("selectB").value);$("selectB").onchange=()=>setPair($("selectA").value,$("selectB").value);
+$("swapBtn").onclick=()=>setPair(recB.atlas_id,recA.atlas_id);
+$("presetSelect").onchange=()=>{let p=presets.find(x=>x.preset_id===$("presetSelect").value);if(p)setPair(p.a,p.b)};
+$("hydrogenBtn").onclick=function(){showH=!showH;this.textContent="H: "+(showH?"on":"off")};
+$("rotateBtn").onclick=function(){autoRotate=!autoRotate;this.textContent="Rotate: "+(autoRotate?"on":"off")};
+$("resetBtn").onclick=()=>camera={x:-.25,y:.65,zoom:1};
+function frame(t){let dt=lastTime?t-lastTime:0;lastTime=t;if(autoRotate&&!dragging)camera.y+=dt*.00018;RA.draw(molA);RB.draw(molB);requestAnimationFrame(frame)}
+Promise.all([
+  fetch("../../data/structures/structure_index.json").then(r=>r.json()),
+  fetch("../../data/graph/relationships.json").then(r=>r.json()),
+  fetch("../../data/graph/homolog_series.json").then(r=>r.json()),
+  fetch("../../data/structures/compare_presets.json").then(r=>r.json())
+]).then(async data=>{[records,relationships,homologs,presets]=data;byId=Object.fromEntries(records.map(r=>[r.atlas_id,r]));populate();let u=new URL(location.href),a=u.searchParams.get("a"),b=u.searchParams.get("b");if(!byId[a])a="CPA-CAN-0002";if(!byId[b])b="CPA-CAN-0001";await setPair(a,b)}).catch(e=>{$("glBadge").textContent="load error";$("relationCard").innerHTML="<b>Compare Lab load error</b><p>"+esc(e.message)+"</p>"});
+requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>
