@@ -1,0 +1,362 @@
+[
+  {
+    "atlas_id": "CPA-CAN-0001",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0001",
+    "alias": "Δ9-THC-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0001",
+    "alias": "Δ9-THC",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0001",
+    "alias": "THC",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0002",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabinolic acid A",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0002",
+    "alias": "Δ9-THCAA-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0002",
+    "alias": "THCA-A",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0002",
+    "alias": "Δ9-THCA",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0002",
+    "alias": "THCA",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0003",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabinolic acid B",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0003",
+    "alias": "Δ9-THCAB-C5",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0003",
+    "alias": "THCA-B",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0004",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabinol-C4",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0004",
+    "alias": "Δ9-THC-C4",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0004",
+    "alias": "THC-C4",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0005",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabinolic acid A-C4",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0005",
+    "alias": "Δ9-THCAA-C4",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0006",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabivarin",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0006",
+    "alias": "Δ9-THCV",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0006",
+    "alias": "THCV",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0007",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabivarinic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0007",
+    "alias": "Δ9-THCVAA",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0007",
+    "alias": "THCVA",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0007",
+    "alias": "THCV acid",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0008",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabiorcol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0008",
+    "alias": "Δ9-THCO / Δ9-THC-C1",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0008",
+    "alias": "THC-C1",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0008",
+    "alias": "THC-orcol",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0009",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabiorcolic acid",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0009",
+    "alias": "Δ9-THCOAA",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0010",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabinal",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0010",
+    "alias": "Δ9-THC aldehyde",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0011",
+    "alias": "β-fenchyl (−)-Δ9-trans-tetrahydrocannabinolate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0012",
+    "alias": "α-fenchyl (−)-Δ9-trans-tetrahydrocannabinolate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0013",
+    "alias": "epi-bornyl (−)-Δ9-trans-tetrahydrocannabinolate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0014",
+    "alias": "bornyl (−)-Δ9-trans-tetrahydrocannabinolate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0015",
+    "alias": "α-terpenyl (−)-Δ9-trans-tetrahydrocannabinolate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0016",
+    "alias": "4-terpenyl (−)-Δ9-trans-tetrahydrocannabinolate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0017",
+    "alias": "α-cadinyl (−)-Δ9-trans-tetrahydrocannabinolate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0018",
+    "alias": "γ-eudesmyl (−)-Δ9-trans-tetrahydrocannabinolate",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0019",
+    "alias": "8α-hydroxy-(−)-Δ9-trans-tetrahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0020",
+    "alias": "8β-hydroxy-(−)-Δ9-trans-tetrahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0021",
+    "alias": "11-acetoxy-(−)-Δ9-trans-tetrahydrocannabinolic acid A",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0022",
+    "alias": "8-oxo-(−)-Δ9-trans-tetrahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0023",
+    "alias": "cannabisol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0024",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabiphorol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0024",
+    "alias": "Δ9-THCP",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0024",
+    "alias": "THCP",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0024",
+    "alias": "tetrahydrocannabiphorol",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0025",
+    "alias": "(−)-Δ9-trans-tetrahydrocannabihexol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0025",
+    "alias": "Δ9-THCH",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0025",
+    "alias": "THCH",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0025",
+    "alias": "tetrahydrocannabihexol",
+    "alias_type": "common_or_structural_alias",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0026",
+    "alias": "(−)-Δ8-trans-tetrahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0026",
+    "alias": "Δ8-THC",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0027",
+    "alias": "Δ8-trans-tetrahydrocannabinolic acid A",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0027",
+    "alias": "Δ8-THCA",
+    "alias_type": "short_label",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0028",
+    "alias": "10α-hydroxy-Δ8-tetrahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0029",
+    "alias": "10β-hydroxy-Δ8-tetrahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "atlas_id": "CPA-CAN-0030",
+    "alias": "10aα-hydroxy-10-oxo-Δ8-tetrahydrocannabinol",
+    "alias_type": "canonical_name",
+    "source_id": "SRC-RADWAN-2021"
+  }
+]
