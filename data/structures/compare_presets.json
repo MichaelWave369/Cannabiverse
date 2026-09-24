@@ -1,0 +1,58 @@
+[
+  {
+    "preset_id": "CMP-THCA-THC",
+    "label": "THCA-A → Δ9-THC",
+    "a": "CPA-CAN-0002",
+    "b": "CPA-CAN-0001",
+    "basis": "EXPLICIT_GRAPH_EDGE",
+    "expected_relation": "DECARBOXYLATES_TO"
+  },
+  {
+    "preset_id": "CMP-CBDA-CBD",
+    "label": "CBDA → CBD",
+    "a": "CPA-CAN-0048",
+    "b": "CPA-CAN-0047",
+    "basis": "EXPLICIT_GRAPH_EDGE",
+    "expected_relation": "DECARBOXYLATES_TO"
+  },
+  {
+    "preset_id": "CMP-CBGA-CBG",
+    "label": "CBGA → CBG",
+    "a": "CPA-CAN-0032",
+    "b": "CPA-CAN-0031",
+    "basis": "EXPLICIT_GRAPH_EDGE",
+    "expected_relation": "DECARBOXYLATES_TO"
+  },
+  {
+    "preset_id": "CMP-CBCA-CBC",
+    "label": "CBCA → CBC",
+    "a": "CPA-CAN-0068",
+    "b": "CPA-CAN-0067",
+    "basis": "EXPLICIT_GRAPH_EDGE",
+    "expected_relation": "DECARBOXYLATES_TO"
+  },
+  {
+    "preset_id": "CMP-THC-CBN",
+    "label": "Δ9-THC → CBN",
+    "a": "CPA-CAN-0001",
+    "b": "CPA-CAN-0076",
+    "basis": "EXPLICIT_GRAPH_EDGE",
+    "expected_relation": "OXIDIZES_TO"
+  },
+  {
+    "preset_id": "CMP-THCV-THC",
+    "label": "THCV ↔ Δ9-THC",
+    "a": "CPA-CAN-0006",
+    "b": "CPA-CAN-0001",
+    "basis": "HOMOLOG_SERIES",
+    "expected_series": "THC neutral homologs"
+  },
+  {
+    "preset_id": "CMP-THC-THCP",
+    "label": "Δ9-THC ↔ THCP",
+    "a": "CPA-CAN-0001",
+    "b": "CPA-CAN-0024",
+    "basis": "HOMOLOG_SERIES",
+    "expected_series": "THC neutral homologs"
+  }
+]
