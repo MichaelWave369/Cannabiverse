@@ -1,0 +1,122 @@
+[
+  {
+    "event_id": "REC-0001",
+    "year": 2021,
+    "action": "FREEZE_BASELINE",
+    "subject": "Radwan-125",
+    "decision": "125 historical records frozen with original numbering and names; corrections append as receipts instead of mutating history.",
+    "source_id": "SRC-RADWAN-2021"
+  },
+  {
+    "event_id": "REC-0002",
+    "year": 2016,
+    "action": "FRAMEWORK_CROSSWALK",
+    "subject": "Hanuš biogenetic framework",
+    "decision": "Added ketide/topology/isoprenyl classification layer and explicit artifact/transformation caution.",
+    "source_id": "SRC-HANUS-2016"
+  },
+  {
+    "event_id": "REC-0003",
+    "year": 2021,
+    "action": "ADD_CONFIRMED",
+    "subject": "CBDPA + THCPA",
+    "decision": "Added as C7 acid members after confirmation against synthesized standards across Cannabis accessions.",
+    "source_id": "SRC-LINCIANO-2021"
+  },
+  {
+    "event_id": "REC-0004",
+    "year": 2021,
+    "action": "KEEP_PROVISIONAL",
+    "subject": "CBGPA + CBCPA",
+    "decision": "Stored as putative UHPLC-HRMS detections, not promoted to confirmed canon.",
+    "source_id": "SRC-LINCIANO-2021"
+  },
+  {
+    "event_id": "REC-0005",
+    "year": 2021,
+    "action": "DO_NOT_PROMOTE",
+    "subject": "CBNPA/CBEPA/CBLPA/CBTPA/CBRPA",
+    "decision": "Stored as search targets not detected in that study rather than pretending the whole theoretical C7 family was observed.",
+    "source_id": "SRC-LINCIANO-2021"
+  },
+  {
+    "event_id": "REC-0006",
+    "year": 2022,
+    "action": "ADD_CONFIRMED",
+    "subject": "cis-Δ9-THCA",
+    "decision": "Added after first validated Cannabis occurrence report.",
+    "source_id": "SRC-CIS-THCA-2022"
+  },
+  {
+    "event_id": "REC-0007",
+    "year": 2022,
+    "action": "ADD_CONFIRMED",
+    "subject": "Hydroxylated CBD analogues",
+    "decision": "Added three isolated/NMR-characterized phytocannabinoids.",
+    "source_id": "SRC-NRF2-2022"
+  },
+  {
+    "event_id": "REC-0008",
+    "year": 2022,
+    "action": "OCCURRENCE_UPGRADE_TO_CANON",
+    "subject": "anhydrocannabimovone",
+    "decision": "Natural-product occurrence confirmed by isolation; structure itself pre-existed.",
+    "source_id": "SRC-NRF2-2022"
+  },
+  {
+    "event_id": "REC-0009",
+    "year": 2022,
+    "action": "ADD_CONFIRMED",
+    "subject": "2α-hydroxy-Δ3,7-cannabitriol",
+    "decision": "Added isolated/NMR-characterized cannabinoid derivative.",
+    "source_id": "SRC-FUTURA-2022"
+  },
+  {
+    "event_id": "REC-0010",
+    "year": 2024,
+    "action": "ADD_9_CONFIRMED",
+    "subject": "Chemotype IV new phytocannabinoids",
+    "decision": "Added compounds 5–13; compound 10 remains source-numbered because authors assigned no trivial name.",
+    "source_id": "SRC-GARGIULO-2024"
+  },
+  {
+    "event_id": "REC-0011",
+    "year": 2024,
+    "action": "ADD_CONFIRMED",
+    "subject": "epicannabidiol hydrate",
+    "decision": "Added isolated and NMR/MS-verified hemp cannabinoid.",
+    "source_id": "SRC-EPICBD-2024"
+  },
+  {
+    "event_id": "REC-0012",
+    "year": 2025,
+    "action": "ADD_CONFIRMED",
+    "subject": "cannabielsoxa",
+    "decision": "Added isolated CBE-type cannabinoid; chlorin discoveries routed outside cannabinoid canon.",
+    "source_id": "SRC-CBE-2025"
+  },
+  {
+    "event_id": "REC-0013",
+    "year": 2025,
+    "action": "ADD_CONFIRMED",
+    "subject": "cannabizetol",
+    "decision": "Added isolated, synthetic-standard-confirmed methylene-bridged dimeric cannabinoid.",
+    "source_id": "SRC-CBGD-2025"
+  },
+  {
+    "event_id": "REC-0014",
+    "year": 2026,
+    "action": "BIOSYNTHESIS_HYPOTHESIS_UPDATE",
+    "subject": "cis-Δ9-THCA",
+    "decision": "CBCA synthase involvement recorded as a hypothesis supported by targeted phytocannabinomics, not as a confirmed enzyme route.",
+    "source_id": "SRC-CIS-BIO-2026"
+  },
+  {
+    "event_id": "REC-0015",
+    "year": 2025,
+    "action": "ROUTE_NON_CANNABINOID",
+    "subject": "Phenolic/flavoalkaloid panel",
+    "decision": "Kept outside cannabinoid canon and routed to wider Phytochemical Atlas branches.",
+    "source_id": "SRC-PHENOLICS-2025"
+  }
+]
