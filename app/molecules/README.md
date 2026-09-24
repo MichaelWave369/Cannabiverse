@@ -71,3 +71,10 @@ The first v0.6 release covers four decarboxylation pairs and can highlight:
 - the full source-atom → target-atom mapping table.
 
 **CORRESPONDENCE ≠ MECHANISM.**
+
+
+## Bond Delta Layer
+
+v0.7 adds deterministic heavy-atom bond accounting on top of governed transformation correspondence.
+
+The Transformation Lab can now separate removed/retained/added connectivity from raw SDF bond-order encoding differences. Raw order differences remain explicitly unpromoted.
