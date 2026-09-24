@@ -26,6 +26,7 @@ Current dataset:
 - **14** registered scientific sources in the current source ledger
 - **11** governed PubChem 3D conformers rendered through native WebGL2
 - **7** governed molecule-comparison presets
+- **4** deterministic heavy-atom transformation correspondence receipts
 
 **145 is not a claim that only 145 phytocannabinoids exist.** Different inventories use different inclusion rules; later literature describes broader inventories.
 
@@ -37,6 +38,7 @@ Current dataset:
 - Evidence Explorer: https://michaelwave369.github.io/Cannabiverse/app/evidence/
 - 3D Molecule Viewer: https://michaelwave369.github.io/Cannabiverse/app/molecules/
 - Molecule Compare Lab: https://michaelwave369.github.io/Cannabiverse/app/molecules/compare.html
+- Transformation Lab: https://michaelwave369.github.io/Cannabiverse/app/molecules/transform.html
 
 GitHub Pages serves the static interfaces; the authoritative scientific data and governance contracts remain versioned in this repository.
 
@@ -72,6 +74,7 @@ data/
   research/           source, reconciliation, and known-issue ledgers
   schemas/            JSON contracts
   structures/         governed 3D structure records + local SDF conformers
+  transformations/    transformation specs + deterministic correspondence receipts
 
 app/explorer/          browser-based Cannabiverse Query Explorer
 app/evidence/          source / claim Evidence Explorer
@@ -89,7 +92,7 @@ No dependency installation is required.
 npm run validate
 ```
 
-The validation gate checks permanent IDs, the frozen baseline, source resolution, graph endpoints, evidence vocabulary, provisional separation, hypothesis-edge discipline, deterministic claim projections, and the governed 3D structure layer including SDF atom/bond counts and non-flat 3D coordinates.
+The validation gate checks permanent IDs, the frozen baseline, source resolution, graph endpoints, evidence vocabulary, provisional separation, hypothesis-edge discipline, deterministic claim projections, governed 3D structures, comparison presets, and deterministic heavy-atom transformation correspondence.
 
 ## Compound evidence
 
@@ -124,6 +127,23 @@ The Compare Lab can show two governed conformers under the same camera motion, d
 It deliberately does **not** claim atom mapping, molecular superposition, or reaction simulation.
 
 See [app/molecules/COMPARE.md](app/molecules/COMPARE.md).
+
+## Transformation Lab
+
+Cannabiverse v0.6 adds deterministic heavy-atom correspondence receipts and a synchronized native WebGL2 Transformation Lab for the first four source-backed decarboxylation edges:
+
+- THCA-A → Δ9-THC
+- CBDA → CBD
+- CBGA → CBG
+- CBCA → CBC
+
+For each pair, the build step identifies the source carboxyl C/O/O heavy-atom group and computes an element- and connectivity-preserving isomorphism between the remaining source heavy-atom graph and the target heavy-atom graph.
+
+**CORRESPONDENCE ≠ MECHANISM**
+
+Hydrogen atoms, transition states, kinetic pathways, and physical morph trajectories are not inferred in v0.6.
+
+See [docs/transformation-model.md](docs/transformation-model.md).
 
 ## Scientific boundaries
 
