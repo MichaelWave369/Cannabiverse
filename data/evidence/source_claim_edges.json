@@ -1,0 +1,247 @@
+[
+  {
+    "edge_id": "CPA-SUP-0001-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0001",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0002-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0002",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0003-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0003",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0004-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0004",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0005-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0005",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0006-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0006",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0007-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0007",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0008-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0008",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0009-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0009",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0010-SRC-WELLING-2022",
+    "source_node": "SRC-WELLING-2022",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0010",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0011-SRC-WELLING-2022",
+    "source_node": "SRC-WELLING-2022",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0011",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0012-SRC-WELLING-2022",
+    "source_node": "SRC-WELLING-2022",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0012",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0013-SRC-LINCIANO-2021",
+    "source_node": "SRC-LINCIANO-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0013",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0014-SRC-LINCIANO-2021",
+    "source_node": "SRC-LINCIANO-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0014",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0015-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0015",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0016-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0016",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0017-SRC-BIOSYNTHESIS-2021",
+    "source_node": "SRC-BIOSYNTHESIS-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0017",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0018-SRC-HANUS-2016",
+    "source_node": "SRC-HANUS-2016",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0018",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0019-SRC-HANUS-2016",
+    "source_node": "SRC-HANUS-2016",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0019",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0020-SRC-HANUS-2016",
+    "source_node": "SRC-HANUS-2016",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0020",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0021-SRC-HANUS-2016",
+    "source_node": "SRC-HANUS-2016",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0021",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0022-SRC-RADWAN-2021",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0022",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0023-SRC-CIS-THCA-2022",
+    "source_node": "SRC-CIS-THCA-2022",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0023",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0024-SRC-RADWAN-2021",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0024",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0025-SRC-RADWAN-2021",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0025",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0026-SRC-RADWAN-2021",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0026",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0027-SRC-RADWAN-2021",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0027",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0028-SRC-RADWAN-2021",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0028",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0029-SRC-RADWAN-2021",
+    "source_node": "SRC-RADWAN-2021",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0029",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0030-SRC-GARGIULO-2024",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0030",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0031-SRC-GARGIULO-2024",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0031",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0032-SRC-GARGIULO-2024",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0032",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0033-SRC-GARGIULO-2024",
+    "source_node": "SRC-GARGIULO-2024",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0033",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0034-SRC-CBGD-2025",
+    "source_node": "SRC-CBGD-2025",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0034",
+    "evidence_lane": "source_support"
+  },
+  {
+    "edge_id": "CPA-SUP-0035-SRC-CIS-BIO-2026",
+    "source_node": "SRC-CIS-BIO-2026",
+    "relation": "SUPPORTS_CLAIM",
+    "target_node": "CPA-CLM-0035",
+    "evidence_lane": "source_support"
+  }
+]
