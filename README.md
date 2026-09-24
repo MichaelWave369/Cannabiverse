@@ -26,7 +26,7 @@ Current dataset:
 - **14** registered scientific sources in the current source ledger
 - **11** governed PubChem 3D conformers rendered through native WebGL2
 - **7** governed molecule-comparison presets
-- **4** deterministic heavy-atom transformation correspondence receipts
+- **4** deterministic heavy-atom transformation correspondence receipts\n- **4** governed bond-delta receipts
 
 **145 is not a claim that only 145 phytocannabinoids exist.** Different inventories use different inclusion rules; later literature describes broader inventories.
 
@@ -92,7 +92,7 @@ No dependency installation is required.
 npm run validate
 ```
 
-The validation gate checks permanent IDs, the frozen baseline, source resolution, graph endpoints, evidence vocabulary, provisional separation, hypothesis-edge discipline, deterministic claim projections, governed 3D structures, comparison presets, and deterministic heavy-atom transformation correspondence.
+The validation gate checks permanent IDs, the frozen baseline, source resolution, graph endpoints, evidence vocabulary, provisional separation, hypothesis-edge discipline, deterministic claim projections, governed 3D structures, comparison presets, and deterministic heavy-atom transformation correspondence, and governed bond-delta accounting.
 
 ## Compound evidence
 
@@ -144,6 +144,25 @@ For each pair, the build step identifies the source carboxyl C/O/O heavy-atom gr
 Hydrogen atoms, transition states, kinetic pathways, and physical morph trajectories are not inferred in v0.6.
 
 See [docs/transformation-model.md](docs/transformation-model.md).
+
+## Bond Delta Layer
+
+Cannabiverse v0.7 extends the governed transformation receipts into deterministic heavy-atom bond accounting.
+
+For each of the four decarboxylation pairs, v0.7 currently finds:
+
+- 3 removed source heavy bonds;
+- 1 scaffold-boundary bond;
+- 2 bonds internal to the removed carboxyl fragment;
+- 0 added target heavy bonds;
+- 6 raw SDF single/double bond-order encoding differences;
+- 0 promoted chemical bond-order changes.
+
+**RAW SDF BOND-ORDER DELTA ≠ CHEMICAL BOND CHANGE ≠ MECHANISM**
+
+The Transformation Lab exposes separate **Bond delta** and **Raw SDF order encoding** views so representation-level differences remain visible without receiving chemical authority they have not earned.
+
+See [docs/bond-delta-model.md](docs/bond-delta-model.md).
 
 ## Scientific boundaries
 
