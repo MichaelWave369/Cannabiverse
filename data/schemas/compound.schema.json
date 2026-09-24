@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/MichaelWave369/Cannabiverse/data/schemas/compound.schema.json",
+  "title": "Cannabiverse canonical compound",
+  "type": "object",
+  "required": [
+    "atlas_id",
+    "canonical_name",
+    "family",
+    "canonical_status",
+    "identity_level",
+    "occurrence_level",
+    "biosynthesis_level",
+    "source_id",
+    "source_url"
+  ],
+  "properties": {
+    "atlas_id": {
+      "type": "string",
+      "pattern": "^CPA-CAN-[0-9]{4}$"
+    },
+    "canonical_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "short_label": {
+      "type": "string"
+    },
+    "family": {
+      "type": "string",
+      "minLength": 1
+    },
+    "canonical_status": {
+      "enum": [
+        "BASELINE_2021_LOCKED",
+        "POST_BASELINE_CONFIRMED"
+      ]
+    },
+    "identity_level": {
+      "type": "string",
+      "pattern": "^I[0-4](?:_|$)"
+    },
+    "occurrence_level": {
+      "type": "string",
+      "pattern": "^O[0-4](?:_|$)"
+    },
+    "biosynthesis_level": {
+      "type": "string",
+      "pattern": "^B[0-3](?:_|$)"
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_url": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": true
+}
