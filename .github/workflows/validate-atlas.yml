@@ -2,7 +2,7 @@ name: Validate Atlas
 
 on:
   push:
-    branches: ["main", "v0.3-compound-evidence"]
+    branches: ["main", "v0.4-webgl2-molecules"]
   pull_request:
 
 permissions:
@@ -25,3 +25,6 @@ jobs:
 
       - name: Validate governed atlas
         run: node scripts/validate-atlas.mjs
+
+      - name: Validate governed molecular structures
+        run: node scripts/validate-structures.mjs
