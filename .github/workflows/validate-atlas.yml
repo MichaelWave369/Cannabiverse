@@ -2,7 +2,7 @@ name: Validate Atlas
 
 on:
   push:
-    branches: ["main", "v0.5-molecule-compare"]
+    branches: ["main", "v0.6-transformation-lab"]
   pull_request:
 
 permissions:
@@ -23,6 +23,9 @@ jobs:
       - name: Check deterministic evidence projection
         run: node scripts/build-evidence-graph.mjs --check
 
+      - name: Check deterministic atom correspondence
+        run: node scripts/build-correspondence.mjs --check
+
       - name: Validate governed atlas
         run: node scripts/validate-atlas.mjs
 
@@ -31,3 +34,6 @@ jobs:
 
       - name: Validate governed comparison presets
         run: node scripts/validate-compare-presets.mjs
+
+      - name: Validate governed transformation correspondence
+        run: node scripts/validate-correspondence.mjs
