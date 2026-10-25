@@ -28,6 +28,7 @@ ol{padding-left:20px}li{margin:8px 0}footer{padding-top:26px;font-size:13px;colo
 <script type="module">
 const root=document.getElementById('claims'), select=document.getElementById('lane'), status=document.getElementById('status');
 const node=(tag,text,cls)=>{const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=text;return el};
+async function loadEvidence() {
 try {
 const response=await fetch('../../data/oncology/evidence-v1.json',{cache:'no-cache'});
 if(!response.ok)throw new Error('HTTP '+response.status);
@@ -53,4 +54,6 @@ function render(){
 }
 select.addEventListener('change',render);render();
 }catch(error){status.textContent='Evidence feed unavailable ('+error.message+'). See the source repository for records; no unverified findings are displayed.'}
+}
+loadEvidence();
 </script></body></html>
