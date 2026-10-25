@@ -185,3 +185,7 @@ A separate **v1 read-only oncology evidence feed** lives in [`data/oncology/evid
 ## Φ Research Bridge v2
 
 [Research Bridge Explorer](https://michaelwave369.github.io/Cannabiverse/app/bridge/) provides permanent-compound-ID navigation into existing, source-bounded evidence claims. The [v2 manifest](data/bridge/research-index-v2.json) references authoritative chemistry receipts, governed 3D conformers and the separate oncology-v1 evidence ledger, without duplicating or promoting claims. Sacred Medicine reads the same manifest to keep educational presentation in sync. See [the contract](docs/research-bridge-v2.md) and run `npm run validate:bridge`.
+
+## Φ Research Bridge content release v3: Pain & ECS
+
+An additional, separate [Pain & Endocannabinoid System evidence domain](https://michaelwave369.github.io/Cannabiverse/app/pain/) is published as [versioned source evidence](data/pain-ecs/evidence-v1.json) and registered with the **existing v2 stable transport manifest**. It distinguishes 2025 AHRQ clinical evidence, IASP's 2021 position, biological CB1/CB2 pathways, and NIH safety limitations. This is not a protocol or a change to the 145 canonical records. See [scientific governance](docs/pain-ecs-v1.md). `npm run validate:pain-ecs` runs in CI.

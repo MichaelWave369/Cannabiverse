@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cannabiverse · Pain and Endocannabinoid System</title>
+<meta name="description" content="Source-backed human chronic pain evidence, safety, and endocannabinoid receptor biology.">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#08130e;color:#ebf7f0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#193d2b,#08130e 70%);min-height:100vh}
+main{width:min(1180px,calc(100% - 32px));margin:auto;padding:28px 0 72px}a{color:#ebd189}
+h1{font-size:clamp(34px,6vw,56px);line-height:1.1}p{line-height:1.6}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#e7c97d}
+.muted{color:#bad1c2;font-size:13px}.panel{padding:20px;border-radius:15px;border:1px solid #42634c;background:#11271b;margin:16px 0}
+.warning{background:#332a19;border-color:#a68e53}
+.filters{display:flex;gap:9px;flex-wrap:wrap;margin:18px 0}button{border:1px solid #567b65;background:#173724;color:inherit;border-radius:10px;padding:9px 13px;cursor:pointer}
+button[aria-pressed=true]{border-color:#e8d193;background:#355e40}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,350px),1fr));gap:14px}
+.card{border:1px solid #42634c;background:#10271b;border-radius:15px;padding:18px}.card h2{font-size:19px;margin:9px 0}
+.tag{font-size:11px;color:#efd18d;letter-spacing:.7px;text-transform:uppercase}
+b{color:#efd18d}.sources{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}.sources a{font-size:12px}
+footer{margin-top:38px;color:#b2ccb7;font-size:12px}ol{line-height:1.7}
+</style></head><body><main>
+<header><a href="../../">← Cannabiverse</a> · <a href="../bridge/">Φ Research Bridge</a> · <a href="https://michaelwave369.github.io/cannabis-as-sacred-medicine/#pain-ecs">Sacred Medicine Pain & ECS</a></header>
+<p class="eyebrow">Φ Research Bridge · Domain 02 · Human outcomes ≠ receptor biology</p>
+<h1>Pain & the Endocannabinoid System</h1>
+<p class="muted">Carefully separated evidence from a 2025 AHRQ systematic review, receptor biology, NIH safety guidance, and a professional society position. These are sourced research summaries, not a personal treatment protocol.</p>
+<div class="panel warning"><strong>Human evidence boundary:</strong> Studied THC-containing products can have small short-term benefits for certain chronic pain patients, while oral CBD alone did not show pain improvement in the reviewed trials. Dizziness, sedation and nausea matter. Whole-plant and long-term outcomes remain uncertain.</div>
+<div class="filters" id="filters" aria-label="Evidence lane filters"></div>
+<p class="muted" id="status" role="status">Reading source-governed evidence…</p>
+<section class="grid" id="items"></section>
+<footer>Evidence is not clinical guidance. <a href="../../data/pain-ecs/evidence-v1.json">Inspect source JSON</a> · <a href="../../docs/pain-ecs-v1.md">Scientific contract</a>. Product formulation evidence must not be turned into claims about any isolated compound.</footer>
+</main><script>
+(function(){
+"use strict";
+var filters=document.getElementById("filters"),items=document.getElementById("items"),status=document.getElementById("status"),record=null,lane="all";
+function el(tag,text,cls){var e=document.createElement(tag);if(text!=null)e.textContent=text;if(cls)e.className=cls;return e;}
+function draw(){
+items.replaceChildren();
+var shown=record.claims.filter(function(c){return lane==="all"||c.lane===lane});
+for(var c of shown){
+var card=el("article",null,"card");card.append(el("span",c.lane.replaceAll("_"," ")+" · "+c.evidence_strength,"tag"),el("h2",c.title),el("p",c.summary),el("p","Population/model: "+c.model,"muted"),el("p","Boundary: "+c.boundary,"muted"));
+if(c.link_scope&&c.related_compounds.length)card.append(el("p","Molecule links represent "+c.link_scope.replaceAll("_"," ")+".","muted"));
+if(c.mechanism_steps.length){var ol=el("ol");for(var step of c.mechanism_steps)ol.append(el("li",step));card.append(ol);}
+var links=el("div",null,"sources");
+for(var id of c.source_ids){var s=record.sources.find(function(x){return x.id===id});if(s){var a=el("a",s.title);a.href=s.url;a.target="_blank";a.rel="noopener noreferrer";links.append(a);}}
+card.append(links);items.append(card);
+}
+status.textContent=shown.length+" of "+record.claims.length+" source-bound records · published "+record.release_date;
+}
+function drawFilters(){
+var all=["all",...new Set(record.claims.map(function(c){return c.lane}))];
+for(var name of all){var b=el("button",name.replaceAll("_"," "));b.type="button";b.setAttribute("aria-pressed",String(name===lane));b.onclick=(function(value){return function(){lane=value;filters.querySelectorAll("button").forEach(function(e){e.setAttribute("aria-pressed",String(e===b))});draw();}})(name);filters.append(b);}
+}
+async function load(){
+try{var response=await fetch("../../data/pain-ecs/evidence-v1.json",{cache:"no-cache"});if(!response.ok)throw new Error("HTTP "+response.status);
+var data=await response.json();if(data.contract_version!=="1.0.0"||data.dataset_id!=="cannabiverse-pain-ecs-evidence"||!Array.isArray(data.claims)||!Array.isArray(data.sources))throw new Error("Unknown source contract");record=data;drawFilters();draw();
+}catch(error){status.textContent="Evidence feed unavailable or incompatible: "+error.message+". No unsourced findings shown.";items.replaceChildren();}
+}
+load();
+})();
+</script></body></html>
