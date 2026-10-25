@@ -271,6 +271,7 @@ function renderDetail(r){
   document.getElementById("detail").innerHTML=
     '<h2>'+esc(r.short_label||r.canonical_name)+'</h2>'+
     '<div class="id">'+esc(r.atlas_id)+'</div>'+
+    '<div class="card"><b>Φ Research Bridge</b><p><a href="../bridge/?id='+encodeURIComponent(r.atlas_id)+'">Open cited research for this molecule</a></p></div>'+
     '<div class="card"><b>Canonical structure record</b><p>'+esc(r.canonical_name)+'<br>'+esc(r.family)+'</p></div>'+
     '<div class="grid"><span>Formula</span><span>'+esc(i.molecular_formula)+'</span><span>Mass</span><span>'+esc(i.molecular_weight)+' g/mol</span><span>Atoms</span><span>'+esc(c.atom_count)+'</span><span>Bonds</span><span>'+esc(c.bond_count)+'</span><span>Format</span><span>'+esc(c.format)+'</span></div>'+
     '<h3>Identifiers</h3>'+

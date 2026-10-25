@@ -181,3 +181,7 @@ See [CITATION.cff](CITATION.cff) and `data/research/sources.json`.
 ## Oncology bridge with Cannabis as Sacred Medicine
 
 A separate **v1 read-only oncology evidence feed** lives in [`data/oncology/evidence-v1.json`](data/oncology/evidence-v1.json) and powers the [Oncology Evidence Explorer](https://michaelwave369.github.io/Cannabiverse/app/oncology/) and [Cannabis as Sacred Medicine](https://michaelwave369.github.io/cannabis-as-sacred-medicine/#oncology). Claim IDs are stable and source receipts indicate review-vs-guideline origins; preclinical mechanisms never promote human-efficacy claims. See [the bridge contract](docs/oncology-evidence-bridge.md). Run `npm run validate:oncology` to check schema, source links, and canonical molecule targets.
+
+## Φ Research Bridge v2
+
+[Research Bridge Explorer](https://michaelwave369.github.io/Cannabiverse/app/bridge/) provides permanent-compound-ID navigation into existing, source-bounded evidence claims. The [v2 manifest](data/bridge/research-index-v2.json) references authoritative chemistry receipts, governed 3D conformers and the separate oncology-v1 evidence ledger, without duplicating or promoting claims. Sacred Medicine reads the same manifest to keep educational presentation in sync. See [the contract](docs/research-bridge-v2.md) and run `npm run validate:bridge`.
