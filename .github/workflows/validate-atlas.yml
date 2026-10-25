@@ -46,3 +46,6 @@ jobs:
 
       - name: Validate static app JavaScript
         run: node scripts/validate-static-js.mjs
+
+      - name: Validate oncology evidence contract
+        run: node scripts/validate-oncology.mjs
