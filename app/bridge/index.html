@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Φ Research Bridge | Cannabiverse</title>
+<meta name="description" content="Trace source-governed molecules and bounded research claims.">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#07140e;color:#eef5ef}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#1c412e,#07140e 65%);min-height:100vh}
+main{max-width:1100px;margin:auto;padding:30px 18px 80px}a{color:#f1d18b}h1{font-size:clamp(32px,6vw,54px);margin:16px 0}p{line-height:1.65}
+.small{font-size:13px;color:#acc9b7}.eyebrow{letter-spacing:2px;text-transform:uppercase;color:#eac777;font-size:12px;font-weight:700}
+header{display:flex;gap:15px;flex-wrap:wrap}.panel{border:1px solid #44634e;border-radius:14px;padding:20px;background:#11271b;margin:18px 0}
+.warning{background:#302719;border-color:#8e794a}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:12px}
+.card{border:1px solid #44634e;border-radius:12px;background:#152b20;padding:16px}
+.card h3{margin:0 0 10px}input{display:block;width:min(620px,100%);padding:12px;background:#07140e;color:inherit;border:1px solid #82a58c;border-radius:8px;margin:10px 0}
+.choices{display:flex;gap:8px;flex-wrap:wrap;max-height:180px;overflow:auto}button{padding:8px;border:1px solid #50785d;background:#1b3926;color:inherit;border-radius:8px;text-align:left;cursor:pointer}
+button[aria-pressed=true]{border-color:#e9cb81;background:#30523a}.tag{font-size:11px;color:#e9cb81;text-transform:uppercase;font-weight:bold}
+.links{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}ol{line-height:1.7}footer{margin-top:30px;font-size:12px;color:#aec4b3}
+</style></head><body><main>
+<header><a href="../../">← Cannabiverse</a><a href="../oncology/">Oncology evidence</a><a href="https://michaelwave369.github.io/cannabis-as-sacred-medicine/#research-bridge">Sacred Medicine</a></header>
+<p class="eyebrow">Φ Research Bridge · v2 · source-first scientific network</p><h1>Molecules, claims, receipts.</h1>
+<p>Browse canonical chemical identities and follow cited research where it exists. A source-linked mention is <strong>not</strong> proof that a compound treats disease.</p>
+<div class="panel warning"><strong>Clinical boundary:</strong> Cannabinoids are not established anticancer treatments in humans. Do not replace oncology care.</div>
+<div class="panel"><label for="search">Search 145 molecules by name, family or permanent ID</label><input id="search" placeholder="CBD, THC, CPA-CAN-0047…" autocomplete="off"><div class="choices" id="choices"></div></div>
+<p id="status" class="small" role="status">Loading governed scientific feeds…</p>
+<div class="panel" id="profile"></div><section class="grid" id="claims" aria-label="Source-backed claims"></section>
+<footer><a href="../../data/bridge/research-index-v2.json">Research bridge contract</a> · <a href="../../data/oncology/evidence-v1.json">Oncology v1 source data</a> · <a href="../../GOVERNANCE.md">Governance</a>. No treatment guidance or dose recommendations.</footer>
+</main><script>
+(function(){
+"use strict";
+var choices=document.getElementById("choices"),search=document.getElementById("search"),profile=document.getElementById("profile"),claims=document.getElementById("claims"),status=document.getElementById("status"),data=null,selected="";
+function el(tag,txt,cls){var n=document.createElement(tag);if(txt!=null)n.textContent=txt;if(cls)n.className=cls;return n;}
+function anchor(txt,url){var a=el("a",txt);a.href=url;a.target="_blank";a.rel="noopener noreferrer";return a;}
+function desired(){var id=new URL(location.href).searchParams.get("id");return id&&/^CPA-CAN-\d{4}$/.test(id)?id:null;}
+function pick(id){
+var m=data.compounds.find(function(x){return x.atlas_id===id});if(!m)return;selected=id;
+var u=new URL(location.href);u.searchParams.set("id",id);history.replaceState(null,"",u);
+var structure=data.structures.some(function(x){return x.atlas_id===id});
+profile.replaceChildren(el("h2",(m.short_label||m.canonical_name)+" · "+id),el("p",m.canonical_name+" · "+m.family));
+profile.append(el("p","Identity: "+m.identity_level+" · "+m.identity_claim_id,"small"),el("p","Occurrence: "+m.occurrence_level+" · "+m.occurrence_claim_id,"small"));
+if(m.occurrence_cautioned)profile.append(el("p","Occurrence caution: "+m.caution,"small"));
+var chem=data.chemSources.find(function(x){return x.source_id===m.source_id});
+if(chem)profile.append(anchor("Chemical registry source: "+chem.title,chem.url));
+var links=el("div",null,"links");
+if(structure)links.append(anchor("Open 3D molecule","../molecules/?id="+encodeURIComponent(id)));
+links.append(anchor("Open in Sacred Medicine","https://michaelwave369.github.io/cannabis-as-sacred-medicine/?compound="+encodeURIComponent(id)+"#research-bridge"));profile.append(links);
+claims.replaceChildren();var matches=[];
+for(var dom of data.domains){for(var c of dom.claims){if(c.related_compounds.some(function(r){return r.atlas_id===id}))matches.push({claim:c,domain:dom});}}
+if(matches.length===0)claims.append(el("p","No claims linked in the currently registered research domains. This does not mean the compound has no biological activity.","small"));
+for(var x of matches){
+var c=x.claim,card=el("article",null,"card");
+card.append(el("p",x.domain.title+" · "+c.lane.replaceAll("_"," "),"tag"),el("h3",c.title),el("p",c.summary),el("p","Study/model: "+c.model,"small"),el("p","Boundary: "+c.boundary,"small"));
+if(c.mechanism_steps.length){var ol=el("ol");for(var step of c.mechanism_steps)ol.append(el("li",step));card.append(ol);}
+for(var sid of c.source_ids){var s=x.domain.sources.find(function(s){return s.id===sid});if(s){var p=el("p");p.append(anchor(s.title+" ("+(s.year||"living")+")",s.url));card.append(p);}}
+claims.append(card);
+}
+status.textContent=data.compounds.length+" compounds · "+data.domains.length+" evidence domain(s) · "+matches.length+" cited claims linked to "+id;
+renderChoices();
+}
+function renderChoices(){
+if(!data)return;var q=search.value.trim().toLowerCase();
+var list=data.compounds.filter(function(m){return !q||[m.canonical_name,m.short_label,m.family,m.atlas_id].join(" ").toLowerCase().includes(q)}).slice(0,24);
+choices.replaceChildren();for(var m of list){var b=el("button",(m.short_label||m.canonical_name)+" · "+m.atlas_id);b.type="button";b.setAttribute("aria-pressed",String(m.atlas_id===selected));b.onclick=(function(id){return function(){pick(id)}})(m.atlas_id);choices.append(b);}
+if(!list.length)choices.append(el("span","No matching molecule.","small"));
+}
+search.addEventListener("input",renderChoices);
+async function read(url){var r=await fetch(url,{cache:"no-cache"});if(!r.ok)throw new Error("HTTP "+r.status);return r.json();}
+async function load(){
+try{
+var manifestUrl=new URL("../../data/bridge/research-index-v2.json",location.href);
+var m=await read(manifestUrl);
+if(m.contract_version!=="2.0.0"||m.dataset_id!=="cannabiverse-research-bridge"||!Array.isArray(m.domains))throw new Error("Unexpected research contract");
+var items=await Promise.all([read(new URL(m.sources.compounds,manifestUrl)),read(new URL(m.sources.structures,manifestUrl)),read(new URL(m.sources.chemistry_sources,manifestUrl)),...m.domains.map(async function(d){var v=await read(new URL(d.evidence_url,manifestUrl));if(v.contract_version!==d.expected_contract_version||v.dataset_id!==d.expected_dataset_id)throw new Error("Evidence feed mismatch");return {...v,title:d.title};})]);
+if(!Array.isArray(items[0])||items[0].length!==145||!Array.isArray(items[1])||!Array.isArray(items[2]))throw new Error("Unexpected chemistry registry");
+data={compounds:items[0],structures:items[1],chemSources:items[2],domains:items.slice(3)};
+var wanted=desired();pick(data.compounds.some(function(x){return x.atlas_id===wanted})?wanted:"CPA-CAN-0047");
+}catch(err){profile.replaceChildren();claims.replaceChildren();choices.replaceChildren();status.textContent="Unable to verify research feeds: "+err.message+". No claims displayed.";}
+}
+load();
+})();
+</script></body></html>

@@ -1,0 +1,27 @@
+{
+  "contract_version": "2.0.0",
+  "dataset_id": "cannabiverse-research-bridge",
+  "publication_date": "2026-10-25",
+  "description": "Read-only, source-owned index of scientific data feeds. The bridge links existing chemical identities to source-bound claims without promoting evidence.",
+  "doctrine": "IDENTITY ≠ OCCURRENCE ≠ BIOSYNTHESIS ≠ BIOACTIVITY ≠ HUMAN EFFECT ≠ SAFETY",
+  "relationship_semantics": "MENTIONED_IN_CITED_CLAIM means a source-linked claim refers to the molecule; it does not prove clinical efficacy, safety, dosage or any new chemical identity.",
+  "sources": {
+    "compounds": "../evidence/compound_evidence_summary.json",
+    "structures": "../structures/structure_index.json",
+    "chemistry_sources": "../research/sources.json"
+  },
+  "domains": [
+    {
+      "id": "oncology",
+      "title": "Cancer research and supportive-care evidence",
+      "evidence_url": "../oncology/evidence-v1.json",
+      "expected_dataset_id": "cannabiverse-oncology-evidence",
+      "expected_contract_version": "1.0.0",
+      "human_efficacy_warning": "Cannabinoids are not established anticancer treatments in humans. Do not replace oncology care."
+    }
+  ],
+  "consumer_links": {
+    "cannabiverse_bridge": "https://michaelwave369.github.io/Cannabiverse/app/bridge/",
+    "sacred_medicine": "https://michaelwave369.github.io/cannabis-as-sacred-medicine/#research-bridge"
+  }
+}
