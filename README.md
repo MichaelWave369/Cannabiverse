@@ -40,6 +40,7 @@ Current dataset:
 - 3D Molecule Viewer: https://michaelwave369.github.io/Cannabiverse/app/molecules/
 - Molecule Compare Lab: https://michaelwave369.github.io/Cannabiverse/app/molecules/compare.html
 - Transformation Lab: https://michaelwave369.github.io/Cannabiverse/app/molecules/transform.html
+- Oncology Evidence Explorer: https://michaelwave369.github.io/Cannabiverse/app/oncology/
 
 GitHub Pages serves the static interfaces; the authoritative scientific data and governance contracts remain versioned in this repository.
 
@@ -176,3 +177,7 @@ See [GOVERNANCE.md](GOVERNANCE.md) for the authority model and [docs/ontology.md
 Code is released under the MIT License. Primary scientific sources retain their own licenses and citation requirements.
 
 See [CITATION.cff](CITATION.cff) and `data/research/sources.json`.
+
+## Oncology bridge with Cannabis as Sacred Medicine
+
+A separate **v1 read-only oncology evidence feed** lives in [`data/oncology/evidence-v1.json`](data/oncology/evidence-v1.json) and powers the [Oncology Evidence Explorer](https://michaelwave369.github.io/Cannabiverse/app/oncology/) and [Cannabis as Sacred Medicine](https://michaelwave369.github.io/cannabis-as-sacred-medicine/#oncology). Claim IDs are stable and source receipts indicate review-vs-guideline origins; preclinical mechanisms never promote human-efficacy claims. See [the bridge contract](docs/oncology-evidence-bridge.md). Run `npm run validate:oncology` to check schema, source links, and canonical molecule targets.
