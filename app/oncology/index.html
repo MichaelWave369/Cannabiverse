@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cannabiverse | Oncology Evidence Explorer</title>
+<meta name="description" content="Source-bound oncology mechanisms, human evidence limits, and safety context.">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#08120e;color:#e8f5ed}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#173b29,#08120e 65%);min-height:100vh}
+main{width:min(1100px,calc(100% - 32px));margin:auto;padding:35px 0 65px}
+a{color:#e9ce85}h1{font-size:clamp(32px,6vw,55px);line-height:1.08;margin:16px 0}
+p{line-height:1.65}.muted{color:#abc4b3}.eyebrow{color:#e9ce85;text-transform:uppercase;letter-spacing:2px;font-weight:750;font-size:12px}
+.panel{background:#12261b;border:1px solid #335343;border-radius:16px;padding:20px;margin:16px 0}
+.alert{border-color:#ad8750;background:#352813}select{background:#12261b;color:#e8f5ed;border:1px solid #507c63;border-radius:8px;padding:10px;margin:10px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}
+.card{background:#10251b;border:1px solid #375746;border-radius:15px;padding:18px}
+.card h2{font-size:19px}.tag{display:inline-block;color:#ebd28c;border:1px solid #7c6c45;border-radius:20px;padding:4px 10px;font-size:11px}
+.label{color:#b6ceb9;font-size:12px;text-transform:uppercase;font-weight:700;letter-spacing:.6px}
+ol{padding-left:20px}li{margin:8px 0}footer{padding-top:26px;font-size:13px;color:#b2c2ba}
+</style></head><body><main>
+<a href="../../">← Cannabiverse</a> &nbsp; · &nbsp; <a href="https://michaelwave369.github.io/cannabis-as-sacred-medicine/#oncology">Sacred Medicine interpretation</a>
+<p class="eyebrow">Source-first · research evidence · contract v1</p>
+<h1>Oncology Evidence Explorer</h1>
+<p class="muted">Molecular pathways and safety context from named scientific sources, separated from clinical efficacy. The graph shows what research reports, not what patients should take.</p>
+<div class="panel alert"><strong>Clinical boundary:</strong> Cannabinoids have not been established as anticancer treatments in humans. Experimental effects and symptom management are not proof of tumor control. Do not replace oncology care.</div>
+<label for="lane" class="label">Filter evidence lane</label><br><select id="lane"><option value="">All evidence lanes</option></select>
+<p id="status" role="status" class="muted">Loading governed evidence…</p><div id="claims" class="grid"></div>
+<footer>Data: <a href="../../data/oncology/evidence-v1.json">versioned oncology JSON</a> · <a href="../../GOVERNANCE.md">governance</a> · <a href="https://github.com/MichaelWave369/Cannabiverse/blob/main/docs/oncology-evidence-bridge.md">contract docs</a>. This is not medical advice.</footer>
+</main>
+<script type="module">
+const root=document.getElementById('claims'), select=document.getElementById('lane'), status=document.getElementById('status');
+const node=(tag,text,cls)=>{const el=document.createElement(tag);if(cls)el.className=cls;el.textContent=text;return el};
+try {
+const response=await fetch('../../data/oncology/evidence-v1.json',{cache:'no-cache'});
+if(!response.ok)throw new Error('HTTP '+response.status);
+const data=await response.json();
+if(data.contract_version!=='1.0.0'||!Array.isArray(data.claims)||!Array.isArray(data.sources))throw new Error('Unsupported evidence contract');
+const sources=new Map(data.sources.map(s=>[s.id,s]));
+const lanes=[...new Set(data.claims.map(c=>c.lane))].sort();
+for(const lane of lanes){const option=node('option',lane.replaceAll('_',' '));option.value=lane;select.append(option)}
+function render(){
+ root.replaceChildren();
+ const items=data.claims.filter(c=>!select.value||c.lane===select.value);
+ for(const c of items){
+ const card=node('article','', 'card');
+ card.append(node('span',c.lane.replaceAll('_',' '),'tag'),node('h2',c.title),node('p',c.summary),node('p','Model: '+c.model,'muted'));
+ if(c.mechanism_steps?.length){card.append(node('p','Reported pathway (model-specific)','label'));const ol=document.createElement('ol');for(const step of c.mechanism_steps)ol.append(node('li',step));card.append(ol)}
+ card.append(node('p','Limit: '+c.boundary,'muted'));
+ if(c.related_compounds?.length)card.append(node('p','Atlas: '+c.related_compounds.map(m=>m.name+' ('+m.atlas_id+')').join(', '),'muted'));
+ const links=document.createElement('p');links.append(node('span','Sources: ','label'));
+ for(const sid of c.source_ids){const s=sources.get(sid);if(!s)continue;const a=node('a',s.authors+' ('+(s.year||'living')+')');a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';links.append(a,document.createTextNode(' · '))}
+ card.append(links);root.append(card)
+ }
+ status.textContent=items.length+' curated claims · dataset '+data.release_date+' · '+data.sources.length+' sources · not clinical guidance';
+}
+select.addEventListener('change',render);render();
+}catch(error){status.textContent='Evidence feed unavailable ('+error.message+'). See the source repository for records; no unverified findings are displayed.'}
+</script></body></html>

@@ -1,0 +1,172 @@
+{
+  "contract_version": "1.0.0",
+  "dataset_id": "cannabiverse-oncology-evidence",
+  "release_date": "2026-10-25",
+  "description": "Curated claims about cannabinoid oncology research. This is a distinct biological-activity and clinical-context ledger, not phytocannabinoid identification or treatment advice.",
+  "editorial_notice": "This first release summarizes a 2016 mechanistic review and the National Cancer Institute's living PDQ professional summary as consulted in October 2026. It is not a systematic review, practice guideline, efficacy assessment, or clinical prescribing resource.",
+  "medical_boundary": "Cannabinoids are not established anticancer treatments in humans. Preclinical findings must not be interpreted as clinical efficacy. Cancer patients should discuss cannabinoid use, including potential interactions, with their oncology team.",
+  "sources": [
+    {
+      "id": "ONC-SRC-VELASCO-2016",
+      "title": "Anticancer mechanisms of cannabinoids",
+      "authors": "Velasco G, Sánchez C, Guzmán M",
+      "year": 2016,
+      "kind": "peer_reviewed_narrative_review",
+      "doi": "10.3747/co.23.3080",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4791144/",
+      "note": "Reviews preclinical cell and animal studies, resistance mechanisms, and early human feasibility studies; secondary synthesis, not a primary assay receipt."
+    },
+    {
+      "id": "ONC-SRC-NCI-PDQ",
+      "title": "Cannabis and Cannabinoids (PDQ®) – Health Professional Version",
+      "authors": "National Cancer Institute",
+      "year": null,
+      "kind": "living_clinical_evidence_summary",
+      "doi": null,
+      "url": "https://www.cancer.gov/about-cancer/treatment/cam/hp/cannabis-pdq",
+      "note": "Living source; findings here reflect the summary consulted on 2026-10-25, and may change after this release."
+    }
+  ],
+  "claims": [
+    {
+      "id": "ONC-CLM-001",
+      "title": "THC-associated stress signaling and cell death in glioma models",
+      "lane": "preclinical_mechanism",
+      "model": "Cell culture and animal models, chiefly glioma",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        }
+      ],
+      "summary": "The 2016 review describes cannabinoid-receptor-associated ceramide production, ER stress, NUPR1/ATF4/CHOP/TRIB3 signaling, inhibition of AKT/mTORC1, and autophagy upstream of apoptosis in experimental glioma systems.",
+      "mechanism_steps": [
+        "Δ9-THC in experimental glioma model",
+        "CB1/CB2-dependent signaling in reported models",
+        "Ceramide and endoplasmic-reticulum stress",
+        "NUPR1 → ATF4 / CHOP → TRIB3",
+        "AKT / mTORC1 inhibition",
+        "Autophagy-associated apoptosis observed in some models"
+      ],
+      "boundary": "A mechanistic model of selected experimental systems, not proof of tumor clearance, selective safety, or patient benefit.",
+      "source_ids": [
+        "ONC-SRC-VELASCO-2016"
+      ]
+    },
+    {
+      "id": "ONC-CLM-002",
+      "title": "CBD-associated cancer-cell responses in experimental systems",
+      "lane": "preclinical_mechanism",
+      "model": "Cell culture and animal studies across selected tumor models",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0047",
+          "name": "CBD"
+        }
+      ],
+      "summary": "The 2016 review discusses CBD-associated cell death and reduced invasiveness in selected experimental models, proposing reactive-oxygen-species and TRPV2-related routes that may act independently of CB1/CB2.",
+      "mechanism_steps": [
+        "CBD exposure in selected preclinical models",
+        "Proposed ROS or TRPV2-associated signaling, depending on model",
+        "Altered cell survival or invasiveness observed experimentally"
+      ],
+      "boundary": "Proposed mechanisms and model-dependent results; not established clinical anticancer efficacy and not a universal CBD effect.",
+      "source_ids": [
+        "ONC-SRC-VELASCO-2016"
+      ]
+    },
+    {
+      "id": "ONC-CLM-003",
+      "title": "Angiogenesis and invasion findings in some preclinical tumors",
+      "lane": "preclinical_mechanism",
+      "model": "In-vitro and animal cancer models",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        },
+        {
+          "atlas_id": "CPA-CAN-0047",
+          "name": "CBD"
+        }
+      ],
+      "summary": "The review discusses decreased VEGF-pathway signaling, invasion, or metastasis in some cannabinoid-treated experimental tumor systems, with different pathways reported for different compounds and cancers.",
+      "mechanism_steps": [
+        "Cannabinoid exposure in specified models",
+        "Model-dependent VEGF signaling or invasion-related changes",
+        "Reduced angiogenesis or invasion in certain animal/cell experiments"
+      ],
+      "boundary": "Preclinical observations do not demonstrate prevention of metastasis or improved survival in humans.",
+      "source_ids": [
+        "ONC-SRC-VELASCO-2016"
+      ]
+    },
+    {
+      "id": "ONC-CLM-004",
+      "title": "Potential tumor-promoting or immune-suppressive contexts",
+      "lane": "risk_context",
+      "model": "Preclinical immune and tumor models",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        }
+      ],
+      "summary": "The 2016 review explicitly describes conflicting findings: in some models cannabinoid-receptor stimulation may suppress antitumor immune surveillance or favor tumor progression, while other models show antitumor effects.",
+      "mechanism_steps": [],
+      "boundary": "Direction depends on cell type, immune context, compound, and conditions; do not represent cannabinoids as universally antitumor.",
+      "source_ids": [
+        "ONC-SRC-VELASCO-2016"
+      ]
+    },
+    {
+      "id": "ONC-CLM-005",
+      "title": "Nine-person recurrent-glioblastoma THC pilot was not an efficacy trial",
+      "lane": "human_pilot_context",
+      "model": "Nine patients with recurrent glioblastoma; early phase I pilot reported in the 2016 review",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        }
+      ],
+      "summary": "The reviewed pilot administered THC intracranially and investigated feasibility, tolerability and exploratory tumor measures; nine participants cannot establish anticancer efficacy.",
+      "mechanism_steps": [],
+      "boundary": "Human pilot feasibility must not be promoted to proof of effectiveness, a recommended route, or a treatment protocol.",
+      "source_ids": [
+        "ONC-SRC-VELASCO-2016"
+      ]
+    },
+    {
+      "id": "ONC-CLM-006",
+      "title": "Cancer-related symptom support is distinct from treating cancer",
+      "lane": "clinical_supportive_care",
+      "model": "Clinical research and NCI clinical evidence summary",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        }
+      ],
+      "summary": "NCI distinguishes use of cannabinoid medicines, including dronabinol and nabilone for certain chemotherapy-related nausea and vomiting, from unproven claims that cannabis treats the cancer itself.",
+      "mechanism_steps": [],
+      "boundary": "Approved or studied symptom-relief indications do not establish anticancer effects; drug products are not interchangeable with unstandardized cannabis.",
+      "source_ids": [
+        "ONC-SRC-NCI-PDQ"
+      ]
+    },
+    {
+      "id": "ONC-CLM-007",
+      "title": "No established human anticancer efficacy",
+      "lane": "clinical_efficacy_boundary",
+      "model": "Human clinical evidence as characterized in the NCI summary",
+      "related_compounds": [],
+      "summary": "The NCI evidence summary does not establish cannabis or cannabinoids as effective antineoplastic treatment in humans; potential interactions and safety issues require clinical discussion.",
+      "mechanism_steps": [],
+      "boundary": "Do not substitute cannabis or cannabinoids for evidence-based cancer care, or use this research atlas to make treatment decisions.",
+      "source_ids": [
+        "ONC-SRC-NCI-PDQ"
+      ]
+    }
+  ]
+}
