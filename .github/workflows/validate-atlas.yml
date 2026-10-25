@@ -52,3 +52,6 @@ jobs:
 
       - name: Validate Phi Research Bridge v2
         run: npm run validate:bridge
+
+      - name: Validate Pain & ECS research domain
+        run: npm run validate:pain-ecs

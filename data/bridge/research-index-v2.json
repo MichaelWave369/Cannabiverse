@@ -18,10 +18,19 @@
       "expected_dataset_id": "cannabiverse-oncology-evidence",
       "expected_contract_version": "1.0.0",
       "human_efficacy_warning": "Cannabinoids are not established anticancer treatments in humans. Do not replace oncology care."
+    },
+    {
+      "id": "pain-ecs",
+      "title": "Chronic pain outcomes & Endocannabinoid System physiology",
+      "evidence_url": "../pain-ecs/evidence-v1.json",
+      "expected_dataset_id": "cannabiverse-pain-ecs-evidence",
+      "expected_contract_version": "1.0.0",
+      "human_efficacy_warning": "General clinical efficacy and safety for all cannabinoid and whole-plant products are not established. Product-specific short-term pain benefits are generally small, with adverse effects and important evidence gaps."
     }
   ],
   "consumer_links": {
     "cannabiverse_bridge": "https://michaelwave369.github.io/Cannabiverse/app/bridge/",
     "sacred_medicine": "https://michaelwave369.github.io/cannabis-as-sacred-medicine/#research-bridge"
-  }
+  },
+  "content_release": "3.0.0"
 }
