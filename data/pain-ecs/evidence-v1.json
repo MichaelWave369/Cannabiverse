@@ -1,0 +1,306 @@
+{
+  "contract_version": "1.0.0",
+  "dataset_id": "cannabiverse-pain-ecs-evidence",
+  "release_date": "2026-10-25",
+  "topic": "Pain & Endocannabinoid System",
+  "description": "Source-curated noncancer chronic pain outcomes and receptor biology with distinct evidence lanes; no self-treatment instructions.",
+  "editorial_notice": "AHRQ's July 2025 final annual systematic review update, a 2021 IASP statement, receptor biology reviews, and a living NIH NCCIH safety summary. These sources have distinct dates and evidence roles.",
+  "medical_boundary": "Specific studied cannabinoid products may yield small short-term pain improvements but do not establish general efficacy or safety for all cannabis products. Do not replace medical care or change prescribed treatment without a clinician.",
+  "sources": [
+    {
+      "id": "PAIN-SRC-AHRQ-2025",
+      "title": "Living Systematic Review on Cannabis and Other Plant-Based Treatments for Chronic Pain: 2025 Update",
+      "authors": "Chou R, Ahmed AY, Dana T, et al.",
+      "year": 2025,
+      "kind": "systematic_review_final_update",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK618040/",
+      "note": "AHRQ Comparative Effectiveness Review No. 250, fourth and final annual update; database search through April 28, 2025; noncancer chronic pain with predominantly neuropathic conditions."
+    },
+    {
+      "id": "PAIN-SRC-IASP-2021",
+      "title": "IASP Position Statement on the Use of Cannabinoids to Treat Pain",
+      "authors": "International Association for the Study of Pain",
+      "year": 2021,
+      "kind": "professional_society_position",
+      "url": "https://www.iasp-pain.org/advocacy/iasp-statements/iasp-position-statement-on-the-use-of-cannabinoids-to-treat-pain/",
+      "note": "IASP did not endorse general cannabinoid use for pain because available high-quality clinical evidence was insufficient; historical position, not a 2026 practice guideline."
+    },
+    {
+      "id": "PAIN-SRC-BIOLOGY-2021",
+      "title": "Cannabinoids, the endocannabinoid system and pain: a review of preclinical studies",
+      "authors": "IASP-linked review authors",
+      "year": 2021,
+      "kind": "preclinical_narrative_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8819673/",
+      "note": "Mechanistic review distinguishing receptor localization, nociceptive physiology, and experimental analgesic pathways from human treatment outcomes."
+    },
+    {
+      "id": "PAIN-SRC-ECS-2015",
+      "title": "The role of the endocannabinoid system in pain",
+      "authors": "Review chapter (PMID 25846617)",
+      "year": 2015,
+      "kind": "physiology_review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25846617/",
+      "note": "Explains central/peripheral CB1, immune-associated CB2, anandamide, 2-AG and endogenous pain signaling; not a human trial."
+    },
+    {
+      "id": "PAIN-SRC-NCCIH",
+      "title": "Cannabis (Marijuana) and Cannabinoids: What You Need To Know",
+      "authors": "National Center for Complementary and Integrative Health (NIH)",
+      "year": null,
+      "kind": "living_government_evidence_summary",
+      "url": "https://www.nccih.nih.gov/health/cannabis-marijuana-and-cannabinoids-what-you-need-to-know",
+      "note": "Clinical risk and regulatory context as consulted Oct 25 2026; living page may be updated."
+    }
+  ],
+  "claims": [
+    {
+      "id": "PAIN-CLM-001",
+      "title": "Comparable-ratio THC/CBD oral spray: small short-term benefit",
+      "lane": "human_clinical_evidence",
+      "summary": "AHRQ 2025 found that certain extracted, comparable THC/CBD-ratio oromucosal sprays probably yield small reductions in chronic pain severity compared with placebo; benefits were concentrated in mostly neuropathic chronic pain studies.",
+      "model": "Adult noncancer chronic pain; mostly neuropathic; short-term 4 weeks to under 6 months; specific standardized oromucosal preparations",
+      "boundary": "The benefit belongs to the studied combined formulation, not separately to isolated THC, CBD, whole-plant cannabis, all pain diagnoses, or long-term use.",
+      "evidence_strength": "moderate",
+      "link_scope": "combination_formulation_components_only",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        },
+        {
+          "atlas_id": "CPA-CAN-0047",
+          "name": "CBD"
+        }
+      ],
+      "mechanism_steps": [],
+      "source_ids": [
+        "PAIN-SRC-AHRQ-2025"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-002",
+      "title": "Purified or synthetic THC products: possible small pain improvement",
+      "lane": "human_clinical_evidence",
+      "summary": "For high-THC-to-CBD synthetic or purified cannabinoid preparations, AHRQ 2025 reported possible small short-term improvements in pain severity, with lower confidence than for comparable-ratio spray.",
+      "model": "Adults with noncancer chronic pain, mostly neuropathic; studied THC-rich oral products",
+      "boundary": "Do not generalize the product-level trial findings to every THC product, smoked cannabis, specific doses, or lasting recovery.",
+      "evidence_strength": "low",
+      "link_scope": "product_class_context_not_single_molecule_proof",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        }
+      ],
+      "mechanism_steps": [],
+      "source_ids": [
+        "PAIN-SRC-AHRQ-2025"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-003",
+      "title": "Oral CBD alone did not improve chronic pain or function in pooled trials",
+      "lane": "human_clinical_evidence",
+      "summary": "AHRQ 2025 found that studied synthetic or purified oral CBD-only products were not associated with improvements in pain severity or function versus placebo.",
+      "model": "Adults with chronic noncancer pain; short-term oral CBD randomized studies",
+      "boundary": "A null pooled result for these studied CBD formulations does not mean CBD is inactive in every biological context; it does not support a general claim that CBD alone relieves chronic pain.",
+      "evidence_strength": "moderate",
+      "link_scope": "cbd_only_trials",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0047",
+          "name": "CBD"
+        }
+      ],
+      "mechanism_steps": [],
+      "source_ids": [
+        "PAIN-SRC-AHRQ-2025"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-004",
+      "title": "Dizziness, sedation and nausea are significant adverse effects",
+      "lane": "clinical_safety",
+      "summary": "The AHRQ review found increased risk of common adverse effects such as dizziness, sedation and nausea with studied THC-containing and comparable THC/CBD products compared with placebo.",
+      "model": "Short-term adult chronic-pain clinical trials, product-specific comparisons",
+      "boundary": "A small mean pain benefit can be offset by harms. Do not infer safety for driving, older adults, combinations with sedatives, or prolonged use.",
+      "evidence_strength": "low_to_moderate",
+      "link_scope": "formulation_level_adverse_events",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        },
+        {
+          "atlas_id": "CPA-CAN-0047",
+          "name": "CBD"
+        }
+      ],
+      "mechanism_steps": [],
+      "source_ids": [
+        "PAIN-SRC-AHRQ-2025",
+        "PAIN-SRC-NCCIH"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-005",
+      "title": "Long-term outcomes and many whole-plant uses remain uncertain",
+      "lane": "evidence_gap",
+      "summary": "AHRQ 2025 noted insufficient or unavailable evidence for important whole-plant preparations, long-term clinical outcomes, diverse pain conditions, subacute pain, and adolescents.",
+      "model": "Evidence gaps in the 2025 noncancer chronic/subacute pain review",
+      "boundary": "No available effect estimate is not proof of safety, effectiveness, or ineffectiveness. Do not promote evidence from standardized formulations to every dispensary product.",
+      "evidence_strength": "insufficient",
+      "link_scope": "scoped_evidence_only",
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "PAIN-SRC-AHRQ-2025"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-006",
+      "title": "Opioid reduction or replacement not established by trials in this review",
+      "lane": "evidence_gap",
+      "summary": "AHRQ 2025 found evidence on changes in opioid use insufficient to draw reliable conclusions for chronic pain treatment.",
+      "model": "Chronic noncancer pain trials and observational studies evaluated in AHRQ 2025",
+      "boundary": "This research cannot establish that cannabis should replace prescribed opioids, nor justify abrupt opioid changes.",
+      "evidence_strength": "insufficient",
+      "link_scope": "scoped_evidence_only",
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "PAIN-SRC-AHRQ-2025"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-007",
+      "title": "IASP does not endorse general cannabinoid use for pain",
+      "lane": "clinical_guidance_context",
+      "summary": "The International Association for the Study of Pain concluded in its 2021 statement that high-quality evidence was insufficient to endorse cannabinoids for general pain treatment while acknowledging patients reporting benefit.",
+      "model": "Professional society statement published 2021",
+      "boundary": "This is a professional evidence position, not a finding that no patient can benefit; evaluate against newer 2025 systematic evidence rather than presenting a single timeless verdict.",
+      "evidence_strength": "professional_position",
+      "link_scope": "scoped_evidence_only",
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "PAIN-SRC-IASP-2021"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-008",
+      "title": "CB1 receptors modulate presynaptic neurotransmission",
+      "lane": "preclinical_physiology",
+      "summary": "CB1 receptors are found at presynaptic sites in central and peripheral neural circuits, including pain pathways. Receptor activation can inhibit neurotransmitter release in experimental contexts.",
+      "model": "Endocannabinoid neurophysiology and animal/cell models, not clinical efficacy tests",
+      "boundary": "A CB1 pathway diagram is not evidence that a given cannabis product is a proven pain treatment; THC-associated receptor engagement is not equivalent to an effect size in patients.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "receptor_link_not_clinical_pain_proof",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        }
+      ],
+      "mechanism_steps": [
+        "CB1 at presynaptic neuronal terminals",
+        "Gi/o-linked modulation of Ca²⁺ and K⁺ conductances",
+        "Reduced neurotransmitter release in relevant model systems",
+        "Altered nociceptive signaling, without automatic clinical efficacy"
+      ],
+      "source_ids": [
+        "PAIN-SRC-BIOLOGY-2021",
+        "PAIN-SRC-ECS-2015"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-009",
+      "title": "CB2-linked immune signaling is studied in inflammatory and neuropathic pain",
+      "lane": "preclinical_physiology",
+      "summary": "CB2 is prominent on immune cells; studies explore how CB2 signaling influences neuroimmune and inflammatory processes relevant to pain. Brain expression and model effects are context-dependent.",
+      "model": "Preclinical neuroimmune systems and experimental pain models",
+      "boundary": "No human clinical analgesic efficacy follows from CB2 expression or animal nociception findings. This record is not assigned to an individual phytocannabinoid.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "scoped_evidence_only",
+      "related_compounds": [],
+      "mechanism_steps": [
+        "CB2 on immune and neuroimmune cells",
+        "Model-specific changes in inflammatory mediator signaling",
+        "Altered experimental nociceptive outcomes in some systems"
+      ],
+      "source_ids": [
+        "PAIN-SRC-BIOLOGY-2021",
+        "PAIN-SRC-ECS-2015"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-010",
+      "title": "Anandamide and 2-AG are endogenous cannabinoid signals, not phytocannabinoids",
+      "lane": "preclinical_physiology",
+      "summary": "The endocannabinoid system includes endogenous lipid messengers anandamide (AEA) and 2-arachidonoylglycerol (2-AG), their synthesis and breakdown pathways, and cannabinoid receptors.",
+      "model": "Foundational endocannabinoid physiology",
+      "boundary": "These endogenous signals are distinct from the 145 canonical Cannabis phytocannabinoid records; do not create fictitious molecule IDs for them or treat their presence as an analgesic indication.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "scoped_evidence_only",
+      "related_compounds": [],
+      "mechanism_steps": [
+        "On-demand endogenous lipid messenger synthesis",
+        "Local cannabinoid receptor signaling",
+        "Enzymatic signal termination"
+      ],
+      "source_ids": [
+        "PAIN-SRC-ECS-2015",
+        "PAIN-SRC-BIOLOGY-2021"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-011",
+      "title": "CBD and THC safety must be assessed by product and patient",
+      "lane": "clinical_safety",
+      "summary": "NIH NCCIH describes cannabis-related impairment, use disorder and psychosis vulnerabilities, plus potential CBD-associated liver effects and clinically relevant drug interactions.",
+      "model": "General cannabinoid safety and interaction information, not pain-specific comparative efficacy",
+      "boundary": "Medication review and safety assessment matter. Do not infer a natural product is harmless or substitute general caution for individual medical advice.",
+      "evidence_strength": "clinical_safety_context",
+      "link_scope": "cross_product_safety_not_single_compound_estimate",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        },
+        {
+          "atlas_id": "CPA-CAN-0047",
+          "name": "CBD"
+        }
+      ],
+      "mechanism_steps": [],
+      "source_ids": [
+        "PAIN-SRC-NCCIH"
+      ]
+    },
+    {
+      "id": "PAIN-CLM-012",
+      "title": "FDA-approved cannabinoid indications are not chronic pain approvals",
+      "lane": "clinical_guidance_context",
+      "summary": "NCCIH distinguishes approved cannabinoid medicines for certain epilepsies, chemotherapy-related nausea/vomiting, or HIV-associated appetite loss from the absence of an FDA-approved cannabis-plant chronic-pain indication.",
+      "model": "US medication/regulatory context summarized by NCCIH",
+      "boundary": "Specific approved pharmaceutical indications cannot be generalized into approval of cannabis, CBD, THC or whole-plant products as pain therapies.",
+      "evidence_strength": "regulatory_context",
+      "link_scope": "indications_not_pain",
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0047",
+          "name": "CBD"
+        },
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        }
+      ],
+      "mechanism_steps": [],
+      "source_ids": [
+        "PAIN-SRC-NCCIH"
+      ]
+    }
+  ]
+}
