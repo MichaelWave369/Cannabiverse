@@ -46,7 +46,7 @@ status.textContent=shown.length+" of "+record.claims.length+" source-bound recor
 }
 function drawFilters(){
 var all=["all",...new Set(record.claims.map(function(c){return c.lane}))];
-for(var name of all){var b=el("button",name.replaceAll("_"," "));b.type="button";b.setAttribute("aria-pressed",String(name===lane));b.onclick=(function(value){return function(){lane=value;filters.querySelectorAll("button").forEach(function(e){e.setAttribute("aria-pressed",String(e===b))});draw();}})(name);filters.append(b);}
+for(var name of all){var b=el("button",name.replaceAll("_"," "));b.type="button";b.setAttribute("aria-pressed",String(name===lane));b.onclick=(function(value){return function(){lane=value;var clicked=this;filters.querySelectorAll("button").forEach(function(e){e.setAttribute("aria-pressed",String(e===clicked))});draw();}})(name);filters.append(b);}
 }
 async function load(){
 try{var response=await fetch("../../data/pain-ecs/evidence-v1.json",{cache:"no-cache"});if(!response.ok)throw new Error("HTTP "+response.status);
