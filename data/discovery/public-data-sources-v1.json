@@ -1,0 +1,39 @@
+{
+  "dataset_id": "cannabiverse-public-msms-source-registry",
+  "contract_version": "1.0.0",
+  "release_date": "2026-11-06",
+  "editorial_notice": "Curated source pointers, not an assertion of having downloaded or analyzed experimental mass spectra. Public dataset registration and sample-level experimental validation are distinct.",
+  "sources": [
+    {
+      "id": "MSV000093886",
+      "title": "GNPS - Charting the Cannabis plant chemical space with computational metabolomics",
+      "description": "Cannabis leaf and flower LC-MS/MS from Amnesia Haze and Royal Dutch Cheese samples; deposited at MassIVE. The deposit is marked Partial Public and CC0 1.0.",
+      "access_status": "PARTIAL_PUBLIC",
+      "license": "CC0-1.0",
+      "source_type": "published_mass_spectrometry_dataset",
+      "access_url": "https://massive.ucsd.edu/ProteoSAFe/dataset.jsp?task=22b747e8cb0b4524be77680d51a8883c",
+      "dataset_doi": "10.25345/C50P0X24D",
+      "publication_title": "Charting the Cannabis plant chemical space with computational metabolomics",
+      "publication_doi": "10.1007/s11306-024-02125-y",
+      "sample_scope": "Cannabis leaf and flower extracts; named varieties include Amnesia Haze and Royal Dutch Cheese.",
+      "instrument": "Shimadzu LCMS-9030 LC-qToF-MS",
+      "associated_workflow": {
+        "task_id": "cdd0ffbbe4d241c5b4e8437825b7bce2",
+        "url": "https://gnps2.org/status?task=cdd0ffbbe4d241c5b4e8437825b7bce2",
+        "workflow": "classical_networking_workflow",
+        "input_mgf_labels": [
+          "MSV000093886_NEG.mgf",
+          "MSV000093886_POS.mgf"
+        ],
+        "input_status": "WORKFLOW_PARAMETER_REFERENCE_NOT_FILE_VERIFICATION"
+      },
+      "restrictions": [
+        "Dataset registration does not authenticate user-selected MGF files or their labels.",
+        "A GNPS networking task is not an independently verified reference-standard cannabinoid identification.",
+        "Exact sample-level control, blank, replication and experimental polarity must be checked from the accompanying metadata.",
+        "Some dataset files may be inaccessible because the deposit is marked Partial Public.",
+        "No spectrum files have been ingested into the Cannabiverse repository as part of this source registry."
+      ]
+    }
+  ]
+}
