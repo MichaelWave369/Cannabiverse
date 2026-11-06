@@ -58,3 +58,6 @@ jobs:
 
       - name: Validate archaeology evidence and source boundaries
         run: npm run validate:archaeology
+
+      - name: Validate exploratory discovery hypotheses and evidence boundaries
+        run: npm run validate:discovery
