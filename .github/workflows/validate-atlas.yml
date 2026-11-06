@@ -64,3 +64,6 @@ jobs:
 
       - name: Validate Discovery Lab mass feature screening
         run: npm run validate:discovery-lab
+
+      - name: Validate Discovery Lab MGF and MS/MS screening
+        run: npm run validate:msms
