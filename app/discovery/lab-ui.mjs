@@ -1,4 +1,5 @@
 import {parseCSV,analyzeFeatures} from './lab-core.mjs';
+import {parseMGF,screenMSMS,mgfPrecursorRows} from './msms-core.mjs';
 
 const byId=id=>document.getElementById(id);
 const refs={csv:byId('csv'),ppm:byId('ppm'),status:byId('status'),count:byId('count'),featureRows:byId('features'),pairRows:byId('pairs'),export:byId('export'),hypotheses:byId('hypotheses'),targets:byId('targets')};
@@ -97,3 +98,76 @@ async function loadLedger(){
   }
 }
 loadLedger();
+
+let latestMsms=null, localScans=null;
+const msmsIds={file:'mgf-file',input:'mgf-text',source:'source-ref',tolerance:'msms-ppm',status:'msms-status',
+  scanRows:'msms-scans',lossRows:'msms-losses',export:'export-msms',precursor:'precursors'};
+const msms=Object.fromEntries(Object.entries(msmsIds).map(([k,id])=>[k,byId(id)]));
+function clearMsms(){
+  latestMsms=null;localScans=null;
+  msms.scanRows.replaceChildren();msms.lossRows.replaceChildren();
+  msms.export.disabled=true;msms.precursor.disabled=true;
+}
+async function readMgfFile(file){
+  clearMsms();
+  if(!file){msms.status.textContent='No local file selected.';return;}
+  if(file.size>2_000_000){msms.status.textContent='Rejected: MGF file exceeds the 2 MB limit.';return;}
+  try{
+    msms.input.value=await file.text();
+    if(!msms.source.value.trim())msms.source.value='Local file: '+file.name.slice(0,120);
+    msms.status.textContent='Read local file '+file.name+'. Select Screen MS/MS spectra. No bytes uploaded.';
+  }catch(error){msms.status.textContent='Could not read local file: '+error.message;}
+}
+msms.file.addEventListener('change',()=>readMgfFile(msms.file.files?.[0]));
+byId('demo-msms').addEventListener('click',async()=>{
+  clearMsms();
+  msms.status.textContent='Loading synthetic demonstration peak lists…';
+  try{
+    const r=await fetch('../../data/discovery/demo-msms-synthetic.mgf',{cache:'no-cache'});
+    if(!r.ok)throw Error('Synthetic fixture unavailable');
+    msms.input.value=await r.text();
+    msms.source.value='SYNTHETIC_FIXTURE_NO_LAB_MEASUREMENT';
+    msms.status.textContent='Synthetic MS/MS fixture loaded; invented peak lists, not experimental cannabinoid data. Select Screen.';
+  }catch(error){msms.status.textContent='Could not load synthetic demo: '+error.message;}
+});
+byId('run-msms').addEventListener('click',()=>{
+  clearMsms();
+  try{
+    const spectra=parseMGF(msms.input.value);
+    const report=screenMSMS(spectra,{ppm_tolerance:msms.tolerance.value,
+      source_reference:msms.source.value});
+    localScans=spectra;latestMsms=report;
+    for(const scan of report.scans){
+      addRow(msms.scanRows,[scan.spectrum_index+' · '+scan.spectrum_id,scan.precursor_mz.toFixed(6),
+        scan.polarity,scan.peak_count,scan.fragment_count_screen]);
+    }
+    for(const loss of report.loss_matches){
+      addRow(msms.lossRows,[loss.spectrum_id,loss.loss_label,loss.fragment_mz.toFixed(6),
+        loss.error_ppm_precursor.toFixed(3),loss.relative_intensity.toFixed(3)]);
+    }
+    msms.export.disabled=false;msms.precursor.disabled=spectra.length===0;
+    msms.status.textContent=report.scans.length+' MS/MS scans screened; '+report.loss_matches.length+
+      ' common neutral-loss mass coincidences. No structures identified. Metadata and origin remain unverified.';
+  }catch(error){msms.status.textContent='MGF screening rejected: '+error.message;}
+});
+msms.precursor.addEventListener('click',()=>{
+  if(!localScans)return;
+  latest=null;refs.export.disabled=true;
+  try{
+    const rows=mgfPrecursorRows(localScans);
+    if(!rows.length)throw Error('No supported precursor adducts for neutral-mass comparison');
+    const report=analyzeFeatures(rows,{ppm_tolerance:refs.ppm.value});
+    latest=report;render(report);refs.export.disabled=false;
+    refs.status.textContent='MGF precursor mass patterns analyzed. QC data unavailable, so all pairs require review; no molecular identifications.';
+    byId('analysis').scrollIntoView({behavior:'smooth',block:'start'});
+  }catch(error){refs.status.textContent='Precursor analysis rejected: '+error.message;}
+});
+msms.export.addEventListener('click',()=>{
+  if(!latestMsms)return;
+  const bytes=JSON.stringify(latestMsms,null,2)+'\n';
+  const blob=new Blob([bytes],{type:'application/json'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  a.href=url;a.download='cannabiverse-msms-pattern-report.json';
+  document.body.append(a);a.click();a.remove();URL.revokeObjectURL(url);
+});
