@@ -67,3 +67,6 @@ jobs:
 
       - name: Validate Discovery Lab MGF and MS/MS screening
         run: npm run validate:msms
+
+      - name: Validate experimental MGF provenance audit
+        run: npm run validate:discovery-provenance
