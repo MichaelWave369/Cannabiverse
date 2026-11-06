@@ -29,18 +29,22 @@ export function parseMGF(source){
       if(!m.PEPMASS)throw Error('PEPMASS missing from scan '+id);
       const mz=assertNumber(m.PEPMASS.split(/\s+/)[0],'PEPMASS for '+id,50,2000);
       const charge=String(m.CHARGE||'').trim();
-      if(!['1+','+1','1-','-1'].includes(charge))throw Error('Unsupported or missing singly charged CHARGE for '+id);
-      const polarity=charge.includes('+')?'positive':'negative';
-      if(m.IONMODE){
-        const claimed=String(m.IONMODE).toLowerCase().trim();
-        if(!['positive','negative'].includes(claimed)||claimed!==polarity)throw Error('IONMODE and CHARGE conflict for '+id);
-      }
+      const resolved=['1+','+1','1-','-1'].includes(charge);
+      // Some public GNPS MGF peak lists use CHARGE=0. Preserve them for
+      // spectral inspection, but DO NOT infer a neutral precursor/adduct.
+      if(!resolved && charge!=='0')throw Error('Unsupported or missing singly charged CHARGE for '+id);
+      const claimed=String(m.IONMODE||'').toLowerCase().trim();
+      const polarity=resolved?(charge.includes('+')?'positive':'negative'):claimed;
+      if(!['positive','negative'].includes(polarity))throw Error('Unknown CHARGE requires explicit IONMODE for '+id);
+      if(claimed && (!['positive','negative'].includes(claimed)||claimed!==polarity))
+        throw Error('IONMODE and CHARGE conflict for '+id);
       if(m.MSLEVEL && String(m.MSLEVEL).trim()!=='2')throw Error('Only MSLEVEL=2 accepted for '+id);
       if(!current.peaks.length)throw Error('No MS/MS peaks for '+id);
       if(current.peaks.every(p=>p.intensity===0))throw Error('All-zero intensities for '+id);
       const peaks=current.peaks.sort((a,b)=>a.mz-b.mz);
       out.push({spectrum_id:id,spectrum_index:out.length+1,precursor_mz:mz,polarity,
-        adduct:polarity==='positive'?'[M+H]+':'[M-H]-',
+        adduct:resolved?(polarity==='positive'?'[M+H]+':'[M-H]-'):null,
+        precursor_charge_status:resolved?'SINGLY_CHARGED':'UNKNOWN_CHARGE',
         retention_seconds:m.RTINSECONDS?assertNumber(m.RTINSECONDS,'retention time',0,1e8):null,
         source_metadata:{title:m.TITLE||null,scans:m.SCANS||null,spectrum_id:m.SPECTRUMID||null,
           ion_mode:m.IONMODE||null,name_unverified:m.NAME||null},
@@ -80,7 +84,10 @@ export function screenMSMS(spectra,opts={}){
     const qc=informative.length>=6?'FRAGMENT_COUNT_SCREEN_PASS':'LOW_FRAGMENT_INFORMATION';
     scans.push({spectrum_id:s.spectrum_id,spectrum_index:s.spectrum_index,precursor_mz:s.precursor_mz,polarity:s.polarity,
       peak_count:s.peaks.length,peaks_above_1pct:informative.length,total_ion_count:total,base_peak_intensity:base,
-      retention_seconds:s.retention_seconds,fragment_count_screen:qc});
+      retention_seconds:s.retention_seconds,fragment_count_screen:qc,
+      precursor_charge_status:s.precursor_charge_status});
+    // A zero/unknown charge cannot support the simple m/z difference -> Da interpretation.
+    if(s.precursor_charge_status!=='SINGLY_CHARGED')continue;
     for(const target of LOSSES){
       let best=null;
       for(const peak of informative){
@@ -108,6 +115,6 @@ export function screenMSMS(spectra,opts={}){
 
 // Existing v0.1 feature screen can analyze an MGF precursor table but cannot infer sample/blank QC.
 export function mgfPrecursorRows(spectra){
-  return spectra.map(s=>({feature_id:'MGF-'+String(s.spectrum_index).padStart(4,'0'),
+  return spectra.filter(s=>s.adduct!==null).map(s=>({feature_id:'MGF-'+String(s.spectrum_index).padStart(4,'0'),
     mz:s.precursor_mz,adduct:s.adduct,blank_ratio:'',replicates:''}));
 }
