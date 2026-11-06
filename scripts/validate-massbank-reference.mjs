@@ -13,7 +13,8 @@ assert.equal(report.reference_record_count,3);
 assert.deepEqual(report.records.map(r=>r.measured_peak_count),[15,6,1]);
 assert.deepEqual(report.records.map(r=>r.ion_mode),['POSITIVE','POSITIVE','NEGATIVE']);
 assert.deepEqual(report.records.map(r=>r.fragment_count_screen),
-  ['FRAGMENT_COUNT_SCREEN_PASS','FRAGMENT_COUNT_SCREEN_PASS','LOW_FRAGMENT_INFORMATION']);
+  ['LOW_FRAGMENT_INFORMATION','LOW_FRAGMENT_INFORMATION','LOW_FRAGMENT_INFORMATION'],
+  'Precursor-dominated spectra cannot pass the simple 1% fragment-count gate; not a judgment of reference-standard validity');
 assert.ok(report.records.every(r=>r.attribution.authors&&r.source_url.includes(manifest.source_revision)));
 assert.ok(report.records.every(r=>r.license==='CC BY'));
 assert.ok(report.records.every(r=>r.canonical_atlas_cross_reference==='CPA-CAN-0001'));
