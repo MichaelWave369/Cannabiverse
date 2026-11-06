@@ -33,7 +33,7 @@
       "evidence_url": "../archaeology/evidence-v1.json",
       "expected_dataset_id": "cannabiverse-archaeology-evidence",
       "expected_contract_version": "1.0.0",
-      "human_efficacy_warning": "Ancient cannabis presence does not establish human clinical efficacy, safety, dosing, or therapeutic intent. Archaeology is not clinical guidance."
+      "human_efficacy_warning": "Clinical efficacy, safety, and therapeutic intent are not established by ancient archaeological findings. Ancient evidence does not support dosing or treatment recommendations."
     }
   ],
   "consumer_links": {
