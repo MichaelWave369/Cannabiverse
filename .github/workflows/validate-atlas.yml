@@ -70,3 +70,17 @@ jobs:
 
       - name: Validate experimental MGF provenance audit
         run: npm run validate:discovery-provenance
+
+      - name: Validate experimental MassBank reference standards
+        run: npm run validate:massbank-reference
+
+      - name: Generate measured reference spectrum benchmark report
+        run: npm run build:massbank-report && npm run check:massbank-report
+
+      - name: Upload measured reference spectrum benchmark report
+        uses: actions/upload-artifact@v4
+        with:
+          name: cannabiverse-massbank-benchmark-v0-4
+          path: data/discovery/references/massbank/benchmark-report-v1.json
+          if-no-files-found: error
+
