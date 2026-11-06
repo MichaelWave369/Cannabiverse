@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cannabiverse | Ancient Cannabis & Archaeochemistry</title>
+<meta name="description" content="Source-governed archaeology of cannabis: Tunnug 1, Jirzankal, Pazyryk and Herodotus.">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#08140e;color:#f1f6ef}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#214533,#08140e 70%)}
+main{width:min(1200px,calc(100% - 32px));margin:auto;padding:24px 0 84px}
+a{color:#efce84}a:focus-visible,select:focus-visible{outline:3px solid #f7cc73;outline-offset:3px}
+header{display:flex;flex-wrap:wrap;gap:14px;font-size:14px}.eyebrow{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#efce84;font-weight:700}
+h1{font-size:clamp(32px,6vw,57px);line-height:1.1;margin:20px 0}h2{font-size:22px}p{line-height:1.65}
+.lead{max-width:900px;color:#d2e4d4}.note{border-radius:14px;background:#32291b;border:1px solid #ae9154;padding:18px;margin:18px 0;color:#fff1ce}
+.toolbar{display:flex;flex-wrap:wrap;gap:16px;margin:20px 0;align-items:end}.toolbar label{display:flex;flex-direction:column;gap:8px;font-weight:600;min-width:min(100%,270px)}
+select{padding:12px;border-radius:9px;background:#12281c;color:inherit;border:1px solid #83a68a}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:14px}
+.card{border:1px solid #52735b;background:#14291e;border-radius:16px;padding:20px}
+.card h2{margin:8px 0;font-size:20px}.muted{color:#b3cbb9;font-size:13px}.tag{font-size:11px;text-transform:uppercase;letter-spacing:.8px;font-weight:750;color:#f1d084}
+.sources{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.sources a{font-size:12px}
+.border{border-top:1px solid #48634f;margin-top:14px;padding-top:12px}
+strong{color:#f4d68f}footer{margin-top:38px;color:#bbd1c3;font-size:12px}
+#status{margin-top:18px}#cards:empty{display:none}
+</style></head><body><main>
+<header><a href="../../">← Cannabiverse</a><a href="../bridge/">Research Bridge</a><a href="../pain/">Pain & ECS</a><a href="https://michaelwave369.github.io/cannabis-as-sacred-medicine/#archaeology">Sacred Medicine</a></header>
+<p class="eyebrow">Φ Research Bridge · content release 4 · archaeological evidence</p>
+<h1>Ancient Cannabis & Archaeochemistry</h1>
+<p class="lead">Dated seeds, detected chemical signals, burial objects, ancient texts and contested interpretations are different kinds of evidence. Explore them without confusing historical practice with modern medical efficacy.</p>
+<div class="note"><strong>Interpretation firewall:</strong> Tunnug 1 hair results have been challenged over possible external exposure. CBN signals do not quantify ancient THC or prove intoxication. A burial with cannabis equipment is not evidence that the Ice Maiden was treated for cancer. Ancient use does not establish clinical benefits or safety.</div>
+<div class="toolbar"><label for="site">Historical context <select id="site"><option value="all">All contexts</option></select></label><label for="lane">Evidence lane <select id="lane"><option value="all">All evidence types</option></select></label></div>
+<p role="status" id="status" class="muted">Checking the versioned Cannabiverse evidence feed…</p>
+<section id="cards" class="grid" aria-label="Archaeology evidence cards"></section>
+<footer><a href="../../data/archaeology/evidence-v1.json">Inspect governed data</a> · <a href="../../docs/archaeology-v1.md">Methods, provenance and corrections policy</a>. Source links point to the original publications or independently reported critiques. No advice, protocols or personalized medicine.</footer>
+</main><script>
+(function(){
+'use strict';
+const site=document.getElementById('site'),lane=document.getElementById('lane'),cards=document.getElementById('cards'),status=document.getElementById('status');
+let data=null;
+const labels={dated_botanical_material:'Dated botanical material',analytical_biomarker_signal:'Analytical biomarker signal',contested_interpretation:'Contested interpretation',contextual_inference:'Contextual inference',archaeological_context:'Archaeological artifacts',historical_text:'Ancient text',interpretive_boundary:'Interpretation boundary'};
+function el(tag,text,cls){const n=document.createElement(tag);if(text!==undefined)n.textContent=String(text);if(cls)n.className=cls;return n;}
+function option(parent,value,label){const o=el('option',label);o.value=value;parent.append(o);}
+function link(text,url){const a=el('a',text);a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;}
+function render(){
+ if(!data)return;
+ const filtered=data.claims.filter(c=>(site.value==='all'||c.site_id===site.value)&&(lane.value==='all'||c.lane===lane.value));
+ cards.replaceChildren();
+ for(const c of filtered){
+  const s=data.sites.find(x=>x.id===c.site_id),article=el('article',undefined,'card');
+  article.append(el('p',(labels[c.lane]||c.lane)+' · '+c.evidence_strength.replaceAll('_',' '),'tag'),el('h2',c.title),el('p',s.name+' · '+s.period,'muted'),el('p',c.summary),el('p','Method: '+c.method,'muted'),el('p','Scope: '+c.model,'muted'));
+  const limit=el('p',undefined,'border');limit.append(el('strong','Limit: '),document.createTextNode(c.boundary));article.append(limit);
+  if(c.related_compounds.length){const m=el('p',undefined,'muted');m.append(document.createTextNode('Contextual analytes (not human-effect proof): '));
+   for(const ref of c.related_compounds){m.append(link(ref.name+' · '+ref.atlas_id,'../bridge/?id='+encodeURIComponent(ref.atlas_id)),document.createTextNode('  '));}article.append(m);}
+  const row=el('div',undefined,'sources');
+  for(const id of c.source_ids){const s=data.sources.find(x=>x.id===id);if(s)row.append(link(s.title,s.url));}
+  article.append(row);cards.append(article);
+ }
+ status.textContent=filtered.length+' bounded claim(s) · '+data.sites.length+' contexts · '+data.sources.length+' sources · reviewed '+data.release_date;
+}
+async function init(){
+ try{
+  const r=await fetch('../../data/archaeology/evidence-v1.json',{cache:'no-cache'});if(!r.ok)throw Error('HTTP '+r.status);
+  const v=await r.json();if(v.contract_version!=='1.0.0'||v.dataset_id!=='cannabiverse-archaeology-evidence'||!Array.isArray(v.claims)||!Array.isArray(v.sources)||!Array.isArray(v.sites))throw Error('Unexpected scientific data contract');
+  data=v;for(const s of data.sites)option(site,s.id,s.name);for(const l of [...new Set(data.claims.map(c=>c.lane))])option(lane,l,labels[l]||l);
+  site.addEventListener('change',render);lane.addEventListener('change',render);render();
+ }catch(error){cards.replaceChildren();status.textContent='Source evidence unavailable or incompatible. No unverified claims are displayed.';}
+}
+init();
+})();
+</script></body></html>
