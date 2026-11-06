@@ -26,11 +26,19 @@
       "expected_dataset_id": "cannabiverse-pain-ecs-evidence",
       "expected_contract_version": "1.0.0",
       "human_efficacy_warning": "General clinical efficacy and safety for all cannabinoid and whole-plant products are not established. Product-specific short-term pain benefits are generally small, with adverse effects and important evidence gaps."
+    },
+    {
+      "id": "archaeology",
+      "title": "Ancient cannabis archaeology and material evidence",
+      "evidence_url": "../archaeology/evidence-v1.json",
+      "expected_dataset_id": "cannabiverse-archaeology-evidence",
+      "expected_contract_version": "1.0.0",
+      "human_efficacy_warning": "Ancient cannabis presence does not establish human clinical efficacy, safety, dosing, or therapeutic intent. Archaeology is not clinical guidance."
     }
   ],
   "consumer_links": {
     "cannabiverse_bridge": "https://michaelwave369.github.io/Cannabiverse/app/bridge/",
     "sacred_medicine": "https://michaelwave369.github.io/cannabis-as-sacred-medicine/#research-bridge"
   },
-  "content_release": "3.0.0"
+  "content_release": "4.0.0"
 }
