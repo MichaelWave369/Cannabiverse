@@ -1,0 +1,65 @@
+{
+  "schema": "cannabiverse-measured-reference-benchmark-v0.4",
+  "dataset_id": "massbank-thc-reference-standards-v1",
+  "created_at": "2026-11-06",
+  "source_repository": "https://github.com/MassBank/MassBank-data",
+  "source_revision": "c1c272f44837881d2f310a8171739a6c2223408f",
+  "source_license": "CC BY (record-specific, version not stated)",
+  "records": [
+    {
+      "accession": "MSBNK-Eawag-EQ362901",
+      "source_path": "Eawag/MSBNK-Eawag-EQ362901.txt",
+      "local_path": "MSBNK-Eawag-EQ362901.txt",
+      "source_blob_sha": "86422ada619c67608ba677914c9f237eadc4c219",
+      "contributor": "Stravs M, Schymanski E, Singer H, Eawag; Thomaidis N, University of Athens",
+      "original_copyright": "Copyright (C) 2015 Eawag, Duebendorf, Switzerland",
+      "source_url": "https://github.com/MassBank/MassBank-data/blob/c1c272f44837881d2f310a8171739a6c2223408f/Eawag/MSBNK-Eawag-EQ362901.txt",
+      "compound_label_from_source": "delta9-Tetrahydrocannabinol",
+      "atlas_id": "CPA-CAN-0001",
+      "acquisition": "LC-ESI-QFT / HCD",
+      "precursor_type": "[M+H]+",
+      "precursor_mz": 315.2319,
+      "peaks": 15,
+      "license": "CC BY"
+    },
+    {
+      "accession": "MSBNK-Athens_Univ-AU158301",
+      "source_path": "Athens_Univ/MSBNK-Athens_Univ-AU158301.txt",
+      "local_path": "MSBNK-Athens_Univ-AU158301.txt",
+      "source_blob_sha": "5eafcf3bdc6f9e4dba1bcc741c8738dddf5a5d82",
+      "contributor": "Nikiforos Alygizakis, Reza Aalizadeh, Nikolaos Thomaidis, University of Athens",
+      "original_copyright": "Copyright (C) 2016 Department of Chemistry, University of Athens",
+      "source_url": "https://github.com/MassBank/MassBank-data/blob/c1c272f44837881d2f310a8171739a6c2223408f/Athens_Univ/MSBNK-Athens_Univ-AU158301.txt",
+      "compound_label_from_source": "delta9-Tetrahydrocannabinol",
+      "atlas_id": "CPA-CAN-0001",
+      "acquisition": "LC-ESI-QTOF / CID",
+      "precursor_type": "[M+H]+",
+      "precursor_mz": 315.2319,
+      "peaks": 6,
+      "license": "CC BY"
+    },
+    {
+      "accession": "MSBNK-Athens_Univ-AU158354",
+      "source_path": "Athens_Univ/MSBNK-Athens_Univ-AU158354.txt",
+      "local_path": "MSBNK-Athens_Univ-AU158354.txt",
+      "source_blob_sha": "9e751de10085de743d9f1bf5e50f6f62b831db2f",
+      "contributor": "Nikiforos Alygizakis, Reza Aalizadeh, Nikolaos Thomaidis, University of Athens",
+      "original_copyright": "Copyright (C) 2016 Department of Chemistry, University of Athens",
+      "source_url": "https://github.com/MassBank/MassBank-data/blob/c1c272f44837881d2f310a8171739a6c2223408f/Athens_Univ/MSBNK-Athens_Univ-AU158354.txt",
+      "compound_label_from_source": "delta9-Tetrahydrocannabinol",
+      "atlas_id": "CPA-CAN-0001",
+      "acquisition": "LC-ESI-QTOF / CID",
+      "precursor_type": "[M-H]-",
+      "precursor_mz": 313.2173,
+      "peaks": 1,
+      "license": "CC BY"
+    }
+  ],
+  "scientific_boundaries": [
+    "These are authentic published MassBank record files annotated as measurements of a known reference standard, not new Cannabiverse experiments or ancient cannabis residues.",
+    "Source records assert confidence standard compound, not independent validation by Cannabiverse of the compound, vendor acquisition, or all metadata.",
+    "A positive/negative neutral-mass agreement does not uniquely identify the compound and does not prove occurrence in a biological sample.",
+    "Different instrument types, ionization modes and collision energies make fragment-count and intensity comparisons non-equivalent.",
+    "No experimental source is equated to the CC0-labeled MassIVE cannabis dataset MSV000093886."
+  ]
+}
