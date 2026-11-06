@@ -193,3 +193,7 @@ An additional, separate [Pain & Endocannabinoid System evidence domain](https://
 ## Φ Research Bridge content release v4: Ancient Cannabis & Archaeochemistry
 
 [Ancient Cannabis Evidence Explorer](https://michaelwave369.github.io/Cannabiverse/app/archaeology/) presents source-linked Tunnug 1 (2026), Jirzankal (2019), Pazyryk kurgan 2, and Herodotus records from [`data/archaeology/evidence-v1.json`](data/archaeology/evidence-v1.json). The v2 transport manifest is unchanged; content release is `4.0.0`. Ancient hair biomarkers, residue chemistry, excavation context, ancient texts, and interpretive disputes are separate evidence lanes. See [governance and limitations](docs/archaeology-v1.md) and run `npm run validate:archaeology`. **Ancient use does not establish medical efficacy.** The 145-molecule canon is unchanged.
+
+## Cannabinoid Discovery Hypotheses v1 (research-only)
+
+[Read the evidence-bound research plan](docs/discovery-hypotheses-v1.md), backed by [the source-governed hypotheses ledger](data/discovery/hypotheses-v1.json). Connects 2026 Tunnug ancient-seed sequencing, 2019 Jirzankal/Jiayi biomarker data, the 2025 cannabis pangenome and Kendrick filtering, and 2026 MassQL class-level discovery methods with **seven already provisional C7 targets**. Research predictions are falsifiable and retain reference receipts. No measured new compound, confirmed identity, occurrence, clinical effect, or permanent canon ID is asserted. Run `npm run validate:discovery`; the existing research bridge and 145 canonical molecular records remain untouched.
