@@ -31,7 +31,7 @@ assert.ok(precursor.pairs.length>0);
 assert.ok(precursor.pairs.every(x=>x.review_status==='QC_REVIEW'));
 const simple='BEGIN IONS\nTITLE=A\nPEPMASS=300.1 100\nCHARGE=1+\nMSLEVEL=2\n70.1 100\nEND IONS\n';
 assert.equal(parseMGF(simple).length,1);
-const gnpsUnknown=parseMGF(simple.replace('CHARGE=1+','CHARGE=0\\nIONMODE=Positive'));
+const gnpsUnknown=parseMGF(simple.replace('CHARGE=1+','CHARGE=0\nIONMODE=Positive'));
 assert.equal(gnpsUnknown.length,1);
 assert.equal(gnpsUnknown[0].precursor_charge_status,'UNKNOWN_CHARGE');
 assert.equal(gnpsUnknown[0].adduct,null);
