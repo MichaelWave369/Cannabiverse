@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cannabiverse | Discovery Lab v0.1</title>
+<meta name="description" content="A local-first, transparent mass-spacing screen for cannabinoid research hypotheses. Not chemical identification.">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#06110c;color:#e9f7ed}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#1e4530,#06110c 68%);min-height:100vh}
+main{max-width:1180px;margin:auto;padding:24px 18px 80px}
+header{display:flex;gap:16px;flex-wrap:wrap;font-size:14px}a{color:#f1d592}
+h1{font-size:clamp(34px,6vw,60px);margin:16px 0;line-height:1.1;letter-spacing:-1.5px}h2{margin:0 0 12px}
+p{line-height:1.62}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#eacb80;font-weight:700}
+.muted{color:#b7cebe}.notice{border:1px solid #be9b53;background:#342919;border-radius:14px;padding:15px 18px;color:#ffe8ba;margin:20px 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:14px}
+.panel{border:1px solid #486d56;border-radius:16px;padding:20px;background:#12271c;margin:18px 0}
+button{border:1px solid #8db79d;border-radius:10px;background:#1b4b30;color:#f4fbf4;padding:11px 16px;font-weight:700;cursor:pointer}
+button:hover{background:#286544}button:disabled{opacity:.4;cursor:not-allowed}
+button.secondary{background:#182e21;border-color:#577663}
+button:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ffd479;outline-offset:3px}
+textarea{width:100%;min-height:200px;resize:vertical;padding:14px;border-radius:12px;border:1px solid #76977d;background:#081810;color:#d9f4e5;font-family:ui-monospace,monospace;font-size:12px;line-height:1.6}
+.actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:14px 0}
+label{font-size:14px;font-weight:650}input[type=number]{padding:8px;width:85px;border-radius:8px;background:#091b11;color:inherit;border:1px solid #76977d}
+.table-wrap{overflow-x:auto;border:1px solid #42634b;border-radius:12px;margin-top:10px}
+table{border-collapse:collapse;width:100%;font-size:13px;min-width:590px}th,td{text-align:left;padding:12px;border-bottom:1px solid #2f4c38}th{color:#f3d594;background:#203526}tbody tr:last-child td{border:0}
+.tag{color:#edcf86;font-size:12px;font-weight:700;letter-spacing:.3px}
+.card{border:1px solid #42634b;border-radius:12px;padding:16px;background:#11261a}
+.card h3{margin:8px 0}.card p{font-size:13px;color:#bfd3c5}
+hr{border:0;border-top:1px solid #3e5b48;margin:22px 0}
+#status{font-weight:650}small{color:#b5cebe}footer{margin-top:40px;font-size:12px;color:#b4cbbb}
+</style></head><body><main>
+<header><a href="../../">← Cannabiverse</a><a href="../archaeology/">Archaeochemistry</a><a href="../bridge/">Research Bridge</a><a href="../../docs/discovery-hypotheses-v1.md">Hypothesis methods</a></header>
+<p class="eyebrow">Φ Cannabiverse · Discovery Lab v0.1 · Research screening only</p>
+<h1>Find patterns. Not imaginary molecules.</h1>
+<p class="muted">A local-first exploratory screen for high-resolution mass-feature tables. Enter feature data, compare CH₂-separated neutral masses, and inspect quality-control flags. Your table stays in this browser; there is no upload, remote database request containing it, or account requirement.</p>
+<div class="notice"><strong>Not a cannabinoid identification system.</strong> A Kendrick mass relationship can arise from many chemical families, contaminants, and artifacts. This release does not analyze raw instrument spectra, perform MassQL searches, validate fragment ions, establish natural occurrence, or generate medical claims.</div>
+<section class="panel" aria-labelledby="analysis">
+<h2 id="analysis">Neutral-mass spacing workbench</h2>
+<p class="muted">Required CSV columns: <code>feature_id,mz,adduct,blank_ratio,replicates</code>. Supports only single-charge <code>[M+H]+</code> and <code>[M-H]-</code>. Leave QC fields empty if unavailable; absent QC is never a pass.</p>
+<div class="actions">
+<button type="button" id="demo">Load synthetic demonstration</button>
+<label for="ppm">Mass tolerance (ppm) <input type="number" id="ppm" min="0.1" max="50" step="0.1" value="10"></label>
+</div>
+<label for="csv">CSV features</label>
+<textarea id="csv" spellcheck="false" placeholder="Load the synthetic demonstration or paste a feature table; no instrument files are uploaded."></textarea>
+<div class="actions"><button type="button" id="run">Analyze features locally</button><button type="button" class="secondary" id="export" disabled>Export transparent JSON report</button></div>
+<p role="status" id="status" class="muted">No data analyzed. Select the synthetic demo to explore.</p>
+</section>
+<section class="panel" aria-label="Screening results">
+<h2>Results and evidence boundaries</h2>
+<p id="count" class="muted">No results yet.</p>
+<div class="table-wrap"><table><thead><tr><th>Feature</th><th>Neutral mass (Da)</th><th>KMD</th><th>QC status</th></tr></thead><tbody id="features"></tbody></table></div>
+<h3>CH₂ mass-spacing relationships</h3><div class="table-wrap"><table><thead><tr><th>Feature pair</th><th>CH₂ steps</th><th>Mass error (ppm)</th><th>Screening flag</th></tr></thead><tbody id="pairs"></tbody></table></div>
+<p class="muted">Only measured mass spacing is calculated. QC screening uses illustrative sample/blank ratio ≥5 and replicate count ≥2, neither sufficient to identify a molecule. KMD means nominal Kendrick mass minus Kendrick mass, using CH₂ exact mass 14.01565006446 Da.</p>
+</section>
+<section class="panel" aria-labelledby="hyp-title">
+<h2 id="hyp-title">Governed discovery questions</h2>
+<div id="hypotheses" class="grid"><p class="muted">Loading the versioned hypothesis ledger…</p></div>
+<hr>
+<h2>Existing provisional targets (not identified here)</h2>
+<p class="muted">These seven targets already exist in Cannabiverse. We do not associate them with a mass-feature match without source-backed structural evidence.</p>
+<div id="targets" class="grid"></div>
+</section>
+<footer>Scientific background: <a href="https://doi.org/10.1021/acsmeasuresciau.5c00106" rel="noopener noreferrer" target="_blank">2025 Kendrick filtering</a> · <a href="https://doi.org/10.1002/rcm.70112" rel="noopener noreferrer" target="_blank">2026 MassQL study</a> · <a href="../../data/discovery/hypotheses-v1.json">Versioned hypothesis ledger</a>. This prototype has no clinical, legal, diagnostic, or compound-identity authority.</footer>
+</main><script type="module" src="./lab-ui.mjs"></script></body></html>
