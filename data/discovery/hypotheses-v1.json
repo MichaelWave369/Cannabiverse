@@ -1,0 +1,223 @@
+{
+  "dataset_id": "cannabiverse-discovery-hypotheses",
+  "contract_version": "1.0.0",
+  "release_date": "2026-11-06",
+  "description": "Testable research questions connecting ancient cannabis archaeochemistry, preservation, genomics, and modern analytical methods. No measured results or newly discovered cannabinoid identities are asserted.",
+  "authority": "research-hypothesis-ledger-only",
+  "doctrine": "HYPOTHESIS ≠ OBSERVATION ≠ TENTATIVE_ANNOTATION ≠ CONFIRMED_IDENTITY ≠ OCCURRENCE ≠ BIOACTIVITY ≠ HUMAN_EFFECT ≠ SAFETY",
+  "sources": [
+    {
+      "id": "DISC-SRC-TUNNUG-2026",
+      "title": "Direct evidence for psychoactive cannabis use 2,800 years ago",
+      "year": 2026,
+      "kind": "archaeology_primary_report",
+      "url": "https://doi.org/10.1126/science.aeg3800",
+      "role": "Ancient botanical material and contested hair molecular signals; sequencing underway as stated in Bern's release.",
+      "evidence_boundary": "No assembled ancient cannabis genotype, variant calls, or full cannabinoid profile have been published in this source ledger."
+    },
+    {
+      "id": "DISC-SRC-BERN-2026",
+      "title": "Cannabis was used as an intoxicant as early as 2,800 years ago",
+      "year": 2026,
+      "kind": "institutional_release",
+      "url": "https://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/cannabis_was_used_as_an_intoxicant_as_early_as_2800_years_ago/index_eng.html",
+      "role": "Reports excellent DNA preservation and sequencing begun; no genetic sequence results yet.",
+      "evidence_boundary": "Announcement of ongoing sequencing is not evidence of specific synthase or thioesterase alleles."
+    },
+    {
+      "id": "DISC-SRC-REN-2019",
+      "title": "The origins of cannabis smoking: Chemical residue evidence from the first millennium BCE in the Pamirs",
+      "year": 2019,
+      "kind": "archaeology_primary_study",
+      "url": "https://doi.org/10.1126/sciadv.aaw1391",
+      "role": "Separate CBN-positive burning residues at Jirzankal and CBD, CBL, CBN in preserved Jiayi cannabis; one Jirzankal brazier also reported cannabivarin.",
+      "evidence_boundary": "Historical chemical signals do not demonstrate ancient relative potencies, novelty, or reliable original concentrations."
+    },
+    {
+      "id": "DISC-SRC-PANGENOME-2025",
+      "title": "Domesticated cannabinoid synthases amid a wild mosaic cannabis pangenome",
+      "year": 2025,
+      "kind": "peer_reviewed_genomics",
+      "url": "https://doi.org/10.1038/s41586-025-09065-0",
+      "role": "Reports genome structure diversity, relatively conserved THCAS/CBDAS, and ALT/BKR variation associated with THCV/CBDV.",
+      "evidence_boundary": "Correlations from modern genomes are not evidence that an ancient sample carried the relevant variants."
+    },
+    {
+      "id": "DISC-SRC-KMD-2025",
+      "title": "Kendrick Mass Defect Filtering Enables High-Throughput Untargeted Annotation of Minor Phytocannabinoids",
+      "year": 2025,
+      "kind": "peer_reviewed_analytical_methods",
+      "url": "https://doi.org/10.1021/acsmeasuresciau.5c00106",
+      "role": "Reports filtering of untargeted HRMS from 50 inflorescence samples, yielding 61 annotated phytocannabinoids across C1–C7 homologs and other families.",
+      "evidence_boundary": "Annotation is not necessarily isolation, standard confirmation, or new-compound identification."
+    },
+    {
+      "id": "DISC-SRC-MASSQL-2026",
+      "title": "A MassQL-Based Framework for Rule-Guided MS/MS Class-Level Retrieval and Analog Discovery of Cannabinoids",
+      "year": 2026,
+      "kind": "peer_reviewed_analytical_methods",
+      "url": "https://doi.org/10.1002/rcm.70112",
+      "role": "Demonstrates rule-based MS/MS class retrieval on public data, highlighting analog-like features missing from spectral libraries.",
+      "evidence_boundary": "Class-level matches are discovery candidates, not confirmed molecular structures."
+    },
+    {
+      "id": "DISC-SRC-LINCIANO-2021",
+      "title": "The novel heptyl phorolic acid cannabinoids content in different Cannabis sativa L. accessions",
+      "year": 2021,
+      "kind": "peer_reviewed_candidate_characterization",
+      "url": "https://doi.org/10.1016/j.talanta.2021.122704",
+      "role": "Source of existing seven Candabiverse C7 provisional entries and their different statuses.",
+      "evidence_boundary": "CBGPA/CBCPA putative detection is distinct from other search targets not detected in this study."
+    },
+    {
+      "id": "DISC-SRC-GENOMICS-2021",
+      "title": "Large-scale whole-genome resequencing unravels the domestication history of Cannabis sativa",
+      "year": 2021,
+      "kind": "peer_reviewed_genomics",
+      "url": "https://doi.org/10.1126/sciadv.abg2286",
+      "role": "Provides modern background in ancestry, domestication, and cannabinoid synthase selection.",
+      "evidence_boundary": "Modern population inference does not directly reconstruct prehistoric biochemistry."
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "DISC-HYP-001",
+      "title": "Ancient genome comparison may reveal changes in precursor supply",
+      "priority": 1,
+      "lane": "comparative_genomics",
+      "status": "HYPOTHESIS_ONLY",
+      "basis": "Tunnug seed DNA sequencing is underway; a modern cannabis pangenome associates ALT/BKR variation with rare varin-type cannabinoids.",
+      "prediction": "When high-quality, authenticated ancient genotype data become available, comparison with modern references may identify ancestral states and differences in fatty-acid precursor-related loci.",
+      "disconfirming_observation": "Ancient reads do not cover relevant loci or observed variants do not differ in ways that correlate with chemotype.",
+      "provisional_ids": [],
+      "canonical_ids": [
+        "CPA-CAN-0006",
+        "CPA-CAN-0051"
+      ],
+      "source_ids": [
+        "DISC-SRC-TUNNUG-2026",
+        "DISC-SRC-BERN-2026",
+        "DISC-SRC-PANGENOME-2025",
+        "DISC-SRC-GENOMICS-2021"
+      ],
+      "needed_data": [
+        "Published authenticated ancient sequences and mapping quality",
+        "Ancient DNA damage/contamination assessment",
+        "Reference pangenome and orthology-aware comparison"
+      ],
+      "limits": "This is an evolutionary research hypothesis. No ancient sequence data or new cannabinoids are identified here; genotype alone does not measure compound production."
+    },
+    {
+      "id": "DISC-HYP-002",
+      "title": "Re-screen long-chain cannabinoid acid targets against current MS/MS evidence",
+      "priority": 1,
+      "lane": "analytical_reannotation",
+      "status": "HYPOTHESIS_ONLY",
+      "basis": "Cannabiverse already catalogs putative C7 acids CBGPA and CBCPA, and five not-detected search targets. Contemporary KMD and MassQL methods could audit them against independent modern spectra.",
+      "prediction": "At least some candidate-family chemical signatures may be prioritized in independent datasets; authentic standard confirmation could distinguish real compounds from isomeric or instrument artifacts.",
+      "disconfirming_observation": "No reproducible features survive blanks, retention-time validation, independently acquired MS/MS, or comparison to plausible isomers.",
+      "provisional_ids": [
+        "CPA-PROV-0001",
+        "CPA-PROV-0002",
+        "CPA-PROV-0003",
+        "CPA-PROV-0004",
+        "CPA-PROV-0005",
+        "CPA-PROV-0006",
+        "CPA-PROV-0007"
+      ],
+      "canonical_ids": [
+        "CPA-CAN-0032",
+        "CPA-CAN-0068",
+        "CPA-CAN-0076"
+      ],
+      "source_ids": [
+        "DISC-SRC-LINCIANO-2021",
+        "DISC-SRC-KMD-2025",
+        "DISC-SRC-MASSQL-2026"
+      ],
+      "needed_data": [
+        "Open peak tables or raw LC-HRMS/MS datasets with metadata",
+        "Reference/blank/replicate comparisons",
+        "Orthogonal structural confirmation for putative hits"
+      ],
+      "limits": "Missing an entry in the 145-record atlas is not proof a compound is novel or naturally produced; no promotions to confirmed canon from mass matches alone."
+    },
+    {
+      "id": "DISC-HYP-003",
+      "title": "Ancient preservation matrices create different cannabinoid observability profiles",
+      "priority": 2,
+      "lane": "preservation_chemistry",
+      "status": "HYPOTHESIS_ONLY",
+      "basis": "The 2019 study documents CBN in burned Jirzankal braziers and CBD/CBL/CBN in desiccated Jiayi material; 2026 Tunnug hair reports disputed CBN-consistent signals.",
+      "prediction": "The same modern reference mixture may yield markedly different detectable chemical profiles in fresh, aged, heated, buried, and contamination-controlled matrices.",
+      "disconfirming_observation": "Profiles show no repeatable matrix-associated differences beyond analytical noise and blank contamination.",
+      "provisional_ids": [],
+      "canonical_ids": [
+        "CPA-CAN-0076",
+        "CPA-CAN-0047",
+        "CPA-CAN-0064"
+      ],
+      "source_ids": [
+        "DISC-SRC-REN-2019",
+        "DISC-SRC-TUNNUG-2026"
+      ],
+      "needed_data": [
+        "Published raw chromatograms and assignments",
+        "Matrix-specific negative controls and processing metadata",
+        "Independent controlled reference observations from appropriately equipped laboratories"
+      ],
+      "limits": "Do not back-calculate original THC potency or treat preservation products as automatically newly biosynthesized phytocannabinoids."
+    },
+    {
+      "id": "DISC-HYP-004",
+      "title": "Kendrick homolog patterns and MassQL fragments can prioritize unknown features",
+      "priority": 1,
+      "lane": "computational_chemistry",
+      "status": "HYPOTHESIS_ONLY",
+      "basis": "Peer-reviewed 2025 KMD and 2026 MassQL research provide complementary, interpretable discovery filters for homologous and structurally similar molecules.",
+      "prediction": "A combined feature-ranking pipeline may flag reproducible cannabinoid-like signals that conventional reference-library matching misses.",
+      "disconfirming_observation": "Ranked candidate features are fully explained by known adducts, isotopes, in-source fragments, degradation products, or contaminants.",
+      "provisional_ids": [],
+      "canonical_ids": [
+        "CPA-CAN-0001",
+        "CPA-CAN-0047",
+        "CPA-CAN-0076"
+      ],
+      "source_ids": [
+        "DISC-SRC-KMD-2025",
+        "DISC-SRC-MASSQL-2026"
+      ],
+      "needed_data": [
+        "Open MS1/MS2 reference datasets with documented licenses",
+        "Mass defect and isotope/adduct de-duplication",
+        "Cross-sample prevalence and source metadata",
+        "Independent chemical identification"
+      ],
+      "limits": "A predicted match, molecular mass, graph edge, or structure proposal is never by itself a compound discovery."
+    },
+    {
+      "id": "DISC-HYP-005",
+      "title": "Historical biomarker findings must be separated from clinical and natural-occurrence claims",
+      "priority": 1,
+      "lane": "evidence_quality",
+      "status": "HYPOTHESIS_ONLY",
+      "basis": "Ancient hair, funeral braziers, preserved botanical samples, and modern cannabis extracts carry different preservation, contamination, and identification constraints.",
+      "prediction": "Explicit sample-matrix provenance and negative-control status will reduce false promotion of historical residue signals to naturally biosynthesized or medically active molecules.",
+      "disconfirming_observation": "The ledger does not distinguish source matrices or independent assessment finds unresolved same-matrix contradictions.",
+      "provisional_ids": [],
+      "canonical_ids": [
+        "CPA-CAN-0076"
+      ],
+      "source_ids": [
+        "DISC-SRC-TUNNUG-2026",
+        "DISC-SRC-REN-2019",
+        "DISC-SRC-KMD-2025"
+      ],
+      "needed_data": [
+        "Source-specific controls, blanks, and sample metadata",
+        "Source quality review including competing interpretations"
+      ],
+      "limits": "No conclusions about clinical effect, safety, historical dosage, intentional use, or psychoactivity are drawn by the discovery ledger."
+    }
+  ]
+}
