@@ -61,3 +61,6 @@ jobs:
 
       - name: Validate exploratory discovery hypotheses and evidence boundaries
         run: npm run validate:discovery
+
+      - name: Validate Discovery Lab mass feature screening
+        run: npm run validate:discovery-lab
