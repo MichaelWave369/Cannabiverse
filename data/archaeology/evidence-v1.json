@@ -1,0 +1,268 @@
+{
+  "contract_version": "1.0.0",
+  "dataset_id": "cannabiverse-archaeology-evidence",
+  "release_date": "2026-11-06",
+  "topic": "Ancient Cannabis & Archaeochemistry",
+  "description": "Site-specific archaeology, dated botanical finds, analytical markers, ancient testimony, interpretation disputes, and explicit limits. No new phytocannabinoid canon or clinical claims.",
+  "editorial_notice": "Curated foundational sources and critical reporting, not a systematic archaeology review. Methodologic uncertainty and independent critique are first-class records.",
+  "medical_boundary": "Ancient ritual or presumed medicinal use does not establish medical efficacy or safety. Archaeological evidence cannot justify replacing clinical care.",
+  "sites": [
+    {
+      "id": "ARCH-SITE-TUNNUG1",
+      "name": "Tunnug 1",
+      "region": "Uyuk Valley, Tuva, southern Siberia",
+      "period": "early eighth century BCE (approximately 2,800 years ago)",
+      "culture": "Early Scythian / Arzhan horizon",
+      "site_context": "Elite funerary mound",
+      "date_basis": "Radiocarbon dating of six cannabis seeds plus archaeological chronology",
+      "location_precision": "regional_only"
+    },
+    {
+      "id": "ARCH-SITE-JIRZANKAL",
+      "name": "Jirzankal Cemetery",
+      "region": "Eastern Pamirs, Xinjiang, western China",
+      "period": "approximately 500 BCE",
+      "culture": "High-altitude eastern Pamir communities",
+      "site_context": "Mortuary setting with wooden braziers",
+      "date_basis": "Archaeological dating described in Ren et al. 2019",
+      "location_precision": "regional_only"
+    },
+    {
+      "id": "ARCH-SITE-PAZYRYK",
+      "name": "Pazyryk kurgan 2",
+      "region": "Southern Altai Mountains, Siberia",
+      "period": "mid-first millennium BCE (approximately 500 BCE)",
+      "culture": "Pazyryk",
+      "site_context": "Frozen elite burial with tent frame, copper containers, heated stones, charred hemp seeds",
+      "date_basis": "Historical archaeological contexts reviewed by Ren et al. 2019",
+      "location_precision": "regional_only"
+    },
+    {
+      "id": "ARCH-SITE-SCYTHIAN-TEXT",
+      "name": "Scythian communities in Herodotus",
+      "region": "Caspian / Pontic steppe described in Histories IV",
+      "period": "fifth century BCE testimony",
+      "culture": "Scythian communities as described by Greek author",
+      "site_context": "Textual account, not a particular excavated burial",
+      "date_basis": "Date of classical text, not radiocarbon dating",
+      "location_precision": "not_a_site"
+    }
+  ],
+  "sources": [
+    {
+      "id": "ARCH-SRC-SCIENCE-2026",
+      "title": "Direct evidence for psychoactive cannabis use 2,800 years ago",
+      "authors": "Caspari G et al.",
+      "year": 2026,
+      "kind": "peer_reviewed_primary_study",
+      "url": "https://doi.org/10.1126/science.aeg3800",
+      "note": "Science, 5 Nov 2026; Tunnug 1 seeds and ancient hair chemistry. Check the original analytical methods and supplements before concluding consumption."
+    },
+    {
+      "id": "ARCH-SRC-BERN-2026",
+      "title": "Cannabis was used as an intoxicant as early as 2,800 years ago",
+      "authors": "University of Bern",
+      "year": 2026,
+      "kind": "institutional_primary_research_release",
+      "url": "https://mediarelations.unibe.ch/media_releases/2026/media_releases_2026/cannabis_was_used_as_an_intoxicant_as_early_as_2800_years_ago/index_eng.html",
+      "note": "Source for early eighth-century BCE direct seed dating, reported CBN-like hair signals, weak putative THC, and explicit limits on route, dose, and cultivation."
+    },
+    {
+      "id": "ARCH-SRC-AP-2026",
+      "title": "Seeds, preserved hair in tomb point to oldest signs of cannabis high, 2,800 years ago, study suggests",
+      "authors": "Keaten J and Jenne P, Associated Press",
+      "year": 2026,
+      "kind": "independent_critical_reporting",
+      "url": "https://abcnews.com/Technology/wireStory/seeds-preserved-hair-tomb-point-oldest-signs-cannabis-137890937",
+      "note": "Quotes independent forensic toxicologist Volker Auwärter questioning the strength of hair analysis and inability to exclude external exposure; critique is not a published refutation."
+    },
+    {
+      "id": "ARCH-SRC-REN-2019",
+      "title": "The origins of cannabis smoking: Chemical residue evidence from the first millennium BCE in the Pamirs",
+      "authors": "Ren M et al.",
+      "year": 2019,
+      "kind": "peer_reviewed_primary_study_and_historical_review",
+      "url": "https://doi.org/10.1126/sciadv.aaw1391",
+      "note": "Science Advances study of Jirzankal GC-MS braziers and burnt stones. Introduction contextualizes older Pazyryk archaeology and cautions that other historical cannabis finds can be poorly verified."
+    },
+    {
+      "id": "ARCH-SRC-HERODOTUS",
+      "title": "Histories, Book IV, sections 73–75",
+      "authors": "Herodotus; A. D. Godley translation",
+      "year": null,
+      "kind": "ancient_text_translation",
+      "url": "https://en.wikisource.org/wiki/Herodotus_The_Persian_Wars_(Godley)/Book_IV",
+      "note": "Fifth-century BCE textual report about Scythian post-burial purification using hemp and hot stones; ancient narrative is not a chemically verified Pazyryk excavation record."
+    }
+  ],
+  "claims": [
+    {
+      "id": "ARCH-CLM-001",
+      "site_id": "ARCH-SITE-TUNNUG1",
+      "lane": "dated_botanical_material",
+      "title": "Directly dated cannabis seeds at Tunnug 1",
+      "summary": "Approximately one thousand cannabis seeds were recovered from an elite funerary context; six seeds underwent radiocarbon dating consistent with the early eighth century BCE.",
+      "method": "archaeobotanical_identification_and_radiocarbon_dating",
+      "model": "Excavated funerary mound; preserved botanical specimens",
+      "boundary": "Seeds demonstrate botanical presence and mortuary deposition, not route of administration, intoxicating potency, cultivation, or medicinal use.",
+      "evidence_strength": "direct_material",
+      "source_ids": [
+        "ARCH-SRC-SCIENCE-2026",
+        "ARCH-SRC-BERN-2026"
+      ],
+      "related_compounds": [],
+      "link_scope": "historical_context_only"
+    },
+    {
+      "id": "ARCH-CLM-002",
+      "site_id": "ARCH-SITE-TUNNUG1",
+      "lane": "analytical_biomarker_signal",
+      "title": "Hair signals consistent with CBN and weaker possible THC",
+      "summary": "The study reports high-resolution mass-spectrometric signals in ancient hair consistent with cannabinol (CBN) and weaker mass-consistent signals for THC.",
+      "method": "high_resolution_mass_spectrometry",
+      "model": "Preserved hair from Tunnug 1 central burial chamber",
+      "boundary": "Reported signals require analytical scrutiny. A CBN-associated signal is not proof of the quantity or route of consumption, impairment, or intentional intoxication.",
+      "evidence_strength": "reported_molecular_signal_contested",
+      "source_ids": [
+        "ARCH-SRC-SCIENCE-2026",
+        "ARCH-SRC-BERN-2026",
+        "ARCH-SRC-AP-2026"
+      ],
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0076",
+          "name": "CBN (cannabinol)"
+        },
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Δ9-THC"
+        }
+      ],
+      "link_scope": "archaeological_analyte_reference_not_occurrence_or_exposure_proof"
+    },
+    {
+      "id": "ARCH-CLM-003",
+      "site_id": "ARCH-SITE-TUNNUG1",
+      "lane": "contested_interpretation",
+      "title": "Consumption inference is actively disputed",
+      "summary": "Study authors interpret the co-occurrence of seeds and hair signatures as evidence of psychoactive cannabis use. An independent forensic toxicologist argues that the hair analysis does not adequately exclude external exposure.",
+      "method": "critical_comparison_of_primary_claim_and_independent_response",
+      "model": "Scientific interpretation of ancient hair biomarkers",
+      "boundary": "Treat intentional ingestion/inhalation as a hypothesis supported by authors but contested, not as an observed event. No demonstrated sedative use before sacrifice.",
+      "evidence_strength": "contested_interpretation",
+      "source_ids": [
+        "ARCH-SRC-SCIENCE-2026",
+        "ARCH-SRC-AP-2026"
+      ],
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0076",
+          "name": "CBN (cannabinol)"
+        }
+      ],
+      "link_scope": "analyte_context_only"
+    },
+    {
+      "id": "ARCH-CLM-004",
+      "site_id": "ARCH-SITE-JIRZANKAL",
+      "lane": "analytical_biomarker_signal",
+      "title": "CBN on wooden braziers and burned stones",
+      "summary": "Ren et al. identified chemical markers of cannabis, including CBN, in charred interior residues from wooden braziers and on some burnt stones. Exterior vessel samples were negative controls.",
+      "method": "gas_chromatography_mass_spectrometry_with_exterior_controls",
+      "model": "Mortuary vessels and heated stones, approximately 500 BCE",
+      "boundary": "Ancient residue CBN detection supports cannabis burning but does not directly recover ancient THC concentrations, human dose, or individual subjective effects.",
+      "evidence_strength": "direct_residue_chemistry",
+      "source_ids": [
+        "ARCH-SRC-REN-2019"
+      ],
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0076",
+          "name": "CBN (cannabinol)"
+        }
+      ],
+      "link_scope": "residue_analyte_reference_not_human_effect"
+    },
+    {
+      "id": "ARCH-CLM-005",
+      "site_id": "ARCH-SITE-JIRZANKAL",
+      "lane": "contextual_inference",
+      "title": "Funerary inhalation is plausible at Jirzankal",
+      "summary": "Cannabis residues on vessels in a mortuary context support researchers' interpretation that plants were burned for ritualized inhalation.",
+      "method": "archaeochemical_and_contextual_inference",
+      "model": "Wooden braziers in cemetery burials",
+      "boundary": "No observed individual inhalation, exact method, standardized potency, or medicinal clinical efficacy can be reconstructed.",
+      "evidence_strength": "well_supported_inference",
+      "source_ids": [
+        "ARCH-SRC-REN-2019"
+      ],
+      "related_compounds": [],
+      "link_scope": "historical_context_only"
+    },
+    {
+      "id": "ARCH-CLM-006",
+      "site_id": "ARCH-SITE-PAZYRYK",
+      "lane": "archaeological_context",
+      "title": "Pazyryk kurgan 2 contained hemp-burning apparatus",
+      "summary": "Published archaeological accounts reviewed in Ren et al. describe a small wooden tent frame, copper containers with heat-affected stones, carbonized hemp seeds, and a leather seed pouch at Pazyryk kurgan 2.",
+      "method": "excavation_report_recounted_in_peer_reviewed_review",
+      "model": "Specific elite burial at Pazyryk kurgan 2",
+      "boundary": "This is not evidence that almost all burials contained personal smoking kits; identify the specific kurgan and distinguish old reports from modern residue chemistry.",
+      "evidence_strength": "documented_artifact_context",
+      "source_ids": [
+        "ARCH-SRC-REN-2019"
+      ],
+      "related_compounds": [],
+      "link_scope": "historical_context_only"
+    },
+    {
+      "id": "ARCH-CLM-007",
+      "site_id": "ARCH-SITE-SCYTHIAN-TEXT",
+      "lane": "historical_text",
+      "title": "Herodotus described hemp fumes in post-burial purification",
+      "summary": "Histories IV.73–75 describes Scythians using heated stones and hemp in a felt-covered structure after burial and responding joyfully.",
+      "method": "ancient_textual_account",
+      "model": "Fifth-century BCE Greek narrative about Scythians",
+      "boundary": "The text is a historically situated account, not a direct record of chemical testing or proof that the same practice occurred at every Pazyryk burial.",
+      "evidence_strength": "textual_attestation",
+      "source_ids": [
+        "ARCH-SRC-HERODOTUS"
+      ],
+      "related_compounds": [],
+      "link_scope": "historical_context_only"
+    },
+    {
+      "id": "ARCH-CLM-008",
+      "site_id": "ARCH-SITE-PAZYRYK",
+      "lane": "interpretive_boundary",
+      "title": "Do not confuse separate Pazyryk burials or infer cancer treatment",
+      "summary": "Evidence for cannabis-burning equipment at specific Pazyryk graves should not be attributed without verification to the Ukok Ice Maiden or treated as evidence of a cancer therapy.",
+      "method": "claim_boundary_and_site_attribution_check",
+      "model": "Comparison of separately excavated Pazyryk-era burials",
+      "boundary": "No source in this dataset establishes cannabis in the Ice Maiden's own burial or that cannabis was medically administered for breast cancer. Cancer findings do not prove treatment.",
+      "evidence_strength": "not_established",
+      "source_ids": [
+        "ARCH-SRC-REN-2019"
+      ],
+      "related_compounds": [],
+      "link_scope": "historical_context_only"
+    },
+    {
+      "id": "ARCH-CLM-009",
+      "site_id": "ARCH-SITE-TUNNUG1",
+      "lane": "interpretive_boundary",
+      "title": "Ancient cannabis findings are not modern therapeutic trials",
+      "summary": "Archaeological artifacts, molecular traces, and ancient written accounts document historical contexts and sometimes chemical signatures, not controlled evidence of health outcomes.",
+      "method": "cross_domain_evidence_scope",
+      "model": "Historical archaeology compared with modern clinical evidence",
+      "boundary": "Historical use does not establish clinical efficacy, safety, dosage, medical indication, or spiritual universality.",
+      "evidence_strength": "not_established",
+      "source_ids": [
+        "ARCH-SRC-SCIENCE-2026",
+        "ARCH-SRC-REN-2019"
+      ],
+      "related_compounds": [],
+      "link_scope": "historical_context_only"
+    }
+  ]
+}

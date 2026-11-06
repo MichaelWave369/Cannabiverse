@@ -55,3 +55,6 @@ jobs:
 
       - name: Validate Pain & ECS research domain
         run: npm run validate:pain-ecs
+
+      - name: Validate archaeology evidence and source boundaries
+        run: npm run validate:archaeology
