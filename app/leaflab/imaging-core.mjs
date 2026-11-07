@@ -101,14 +101,18 @@ export function traceVeinCandidates({width,height,data,mask,contrast=14,minPixel
   for(let i=0;i<n;i++){
     const k=4*i;lum[i]=.2126*data[k]+.7152*data[k+1]+.0722*data[k+2];
   }
-  // Integrals keep the local-average operation O(n) regardless of radius.
-  const integral=new Float64Array((width+1)*(height+1));
+  // Mask-weighted integral images prevent bright exterior backgrounds from
+  // becoming fake dark "veins" around the leaf's perimeter.
   const stride=width+1;
+  const integral=new Float64Array((width+1)*(height+1));
+  const sampleCount=new Uint32Array((width+1)*(height+1));
   for(let y=1;y<=height;y++){
-    let sum=0;
+    let sum=0,total=0;
     for(let x=1;x<=width;x++){
-      sum+=lum[(y-1)*width+x-1];
+      const i=(y-1)*width+x-1;
+      if(mask[i]){sum+=lum[i];total++;}
       integral[y*stride+x]=integral[(y-1)*stride+x]+sum;
+      sampleCount[y*stride+x]=sampleCount[(y-1)*stride+x]+total;
     }
   }
   function average(x,y,r){
@@ -116,7 +120,9 @@ export function traceVeinCandidates({width,height,data,mask,contrast=14,minPixel
       y0=Math.max(0,y-r),y1=Math.min(height,y+r+1);
     const sum=integral[y1*stride+x1]-integral[y0*stride+x1]-
       integral[y1*stride+x0]+integral[y0*stride+x0];
-    return sum/((x1-x0)*(y1-y0));
+    const n=sampleCount[y1*stride+x1]-sampleCount[y0*stride+x1]-
+      sampleCount[y1*stride+x0]+sampleCount[y0*stride+x0];
+    return n?sum/n:lum[y*width+x];
   }
   const ridge=new Uint8Array(n);
   for(let y=1;y<height-1;y++)for(let x=1;x<width-1;x++){
