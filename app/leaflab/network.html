@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cannabiverse LeafLab v0.8: geometric graph structures, one-link failures, and same-node MST/star network baselines derived from manual image lines.">
+<title>Cannabiverse | Φ Botanical Network Atlas v0.8</title>
+<style>
+:root{color-scheme:dark;--bg:#07170e;--panel:#10291b;--panel2:#163522;--line:#436e50;--text:#ebf6ed;--muted:#b3d0bb;--gold:#efd394;--green:#95edb1}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#224b32,var(--bg) 63%);color:var(--text);font:14px/1.55 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:1460px;margin:auto;padding:24px 19px 80px}nav{display:flex;gap:16px;flex-wrap:wrap;font-size:13px;margin-bottom:20px}a{color:var(--gold)}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.06;letter-spacing:-1.4px;margin:10px 0}h1 span{color:var(--green)}
+h2{font-size:20px;margin:0 0 12px}h3{font-size:16px;margin:18px 0 8px}.eyebrow{font-size:12px;color:var(--gold);font-weight:750;letter-spacing:1.6px;text-transform:uppercase}
+.lead{max-width:950px;color:#c6e1cb}.notice{border:1px solid #998351;background:#302a1d;border-radius:12px;padding:14px 17px;color:#f2e3b8;margin:18px 0}
+.layout{display:grid;grid-template-columns:minmax(235px,270px) minmax(370px,1fr) minmax(295px,335px);gap:14px;align-items:start}
+.panel{min-width:0;border:1px solid var(--line);border-radius:15px;padding:18px;background:var(--panel)}.panel p{font-size:13px;color:#c5dace;margin:7px 0 14px}
+input[type=file]{width:100%;padding:10px;border:1px dashed #638b70;border-radius:9px;background:#0b2114;color:var(--text)}
+button{font:700 12px system-ui;background:#1c4d31;color:#f5fff7;border:1px solid #679a78;border-radius:9px;padding:10px 12px;cursor:pointer}
+button.primary{background:#99eab7;color:#082417;border-color:#99eab7}button:disabled{opacity:.45;cursor:not-allowed}button:hover:not(:disabled){filter:brightness(1.13)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #f6d485;outline-offset:3px}
+.bar{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
+.stage{border:1px solid #42694c;background:#092117;border-radius:12px;overflow:hidden}.stage svg{display:block;width:100%;height:auto;min-height:260px;max-height:510px}
+.stage svg line{cursor:pointer}.stage svg line:focus{outline:0;stroke:#ffdf92!important;stroke-width:5!important}
+.key{font-size:12px;color:#bcd8c5;margin:8px 0}.status{white-space:pre-line;font:12px/1.6 ui-monospace,Consolas,monospace;color:#d4ebd7;overflow-wrap:anywhere}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{border:1px solid #325b40;background:var(--panel2);border-radius:10px;padding:10px}.metric b{font-size:23px;display:block}.metric span{font-size:11px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;font-size:12px;min-width:580px}td,th{border-bottom:1px solid #355742;padding:9px 8px;text-align:left}th{color:var(--gold)}.scroll{overflow:auto;max-height:360px}
+pre{font:12px/1.5 ui-monospace,Consolas,monospace;background:#0a2116;border:1px solid #325e41;border-radius:9px;padding:12px;white-space:pre-wrap;overflow-wrap:anywhere}
+.full{grid-column:1/-1}.footer{margin-top:25px;color:#b6ccb9;font-size:12px}
+@media(max-width:1150px){.layout{grid-template-columns:260px minmax(350px,1fr)}.results{grid-column:1/-1}}
+@media(max-width:730px){.layout{grid-template-columns:1fr}.results,.full{grid-column:1}.panel{padding:14px}}
+</style></head><body><main>
+<nav><a href="./">← Leaf Morphology Lab</a><a href="./veins.html">Human Vein Reference Benchmark</a><a href="./imaging.html">Imaging Lab</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-network-atlas-v08.md">Methods &amp; limits</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Computational topology · v0.8</div>
+<h1>Φ Botanical <span>Network Atlas</span></h1>
+<p class="lead">Explore annotated 2D line networks as graphs: how much wiring they use, how direct their paths are, and which connections matter when one link disappears. Compare those calculations with conventional minimum-spanning-tree and star layouts using the same marked positions.</p>
+<div class="notice"><strong>This is a graph experiment, not vascular physiology.</strong> Human-drawn image features are not verified xylem or phloem. Edge crossings do not connect automatically. Image-pixel distance cannot represent actual fluid conductance, engineering throughput or biological optimality. No real specimen data ships with the app.</div>
+<div class="layout">
+<section class="panel">
+<h2>1 · Load a graph</h2>
+<p>Import a <strong>v0.7 manual vein reference JSON</strong> exported from the Vein Reference Benchmark. The graph is constructed entirely from the marked polylines; original image files aren't needed.</p>
+<label for="graphImport">Import source annotation JSON</label><input id="graphImport" type="file" accept=".json,application/json">
+<div class="bar">
+<button type="button" id="demoTree">Synthetic branching tree</button>
+<button type="button" id="demoLoop">Synthetic looped network</button>
+</div>
+<p id="graphStatus" class="status" aria-live="polite">No graph loaded. Choose a file or synthetic demonstration.</p>
+<div class="bar"><button id="exportNetworkReport" class="primary" type="button" disabled>Export graph audit JSON</button></div>
+<p>Demo networks are explicitly synthetic. Imported files carry user-asserted plant identities, observer codes and original-image SHA-256. A matching hash is not independently verified without the source photograph.</p>
+</section>
+<section class="panel">
+<h2>2 · Inspect the network</h2>
+<div class="stage"><svg id="networkFigure" viewBox="0 0 100 100" aria-label="Two-dimensional line network, click a link to simulate its failure" role="img"></svg></div>
+<p class="key">Green edges retain alternate routes under one-link removal; amber edges are bridges whose removal splits an existing component. Click or focus and press Enter on an edge to inspect the failure. Edge colors reflect the current abstract graph only.</p>
+<div class="bar"><button id="resetFailure" type="button" disabled>Restore all links</button></div>
+<pre id="selectedFailure" aria-live="polite">Select a link to inspect its removal.</pre>
+</section>
+<section class="panel results">
+<h2>3 · Geometry &amp; resilience</h2>
+<div class="metrics">
+<div class="metric"><b id="nodeMetric">–</b><span>Annotated nodes</span></div>
+<div class="metric"><b id="edgeMetric">–</b><span>Graph links</span></div>
+<div class="metric"><b id="cycleMetric">–</b><span>Independent cycles</span></div>
+<div class="metric"><b id="bridgeMetric">–</b><span>Bridge links</span></div>
+</div>
+<h3>Failure-tolerance summary</h3>
+<pre id="robustnessSummary">No source graph evaluated.</pre>
+<p>Reachable-pair fraction is the proportion of all node pairs that can still communicate through the remaining undirected links. The model assumes each geometric link is a perfect, equal-capacity connection until removed.</p>
+</section>
+<section class="panel full">
+<h2>4 · Compare conventional network layouts</h2>
+<p>The MST minimizes total straight-line length for a connected tree over the same marked vertices. The star connects every vertex to the best existing central vertex. These **hypothetical baselines may leave the leaf silhouette** and don't represent anatomically possible growth.</p>
+<div class="scroll"><table><thead><tr><th>Network</th><th>Total length (px)</th><th>Length / MST</th><th>Cycles</th><th>Geometric efficiency</th><th>Mean after 1 failure</th><th>Worst after 1 failure</th></tr></thead><tbody id="comparisonRows"></tbody></table></div>
+<p class="key">Lower length means less straight-line material in this abstract proxy; higher reachability and efficiency means better connectivity or shorter routes under this model. Different metrics trade off. None is a verified biological objective.</p>
+</section>
+</div>
+<div class="footer">Φ Network Atlas v0.8 · Pure browser-local ES modules · Explicitly grouped botanical evidence and engineering hypotheses · Original images never uploaded, decoded or embedded by this page.</div>
+</main><script type="module" src="./network-ui.mjs"></script></body></html>
