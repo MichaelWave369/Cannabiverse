@@ -1,6 +1,6 @@
-# Φ Leaf Morphology Lab v0.2
+# Φ Leaf Morphology Lab v0.3
 
-**Research status:** synthetic geometry, manual annotation and an in-sample descriptive tip-fan fit. No empirical cross-validation or botanical growth-model claim.
+**Research status:** synthetic geometry, manual tip annotation, descriptive in-sample tip fitting, ruler calibration, traced polygon metrics and descriptive specimen cohorts. No botanical growth-model or statistical claim.
 
 After deployment, open [the lab](../app/leaflab/). It is a zero-dependency static web app. Photos are selected locally, handled through temporary browser object URLs, and are not transmitted.
 
@@ -34,7 +34,7 @@ The comparison table divides boundary and vein proxy lengths by √(synthetic ar
 6. For a *complete* leaf with exactly 3, 5, 7, 9 or 11 marked tips, choose **Fit measured tip fan** to obtain descriptive fitted parameters and measured-minus-fitted tip residuals. Export the fit report as JSON.
 7. Treat curled leaves, shadows, perspective, resolution, observer error and incomplete leaflet visibility as sources of uncertainty.
 
-The app **does not calibrate against the ruler** or automatically extract leaflet margins/vein networks. It reports no centimeters and makes no biological claims from the photo.
+The app now includes **manual** ruler calibration and outline tracing but does not automatically segment leaves or recover vein networks. The v0.3 measurement protocol below lists important physical limitations.
 
 ## Falsifiable study questions
 
@@ -49,7 +49,7 @@ For serious tests, repeat across plants and growth conditions, blind labels wher
 
 Run: npm run validate:leaflab
 
-Synthetic model exports use kind = synthetic-morphology. Photo annotation exports use kind = manual-photo-tip-annotation. Both include modelVersion and limitations. These outputs are **not authoritative scientific evidence receipts** and must not be promoted into the compound canon.
+Synthetic model exports use kind = synthetic-morphology. Photo annotation exports use kind = manual-photo-tip-annotation. The new physical specimen kind is manual-leaf-specimen and the cross-specimen report is descriptive-leaf-cohort. Both include modelVersion and limitations. These outputs are **not authoritative scientific evidence receipts** and must not be promoted into the compound canon.
 
 ## Background research
 
@@ -75,3 +75,24 @@ No image is uploaded or sent to another service. Imported measurement JSON is us
 ### Next empirical gate
 
 For real inference, acquire multiple independent images per specimen, record scale and orientation, mark or extract *full outlines*, preregister a held-out evaluation split by plant (not by photo), report annotation uncertainty, and compare model families including non-cannabis palmate leaves. Only then evaluate whether any proposed number-series relationship beats conventional models and multiple-testing corrections.
+
+## v0.3 manual scale, traced leaflets and specimen cohorts
+
+**Scope:** manual image-plane measurements, not biological inference. The lab adds an independent morphology research lane. Cannabiverse molecular authority is unchanged.
+
+**Calibrate:** Photograph a flattened leaf with a millimeter ruler in the same plane. Enter the known length in millimeters, select "Mark ruler endpoints", and click both ends of that known segment. The reference distance in image-display units is d and the known millimeter length is L, so s=L/d mm/display unit. Calibration is only valid if the ruler and leaf are in one undistorted plane.
+
+**Trace:** Choose a leaflet ID, activate "Trace leaflet outline", click its entire visible perimeter in sequence, then press "Close outline". At least three vertices are required, with no self-crossings; each outline supports at most 200 vertices. Re-tracing a saved leaflet ID replaces its old polygon. The Remove saved leaflet control deletes the selected one. For sharply serrated edges, add many more points than for smooth edges. Shadows, overlap, blur and damaged tips make manual errors likely.
+
+The polygon's shoelace area A and perimeter P are converted with:
+- Area in mm² = A × s²
+- Perimeter in mm = P × s
+- Compactness = 4πA/P²
+
+**Do not confuse a sum of traced leaflet polygons with whole-leaf area.** Missing leaflets lower the total; overlapping polygons cause double counting. No perspective, lens distortion, curling, occlusion or scale uncertainty correction is implemented.
+
+**Export and compare:** Enter a unique Specimen ID and its Plant ID, then export a v0.3 manual-leaf-specimen JSON file. It contains the known ruler length, marked scale endpoints, traced polygons, recomputed metrics, sample IDs, and limited source filename, but **never the original image**. Import multiple such JSON files or add the current specimen to an in-memory descriptive cohort. Duplicated specimen IDs are rejected. Repeated specimens sharing a Plant ID are grouped as one nominal plant group rather than independent replicates. You can export the specimen-level CSV and the cohort JSON report, which also includes per-plant means.
+
+Distinct user-supplied plant IDs are **not evidence of biological independence**. The comparison is descriptive, not a statistical hypothesis test. Mean area is averaged over traced leaflets only and should not be interpreted as total leaf size. Cohorts are not stored persistently; export before leaving the page.
+
+**Quality requirements for future science:** independently verify specimen identities, hold out entire plants rather than individual photos, include multiple observers, record growth stage and position, estimate perspective/scale and annotation uncertainty, and preregister simple and null models. No Fibonacci or 3-6-9 pattern is demonstrated by this workbench.

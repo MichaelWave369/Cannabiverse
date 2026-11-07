@@ -1,8 +1,9 @@
 import {DEFAULTS, COUNTS, generateLeaf, measureTips} from "./core.mjs";
 import {validateAnnotation, orderedRays, fitTipFan} from "./fit.mjs";
+import {installMeasurementUI} from "./measurement-ui.mjs";
 const $ = id => document.getElementById(id);
 const svg = $("figure"), NS = "http://www.w3.org/2000/svg", fields = ["count","fan","falloff","width","taper","teeth","depth","asym"];
-let mode = "model", model, photoURL = null, photoInfo = null, marks = [], fitResult = null;
+let mode = "model", model, photoURL = null, photoInfo = null, marks = [], fitResult = null, measurementUI = null;
 function el(name, attrs={}, parent=svg) {
   const n = document.createElementNS(NS,name);
   for (const [k,v] of Object.entries(attrs)) n.setAttribute(k,String(v));
@@ -71,6 +72,7 @@ function renderPhoto(){
     el("circle",{cx:x,cy:y,r:i?5:8,fill:i?"#ffe2a2":"#8df0b0",stroke:"#102a16","stroke-width":2});
     el("text",{x:x+9,y:y-9,fill:"#fff", "font-size":13}).textContent=i?i:"H";
   });
+  measurementUI?.renderOverlay();
   $("photoExport").disabled=marks.length<2;
   $("fitButton").disabled=!COUNTS.includes(marks.length-1);
   $("fitExport").disabled=!fitResult;
@@ -111,12 +113,13 @@ $("photo").addEventListener("change",e=>{
   if(!f.type.startsWith("image/")){$("stageNote").textContent="Select an image file.";return;}
   if(photoURL)URL.revokeObjectURL(photoURL);
   photoURL=URL.createObjectURL(f);marks=[];fitResult=null;photoInfo=null;
+  measurementUI?.resetForPhoto();
   const im=new Image();im.onload=()=>{photoInfo={filename:f.name,width:im.naturalWidth,height:im.naturalHeight};renderPhoto();};
   im.onerror=()=>{$("stageNote").textContent="Could not decode this image.";};
   im.src=photoURL;
 });
 svg.addEventListener("click",e=>{
-  if(mode!=="photo"||!photoURL||!photoInfo||marks.length>=21)return;
+  if(mode!=="photo"||!photoURL||!photoInfo)return;
   const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;
   const m=svg.getScreenCTM();if(!m)return;
   const p=pt.matrixTransform(m.inverse());
@@ -124,6 +127,8 @@ svg.addEventListener("click",e=>{
   const frame=850/630;
   const width=ratio>frame?850:630*ratio, height=ratio>frame?850/ratio:630;
   if(p.x<(850-width)/2||p.x>(850+width)/2||p.y<(630-height)/2||p.y>(630+height)/2)return;
+  if(measurementUI?.handleClick([p.x,p.y]))return;
+  if(marks.length>=21)return;
   marks.push([p.x,p.y]);fitResult=null;renderPhoto();
 });
 $("undo").addEventListener("click",()=>{marks.pop();fitResult=null;renderPhoto();});
@@ -191,6 +196,7 @@ $("measurementImport").addEventListener("change",async event=>{
     validateAnnotation(data);
     if(photoURL)URL.revokeObjectURL(photoURL);
     photoURL=null;$("photo").value="";
+    measurementUI?.resetForPhoto();
     marks=[data.hub,...data.tips.map(t=>[t.x,t.y])];
     photoInfo=data.source&&typeof data.source==="object"?data.source:{filename:file.name};
     fitResult=null;setMode("photo");
@@ -203,6 +209,11 @@ $("photoExport").addEventListener("click",()=>{
   let result;
   try{result=currentAnnotation();}catch(e){$("stageNote").textContent=e.message;return;}
   download("cannabiverse-leaflab-photo-measurements.json",JSON.stringify(result,null,2),"application/json");
+});
+measurementUI=installMeasurementUI({svg,
+  getPhotoURL:()=>photoURL,
+  getPhotoInfo:()=>photoInfo,
+  renderPhoto,download
 });
 window.addEventListener("pagehide",()=>{if(photoURL)URL.revokeObjectURL(photoURL);});
 refresh();

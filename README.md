@@ -216,7 +216,7 @@ A new [public research-data source ledger](data/discovery/public-data-sources-v1
 
 Our first **real experimental reference-spectra validation** uses three unchanged, **CC BY** [MassBank-data](https://github.com/MassBank/MassBank-data) records (Δ9-THC standard spectra from Eawag and the University of Athens) pinned to one source commit. We convert their original recorded peaks into MGF **in memory**, screen them with our existing MS/MS analyzer, and compare the positive/negative precursor neutral masses without mistaking a common standard for a new discovery. Upstream attribution and raw record files are preserved in [the source registry](data/discovery/references/massbank/manifest-v1.json); [method notes](docs/discovery-lab-v0.4.md) distinguish authentic published standard spectra from actual cannabis-extract measurements. Run `npm run validate:massbank-reference` and `npm run build:massbank-report`. Atlas CI publishes an auditable JSON **artifact**, but no unverified novel-cannabinoid claims. This benchmark is **not** the previously registered MassIVE cannabis extract dataset.
 
-## Φ Leaf Morphology Lab v0.2
+## Φ Leaf Morphology Lab v0.3
 
 [Open Leaf Morphology Lab](https://michaelwave369.github.io/Cannabiverse/app/leaflab/) or read the [protocol and hypotheses](docs/leaf-morphology-lab.md). This separate, no-dependency browser workspace explores synthetic leaflet geometry, tooth modulation, paired-area symmetry, schematic vein lengths, normalized count comparisons, and locally annotated photograph tip positions. It exports SVG/JSON/CSV without transmitting photos.
 
@@ -225,3 +225,7 @@ Our first **real experimental reference-spectra validation** uses three unchange
 ### LeafLab v0.2 · descriptive photo-to-model fitting
 
 Imported local photo-tip JSON can now be reopened and fit against a bounded, deterministic leaflet-fan length/angle model. The app reports rotation-invariant observed fan spread, fitted fan/rotation/falloff/asymmetry, per-tip residuals and JSON export. **Fit quality is in-sample only and does not establish botanical predictive validity or 3-6-9/Fibonacci effects.** The source chemistry canon and all governed molecular evidence remain unchanged.
+
+### LeafLab v0.3 · physical-scale measurements and specimen cohorts
+
+Manually calibrate a ruler segment, trace numbered leaflet polygons, obtain approximate mm² areas/perimeters, and export versioned local specimen JSON. Import separate specimen records for descriptive comparison grouped by Plant ID, with CSV/JSON export. **These are manually traced image-plane estimates, not corrected 3D measurements or statistical findings.** The governed chemistry canon and evidence ledgers remain unchanged. [Protocol](docs/leaf-morphology-lab.md).
