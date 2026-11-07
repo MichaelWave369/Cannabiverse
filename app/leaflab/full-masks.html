@@ -1,0 +1,110 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cannabiverse Φ LeafLab v1.6 complete human-traced real-leaf masks, multi-observer disagreement and separately scored detector baselines.">
+<title>Cannabiverse | Φ Full-Reference Mask Lab v1.6</title>
+<style>
+:root{color-scheme:dark;--bg:#07190d;--pane:#112b1c;--line:#456c50;--text:#effaf0;--muted:#c2d8c5;--gold:#f3d798;--mint:#99e5b1}*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(ellipse at 40% -10%,#245638,var(--bg) 67%);color:var(--text);font:14px/1.54 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:1480px;margin:auto;padding:24px 17px 70px}nav{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:19px;font-size:13px}a{color:var(--gold)}
+h1{font-size:clamp(34px,4.8vw,56px);line-height:1.07;letter-spacing:-1.5px;margin:9px 0}h1 span{color:var(--mint)}
+h2{font-size:19px;margin:0 0 10px}h3{font-size:15px;margin:14px 0 7px}.eyebrow{color:var(--gold);font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
+.lead{max-width:1040px;color:#d5e9d7}.notice{background:#322a1c;border:1px solid #9b8151;padding:14px 16px;border-radius:12px;color:#f1e0be;margin:18px 0}
+.layout{display:grid;grid-template-columns:320px minmax(360px,1fr) 290px;gap:14px;align-items:start}
+.panel{background:var(--pane);border:1px solid var(--line);border-radius:14px;padding:17px;min-width:0}.panel p{color:var(--muted);font-size:12px}
+label{display:block;font-weight:750;font-size:12px;margin:11px 0 5px}
+input,select{width:100%;font:14px system-ui;padding:9px;border:1px solid #73a282;border-radius:8px;background:#0b2014;color:var(--text)}input[type=file]{border-style:dashed}
+input[type=checkbox]{width:auto;accent-color:var(--mint)}.check{display:flex;gap:9px;align-items:start;margin:13px 0}.check label{margin:0;font-weight:500}
+button{font:700 12px system-ui;border:1px solid #75a584;border-radius:9px;background:#1d5032;color:#e8ffed;padding:9px 11px;cursor:pointer}
+button.primary{color:#092819;background:var(--mint);border-color:var(--mint)}
+button:disabled{opacity:.43;cursor:not-allowed}button[aria-pressed=true]{background:#f0d591;color:#12311d}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f1ce88;outline-offset:3px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0}.row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stage{background:#091f14;border:1px solid #497453;border-radius:11px;overflow:hidden;min-height:230px;display:grid;place-items:center;touch-action:none}
+.stage canvas{display:block;width:100%;max-width:100%;height:auto;cursor:crosshair;touch-action:none}
+pre{font:12px/1.6 ui-monospace,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;padding:12px;border:1px solid #3d6049;border-radius:9px;background:#0a2115}
+.status{color:#d0ebd7;font-size:12px;white-space:pre-line;overflow-wrap:anywhere}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.metric{padding:10px;border:1px solid #416c4d;border-radius:9px;background:#1a3926}.metric strong{display:block;font-size:23px;font-variant-numeric:tabular-nums}.metric span{color:var(--muted);font-size:11px}
+.full{grid-column:1/-1}.scroll{overflow:auto}table{width:100%;min-width:700px;border-collapse:collapse;font-size:12px}
+th,td{padding:9px 8px;border-bottom:1px solid #416447;text-align:left;vertical-align:top}th{color:var(--gold)}
+footer{margin-top:27px;font-size:12px;color:var(--muted)}@media(max-width:1200px){.layout{grid-template-columns:320px minmax(350px,1fr)}.results{grid-column:1/-1}}
+@media(max-width:750px){.layout{grid-template-columns:1fr}.results,.full{grid-column:auto}.panel{padding:14px}}
+</style></head><body><main>
+<nav><a href="./">← LeafLab</a><a href="./real-photos.html">Real photo library</a><a href="./real-image-qa.html">Sparse QA v1.5</a><a href="./evidence.html">Observer audit v1.2</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-full-masks-v16.md">Full-mask protocol</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Reference annotation · v1.6</div>
+<h1>Φ <span>Full-Reference Mask Lab</span></h1>
+<p class="lead">Trace complete leaf boundaries on an actual local photo, independently export one reference per masked reviewer, then compare two observers on the same original image before measuring the model against each. Multiple green regions and subtractive holes are supported.</p>
+<div class="notice"><strong>Honesty boundary:</strong> The software assigns every pixel to leaf or non-leaf using your polygons, but cannot prove you traced everything correctly. Two observers can agree and both be wrong. Hash matching proves image file identity, not true botanical ground truth, independent human review, or unseen holdout status. Never import model prediction as a human reference.</div>
+<div class="layout">
+<section class="panel">
+<h2>1 · Define a whole-frame reference</h2>
+<label for="maskPhoto">Original image file (local only, max 16 MiB)</label>
+<input id="maskPhoto" type="file" accept="image/*">
+<pre id="maskSource">Open an original leaf photograph. We hash the actual bytes, not its filename.</pre>
+<div class="row">
+<div><label for="maskPlant">Plant ID</label><input id="maskPlant" maxlength="64" placeholder="Plant_001"></div>
+<div><label for="maskSpecimen">Photo/specimen ID</label><input id="maskSpecimen" maxlength="64" placeholder="Image_001"></div>
+</div>
+<label for="maskObserver">Masked reviewer code</label><input id="maskObserver" maxlength="64" placeholder="Observer_A">
+<label for="maskTarget">What counts as the target?</label>
+<select id="maskTarget"><option value="single-prominent-leaf">One prominent leaf only</option><option value="all-visible-leaves">All visibly identifiable leaves</option></select>
+<label for="maskRole">Declared study role</label>
+<select id="maskRole"><option value="development">Development / exploratory</option><option value="user-declared-holdout">Self-declared holdout (not verified)</option></select>
+<label for="maskIndependence">Observer independence</label>
+<select id="maskIndependence"><option value="not-attested">Not attested</option><option value="observer-self-attested-independent">Reviewer self-attests independent tracing</option></select>
+<h3>Polygon tool</h3><p>Click 3+ vertices on the actual image. Close a polygon to add a region, or subtract a hole. You can create multiple regions before exporting. Unknown/uncertain structures should be handled explicitly in your study protocol.</p>
+<div class="actions">
+<button id="maskInclude" aria-pressed="true" type="button">Add leaf area</button>
+<button id="maskExclude" aria-pressed="false" type="button">Subtract non-leaf</button>
+<button id="maskUndoPoint" type="button" disabled>Undo point</button>
+<button id="maskClosePolygon" type="button" disabled>Close polygon</button>
+<button id="maskUndoPolygon" type="button" disabled>Undo shape</button>
+</div>
+<div class="check"><input type="checkbox" id="maskCompleted"><label for="maskCompleted">I have visually reviewed the entire frame and included all regions covered by the selected target definition.</label></div>
+<div class="actions">
+<button id="maskSave" class="primary" type="button" disabled>Finalize &amp; export reviewer JSON</button>
+<button id="maskReset" type="button" disabled>Clear current shapes</button>
+</div>
+<p class="status" id="maskWorkStatus" aria-live="polite">No reference contours saved. File-by-file review is self-asserted, never automatically certified.</p>
+</section>
+<section class="panel">
+<h2>2 · Trace on the original photo</h2>
+<div class="stage"><canvas id="maskCanvas" width="320" height="214" aria-label="Original photo with user-drawn inclusion and exclusion leaf polygons"></canvas></div>
+<div class="actions">
+<button id="maskViewOutline" type="button" aria-pressed="true">Own outlines</button>
+<button id="maskViewComplete" type="button" aria-pressed="false">Filled full mask</button>
+<button id="maskViewDisagreement" type="button" aria-pressed="false" disabled>Reviewer disagreement</button>
+<button id="maskViewPrediction" type="button" aria-pressed="false" disabled>Model prediction</button>
+</div>
+<p class="status" id="maskCanvasInfo">Green outlines add target leaf; orange outlines subtract background. A green translucent fill is your rasterized reference. After importing two reviewers, red/cyan highlights show disagreements.</p>
+<h3>Color seeds for baseline (only after two masks)</h3>
+<div class="actions">
+<button id="maskPickForeground" type="button" disabled>Pick leaf seed</button>
+<button id="maskPickBackground" type="button" disabled>Pick non-leaf seed</button>
+</div>
+<label for="maskMargin">Color margin <output id="maskMarginValue">0.07</output></label><input id="maskMargin" type="range" min="-0.1" max="0.5" step="0.01" value="0.07">
+<div class="actions"><button id="maskBenchmark" type="button" disabled>Score baseline against both references</button><button id="maskExportBenchmark" type="button" disabled>Export dual-reference audit</button></div>
+</section>
+<section class="panel results">
+<h2>3 · Independent reviewers</h2>
+<label for="maskImport">Import complete-mask reviewer JSON files</label>
+<input id="maskImport" type="file" multiple accept=".json,application/json">
+<div class="actions"><button id="maskCompare" class="primary" type="button" disabled>Audit two reviewers</button><button id="maskExportComparison" type="button" disabled>Export agreement report</button></div>
+<pre id="maskImportStatus">No reviewers imported. For independent annotations, each reviewer should export their own original-image mask before viewing anyone else's drawing or model output.</pre>
+<div class="metrics">
+<div class="metric"><strong id="maskReferenceCount">–</strong><span>Matching reviewer files</span></div>
+<div class="metric"><strong id="maskIoU">–</strong><span>Pairwise observer IoU</span></div>
+<div class="metric"><strong id="maskDisagreement">–</strong><span>Disagreeing image pixels</span></div>
+<div class="metric"><strong id="maskModelRange">–</strong><span>Model IoU vs A/B, if run</span></div>
+</div>
+<h3>Pair review and baseline</h3>
+<pre id="maskAudit">An observer-agreement score is not a botanical truth score. Model evaluation requires two distinct reviewer references, the same image bytes and identical target definitions.</pre>
+</section>
+<section class="panel full">
+<h2>4 · Multi-photo plant-level integrity</h2>
+<p>A study can have multiple images per plant, but they are not independent biological replicates. Importing a batch into the cohort audit checks duplicate source/observer pairs, shared original-file identity, missing second reviewers, and conflicting development/holdout roles for the same declared Plant ID.</p>
+<div class="actions"><button id="maskCohort" type="button" disabled>Audit imported reference cohort</button><button id="maskExportCohort" type="button" disabled>Export cohort audit</button></div>
+<div class="scroll"><table><thead><tr><th>Image</th><th>Plant</th><th>Role</th><th>Observers</th><th>Pair count</th><th>Mean observer IoU</th><th>Review status</th></tr></thead><tbody id="maskCohortRows"></tbody></table></div>
+<pre id="maskCohortInfo">No collection audit. A valid plant ID split is only a structural guard against obvious leakage, not immutable preregistration.</pre>
+</section></div>
+<footer>Φ LeafLab v1.6 · All photos and contour editing stay in your browser · No public photo uploads, no verified botanical reference truth, and no claims about actual network-flow superiority or medical effects.</footer>
+</main><script type="module" src="./full-mask-ui.mjs"></script></body></html>
