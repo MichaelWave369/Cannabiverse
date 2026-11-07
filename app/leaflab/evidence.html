@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Φ LeafLab v1.2: local-only observer agreement, plant-level development/holdout separation, annotation identity and consistency checks.">
+<title>Cannabiverse | Φ Evidence &amp; Validation Gateway v1.2</title>
+<style>
+:root{color-scheme:dark;--bg:#07180f;--pane:#122c1f;--ink:#ecf9ee;--muted:#bad6c0;--mint:#a0e7b8;--gold:#f1d694;--line:#426e51}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 55% -10%,#23533b,var(--bg) 65%);color:var(--ink);font:14px/1.56 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:1430px;margin:auto;padding:24px 17px 70px}nav{display:flex;flex-wrap:wrap;gap:15px;font-size:13px;margin-bottom:20px}
+a{color:var(--gold)}h1{font-size:clamp(33px,5vw,57px);line-height:1.07;letter-spacing:-1.4px;margin:9px 0 12px}h1 span{color:var(--mint)}h2{font-size:19px;margin:0 0 10px}h3{font-size:15px;margin:17px 0 6px}
+.eyebrow{font-size:12px;letter-spacing:1.5px;color:var(--gold);font-weight:800;text-transform:uppercase}.lead{max-width:980px;color:#d2e7d7}
+.notice{background:#30291b;border:1px solid #937950;color:#f3e2bc;padding:15px 18px;border-radius:12px;margin:17px 0}
+.grid{display:grid;grid-template-columns:minmax(270px,335px) minmax(350px,1fr) minmax(250px,300px);gap:13px;align-items:start}
+.panel{min-width:0;background:var(--pane);border:1px solid var(--line);padding:18px;border-radius:15px}
+.panel p{font-size:12px;color:#bed4c5}label{display:block;font-weight:700;color:#d7eadc;font-size:12px;margin:12px 0 5px}
+input,select{width:100%;font:14px system-ui;color:#f1fff4;background:#0a2115;border:1px solid #6a9a7a;padding:10px;border-radius:9px}
+input[type=file]{border-style:dashed}input[type=range]{accent-color:#9ae9b5;border:0;padding:0}
+button{font:700 12px system-ui;background:#205138;border:1px solid #68a17c;color:#f0fff3;padding:10px 12px;border-radius:9px;cursor:pointer}
+button.primary{background:#a0e8bb;color:#082516;border-color:#a0e8bb}button:disabled{opacity:.42;cursor:not-allowed}button:not(:disabled):hover{filter:brightness(1.12)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f7d590;outline-offset:3px}
+.actions{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0}.status{font-size:12px;color:#cfecd5;white-space:pre-line;overflow-wrap:anywhere}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{padding:11px;background:#1b3d2a;border:1px solid #466d55;border-radius:10px}
+.metric strong{display:block;font-size:22px;font-variant-numeric:tabular-nums}.metric span{display:block;font-size:11px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;min-width:580px;font-size:12px}td,th{padding:9px 8px;text-align:left;border-bottom:1px solid #3d634a}th{color:var(--gold)}
+.scroll{overflow:auto;max-height:400px}pre{font:12px/1.57 ui-monospace,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#092116;border:1px solid #365f47;padding:12px;border-radius:9px}
+.roles{display:grid;grid-template-columns:1fr 1fr;gap:8px;align-items:center}
+.roles label{margin:5px 0;overflow-wrap:anywhere}.subtle{font-size:12px;color:var(--muted)}
+.full{grid-column:1/-1}footer{font-size:12px;color:#b7d2bd;margin-top:27px}
+@media(max-width:1180px){.grid{grid-template-columns:295px minmax(340px,1fr)}.results{grid-column:1/-1}}
+@media(max-width:730px){.grid{grid-template-columns:1fr}.results,.full{grid-column:auto}.panel{padding:14px}}
+</style></head><body><main>
+<nav><a href="./">← Leaf Morphology Lab</a><a href="./veins.html">Human Reference v0.7</a><a href="./transport.html">Transport Engineering v1.1</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-evidence-v12.md">Evidence protocol</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Research integrity · Evidence gateway v1.2</div>
+<h1>Φ <span>Evidence &amp; Validation Gateway</span></h1>
+<p class="lead">Pair independently drawn line references on the <em>same</em> original image, audit human-observer disagreement, and explicitly assign whole plants to development or holdout sets before summarizing detector scores. Imported reports remain user-asserted data, never automatically promoted to verified botanical truth.</p>
+<div class="notice"><strong>Source integrity, not source authentication:</strong> JSON SHA-256 values and plant/observer IDs are self-reported. This page never opens the original photographs or checks the SHA-256 against their bytes. Agreement between drawings is not proof of real vascular anatomy. “Holdout” is a user-declared role and does not prove an untouched experiment.</div>
+<div class="grid">
+<section class="panel">
+<h2>1 · Import evidence</h2>
+<label for="refFiles">v0.7 human reference JSON files (multiple)</label>
+<input id="refFiles" type="file" accept=".json,application/json" multiple>
+<p>Import two separately created references from the same photo and different masked observers. Up to 36 references, at most three observers per source image. One specimen ID per original photo.</p>
+<div class="actions"><button id="syntheticEvidence" type="button">Load synthetic demonstration</button><button id="clearEvidence" type="button">Clear all files</button></div>
+<p id="referenceStatus" class="status" aria-live="polite">No annotation files loaded.</p>
+<label for="agreementTolerance">Human line matching tolerance <output id="toleranceValue">2 pixels</output></label>
+<input id="agreementTolerance" type="range" min="0" max="3" step="1" value="2">
+<div class="actions"><button id="auditEvidence" class="primary" type="button" disabled>Audit human-reference agreement</button><button id="exportAgreement" type="button" disabled>Export agreement JSON</button></div>
+<p>Scores describe agreement on drawn *image pixels* within the selected tolerance, not independent confirmation that a line is a plant vein.</p>
+</section>
+<section class="panel">
+<h2>2 · Observer agreement</h2>
+<div class="metrics">
+<div class="metric"><strong id="refCount">–</strong><span>Reference annotations</span></div>
+<div class="metric"><strong id="imageCount">–</strong><span>Distinct image hashes</span></div>
+<div class="metric"><strong id="plantCount">–</strong><span>Self-asserted plants</span></div>
+<div class="metric"><strong id="pairedCount">–</strong><span>Images with multiple observers</span></div>
+</div>
+<h3>Same-image comparison</h3>
+<div class="scroll"><table><thead><tr><th>Specimen</th><th>Plant ID</th><th>Observers</th><th>Pairs</th><th>Mean F1</th><th>Review status</th></tr></thead><tbody id="observerRows"></tbody></table></div>
+<pre id="observerNotes">Import and audit annotations. Images with only one observer are reported as missing independent review, never as perfect agreement.</pre>
+</section>
+<section class="panel results">
+<h2>3 · Explicit plant-level partition</h2>
+<p>Choose a role for <strong>every plant ID</strong>. A plant's photos and observers must stay together. Unassigned plants block split creation.</p>
+<div class="roles" id="plantRoles"></div>
+<div class="actions"><button id="buildSplit" class="primary" type="button" disabled>Create self-declared partition</button><button id="exportSplit" type="button" disabled>Export partition JSON</button></div>
+<p class="status" id="splitStatus">At least one development plant and one holdout plant are required. Splitting does not constitute preregistration.</p>
+<h3>Optional model-score evidence</h3>
+<label for="modelReports">v0.7 detector benchmark JSON files (multiple)</label>
+<input id="modelReports" type="file" accept=".json,application/json" multiple>
+<p>Optional reports must match the imported image, plant, specimen and masked observer. All reports must have the same ridge threshold, component size, color margin and matching tolerance. These JSON scores are <strong>not recomputed</strong> without the original photos.</p>
+<p id="reportStatus" class="status">No model reports loaded.</p>
+<div class="actions"><button id="buildHoldout" type="button" disabled>Review development vs holdout</button><button id="exportHoldout" type="button" disabled>Export evidence summary</button></div>
+</section>
+<section class="panel full">
+<h2>4 · Detector results by independent plant</h2>
+<div class="scroll"><table><thead><tr><th>Group</th><th>Detector</th><th>Plant-level mean F1</th><th>Contributing plants</th><th>Assigned plants</th><th>Image-level reports</th></tr></thead><tbody id="holdoutRows"></tbody></table></div>
+<pre id="holdoutNotes">This stage remains descriptive. Model report JSON is unsigned, and plants must actually be independent for plant-level summaries to be meaningful. Unmeasured plants are counted but excluded from observed means.</pre>
+</section>
+</div>
+<footer>Φ LeafLab v1.2 · Entirely browser-local metadata and line-annotation processing · No original photos uploaded or remote fetches · Synthetic demo files are NEVER classified as authentic botanical evidence.</footer>
+</main><script type="module" src="./evidence-ui.mjs"></script></body></html>
