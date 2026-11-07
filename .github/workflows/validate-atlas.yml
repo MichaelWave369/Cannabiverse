@@ -62,6 +62,9 @@ jobs:
       - name: Validate LeafLab human vein reference and detector comparison
         run: npm run validate:leaflab-veins
 
+      - name: Validate LeafLab network graph and fault tolerance baselines
+        run: npm run validate:leaflab-networks
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
