@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Cannabiverse Leaf Morphology Lab: synthetic cannabis leaf geometry and private manual photo measurements.">
-<title>Cannabiverse | Φ Leaf Morphology Lab</title>
+<meta name="description" content="Cannabiverse Leaf Morphology Lab: synthetic cannabis leaf geometry, local tip annotations and descriptive fits.">
+<title>Cannabiverse | Φ Leaf Morphology Lab v0.2</title>
 <style>
 :root{color-scheme:dark;--bg:#07120c;--panel:#13261b;--line:#365a42;--text:#edf7ee;--muted:#b3cbb9;--gold:#e8cc87;--green:#79e0a1}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 55% 0,#1d4730,#07120c 62%);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
@@ -15,15 +15,18 @@ main{max-width:1500px;margin:auto;padding:20px clamp(15px,3vw,40px) 60px}nav{dis
 .legend{font-size:12px;color:#b8d5c0;margin:11px 2px;min-height:36px}.small{font-size:12px;color:var(--muted)}.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{background:#1b3625;border:1px solid #375943;padding:12px;border-radius:10px}.metric strong{display:block;color:#f5fff5;font-size:22px;font-variant-numeric:tabular-nums}.metric span{font-size:11px;color:var(--muted)}
 .table-scroll{overflow-x:auto;margin-top:14px}table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:12px}th{text-align:left;color:var(--gold)}th,td{border-bottom:1px solid #32533d;padding:8px 5px}tr.active{color:#9ff1b5}
 input[type=file]{width:100%;max-width:100%;background:#092116;border:1px dashed #5e8b69;border-radius:9px;padding:12px;color:#d2ebd9}.hidden{display:none!important}.help{margin-top:18px;padding-top:10px;border-top:1px solid #35513d}.help p{font-size:12px;color:#b9d1c1}.point-list{font-size:12px;color:#d5eed8;white-space:pre-line;max-height:180px;overflow-y:auto}
+.fit-table{overflow:auto;max-height:280px}.fit-table table{width:100%;font-size:11px;white-space:nowrap}
+.fit-status{white-space:pre-line;color:#c6e8d2;font-size:12px;line-height:1.65}
+.help-badge{font-size:11px;border:1px solid #6a845b;border-radius:12px;padding:4px 7px;color:#b8e8c4}
 footer{font-size:12px;color:#aec8b7;margin-top:28px}
 @media(max-width:1160px){.layout{grid-template-columns:255px minmax(340px,1fr)}.research{grid-column:1/-1}}@media(max-width:700px){.layout{grid-template-columns:1fr}.research{grid-column:auto}.panel{padding:15px}}
 </style>
 </head>
 <body><main>
 <nav><a href="../../">← Cannabiverse</a><a href="../discovery/">Discovery Lab</a><a href="../explorer/">Research Explorer</a><a href="https://github.com/MichaelWave369/Cannabiverse">Source & governance</a></nav>
-<div class="eyebrow">Φ Cannabiverse · Botanical geometry · Prototype 0.1</div>
+<div class="eyebrow">Φ Cannabiverse · Botanical geometry · Prototype 0.2</div>
 <h1><span>Φ</span> Leaf Morphology Lab</h1>
-<p class="lead">Explore the architecture of a palmately compound cannabis leaf: leaflet fan geometry, serrations, apparent symmetry, and schematic vein branching. Compare generated geometries or annotate your own photograph, entirely in your browser.</p>
+<p class="lead">Explore palmately compound cannabis leaf geometry, serrations and schematic veins, then annotate and descriptively fit real tip positions to the synthetic model. All image and annotation processing stays inside your browser.</p>
 <div class="notice"><strong>Model ≠ measurement ≠ biological mechanism.</strong> Generated leaves are hypothetical silhouettes in arbitrary units. Venation is schematic, not a flow simulation. Neither Fibonacci patterns nor 3-6-9 structure nor an efficient natural design has been established by these drawings.</div>
 <div class="layout">
 <section class="panel" aria-labelledby="geometryTitle">
@@ -47,11 +50,18 @@ footer{font-size:12px;color:#aec8b7;margin-top:28px}
 <input type="file" id="photo" accept="image/*">
 <p class="small">Click the leaflet junction first, then each visible leaflet tip. Photos are never uploaded; the browser uses a temporary local object URL.</p>
 <div class="toolbar"><button class="btn" id="undo" type="button">Undo point</button><button class="btn" id="clear" type="button">Clear points</button></div>
+<label for="measurementImport">Or reopen exported annotations (JSON)</label>
+<input type="file" id="measurementImport" accept=".json,application/json">
+<p class="small">Imported annotations are rendered without the original image, so a measurement file can be checked or refitted independently.</p>
 </div>
 <div class="stage"><svg id="figure" viewBox="0 0 850 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Live model of a multi-leaflet leaf"></svg></div>
 <p id="stageNote" class="legend" aria-live="polite">Synthetic geometry.</p>
 <div id="modelExports" class="toolbar"><button class="btn primary" id="svgExport" type="button">Export model SVG</button><button class="btn" id="jsonExport" type="button">Export model JSON</button><button class="btn" id="csvExport" type="button">Compare counts CSV</button></div>
-<div id="photoExports" class="toolbar hidden"><button class="btn primary" id="photoExport" type="button" disabled>Export measurements JSON</button></div>
+<div id="photoExports" class="toolbar hidden">
+  <button class="btn primary" id="photoExport" type="button" disabled>Export measurements JSON</button>
+  <button class="btn" id="fitButton" type="button" disabled>Fit measured tip fan</button>
+  <button class="btn" id="fitExport" type="button" disabled>Export fit report JSON</button>
+</div>
 </section>
 <section class="panel research">
 <h2 id="metricsTitle">Synthetic metrics</h2>
@@ -67,8 +77,16 @@ footer{font-size:12px;color:#aec8b7;margin-top:28px}
 <p class="small">Normalized by √(model area), not matched to real leaf area or growth cost. Lower is not automatically better.</p>
 <div class="table-scroll"><table><thead><tr><th>N</th><th>Boundary / √A</th><th>Veins / √A</th></tr></thead><tbody id="comparison"></tbody></table></div>
 </div>
-<div id="photoMetrics" class="hidden"><p class="small" id="photoSummary">No measurements yet. Mark a hub and at least one tip.</p><div id="photoPoints" class="point-list"></div></div>
-<div class="help"><h2>Research boundaries</h2><p>Photo mode measures hub-to-tip directions and relative lengths only. It does not derive serrations, photosynthesis, vein topology, or real-world units. Perspective and scale must be independently controlled before comparing specimens.</p><p>See the <a href="../../docs/leaf-morphology-lab.md">protocol, equations and falsifiable hypotheses</a>.</p></div>
+<div id="photoMetrics" class="hidden">
+  <p class="small" id="photoSummary">No measurements yet. Mark a hub and at least one tip.</p>
+  <div id="photoPoints" class="point-list"></div>
+  <h2 style="margin-top:20px">Measured versus fitted</h2>
+  <p class="small">Requires exactly 3, 5, 7, 9 or 11 complete tips. Angles are circularly unwrapped so a rotated photograph cannot create a fake 360° fan.</p>
+  <div id="fitSummary" class="fit-status">No fit yet. Mark all tips, then press “Fit measured tip fan”.</div>
+  <div class="fit-table"><table><thead><tr><th>Tip</th><th>Angle error</th><th>Length error</th></tr></thead><tbody id="fitRows"></tbody></table></div>
+  <p id="fitWarnings" class="small"></p>
+</div>
+<div class="help"><h2>Research boundaries</h2><p>Photo mode measures hub-to-tip directions and relative lengths only. The v0.2 tip fit is descriptive, using the same observations it evaluates. It does not validate predictions on held-out leaves or identify serrations, photosynthesis, vein topology, or real-world units. Perspective and scale must be independently controlled before comparing specimens.</p><p>See the <a href="../../docs/leaf-morphology-lab.md">protocol, equations and falsifiable hypotheses</a>.</p></div>
 </section>
 </div>
 <footer>Cannabiverse LeafLab · MIT code · Local-first, no external dependencies. Claims about a real plant require real specimens, measured uncertainty and independent validation.</footer>
