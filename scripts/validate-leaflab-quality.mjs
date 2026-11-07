@@ -73,7 +73,7 @@ assert.throws(()=>evaluateExternalSnapshot(snapshot,external.slice(0,2)),/at lea
 assert.throws(()=>evaluateExternalSnapshot(snapshot,external.map(x=>({...x,origin:"manual"}))),/origin differs/);
 assert.throws(()=>evaluateExternalSnapshot(snapshot,external.map(x=>({...x,group:"control"}))),/only selected group/);
 assert.throws(()=>evaluateExternalSnapshot(snapshot,external.map(x=>({...x,
-  specimenId:training[0].specimenId}))),/Specimen ID/);
+  specimenId:training[0].specimenId}))),/Specimen ID|Duplicate specimen ID/);
 const corrupt={...snapshot,models:snapshot.models.map((m,i)=>i===3?
   {...m,expectedRelativeLengths:m.expectedRelativeLengths.map((v,j)=>j===0?v+.2:v)}:m)};
 assert.throws(()=>validateExternalSnapshot(corrupt),/predicted values/);
