@@ -207,7 +207,7 @@ export function evaluateHeldout(raw,{count=7,group="cannabis",seed=STUDY_SEED}={
       heldoutPlantIds:split.heldout,trainingPlantCount:train.length,heldoutPlantCount:test.length,
       trainingSpecimenCount:selected.filter(o=>split.training.includes(o.plantId)).length,
       heldoutSpecimenCount:selected.filter(o=>split.heldout.includes(o.plantId)).length},
-    trainedAngularGapDegrees:round(fanGap),models,
+    trainedAngularGapDegrees:round(fanGap),models:fitted,
     goldenMinusLinearRMSE:{meanDifference:round(mean(differences)),
       positiveMeans:"Golden fixed model has larger error than linear falloff",
       exploratoryPlantBootstrap95:boot},
