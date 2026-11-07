@@ -111,7 +111,7 @@ function sourceFields(raw){
      !Number.isInteger(raw.width)||!Number.isInteger(raw.height))
     throw new TypeError("Reference needs a source photo with original file SHA-256 and decoded dimensions");
   const identity=identifyPhotoByOriginalHash(raw.originalSHA256,
-    raw.originalBytes,raw.width,raw.height);
+    raw.originalBytes,raw.width??raw.originalWidth,raw.height??raw.originalHeight);
   return {
     originalSHA256:identity.originalSHA256,
     originalBytes:identity.originalBytes,
