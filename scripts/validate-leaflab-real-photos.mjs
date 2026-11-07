@@ -25,6 +25,9 @@ assert.equal(REAL_LEAF_SOURCES.filter(x=>x.license==="Public domain (PD-author)"
 assert.equal(REAL_LEAF_SOURCES.filter(x=>x.license==="CC BY-SA 3.0").length,2);
 assert.equal(REAL_LEAF_SOURCES.filter(x=>x.license==="CC BY 2.0").length,1);
 assert.equal(REAL_LEAF_SOURCES.filter(x=>x.possibleSharedPlantGroup).length,2);
+assert.equal(REAL_LEAF_SOURCES.filter(x=>x.independentlyFetchedSHA256).length,2);
+assert.ok(REAL_LEAF_SOURCES.filter(x=>x.independentlyFetchedSHA256).every(
+  x=>/^[a-f0-9]{64}$/.test(x.independentlyFetchedSHA256)));
 const pair=REAL_LEAF_SOURCES.filter(x=>x.possibleSharedPlantGroup);
 assert.equal(pair[0].possibleSharedPlantGroup,pair[1].possibleSharedPlantGroup);
 assert.throws(()=>validateRealLeafCatalog([]),/1–30/);
@@ -42,6 +45,9 @@ assert.throws(()=>validateRealLeafCatalog([
 assert.throws(()=>validateRealLeafCatalog([
   {...REAL_LEAF_SOURCES[0],annotationOverlay:true}
 ]),/Preannotated image/);
+assert.throws(()=>validateRealLeafCatalog([
+  {...REAL_LEAF_SOURCES[0],independentlyFetchedSHA256:"not-a-sha256"}
+]),/Invalid frozen SHA-256/);
 assert.throws(()=>validateRealLeafCatalog([
   {...REAL_LEAF_SOURCES[0],originalBytes:17*1024*1024}
 ]),/maximum size/);
