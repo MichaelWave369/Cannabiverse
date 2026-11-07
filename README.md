@@ -239,3 +239,8 @@ Manually calibrate a ruler segment, trace numbered leaflet polygons, obtain appr
 ### LeafLab v0.5 · independent marking reliability and truly separate evaluation files
 
 [Open Quality Gate v0.5](https://michaelwave369.github.io/Cannabiverse/app/leaflab/quality.html) · [Read quality protocol](docs/leaf-morphology-quality-v05.md). Compare repeat tip annotations of the *same* image from masked-code observers, explicitly recording count mismatches and observer disagreement. Train a fixed candidate-model snapshot on one v0.4 study collection and score a separately imported collection of new Plant IDs with no refitting. The app rejects repeated training/test IDs and flags all synthetic examples; user-asserted identities and snapshot immutability **cannot be verified by software alone**. No real plant evidence or chemical canon changes. Run npm run validate:leaflab-quality.
+
+
+### LeafLab v0.6 · offline segmented imaging and vein-like pixel networks
+
+[Open Imaging Lab](https://michaelwave369.github.io/Cannabiverse/app/leaflab/imaging.html) · [Read imaging method notes](docs/leaf-morphology-imaging-v06.md). Upload a private local leaf photo, mark representative foreground/background colors and use a dependency-free connected-color region segmenter. Inspect **experimental dark ridge** candidates, thin them to a pixel skeleton and review proxy graph components, endpoint-like and junction-like pixels. Compare binary masks against same-image v0.3 manually traced leaflet polygons with IoU/Dice, then export mask PNG and experimental JSON. Synthetic image tests validate software behavior, **not real cannabis veins or vascular transport**. No images are uploaded and existing governed chemistry evidence remains unchanged. Run npm run validate:leaflab-imaging.
