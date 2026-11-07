@@ -114,6 +114,11 @@ export function installMeasurementUI({svg,getPhotoURL,getPhotoInfo,renderPhoto,d
   });
   $("undoOutline").addEventListener("click",()=>{draft.pop();renderPhoto();});
   $("clearOutline").addEventListener("click",()=>{draft=[];renderPhoto();});
+  $("removeSavedOutline").addEventListener("click",()=>{
+    const selected=Number($("outlineLeaflet").value);
+    outlines=outlines.filter(o=>o.leafletId!==selected);
+    draft=[];renderPhoto();
+  });
   $("clearScale").addEventListener("click",()=>{scaleMarks=[];setTool("tips");});
   $("specimenExport").addEventListener("click",()=>{
     try{
