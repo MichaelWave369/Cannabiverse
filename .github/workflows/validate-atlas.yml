@@ -50,6 +50,9 @@ jobs:
       - name: Validate botanical Leaf Morphology Lab
         run: npm run validate:leaflab
 
+      - name: Validate LeafLab held-out research and null comparisons
+        run: npm run validate:leaflab-study
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
