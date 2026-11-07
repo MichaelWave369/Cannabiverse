@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cannabiverse LeafLab v0.4: locally compare plant-held-out leaflet models against a fixed golden ratio candidate and audit 3/9 leaf-count patterns.">
+<title>Cannabiverse | Φ LeafLab Research Audit v0.4</title>
+<style>
+:root{color-scheme:dark;--bg:#06130b;--surface:#112719;--surface2:#163322;--border:#3e694f;--text:#e8f6ea;--muted:#a5c4ad;--gold:#e9cd87;--green:#8ae6ae}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;font:15px/1.55 system-ui,-apple-system,Segoe UI,Arial,sans-serif;color:var(--text);background:radial-gradient(ellipse at 50% 0,#21442d,var(--bg) 66%)}
+main{width:min(1330px,calc(100% - 32px));margin:auto;padding:20px 0 70px}
+a{color:var(--gold)}nav{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;margin:3px 0 24px}
+h1{font-size:clamp(34px,5vw,56px);line-height:1.1;letter-spacing:-1.4px;margin:10px 0 13px}h2{font-size:20px;margin:0 0 10px}h3{font-size:16px;margin:18px 0 8px}
+p{margin:10px 0}strong{color:#e8f8ed}.eyebrow{font-size:12px;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;font-weight:750}.lead{max-width:900px;color:#c0d8c5}
+.notice{border:1px solid #988252;background:#322c1b;padding:15px 17px;border-radius:12px;font-size:13px;color:#f6e9bb;margin:22px 0}
+.panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.panel{background:linear-gradient(170deg,#132b1d,#0d2015);border:1px solid var(--border);border-radius:16px;padding:20px;min-width:0}
+.panel.full{grid-column:1/-1}.panel p{color:#bfd3c4;font-size:13px}.bar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:15px 0}
+button{border-radius:9px;padding:10px 14px;cursor:pointer;font:600 13px system-ui;background:#1e442d;color:#ebf9ee;border:1px solid #699476}button.main{background:#8be6ae;color:#0b2415;border-color:#8be6ae}button:disabled{opacity:.44;cursor:not-allowed}button:not(:disabled):hover{filter:brightness(1.17)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f8d583;outline-offset:3px}
+.field{margin:9px 0}.field label{display:block;font-size:12px;font-weight:700;color:#d5ebd8;margin-bottom:5px}
+input,select{width:100%;background:#0b2014;color:#f3fff5;border:1px solid #65836d;border-radius:8px;padding:10px;font:14px system-ui}input[type=file]{border-style:dashed}.fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.status{white-space:pre-line;color:#bfe9c8!important;font-size:13px;min-height:30px}
+table{border-collapse:collapse;width:100%;font-size:12px;min-width:540px}th,td{text-align:left;border-bottom:1px solid #33543d;padding:9px 8px}th{color:var(--gold);font-weight:750}td{font-variant-numeric:tabular-nums}.scroll{max-width:100%;overflow:auto;max-height:330px}.small{font-size:12px!important;color:#a7c8b0!important}
+.report{white-space:pre-line;font:13px/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;color:#d6efdb;margin:10px 0;background:#0b2014;padding:13px;border-radius:9px;border:1px solid #3f6448}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.badge{display:inline-block;font-size:11px;font-weight:750;color:#0b2b1a;background:#9debb7;padding:3px 8px;border-radius:16px}
+footer{font-size:12px;color:#a9c6b2;margin-top:28px}
+@media(max-width:750px){.panels,.fields,.two{grid-template-columns:1fr}.panel.full{grid-column:auto}.panel{padding:15px}table{min-width:460px}}
+</style></head><body><main>
+<nav><a href="./">← Φ Leaf Morphology Lab</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-research-v04.md">Audit protocol</a><a href="https://github.com/MichaelWave369/Cannabiverse">Source &amp; governance</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Computational botany · Research gate 0.4</div>
+<h1>LeafLab <span style="color:#8ae6ae">Research Audit</span></h1>
+<p class="lead">An intentionally skeptical laboratory. Assemble annotated leaf-tip observations, hold out entire plant IDs, compare simple mathematical models, and report when golden-ratio predictions lose. Study files and reports stay in your browser until you export them.</p>
+<div class="notice"><strong>No discovery claims.</strong> Manual source data and plant IDs are unverified. A small held-out model comparison is not proof of predictive generality. The golden-ratio shape is an explicit test candidate, not a known cannabis law. The separate 3/9 count audit does not test 6 and cannot establish biological numerology.</div>
+<div class="panels">
+<section class="panel">
+<h2>1 · Build a study collection</h2>
+<p>Use a v0.2+ <strong>manual-photo-tip-annotation</strong> JSON exported from the main LeafLab. One unique specimen ID per marked leaf, and one stable plant ID for repeats from the same plant.</p>
+<div class="field"><label for="annotationFile">Local tip annotation JSON</label><input id="annotationFile" type="file" accept=".json,application/json"></div>
+<div class="fields">
+  <div class="field"><label for="specimenId">Specimen ID</label><input id="specimenId" maxlength="64" placeholder="C01_leaf1" autocomplete="off"></div>
+  <div class="field"><label for="plantId">Plant ID</label><input id="plantId" maxlength="64" placeholder="Plant_C01" autocomplete="off"></div>
+  <div class="field"><label for="group">Study group</label><select id="group"><option value="cannabis">Cannabis</option><option value="control">Non-cannabis control</option></select></div>
+  <div class="field"><label for="species">Species or taxon label</label><input id="species" maxlength="90" value="Cannabis sativa" autocomplete="off"></div>
+</div>
+<div class="bar"><button id="addObservation" class="main" type="button">Add annotated specimen</button><button id="loadDemo" type="button">Load labeled synthetic demo</button></div>
+<p class="status" id="collectionStatus" aria-live="polite">No observations loaded.</p>
+<div class="scroll"><table><thead><tr><th>Specimen</th><th>Plant</th><th>Group</th><th>Tips</th><th>Origin</th></tr></thead><tbody id="collectionRows"></tbody></table></div>
+<div class="bar"><button id="exportCollection" type="button" disabled>Export collection JSON</button><button id="clearCollection" type="button">Clear</button></div>
+<div class="field"><label for="importCollection">Or import saved v0.4 collection JSON</label><input id="importCollection" type="file" accept=".json,application/json"></div>
+<p class="small">Local files are not uploaded. Synthetic demo and manual observations cannot be mixed. Collection JSON preserves tip coordinates and metadata, not original photos.</p>
+</section>
+<section class="panel">
+<h2>2 · Plant-held-out model comparison</h2>
+<p>Requires at least <strong>8 distinct plant IDs</strong> with complete annotations of the same leaflet count in one group. Repeated leaves are averaged inside their own plant first. A fixed deterministic split is used, with the held-out plant IDs forbidden from training.</p>
+<div class="fields">
+  <div class="field"><label for="analysisGroup">Group to evaluate</label><select id="analysisGroup"><option value="cannabis">Cannabis</option><option value="control">Non-cannabis control</option></select></div>
+  <div class="field"><label for="analysisCount">Complete leaflet count</label><select id="analysisCount"><option>3</option><option>5</option><option selected>7</option><option>9</option><option>11</option></select></div>
+</div>
+<div class="bar"><button class="main" id="runHeldout" type="button" disabled>Evaluate held-out plants</button><button id="exportHeldout" type="button" disabled>Export JSON report</button></div>
+<p class="status" id="heldoutStatus" aria-live="polite">Add or import observations to begin.</p>
+<div id="heldoutSummary" class="report" hidden></div>
+<div class="scroll"><table><thead><tr><th>Predeclared model</th><th>Test length RMSE</th><th>Test angular-gap RMSE</th><th>Fitted falloff</th><th>Fitted asymmetry</th></tr></thead><tbody id="modelRows"></tbody></table></div>
+<p class="small">Lower test error is better. All models share the same training-estimated angular gap. The golden candidate uses Φ<sup>-|k|</sup>, symmetric across leaflets. Reported plant-bootstrap intervals are exploratory, not confirmatory statistical intervals.</p>
+</section>
+<section class="panel full">
+<h2>3 · 3/9 count pattern versus controls</h2>
+<p>A specific operational definition of the old 3-6-9 idea: the fraction of plants whose consistently observed leaflet count is <strong>3 or 9</strong>, compared with non-cannabis palmate controls. Each plant counts once; plants containing multiple observed count classes are excluded from this audit. Because our current complete-tip workflow supports odd counts only, <strong>6 is not evaluated</strong>.</p>
+<div class="bar"><button id="runCountAudit" class="main" type="button" disabled>Run count pattern audit</button><button id="exportCountAudit" type="button" disabled>Export count report JSON</button></div>
+<p id="countStatus" class="status" aria-live="polite">Add both cannabis and control observations for a comparison.</p>
+<div id="countSummary" class="report" hidden></div>
+<p class="small">The conditional label-permutation reference only describes the recorded sample, under an assumption that group labels would be exchangeable. It does not correct for growth stage, cultivar, taxon selection, observer choice or multiple exploration. A significant value would not demonstrate a biological 3-6-9 law.</p>
+</section>
+</div>
+<footer>LeafLab Research Audit v0.4 · Local-only files · Synthetic demo is clearly flagged · Models, measurements, exploratory reference distributions, and verified evidence remain distinct.</footer>
+</main><script type="module" src="./research-ui.mjs"></script></body></html>
