@@ -1,6 +1,6 @@
 # Cannabiverse
 
-**A governed, source-aware map of Cannabis phytochemistry.**
+**A governed, source-aware map of Cannabis phytochemistry, plus a separate exploratory botanical morphology lab.**
 
 Cannabiverse turns cannabinoid lists into a reproducible scientific knowledge graph: canonical compounds, aliases, homolog series, transformation routes, biosynthetic relationships, evidence lanes, source receipts, and explicit uncertainty.
 
@@ -36,6 +36,7 @@ Current dataset:
 **Cannabiverse:** https://michaelwave369.github.io/Cannabiverse/
 
 - Research Explorer: https://michaelwave369.github.io/Cannabiverse/app/explorer/
+- Φ Leaf Morphology Lab: https://michaelwave369.github.io/Cannabiverse/app/leaflab/
 - Evidence Explorer: https://michaelwave369.github.io/Cannabiverse/app/evidence/
 - 3D Molecule Viewer: https://michaelwave369.github.io/Cannabiverse/app/molecules/
 - Molecule Compare Lab: https://michaelwave369.github.io/Cannabiverse/app/molecules/compare.html
@@ -79,6 +80,7 @@ data/
   transformations/    transformation specs + deterministic correspondence receipts
 
 app/explorer/          browser-based Cannabiverse Query Explorer
+app/leaflab/           local-first synthetic leaf geometry + photo annotation
 app/evidence/          source / claim Evidence Explorer
 app/molecules/         native WebGL2 molecule viewer
 docs/                  ontology and governance documentation
@@ -213,3 +215,9 @@ A new [public research-data source ledger](data/discovery/public-data-sources-v1
 ## Discovery Lab v0.4: measured reference spectrum benchmark
 
 Our first **real experimental reference-spectra validation** uses three unchanged, **CC BY** [MassBank-data](https://github.com/MassBank/MassBank-data) records (Δ9-THC standard spectra from Eawag and the University of Athens) pinned to one source commit. We convert their original recorded peaks into MGF **in memory**, screen them with our existing MS/MS analyzer, and compare the positive/negative precursor neutral masses without mistaking a common standard for a new discovery. Upstream attribution and raw record files are preserved in [the source registry](data/discovery/references/massbank/manifest-v1.json); [method notes](docs/discovery-lab-v0.4.md) distinguish authentic published standard spectra from actual cannabis-extract measurements. Run `npm run validate:massbank-reference` and `npm run build:massbank-report`. Atlas CI publishes an auditable JSON **artifact**, but no unverified novel-cannabinoid claims. This benchmark is **not** the previously registered MassIVE cannabis extract dataset.
+
+## Φ Leaf Morphology Lab v0.1
+
+[Open Leaf Morphology Lab](https://michaelwave369.github.io/Cannabiverse/app/leaflab/) or read the [protocol and hypotheses](docs/leaf-morphology-lab.md). This separate, no-dependency browser workspace explores synthetic leaflet geometry, tooth modulation, paired-area symmetry, schematic vein lengths, normalized count comparisons, and locally annotated photograph tip positions. It exports SVG/JSON/CSV without transmitting photos.
+
+**Synthetic geometry is not biological optimization, and manual photo annotation is not automatically verified botanical evidence.** Fibonacci and 3-6-9 remain falsifiable hypotheses. The chemistry canon, evidence lanes, and research bridge are unchanged. Run npm run validate:leaflab.
