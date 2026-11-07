@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Cannabiverse Leaf Morphology Lab: synthetic cannabis leaf geometry, local tip annotations and descriptive fits.">
-<title>Cannabiverse | Φ Leaf Morphology Lab v0.2</title>
+<title>Cannabiverse | Φ Leaf Morphology Lab v0.3</title>
 <style>
 :root{color-scheme:dark;--bg:#07120c;--panel:#13261b;--line:#365a42;--text:#edf7ee;--muted:#b3cbb9;--gold:#e8cc87;--green:#79e0a1}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 55% 0,#1d4730,#07120c 62%);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
@@ -18,13 +18,21 @@ input[type=file]{width:100%;max-width:100%;background:#092116;border:1px dashed 
 .fit-table{overflow:auto;max-height:280px}.fit-table table{width:100%;font-size:11px;white-space:nowrap}
 .fit-status{white-space:pre-line;color:#c6e8d2;font-size:12px;line-height:1.65}
 .help-badge{font-size:11px;border:1px solid #6a845b;border-radius:12px;padding:4px 7px;color:#b8e8c4}
+.lab-subpanel{margin:16px 0;padding:13px;border:1px solid #4d765a;border-radius:12px;background:#10281b}
+.lab-subpanel h3{font-size:15px;margin:2px 0 10px;color:#bdecc7}
+.lab-subpanel label{display:block;font-size:12px;font-weight:700;margin:9px 0 5px;color:#cce9d4}
+.lab-subpanel input:not([type=file]),.lab-subpanel select{width:100%;border:1px solid #678d72;border-radius:8px;background:#071a10;color:#f0faef;padding:9px}
+.form-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lab-status{font-size:12px;white-space:pre-line;color:#d4efd7}
+.cohort-table{overflow:auto;max-height:300px}
+.cohort-table table{min-width:470px}
 footer{font-size:12px;color:#aec8b7;margin-top:28px}
 @media(max-width:1160px){.layout{grid-template-columns:255px minmax(340px,1fr)}.research{grid-column:1/-1}}@media(max-width:700px){.layout{grid-template-columns:1fr}.research{grid-column:auto}.panel{padding:15px}}
 </style>
 </head>
 <body><main>
 <nav><a href="../../">← Cannabiverse</a><a href="../discovery/">Discovery Lab</a><a href="../explorer/">Research Explorer</a><a href="https://github.com/MichaelWave369/Cannabiverse">Source & governance</a></nav>
-<div class="eyebrow">Φ Cannabiverse · Botanical geometry · Prototype 0.2</div>
+<div class="eyebrow">Φ Cannabiverse · Botanical geometry · Prototype 0.3</div>
 <h1><span>Φ</span> Leaf Morphology Lab</h1>
 <p class="lead">Explore palmately compound cannabis leaf geometry, serrations and schematic veins, then annotate and descriptively fit real tip positions to the synthetic model. All image and annotation processing stays inside your browser.</p>
 <div class="notice"><strong>Model ≠ measurement ≠ biological mechanism.</strong> Generated leaves are hypothetical silhouettes in arbitrary units. Venation is schematic, not a flow simulation. Neither Fibonacci patterns nor 3-6-9 structure nor an efficient natural design has been established by these drawings.</div>
@@ -52,7 +60,40 @@ footer{font-size:12px;color:#aec8b7;margin-top:28px}
 <div class="toolbar"><button class="btn" id="undo" type="button">Undo point</button><button class="btn" id="clear" type="button">Clear points</button></div>
 <label for="measurementImport">Or reopen exported annotations (JSON)</label>
 <input type="file" id="measurementImport" accept=".json,application/json">
-<p class="small">Imported annotations are rendered without the original image, so a measurement file can be checked or refitted independently.</p>
+<p class="small">Imported annotations are rendered without the original image, so a measurement file can be checked or refitted independently. For physical measurements, use the original photo.</p>
+<div class="lab-subpanel" id="physicalTools">
+  <h3>v0.3 · Calibrate &amp; trace outlines</h3>
+  <p class="small">Place a ruler in the same plane as the flat leaf. Mark both ends of a known distance, then trace each leaflet perimeter with multiple points. Scale is approximate and assumes no perspective distortion.</p>
+  <div class="form-pair">
+    <div><label for="specimenId">Specimen ID (unique)</label><input id="specimenId" maxlength="64" placeholder="sample_001" autocomplete="off"></div>
+    <div><label for="plantId">Plant ID (groups repeat samples)</label><input id="plantId" maxlength="64" placeholder="plant_A" autocomplete="off"></div>
+  </div>
+  <label for="knownLengthMm">Known ruler segment length (millimeters)</label>
+  <input id="knownLengthMm" type="number" min="0.001" max="10000" step="any" value="10">
+  <div class="toolbar">
+    <button class="btn" type="button" id="tipTool" aria-pressed="true">Mark hub / tips</button>
+    <button class="btn" type="button" id="scaleTool" aria-pressed="false">Mark ruler endpoints</button>
+    <button class="btn" type="button" id="traceTool" aria-pressed="false">Trace leaflet outline</button>
+  </div>
+  <label for="outlineLeaflet">Leaflet identifier for next outline</label>
+  <select id="outlineLeaflet">
+    <option value="1">Leaflet 1</option><option value="2">Leaflet 2</option><option value="3">Leaflet 3</option>
+    <option value="4">Leaflet 4</option><option value="5">Leaflet 5</option><option value="6">Leaflet 6</option>
+    <option value="7">Leaflet 7</option><option value="8">Leaflet 8</option><option value="9">Leaflet 9</option>
+    <option value="10">Leaflet 10</option><option value="11">Leaflet 11</option>
+  </select>
+  <div class="toolbar">
+    <button class="btn" type="button" id="finishOutline">Close outline</button>
+    <button class="btn" type="button" id="undoOutline">Undo vertex</button>
+    <button class="btn" type="button" id="clearOutline">Clear current outline</button>
+    <button class="btn" type="button" id="clearScale">Clear ruler marks</button>
+  </div>
+  <p id="physicalStatus" class="lab-status" aria-live="polite">Choose a photo, then mark a ruler and trace one or more leaflet boundaries.</p>
+  <div class="toolbar">
+    <button class="btn primary" type="button" id="specimenExport">Export specimen JSON</button>
+    <button class="btn" type="button" id="specimenAdd">Add specimen to comparison</button>
+  </div>
+</div>
 </div>
 <div class="stage"><svg id="figure" viewBox="0 0 850 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Live model of a multi-leaflet leaf"></svg></div>
 <p id="stageNote" class="legend" aria-live="polite">Synthetic geometry.</p>
@@ -85,8 +126,21 @@ footer{font-size:12px;color:#aec8b7;margin-top:28px}
   <div id="fitSummary" class="fit-status">No fit yet. Mark all tips, then press “Fit measured tip fan”.</div>
   <div class="fit-table"><table><thead><tr><th>Tip</th><th>Angle error</th><th>Length error</th></tr></thead><tbody id="fitRows"></tbody></table></div>
   <p id="fitWarnings" class="small"></p>
+<div class="lab-subpanel">
+  <h3>v0.3 · Cross-specimen comparison</h3>
+  <p class="small">Import individually calibrated specimen JSON files. Repeated specimens with the same plant ID are grouped rather than counted as independent plants. Descriptive summaries only, not significance tests.</p>
+  <label for="cohortImport">Import specimen JSON files (multiple allowed)</label>
+  <input type="file" id="cohortImport" accept=".json,application/json" multiple>
+  <p class="lab-status" id="cohortStatus" aria-live="polite">No specimens loaded.</p>
+  <div class="cohort-table"><table><thead><tr><th>Specimen</th><th>Plant</th><th>Traced</th><th>Mean mm²</th></tr></thead><tbody id="cohortRows"></tbody></table></div>
+  <div class="toolbar">
+    <button class="btn" type="button" id="cohortExportCSV" disabled>Export comparison CSV</button>
+    <button class="btn" type="button" id="cohortExportJSON" disabled>Export comparison JSON</button>
+    <button class="btn" type="button" id="cohortClear">Clear comparison</button>
+  </div>
 </div>
-<div class="help"><h2>Research boundaries</h2><p>Photo mode measures hub-to-tip directions and relative lengths only. The v0.2 tip fit is descriptive, using the same observations it evaluates. It does not validate predictions on held-out leaves or identify serrations, photosynthesis, vein topology, or real-world units. Perspective and scale must be independently controlled before comparing specimens.</p><p>See the <a href="../../docs/leaf-morphology-lab.md">protocol, equations and falsifiable hypotheses</a>.</p></div>
+</div>
+<div class="help"><h2>Research boundaries</h2><p>Photo mode measures hub-to-tip directions and relative lengths only. The v0.2 tip fit is descriptive and in-sample. v0.3 manual scale and polygon metrics estimate image-plane dimensions only; group comparisons are descriptive, not inferential. It does not validate predictions on held-out leaves or identify serrations, photosynthesis, vein topology, or real-world units. Perspective and scale must be independently controlled before comparing specimens.</p><p>See the <a href="../../docs/leaf-morphology-lab.md">protocol, equations and falsifiable hypotheses</a>.</p></div>
 </section>
 </div>
 <footer>Cannabiverse LeafLab · MIT code · Local-first, no external dependencies. Claims about a real plant require real specimens, measured uncertainty and independent validation.</footer>
