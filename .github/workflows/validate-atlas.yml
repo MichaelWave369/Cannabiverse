@@ -74,6 +74,9 @@ jobs:
       - name: Validate transport link delay, classes and wire-cost caps
         run: npm run validate:leaflab-transport
 
+      - name: Validate human annotation agreement and plant split leakage
+        run: npm run validate:leaflab-evidence
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
