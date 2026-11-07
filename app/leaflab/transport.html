@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cannabiverse Φ Transport Engineering v1.1: cost-capped synthetic packet routing, priority scheduling, propagation delay and shared faults.">
+<title>Cannabiverse | Φ Transport Engineering Lab v1.1</title>
+<style>
+:root{color-scheme:dark;--bg:#07170e;--panel:#132e20;--line:#446e54;--text:#edfaef;--sub:#b9d7c4;--gold:#f0d396;--mint:#9deabd}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#20503a,var(--bg) 68%);color:var(--text);font:14px/1.55 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:1490px;margin:auto;padding:25px 18px 76px}nav{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:22px;font-size:13px}
+a{color:var(--gold)}h1{font-size:clamp(34px,5vw,58px);line-height:1.06;letter-spacing:-1.5px;margin:10px 0}h1 span{color:var(--mint)}h2{font-size:20px;margin:0 0 12px}h3{font-size:15px;margin:17px 0 7px}
+.eyebrow{color:var(--gold);letter-spacing:1.5px;font-size:12px;font-weight:800;text-transform:uppercase}.lead{max-width:1050px;color:#cfe6d4}
+.notice{border:1px solid #947b4f;background:#302a1b;color:#f0e1bd;border-radius:11px;padding:15px;margin:20px 0}
+.grid{display:grid;grid-template-columns:300px minmax(380px,1fr) 305px;gap:14px;align-items:start}
+.panel{min-width:0;border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:18px}.panel p{color:#bfd5c5;font-size:12px}
+label{display:block;color:#dbe9de;font-size:12px;font-weight:750;margin:11px 0 5px}
+input,select{font:14px system-ui;color:#effaf0;background:#071b10;border:1px solid #6c9d7d;padding:9px;width:100%;border-radius:9px}
+input[type=file]{border-style:dashed}.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+button{font:700 12px system-ui;border:1px solid #679e7a;color:#ebffef;background:#1a4c30;border-radius:9px;padding:10px 12px;cursor:pointer}
+button.primary{background:var(--mint);color:#092817;border-color:var(--mint)}button:disabled{opacity:.48;cursor:not-allowed}button:hover:not(:disabled){filter:brightness(1.1)}
+button:focus-visible,input:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #f4d794;outline-offset:3px}
+.buttons{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0}
+.status{white-space:pre-line;color:#d0f0d9;font-size:12px;overflow-wrap:anywhere}
+.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{padding:10px;background:#1a3c2a;border:1px solid #406f50;border-radius:10px}.metric strong{font-size:21px;display:block;font-variant-numeric:tabular-nums}.metric span{font-size:11px;color:var(--sub)}
+.figure{background:#081f13;border:1px solid #416c4b;border-radius:11px;overflow:hidden}.figure svg{width:100%;min-height:190px;max-height:320px;display:block}
+.scroll{overflow:auto;max-height:410px}table{width:100%;min-width:860px;border-collapse:collapse;font-size:12px}th,td{padding:9px 7px;border-bottom:1px solid #3a6046;text-align:left}th{color:var(--gold)}
+pre{font:12px/1.6 ui-monospace,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #355d46;background:#092016;border-radius:9px;padding:12px}
+canvas{display:block;width:100%;height:180px;background:#081c10;border:1px solid #3b6649;border-radius:9px}
+.full{grid-column:1/-1}footer{font-size:12px;color:#b5d0bb;margin-top:28px}
+@media(max-width:1160px){.grid{grid-template-columns:290px minmax(350px,1fr)}.results{grid-column:1/-1}}
+@media(max-width:730px){.grid{grid-template-columns:1fr}.results,.full{grid-column:auto}.pair{grid-template-columns:1fr}.panel{padding:14px}}
+</style></head><body><main>
+<nav><a href="./">← Leaf Morphology Lab</a><a href="./engineering.html">Network Engineering v1.0</a><a href="./packets.html">Packet Simulator v0.9</a><a href="./network.html">Topology Atlas</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-transport-v11.md">Transport protocol</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Engineering methodology · v1.1</div>
+<h1>Φ <span>Transport Engineering Lab</span></h1>
+<p class="lead">Make the assumptions visible. Test how propagation delays, high-priority traffic, resource limits and node outages affect three routing heuristics on comparable abstract geometries, while constraining every topology by the same maximum capacity-weighted wire cost.</p>
+<div class="notice"><strong>Not a physical network prediction.</strong> An image-derived line is not an authenticated botanical vessel. Pixels-per-tick is an invented propagation scale, strict priority can starve normal traffic, and the cost cap is a geometric proxy rather than measured dollars or equipment. No real routing hardware or sap transport is modeled.</div>
+<div class="grid">
+<section class="panel">
+<h2>1 · Source and experiment</h2>
+<label for="transportFile">Import a v0.7 manual line-reference JSON</label>
+<input id="transportFile" type="file" accept=".json,application/json">
+<div class="buttons"><button id="transportTree" type="button">Synthetic tree</button><button id="transportLoop" type="button">Synthetic loop</button></div>
+<p class="status" id="sourceInfo" aria-live="polite">Select a graph or a clearly labeled synthetic demo. 36-node maximum for bounded simulation.</p>
+<h3>Traffic and scheduling</h3>
+<div class="pair">
+<div><label for="transportSeeds">Traffic seeds (1–3)</label><input id="transportSeeds" type="number" min="1" max="3" value="2"></div>
+<div><label for="transportSeedBase">Starting seed</label><input id="transportSeedBase" type="number" min="1" max="2147483647" value="369"></div>
+<div><label for="transportTicks">Offered traffic ticks</label><input id="transportTicks" type="number" min="10" max="60" value="36"></div>
+<div><label for="transportArrivals">Packet offers per tick</label><input id="transportArrivals" type="number" min="1" max="6" value="3"></div>
+<div><label for="transportQueue">Max node queue</label><input id="transportQueue" type="number" min="4" max="50" value="18"></div>
+<div><label for="transportSpeed">Pixels propagated / tick</label><input id="transportSpeed" type="number" min="10" max="120" value="30"></div>
+<div><label for="transportPriority">High-priority offers (%)</label><input id="transportPriority" type="number" min="0" max="100" value="40"></div>
+<div><label for="transportCost">Maximum cost proxy</label><input id="transportCost" type="number" min="1" max="100000" value="542"></div>
+</div>
+<p class="status" id="costInfo">Common feasible budget requires a topology to install at least one slot on each link.</p>
+<label for="transportAllocation">Capacity assignment</label>
+<select id="transportAllocation"><option value="even-slots">Round-robin slots while affordable</option><option value="short-link-first">Fill shortest links first</option></select>
+<label for="transportTraffic">Offered endpoint pattern</label>
+<select id="transportTraffic"><option value="uniform-pairs">Uniform pairs</option><option value="hub-hotspot">Synthetic hotspot</option></select>
+<label for="transportHotspot">Hotspot node</label><select id="transportHotspot"></select>
+<label for="transportFault">Same node outage across graphs</label>
+<select id="transportFault"><option value="none">No outage</option><option value="node">Node down for fixed tick window</option></select>
+<div class="pair">
+<div><label for="transportNode">Failed node</label><select id="transportNode"></select></div>
+<div><label for="transportStart">Outage starts</label><input id="transportStart" type="number" min="0" max="59" value="12"></div>
+<div><label for="transportDuration">Outage duration</label><input id="transportDuration" type="number" min="1" max="60" value="8"></div>
+</div>
+<div class="buttons"><button id="transportRun" class="primary" type="button" disabled>Run v1.1 benchmark</button><button id="transportExport" type="button" disabled>Export JSON audit</button></div>
+<p id="runInfo" class="status" aria-live="polite">No experiment run.</p>
+</section>
+<section class="panel">
+<h2>2 · Link capacity and latency</h2>
+<div class="figure"><svg id="transportFigure" role="img" viewBox="0 0 100 100" aria-label="Network edges scaled by assigned capacity, with node points"></svg></div>
+<label for="transportShape">Inspect topology</label>
+<select id="transportShape"><option value="annotated-network">Marked geometry</option><option value="euclidean-minimum-spanning-tree">Euclidean MST</option><option value="best-centered-euclidean-star">Best-centered star</option></select>
+<p>Line width shows assigned integer packet launch slots. End-to-end packet delays depend on per-edge propagation and intermediate queues, not just total geometric distance.</p>
+<div class="metric-grid">
+<div class="metric"><strong id="transportEdges">–</strong><span>Links on displayed shape</span></div>
+<div class="metric"><strong id="transportSlots">–</strong><span>Installed packet slots</span></div>
+<div class="metric"><strong id="transportSpent">–</strong><span>Spent cost proxy</span></div>
+<div class="metric"><strong id="transportSlack">–</strong><span>Unspent cost allowance</span></div>
+</div>
+<h3>Independent packet classes</h3>
+<p>High-priority packets transmit first whenever a link is contested. Both classes share the same finite node queues, with FIFO order within each class. This is deliberate strict-priority behavior, not a promise of fairness to standard traffic.</p>
+</section>
+<section class="panel results">
+<h2>3 · Inspect packet outcomes</h2>
+<div class="metric-grid">
+<div class="metric"><strong id="transportCount">–</strong><span>Completed model runs</span></div>
+<div class="metric"><strong id="transportSamples">–</strong><span>Shared traffic seeds</span></div>
+</div>
+<label for="transportSelectRun">Individual run</label>
+<select id="transportSelectRun" disabled><option>No results yet</option></select>
+<canvas id="transportChart" width="650" height="180" aria-label="Per-tick delivered, dropped, pending and in-flight packets"></canvas>
+<p>Chart colors: green delivered, orange dropped, pale blue total pending, purple in flight. Every result includes separate class delivery and delivered-only latency.</p>
+<pre id="transportDetail">Run a scenario to inspect its accounting and priority outcomes.</pre>
+</section>
+<section class="panel full">
+<h2>4 · Equal-cost-cap comparison</h2>
+<p>Across all graph shapes, the maximum allowable cost is the same. Actual spend may differ because integer capacity slots and link lengths cannot always fill the cap. Comparisons require delivery and loss for both classes, not merely a winner based on mean latency.</p>
+<div class="scroll"><table><thead><tr><th>Topology</th><th>Routing</th><th>Actual spend</th><th>Slots</th><th>Delivery %</th><th>High delivery %</th><th>Standard delivery %</th><th>Mean latency</th><th>Inspect</th></tr></thead><tbody id="transportRows"></tbody></table></div>
+<p id="matrixInfo" class="status">No results.</p>
+</section></div>
+<footer>Φ Transport Engineering Lab v1.1 · Static browser-only code · Image-based graph assumptions and synthetic traffic remain distinct from governed chemistry and medical evidence.</footer>
+</main><script type="module" src="./transport-ui.mjs"></script></body></html>
