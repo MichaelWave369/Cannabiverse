@@ -117,10 +117,17 @@ export function measureTips(hub, tips, source = {}) {
     tip:i+1, x, y, angleDegrees:Math.atan2(x-hub[0], hub[1]-y)/RAD,
     relativeLength:distances[i]/max
   }));
-  return {kind:"manual-photo-tip-annotation", modelVersion:"0.1", source,
+  // Smallest circular arc containing the marked rays: robust to rotating a photo
+  // across the +/-180° coordinate discontinuity.
+  const angles=measurements.map(t=>((t.angleDegrees%360)+360)%360).sort((a,b)=>a-b);
+  let largestGap=0;
+  for(let i=0;i<angles.length;i++){
+    const next=i===angles.length-1?angles[0]+360:angles[i+1];
+    largestGap=Math.max(largestGap,next-angles[i]);
+  }
+  return {kind:"manual-photo-tip-annotation", modelVersion:"0.2", source,
     hub, tips:measurements,
-    angularSpreadDegrees:Math.max(...measurements.map(t=>t.angleDegrees)) -
-      Math.min(...measurements.map(t=>t.angleDegrees)),
+    angularSpreadDegrees:360-largestGap,
     limitations:["Distances are ratios in displayed photo coordinates",
       "Not perspective-corrected", "Not automatically segmented",
       "No measured vein networks or physical scale"]};
