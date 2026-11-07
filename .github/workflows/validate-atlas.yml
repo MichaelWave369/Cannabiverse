@@ -80,6 +80,9 @@ jobs:
       - name: Validate source-photo byte integrity and specimen provenance
         run: npm run validate:leaflab-specimens
 
+      - name: Validate real-leaf source catalog, license and original-byte guards
+        run: npm run validate:leaflab-real-photos
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
