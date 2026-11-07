@@ -193,10 +193,15 @@ export function summarizePlantHoldout(agreement,partition,reports=[]){
      partition.version!==EVIDENCE_GATEWAY_VERSION)
     throw new TypeError("Require compatible observer audit and explicit plant partition");
   const refIds=new Set(agreement.plantIds);
-  if(partition.developmentPlantIds.some(x=>!refIds.has(x))||
-    partition.holdoutPlantIds.some(x=>!refIds.has(x))||
-    new Set([...partition.developmentPlantIds,...partition.holdoutPlantIds]).size!==
-      agreement.plantIds.length)
+  const dev=partition.developmentPlantIds,test=partition.holdoutPlantIds;
+  if(partition.status!=="SELF_DECLARED_PLANT_SPLIT_NOT_CRYPTOGRAPHICALLY_FROZEN"||
+    partition.evidenceStatus!==agreement.evidenceStatus||
+    !Array.isArray(dev)||!Array.isArray(test)||!dev.length||!test.length||
+    dev.some(x=>!validId(x))||test.some(x=>!validId(x))||
+    new Set(dev).size!==dev.length||new Set(test).size!==test.length||
+    dev.some(x=>test.includes(x))||
+    dev.some(x=>!refIds.has(x))||test.some(x=>!refIds.has(x))||
+    new Set([...dev,...test]).size!==agreement.plantIds.length)
     throw new RangeError("Partition does not match audited plant cohort");
   const index=new Map(agreement.images.map(x=>[x.imageSHA256,x]));
   if(partition.images.length!==agreement.images.length||
