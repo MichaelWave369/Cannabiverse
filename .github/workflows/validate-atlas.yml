@@ -47,6 +47,9 @@ jobs:
       - name: Validate static app JavaScript
         run: node scripts/validate-static-js.mjs
 
+      - name: Validate botanical Leaf Morphology Lab
+        run: npm run validate:leaflab
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
