@@ -139,7 +139,7 @@ assert.throws(()=>auditSpecimenRegistry([record],[alpha,beta,
   makeVeinReference({...alpha,annotatorCode:"Masked_C"}),
   makeVeinReference({...alpha,annotatorCode:"Masked_D"})
 ]),/At most three/);
-assert.throws(()=>auditSpecimenRegistry([record],[alpha],["z".repeat(64)]),
+assert.throws(()=>auditSpecimenRegistry([record],[alpha],["e".repeat(64)]),
   /Verified hash absent/);
 assert.throws(()=>auditSpecimenRegistry([record],[alpha],["BAD"]),
   /64-byte lowercase/);
