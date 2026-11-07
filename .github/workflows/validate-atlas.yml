@@ -71,6 +71,9 @@ jobs:
       - name: Validate engineering multi-seed capacity-budget benchmarks
         run: npm run validate:leaflab-engineering
 
+      - name: Validate transport link delay, classes and wire-cost caps
+        run: npm run validate:leaflab-transport
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
