@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Φ LeafLab v1.3: original photo SHA-256 verification, source specimen registry and incomplete research protocol checks, browser-local.">
+<title>Cannabiverse | Φ Specimen Provenance Lab v1.3</title>
+<style>
+:root{color-scheme:dark;--bg:#07190e;--card:#112b1d;--line:#466c50;--text:#ecf7ed;--sub:#c1dac7;--gold:#f2d89a;--mint:#9eeab6}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#214e33,var(--bg) 68%);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:1490px;margin:auto;padding:24px 18px 70px}nav{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;margin-bottom:22px}a{color:var(--gold)}
+h1{font-size:clamp(34px,5vw,55px);line-height:1.07;letter-spacing:-1.5px;margin:10px 0}h1 span{color:var(--mint)}h2{font-size:19px;margin:0 0 12px}h3{font-size:15px;margin:15px 0 7px}
+.eyebrow{font-size:12px;color:var(--gold);font-weight:750;text-transform:uppercase;letter-spacing:1.8px}.lead{max-width:1000px;color:#d2e5d4}
+.notice{background:#322a1d;border:1px solid #948059;color:#f7e7c0;padding:15px;border-radius:12px;margin:18px 0}
+.layout{display:grid;grid-template-columns:320px minmax(360px,1fr) 310px;gap:14px;align-items:start}.panel{min-width:0;padding:18px;background:var(--card);border:1px solid var(--line);border-radius:15px}
+.panel p,.muted{color:var(--sub);font-size:12px}label{display:block;color:#d8e9de;font-weight:700;font-size:12px;margin:11px 0 5px}
+input,select,textarea{width:100%;border:1px solid #739b7b;border-radius:9px;padding:9px;background:#081f13;color:#f5fff5;font:14px system-ui}
+input[type=file]{border-style:dashed}input[type=checkbox]{width:auto;accent-color:#9eeab6}.checkrow{display:flex;align-items:center;gap:9px;margin:13px 0}.checkrow label{margin:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:9px}button{font:700 12px system-ui;background:#225238;color:#f0fff4;border:1px solid #76a987;border-radius:9px;padding:10px 11px;cursor:pointer}
+button.primary{background:var(--mint);border-color:var(--mint);color:#092818}button[disabled]{opacity:.47;cursor:not-allowed}button:hover:not([disabled]){filter:brightness(1.1)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:3px solid #f2d790;outline-offset:3px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0}.status{font-size:12px;color:#d2f0da;white-space:pre-line;overflow-wrap:anywhere}.metrics{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.metric{border:1px solid #3e684c;background:#193a26;border-radius:10px;padding:11px}.metric strong{display:block;font-size:23px;font-variant-numeric:tabular-nums}.metric span{font-size:11px;color:var(--sub)}
+table{width:100%;border-collapse:collapse;min-width:650px;font-size:12px}th,td{padding:9px;border-bottom:1px solid #345a42;text-align:left;vertical-align:top}th{color:var(--gold)}.scroll{overflow:auto;max-height:440px}
+pre{font:12px/1.55 ui-monospace,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#091f14;border:1px solid #345b43;border-radius:10px;padding:12px}
+.full{grid-column:1/-1}footer{font-size:12px;color:var(--sub);margin-top:27px}
+@media(max-width:1220px){.layout{grid-template-columns:310px minmax(345px,1fr)}.summary{grid-column:1/-1}}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.summary,.full{grid-column:auto}.panel{padding:14px}.two{grid-template-columns:1fr}}
+</style></head><body><main>
+<nav><a href="./">← Leaf Morphology Lab</a><a href="./veins.html">Human References v0.7</a><a href="./evidence.html">Evidence Gateway v1.2</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-provenance-v13.md">Collection protocol</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Source checks · v1.3</div>
+<h1>Φ <span>Specimen Provenance Lab</span></h1>
+<p class="lead">Collect a source-photo manifest, verify its SHA-256 against original local image bytes, link separately annotated v0.7 references, and report which study-quality fields remain unverified or missing. No image is uploaded or saved by this tool.</p>
+<div class="notice"><strong>Byte identity ≠ botanical authentication.</strong> A matching SHA-256 proves only that selected local bytes match their recorded hash. It cannot identify a plant, detect an edited photo, confirm legal permission, authenticate an expert or demonstrate blinded observers. This lab makes missing evidence visible rather than manufacturing certainty.</div>
+<div class="layout">
+<section class="panel">
+<h2>1 · Register source photo</h2>
+<p>When you select an original photo, its bytes are hashed locally. If a manifest with that hash already exists, the photo is verified against its dimensions. Otherwise, the fields below create a new source record.</p>
+<label for="sourcePhoto">Original photo (16 MB maximum)</label><input id="sourcePhoto" type="file" accept="image/*">
+<div class="two">
+<div><label for="sourcePlant">Stable plant ID</label><input id="sourcePlant" maxlength="64" placeholder="Plant_001"></div>
+<div><label for="sourceSpecimen">Unique image/specimen ID</label><input id="sourceSpecimen" maxlength="64" placeholder="Leaf_Image_001"></div>
+</div>
+<label for="captureDate">Capture date</label><input id="captureDate" type="date">
+<label for="taxonLabel">Taxon label (self-reported)</label><input id="taxonLabel" maxlength="100" placeholder="Unidentified plant">
+<label for="taxonBasis">Identification basis</label><select id="taxonBasis">
+<option value="unverified">Unverified</option><option value="photographic-self-assertion">User visual identification</option>
+<option value="expert-review-self-assertion">Expert-reviewed, self-asserted</option></select>
+<label for="taxonNote">Evidence/reviewer note (optional)</label><input id="taxonNote" maxlength="300" placeholder="No personal contact details">
+<div class="two">
+<div><label for="growthStage">Growth stage</label><select id="growthStage"><option value="unknown">Unknown</option><option value="vegetative">Vegetative</option><option value="flowering">Flowering</option><option value="post-harvest">Post-harvest</option></select></div>
+<div><label for="sourceLighting">Lighting</label><select id="sourceLighting"><option value="unknown">Unknown</option><option value="diffuse">Diffuse</option><option value="direct">Direct</option><option value="mixed">Mixed</option></select></div>
+<div><label for="sourceAngle">Photo angle</label><select id="sourceAngle"><option value="unknown">Unknown</option><option value="near-perpendicular">Near-perpendicular</option><option value="oblique">Oblique</option></select></div>
+<div><label for="sourceBackground">Background</label><select id="sourceBackground"><option value="unknown">Unknown</option><option value="plain">Plain</option><option value="cluttered">Cluttered</option></select></div>
+</div>
+<div class="checkrow"><input id="sourceRuler" type="checkbox"><label for="sourceRuler">Scale marker visible in photograph</label></div>
+<label for="sourcePermission">Photo-use permission</label><select id="sourcePermission"><option value="not-recorded">Not recorded</option><option value="self-attested-permission">I affirm I have permission to analyze this photo</option></select>
+<label for="sourceBlinding">Annotator procedure</label><select id="sourceBlinding"><option value="not-recorded">Not recorded</option><option value="self-attested-blinded">Independent/blinded procedure, self-asserted</option></select>
+<label for="sourceNote">Collection notes (optional)</label><textarea id="sourceNote" maxlength="500" rows="3" placeholder="Equipment and image protocol, not precise location or identifying data"></textarea>
+<p id="photoStatus" class="status" aria-live="polite">No photo selected. Fill source fields to register a new photo, or import an existing manifest first.</p>
+</section>
+<section class="panel">
+<h2>2 · Registry &amp; reference linking</h2>
+<label for="importRegistry">Import existing v1.3 manifest JSON files</label><input id="importRegistry" type="file" accept=".json,application/json" multiple>
+<p>Accepts individual records or registry bundles from this lab. Imported records are unverified until the exact original photo is selected again in this browser session.</p>
+<label for="importSourceRefs">Import independent v0.7 annotation references</label>
+<input id="importSourceRefs" type="file" accept=".json,application/json" multiple>
+<p>References must use the registered original-file hash, stable plant ID, image specimen ID and v0.7 processing dimensions. A second observer is expected for independent agreement analysis.</p>
+<div class="actions">
+<button id="runSourceAudit" class="primary" type="button" disabled>Audit registry</button>
+<button id="exportRegistry" type="button" disabled>Export registry JSON</button>
+<button id="exportSourceAudit" type="button" disabled>Export audit JSON</button>
+<button id="clearRegistry" type="button">Clear session</button>
+</div>
+<pre id="registryStatus">No source images or annotations imported.</pre>
+<div class="scroll"><table><thead><tr><th>Specimen</th><th>Plant</th><th>Local byte check</th><th>Observers</th><th>Missing protocol fields</th></tr></thead><tbody id="specimenRows"></tbody></table></div>
+</section>
+<section class="panel summary">
+<h2>3 · Evidence readiness</h2>
+<div class="metrics">
+<div class="metric"><strong id="specimenTotal">–</strong><span>Distinct images</span></div>
+<div class="metric"><strong id="sourceVerified">–</strong><span>Byte-verified this session</span></div>
+<div class="metric"><strong id="sourceReviewed">–</strong><span>Two+ annotated observers</span></div>
+<div class="metric"><strong id="sourceFlagged">–</strong><span>Images with warnings</span></div>
+</div>
+<h3>Audit interpretation</h3>
+<pre id="sourceWarnings">No audit. A complete checklist is not a claim of anatomical correctness, taxonomic confirmation or permission verification.</pre>
+<p>Any record marked “verified” was checked against actual local file bytes **in this browser session only**. Exported reports can be edited, so the status is not a cryptographic certificate.</p>
+<h3>Next scientific gate</h3>
+<p>For real measurements, record taxon and capture provenance independently, confirm vein junctions using an appropriate botanical method, freeze the full annotation/analysis protocol, then evaluate an untouched plant-level holdout through the <a href="./evidence.html">Evidence Gateway v1.2</a>.</p>
+</section>
+<section class="panel full">
+<h2>What this version intentionally does not do</h2>
+<p>It does not send photos to a server, embed image files in JSON, infer anatomy, classify species, check legal authorization, or automatically assert that an observer was blind. Protocol metadata is user-entered and can be mistaken or falsified. No real plant specimen dataset or authenticated expert review is included with Cannabiverse.</p>
+</section>
+</div><footer>Φ LeafLab v1.3 · Local original-file identity checks, self-asserted specimen metadata and transparent incomplete-evidence reporting · No modifications to governed chemical or clinical evidence.</footer>
+</main><script type="module" src="./specimen-ui.mjs"></script></body></html>
