@@ -77,6 +77,9 @@ jobs:
       - name: Validate human annotation agreement and plant split leakage
         run: npm run validate:leaflab-evidence
 
+      - name: Validate source-photo byte integrity and specimen provenance
+        run: npm run validate:leaflab-specimens
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
