@@ -15,6 +15,7 @@ export const REAL_LEAF_SOURCES=Object.freeze([
     commonsPage:"https://commons.wikimedia.org/wiki/File:Cannabis_sativa_leaf_%281%29.jpg",
     originalUrl:"https://upload.wikimedia.org/wikipedia/commons/f/f5/Cannabis_sativa_leaf_%281%29.jpg",
     sourceImageSHA1:"825dbedb876491fd92bcec01feabe42402235629",
+    independentlyFetchedSHA256:"4dec1eade2d3aa0b3690f5c392c832c1602692dd35306e032af543c6dead02ff",
     originalBytes:148375,width:1024,height:680,
     use:"single-leaf-segmentation",
     annotationOverlay:false,sourceIdentity:"commons-source-claim",
@@ -32,6 +33,7 @@ export const REAL_LEAF_SOURCES=Object.freeze([
     commonsPage:"https://commons.wikimedia.org/wiki/File:Cannabis-leaf-hemp.jpg",
     originalUrl:"https://upload.wikimedia.org/wikipedia/commons/8/81/Cannabis-leaf-hemp.jpg",
     sourceImageSHA1:"e9829574a752ef10c0a6480d5ad70c646ddd6998",
+    independentlyFetchedSHA256:"3bedc723200f9f98502218e6a754b6c2c7f12907020eae5bc892758a2c6fcdf6",
     originalBytes:456200,width:1920,height:1275,
     use:"hard-background-stress",
     annotationOverlay:false,sourceIdentity:"commons-source-claim",
@@ -127,6 +129,9 @@ export function validateRealLeafCatalog(list=REAL_LEAF_SOURCES){
       throw new RangeError("Image exceeds local LeafLab maximum size");
     if(!/^[a-f0-9]{40}$/.test(item.sourceImageSHA1))
       throw new RangeError("Original SHA-1 metadata not supplied by Commons");
+    if(item.independentlyFetchedSHA256!==undefined&&
+       !/^[a-f0-9]{64}$/.test(item.independentlyFetchedSHA256))
+      throw new RangeError("Invalid frozen SHA-256 observed in a real acquisition run");
     if(item.annotationOverlay&&item.use!=="qualitative-teaching-reference-only")
       throw new RangeError("Preannotated image cannot be quantitative benchmark input");
   }
