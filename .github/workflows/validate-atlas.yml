@@ -65,6 +65,9 @@ jobs:
       - name: Validate LeafLab network graph and fault tolerance baselines
         run: npm run validate:leaflab-networks
 
+      - name: Validate BioNetwork packet routing and controlled outages
+        run: npm run validate:leaflab-packets
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 

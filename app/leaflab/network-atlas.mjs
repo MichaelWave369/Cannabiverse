@@ -279,3 +279,17 @@ export function demoNetworkReferences(){
   ],specimenId:"DEMO_LOOP"};
   return [parseVeinReference(tree),parseVeinReference(loop)];
 }
+
+
+// v0.9: return the exact comparison topologies (not just their summary rows).
+// All graphs use the SAME marked node positions and deterministic link IDs.
+export function simulationTopologies(raw){
+  const g=validateGraph(raw),nodes=g.nodes;
+  return [
+    {name:"annotated-network",graph:{nodes,edges:g.edges.map(e=>({...e}))}},
+    {name:"euclidean-minimum-spanning-tree",
+      graph:{nodes,edges:makeEdges(nodes,mstPairs(nodes))}},
+    {name:"best-centered-euclidean-star",
+      graph:{nodes,edges:makeEdges(nodes,starPairs(nodes))}}
+  ];
+}
