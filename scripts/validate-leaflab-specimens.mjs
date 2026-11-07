@@ -59,7 +59,8 @@ const matched=await verifyOriginalPhoto(record,bytes,640,480,webcrypto.subtle);
 assert.equal(matched.verified,true);
 assert.equal(matched.imageSHA256,photoHash);
 assert.equal(matched.status,"ORIGINAL_FILE_BYTES_MATCHED_IN_ACTIVE_SESSION");
-assert.throws(()=>verifyOriginalPhoto(record,bytes,639,480,webcrypto.subtle),
+await assert.rejects(
+  ()=>verifyOriginalPhoto(record,bytes,639,480,webcrypto.subtle),
   /Decoded image width\/height/);
 await assert.rejects(
   ()=>verifyOriginalPhoto(record,new Uint8Array(bytes.byteLength),640,480,webcrypto.subtle),
