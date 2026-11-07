@@ -1,0 +1,4 @@
+# LeafLab photo originals are downloaded only on the local computer / CI artifact
+.leaflab-real-photos/
+node_modules/
+.DS_Store
