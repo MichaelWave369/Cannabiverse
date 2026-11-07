@@ -204,11 +204,18 @@ export function summarizePlantHoldout(agreement,partition,reports=[]){
     new Set([...dev,...test]).size!==agreement.plantIds.length)
     throw new RangeError("Partition does not match audited plant cohort");
   const index=new Map(agreement.images.map(x=>[x.imageSHA256,x]));
-  if(partition.images.length!==agreement.images.length||
-      partition.images.some(x=>!index.has(x.imageSHA256)||
+  if(!Array.isArray(partition.images)||
+     partition.images.length!==agreement.images.length||
+     new Set(partition.images.map(x=>x.imageSHA256)).size!==agreement.images.length||
+     partition.images.some(x=>!index.has(x.imageSHA256)||
         index.get(x.imageSHA256).plantId!==x.plantId||
+        index.get(x.imageSHA256).specimenId!==x.specimenId||
         (x.assignedRole!==(partition.developmentPlantIds.includes(x.plantId)?
-          "development":"holdout"))))
+          "development":"holdout")))||
+     partition.developmentImages!==partition.images.filter(
+       x=>x.assignedRole==="development").length||
+     partition.holdoutImages!==partition.images.filter(
+       x=>x.assignedRole==="holdout").length)
     throw new RangeError("Partition image mapping differs from current observer audit");
   const {accepted,commonSettings}=validCompatibleReports(reports,agreement);
   const roles=[["development",partition.developmentPlantIds],
