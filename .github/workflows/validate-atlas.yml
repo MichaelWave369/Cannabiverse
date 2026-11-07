@@ -68,6 +68,9 @@ jobs:
       - name: Validate BioNetwork packet routing and controlled outages
         run: npm run validate:leaflab-packets
 
+      - name: Validate engineering multi-seed capacity-budget benchmarks
+        run: npm run validate:leaflab-engineering
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
