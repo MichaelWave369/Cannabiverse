@@ -229,3 +229,8 @@ Imported local photo-tip JSON can now be reopened and fit against a bounded, det
 ### LeafLab v0.3 · physical-scale measurements and specimen cohorts
 
 Manually calibrate a ruler segment, trace numbered leaflet polygons, obtain approximate mm² areas/perimeters, and export versioned local specimen JSON. Import separate specimen records for descriptive comparison grouped by Plant ID, with CSV/JSON export. **These are manually traced image-plane estimates, not corrected 3D measurements or statistical findings.** The governed chemistry canon and evidence ledgers remain unchanged. [Protocol](docs/leaf-morphology-lab.md).
+
+
+### LeafLab v0.4 · independent-plant held-out research audit
+
+[Launch Research Audit](https://michaelwave369.github.io/Cannabiverse/app/leaflab/research.html) or read the [analysis protocol](docs/leaf-morphology-research-v04.md). This **separate static local-only application** imports manually marked tip-ray annotations into identified specimen/plant groups, trains only on the training plants, and evaluates conventional and golden-ratio *candidate* leaflet-length models on held-out plant IDs. It includes an exploratory 3-or-9-count comparison against non-cannabis controls, conditional exact label-permutation reference, and resampled uncertainty diagnostics. Labeled synthetic fixtures allow a functional demonstration but are **not real botanical observations**. No model evidence is promoted to the governed chemistry canon. Run npm run validate:leaflab-study.
