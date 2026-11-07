@@ -1,4 +1,4 @@
-name: LeafLab Original Real-Photo Acquisition Pack
+name: LeafLab Public-Domain Starter Photo Pack
 
 on:
   pull_request:
@@ -22,12 +22,12 @@ jobs:
           node-version: "22"
       - name: Validate approved source catalog offline
         run: node scripts/validate-leaflab-real-photos.mjs
-      - name: Download, hash and inspect original Wikimedia leaf photos
-        run: node scripts/fetch-leaflab-real-photos.mjs --out "$RUNNER_TEMP/leaflab-real-originals"
+      - name: Download and hash two verified original public-domain leaf photos
+        run: node scripts/fetch-leaflab-real-photos.mjs --ids commons-leaf-earth-pd,commons-leaf-foliage-cc0 --out "$RUNNER_TEMP/leaflab-real-originals"
       - name: Upload source originals, attribution and SHA-256 manifest
         uses: actions/upload-artifact@v4
         with:
-          name: leaflab-v14-real-leaf-originals
+          name: leaflab-v14-public-domain-original-leaves
           path: ${{ runner.temp }}/leaflab-real-originals/
           if-no-files-found: error
           retention-days: 14
