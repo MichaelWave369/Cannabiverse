@@ -204,7 +204,7 @@ export function simulatePacketRouting(rawGraph,rawScenario,mode="shortest-distan
      traffic.arrivalsPerTick!==cfg.arrivalsPerTick||traffic.seed!==cfg.seed||
      !Array.isArray(traffic.schedule)||traffic.schedule.length!==cfg.ticks)
     throw new TypeError("Traffic schedule does not match scenario");
-  let generated=0,delivered=0,dropped=0,peakQueue=0,hops=0,usedSlots=0,
+  let generated=0,delivered=0,dropped=0,peakQueue=0,hops=0,deliveredHops=0,usedSlots=0,
     availableSlots=0;
   const dropReasons={nodeFailed:0,targetFailed:0,unreachable:0,queueOverflow:0,ttl:0};
   const latencies=[],series=[],nodeCount=graph.nodes.length;
@@ -241,6 +241,7 @@ export function simulatePacketRouting(rawGraph,rawScenario,mode="shortest-distan
         queues[p.from].push({destination:p.to,created:tick,hops:0});
       }
     }
+    peakQueue=Math.max(peakQueue,...queues.map(q=>q.length));
     const next=Array.from({length:nodeCount},()=>[]);
     const occupancy=queues.map(q=>q.length);
     for(let u=0;u<nodeCount;u++){
@@ -268,7 +269,8 @@ export function simulatePacketRouting(rawGraph,rawScenario,mode="shortest-distan
         remaining[route.edge]--;
         edgeTransmissions[route.edge]++;roundTransmissions++;hops++;usedSlots++;
         if(route.next===p.destination){
-          delivered++;roundDelivered++;latencies.push(tick-p.created+1);
+          delivered++;roundDelivered++;deliveredHops+=p.hops+1;
+          latencies.push(tick-p.created+1);
         }else{
           next[route.next].push({...p,hops:p.hops+1});
         }
@@ -294,7 +296,7 @@ export function simulatePacketRouting(rawGraph,rawScenario,mode="shortest-distan
     unfinishedRatio:round(unfinished/generated),
     deliveredPerOfferedTick:round(delivered/cfg.ticks),
     meanDeliveredLatencyTicks:mean===null?null:round(mean),
-    p95DeliveredLatencyTicks:p95,meanDeliveredHops:delivered?round(hops/delivered):null,
+    p95DeliveredLatencyTicks:p95,meanDeliveredHops:delivered?round(deliveredHops/delivered):null,
     transmissions:hops,linkSlotUtilization:availableSlots?round(usedSlots/availableSlots):null,
     peakNodeQueue:peakQueue,
     conservationChecked:true
