@@ -1,7 +1,8 @@
 import {DEFAULTS, COUNTS, generateLeaf, measureTips} from "./core.mjs";
+import {validateAnnotation, orderedRays, fitTipFan} from "./fit.mjs";
 const $ = id => document.getElementById(id);
 const svg = $("figure"), NS = "http://www.w3.org/2000/svg", fields = ["count","fan","falloff","width","taper","teeth","depth","asym"];
-let mode = "model", model, photoURL = null, photoInfo = null, marks = [];
+let mode = "model", model, photoURL = null, photoInfo = null, marks = [], fitResult = null;
 function el(name, attrs={}, parent=svg) {
   const n = document.createElementNS(NS,name);
   for (const [k,v] of Object.entries(attrs)) n.setAttribute(k,String(v));
@@ -53,13 +54,26 @@ function renderModel(){
 function renderPhoto(){
   svg.replaceChildren();svg.classList.add("photo");
   if(photoURL) el("image",{href:photoURL,x:0,y:0,width:850,height:630,preserveAspectRatio:"xMidYMid meet"});
-  else {grid();el("text",{x:425,y:310,fill:"#bce2c4","font-size":20,"text-anchor":"middle"}).textContent="Choose a leaf photograph above";}
+  else {grid();if(!marks.length)el("text",{x:425,y:310,fill:"#bce2c4","font-size":20,"text-anchor":"middle"}).textContent="Choose a photo or import annotations";}
+  if(fitResult){
+    const maxRadius=Math.max(...marks.slice(1).map(([x,y])=>Math.hypot(x-marks[0][0],y-marks[0][1])));
+    fitResult.points.forEach(p=>{
+      const angle=p.fittedAngleDegrees*Math.PI/180, radius=p.fittedRelativeLength*maxRadius;
+      const x=marks[0][0]+Math.sin(angle)*radius, y=marks[0][1]-Math.cos(angle)*radius;
+      el("line",{x1:marks[0][0],y1:marks[0][1],x2:x,y2:y,stroke:"#71efb1","stroke-width":2,"stroke-dasharray":"3 3"});
+      const observed=marks[p.tip];
+      if(observed)el("line",{x1:x,y1:y,x2:observed[0],y2:observed[1],stroke:"#ff9988","stroke-width":2});
+      el("circle",{cx:x,cy:y,r:6,stroke:"#122e1d","stroke-width":2,fill:"#70f0a7"});
+    });
+  }
   marks.forEach(([x,y],i)=>{
     if(i)el("line",{x1:marks[0][0],y1:marks[0][1],x2:x,y2:y,stroke:"#fce7a5","stroke-width":2,"stroke-dasharray":"6 4"});
     el("circle",{cx:x,cy:y,r:i?5:8,fill:i?"#ffe2a2":"#8df0b0",stroke:"#102a16","stroke-width":2});
     el("text",{x:x+9,y:y-9,fill:"#fff", "font-size":13}).textContent=i?i:"H";
   });
   $("photoExport").disabled=marks.length<2;
+  $("fitButton").disabled=!COUNTS.includes(marks.length-1);
+  $("fitExport").disabled=!fitResult;
   let info=null;
   if(marks.length>=2) {
     try{info=measureTips(marks[0],marks.slice(1),photoInfo||{});}catch(_){}
@@ -68,7 +82,11 @@ function renderPhoto(){
     ?info.tips.length+" tip(s) · angular spread "+info.angularSpreadDegrees.toFixed(1)+"° · relative to longest marked leaflet"
     :"Mark the shared leaflet junction (hub) first, then each visible tip.";
   $("photoPoints").textContent=info ? info.tips.map(t=>"Tip "+t.tip+": "+t.angleDegrees.toFixed(1)+"° / length ratio "+t.relativeLength.toFixed(3)).join("\n") : "";
-  $("stageNote").textContent=photoURL?"Local photo · "+marks.length+" marked point(s) · no biological interpretation": "Photo mode · no photo loaded";
+  $("stageNote").textContent=photoURL
+    ? "Local photo · "+marks.length+" marked point(s) · no biological interpretation"
+    : marks.length ? "Imported annotation · "+marks.length+" marked point(s) · original image unavailable"
+    : "Photo mode · no photo loaded";
+  renderFitSummary();
 }
 function refresh(){
   fields.forEach(k=>$(k+"Val").textContent=$(k).value+(k==="fan"?"°":""));
@@ -92,7 +110,7 @@ $("photo").addEventListener("change",e=>{
   const f=e.target.files?.[0];if(!f)return;
   if(!f.type.startsWith("image/")){$("stageNote").textContent="Select an image file.";return;}
   if(photoURL)URL.revokeObjectURL(photoURL);
-  photoURL=URL.createObjectURL(f);marks=[];
+  photoURL=URL.createObjectURL(f);marks=[];fitResult=null;photoInfo=null;
   const im=new Image();im.onload=()=>{photoInfo={filename:f.name,width:im.naturalWidth,height:im.naturalHeight};renderPhoto();};
   im.onerror=()=>{$("stageNote").textContent="Could not decode this image.";};
   im.src=photoURL;
@@ -106,10 +124,10 @@ svg.addEventListener("click",e=>{
   const frame=850/630;
   const width=ratio>frame?850:630*ratio, height=ratio>frame?850/ratio:630;
   if(p.x<(850-width)/2||p.x>(850+width)/2||p.y<(630-height)/2||p.y>(630+height)/2)return;
-  marks.push([p.x,p.y]);renderPhoto();
+  marks.push([p.x,p.y]);fitResult=null;renderPhoto();
 });
-$("undo").addEventListener("click",()=>{marks.pop();renderPhoto();});
-$("clear").addEventListener("click",()=>{marks=[];renderPhoto();});
+$("undo").addEventListener("click",()=>{marks.pop();fitResult=null;renderPhoto();});
+$("clear").addEventListener("click",()=>{marks=[];fitResult=null;renderPhoto();});
 $("svgExport").addEventListener("click",()=>{
   const copy=svg.cloneNode(true);copy.setAttribute("xmlns",NS);
   download("cannabiverse-leaflab-synthetic.svg",new XMLSerializer().serializeToString(copy),"image/svg+xml");
@@ -124,10 +142,66 @@ $("csvExport").addEventListener("click",()=>{
   COUNTS.forEach(count=>{const m=generateLeaf({...values(),count}).metrics;rows.push([count,values().fan,m.area,m.perimeter,m.veinLength,m.perimeterOverSqrtArea,m.schematicVeinOverSqrtArea].join(","));});
   download("cannabiverse-leaflab-counts.csv",rows.join("\n")+"\n","text/csv");
 });
+function currentAnnotation(){
+  return measureTips(marks[0],marks.slice(1),
+    {...(photoInfo||{}),coordinateSpace:"SVG 850x630 units, fit xMidYMid meet"});
+}
+function renderFitSummary(){
+  $("fitRows").replaceChildren();
+  if(!fitResult){
+    $("fitSummary").textContent="No fit yet. Mark all tips, then press “Fit measured tip fan”.";
+    $("fitWarnings").textContent="";
+    return;
+  }
+  const f=fitResult.fitted, m=fitResult.metrics;
+  $("fitSummary").textContent=
+    "Measured span: "+fitResult.measuredFanSpreadDegrees.toFixed(1)+"°\n"+
+    "Fitted fan: "+f.fanDegrees.toFixed(1)+"° · photo rotation: "+f.rotationDegrees.toFixed(1)+"°\n"+
+    "Outer falloff: "+f.falloff.toFixed(2)+" · asymmetry: "+f.asymmetry.toFixed(2)+"\n"+
+    "Angle RMSE: "+m.angleRMSEDegrees.toFixed(2)+"° · relative length RMSE: "+m.relativeLengthRMSE.toFixed(3)+"\n"+
+    "Equal-length baseline RMSE: "+m.equalLengthBaselineRMSE.toFixed(3);
+  fitResult.points.forEach(p=>{
+    const row=document.createElement("tr");
+    [p.tip,p.angleResidualDegrees.toFixed(2)+"°",p.relativeLengthResidual.toFixed(3)].forEach(value=>{
+      const cell=document.createElement("td");cell.textContent=value;row.append(cell);
+    });
+    $("fitRows").append(row);
+  });
+  $("fitWarnings").textContent=fitResult.warnings.join(" ");
+}
+$("fitButton").addEventListener("click",()=>{
+  try{
+    if(!COUNTS.includes(marks.length-1))throw new RangeError("A complete 3/5/7/9/11-tip annotation is needed");
+    fitResult=fitTipFan(currentAnnotation());
+    renderPhoto();
+  }catch(error){
+    fitResult=null;renderPhoto();$("stageNote").textContent="Fit unavailable: "+error.message;
+  }
+});
+$("fitExport").addEventListener("click",()=>{
+  if(fitResult)download("cannabiverse-leaflab-descriptive-fit.json",
+    JSON.stringify(fitResult,null,2),"application/json");
+});
+$("measurementImport").addEventListener("change",async event=>{
+  const file=event.target.files?.[0];
+  if(!file)return;
+  try{
+    if(file.size>1024*1024)throw new RangeError("Annotation JSON exceeds 1 MB");
+    const data=JSON.parse(await file.text());
+    validateAnnotation(data);
+    if(photoURL)URL.revokeObjectURL(photoURL);
+    photoURL=null;$("photo").value="";
+    marks=[data.hub,...data.tips.map(t=>[t.x,t.y])];
+    photoInfo=data.source&&typeof data.source==="object"?data.source:{filename:file.name};
+    fitResult=null;setMode("photo");
+  }catch(error){
+    $("stageNote").textContent="Import error: "+error.message;
+  }
+});
 $("photoExport").addEventListener("click",()=>{
   if(marks.length<2)return;
   let result;
-  try{result=measureTips(marks[0],marks.slice(1),{...photoInfo,coordinateSpace:"SVG 850x630 units, fit xMidYMid meet"});}catch(e){$("stageNote").textContent=e.message;return;}
+  try{result=currentAnnotation();}catch(e){$("stageNote").textContent=e.message;return;}
   download("cannabiverse-leaflab-photo-measurements.json",JSON.stringify(result,null,2),"application/json");
 });
 window.addEventListener("pagehide",()=>{if(photoURL)URL.revokeObjectURL(photoURL);});
