@@ -114,10 +114,16 @@ assert.throws(()=>normalizeEngineeringExperiment(layouts,
 assert.throws(()=>normalizeEngineeringExperiment(layouts,
   {...experiment,trafficShape:"invalid"}),/Unknown traffic shape/);
 // Identical node IDs and coordinates are a hard prerequisite.
-const changed=layouts.map((x,i)=>i===1?{...x,graph:{...x.graph,nodes:[
-  {...x.graph.nodes[0],x:x.graph.nodes[0].x+1},
-  ...x.graph.nodes.slice(1)
-]}}:x);
+const changed=layouts.map((x,i)=>{
+  if(i!==1)return x;
+  const nodes=[{...x.graph.nodes[0],x:x.graph.nodes[0].x+1},
+    ...x.graph.nodes.slice(1)];
+  const edges=x.graph.edges.map(e=>({...e,
+    length:Math.hypot(nodes[e.a].x-nodes[e.b].x,
+      nodes[e.a].y-nodes[e.b].y)
+  }));
+  return {...x,graph:{nodes,edges}};
+});
 assert.throws(()=>runEngineeringExperiment(changed,experiment),
   /identical node positions/);
 // Demonstrate heterogeneous installed capacities materially affect delivered
