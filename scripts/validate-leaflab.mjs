@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import {readFileSync} from "node:fs";
 import {COUNTS, DEFAULTS, generateLeaf, measureTips, polygonArea, polygonPerimeter} from "../app/leaflab/core.mjs";
 import {validateAnnotation,orderedRays,fitTipFan} from "../app/leaflab/fit.mjs";
+import {calibrateScale,validatedOutline,measureOutline,makeSpecimen,parseSpecimen,compareSpecimens,cohortCSV} from "../app/leaflab/measure.mjs";
 
 for(const count of COUNTS){
   const a=generateLeaf({...DEFAULTS,count});
@@ -108,3 +109,70 @@ assert.match(uiV2,/fitTipFan/);
 assert.match(uiV2,/renderFitSummary/);
 assert.ok(!/fetch\(|XMLHttpRequest|navigator\.sendBeacon/.test(uiV2));
 console.log("PASS LeafLab v0.2: rotation-invariant angle recovery, bounded fit, residuals, input checks and offline import UI");
+
+
+// v0.3: scale is manually recorded from a coplanar ruler and all output is
+// approximate. Verify dimensional analysis and reject untrustworthy outlines.
+const ruler={points:[[100,100],[200,100]],knownLengthMm:10};
+const calibrated=calibrateScale(ruler);
+assert.equal(calibrated.mmPerDisplayUnit,.1);
+assert.equal(calibrated.displayUnitsPerMm,10);
+const square={leafletId:1,vertices:[[100,100],[200,100],[200,200],[100,200]]};
+const measured=measureOutline(square,ruler);
+assert.equal(measured.areaMm2,100);
+assert.equal(measured.perimeterMm,40);
+assert.ok(Math.abs(measured.compactness-Math.PI/4)<1e-5);
+const scaled=measureOutline(square,{points:ruler.points,knownLengthMm:20});
+assert.equal(scaled.areaMm2,400,"double length scale must quadruple polygon area");
+assert.equal(scaled.perimeterMm,80);
+assert.deepEqual(validatedOutline(square),square);
+assert.throws(()=>calibrateScale({points:ruler.points,knownLengthMm:0}),/reference length/);
+assert.throws(()=>calibrateScale({points:[[100,100],[100,100]],knownLengthMm:10}),/at least one/);
+assert.throws(()=>calibrateScale({points:[[-1,100],[200,100]],knownLengthMm:10}),/inside the image view/);
+assert.throws(()=>validatedOutline({leafletId:1,vertices:[[0,0],[2,2],[0,2],[2,0]]}),/area|self-intersects/);
+assert.throws(()=>validatedOutline({leafletId:1,vertices:[[10,10],[50,10],[50,50],[10,10]]}),/Duplicate|self-intersects/);
+assert.throws(()=>validatedOutline({leafletId:0,vertices:square.vertices}),/leafletId/);
+const sampleA=makeSpecimen({
+  specimenId:"A_01",plantId:"Plant_A",source:{filename:"local-leaf.jpg"},
+  calibration:ruler,outlines:[square]
+});
+assert.equal(sampleA.kind,"manual-leaf-specimen");
+assert.equal(sampleA.metrics.meanTracedLeafletAreaMm2,100);
+assert.equal(sampleA.metrics.summedTracedPolygonAreaMm2,100);
+const tampered={...sampleA,metrics:{meanTracedLeafletAreaMm2:100000000}};
+assert.equal(parseSpecimen(tampered).metrics.meanTracedLeafletAreaMm2,100,
+  "import must recompute metrics rather than trusting stored results");
+const sampleB=makeSpecimen({
+  specimenId:"A_02",plantId:"Plant_A",calibration:ruler,outlines:[square]
+});
+const sampleC=makeSpecimen({
+  specimenId:"B_01",plantId:"Plant_B",
+  calibration:{points:ruler.points,knownLengthMm:20},outlines:[square]
+});
+const comparison=compareSpecimens([sampleC,sampleB,sampleA]);
+assert.equal(comparison.kind,"descriptive-leaf-cohort");
+assert.equal(comparison.specimenCount,3);
+assert.equal(comparison.distinctPlantIds,2,"multiple records of Plant_A are not independent plants");
+assert.equal(comparison.plantMeans.find(p=>p.plantId==="Plant_A").specimens,2);
+assert.equal(comparison.plantMeans.find(p=>p.plantId==="Plant_B").meanAreaMm2,400);
+assert.deepEqual(comparison,compareSpecimens([sampleC,sampleB,sampleA]));
+const csv=cohortCSV(comparison);
+assert.match(csv,/specimen_id,plant_id/);
+assert.match(csv,/A_01,Plant_A,1,100,40/);
+assert.match(csv,/B_01,Plant_B,1,400,80/);
+assert.throws(()=>compareSpecimens([sampleA,sampleA]),/Duplicate specimen ID/);
+assert.throws(()=>parseSpecimen({...sampleA,kind:"synthetic-morphology"}),/manual-leaf-specimen/);
+assert.throws(()=>makeSpecimen({...sampleA,specimenId:"=HYPERLINK(1)"}),/Specimen ID/);
+assert.throws(()=>makeSpecimen({...sampleA,outlines:[square,square]}),/unique/);
+const measuredHTML=readFileSync(new URL("../app/leaflab/index.html",import.meta.url),"utf8");
+const measurementUI=readFileSync(new URL("../app/leaflab/measurement-ui.mjs",import.meta.url),"utf8");
+for(const id of ["scaleTool","knownLengthMm","outlineLeaflet","finishOutline",
+  "specimenExport","specimenAdd","cohortImport","cohortRows","cohortExportCSV",
+  "removeSavedOutline"])assert.ok(measuredHTML.includes('id="'+id+'"'),"Missing control "+id);
+assert.match(measurementUI,/installMeasurementUI/);
+assert.match(measurementUI,/makeSpecimen/);
+assert.match(measurementUI,/compareSpecimens/);
+assert.match(uiV2,/measurementUI/);
+assert.ok(!/fetch\(|XMLHttpRequest|navigator\.sendBeacon/.test(measurementUI),
+  "photo, ruler and specimen inputs remain local");
+console.log("PASS LeafLab v0.3: scale^2 area, validated polygons, metric recomputation, grouped cohort and UI privacy");
