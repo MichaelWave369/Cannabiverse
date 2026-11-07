@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Φ BioNetwork Simulator v0.9: compare packet routing, congestion and failure resilience over the same geometric node positions using seeded traffic.">
+<title>Cannabiverse | Φ BioNetwork Simulator v0.9</title>
+<style>
+:root{color-scheme:dark;--bg:#07150c;--panel:#12291b;--line:#406e4d;--text:#edfaef;--muted:#aecaaf;--mint:#96e9b3;--gold:#eed08a;--warning:#eed8a0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% 0,#214830,var(--bg) 68%);color:var(--text);font:14px/1.55 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:1500px;margin:auto;padding:22px 19px 80px}nav{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;margin-bottom:22px}a{color:var(--gold)}
+h1{font-size:clamp(34px,5.2vw,57px);line-height:1.06;letter-spacing:-1.5px;margin:10px 0}h1 span{color:var(--mint)}
+h2{font-size:19px;margin:0 0 11px}h3{font-size:15px;margin:16px 0 8px}.eyebrow{color:var(--gold);font-size:12px;letter-spacing:1.6px;font-weight:800;text-transform:uppercase}.lead{color:#c6dfcd;max-width:1050px;font-size:15px}
+.notice{border:1px solid #948054;background:#312b1e;border-radius:12px;padding:15px 17px;color:#f7e8bc;margin:18px 0;font-size:13px}
+.layout{display:grid;grid-template-columns:290px minmax(400px,1fr) 310px;gap:14px;align-items:start}.panel{border:1px solid var(--line);border-radius:15px;background:var(--panel);padding:19px;min-width:0}
+.panel p{font-size:12px;color:#c0d9c6}.row{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin:10px 0}.row>*{flex:0 0 auto}
+label{display:block;font-weight:750;color:#d9ecdc;margin:12px 0 5px;font-size:12px}
+input,select{width:100%;background:#0a1e11;border:1px solid #669375;color:#f3fff3;padding:10px;border-radius:9px;font:14px system-ui}
+input[type=file]{border-style:dashed}.fields{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+button{font:700 12px system-ui;background:#215034;border:1px solid #699c7a;border-radius:9px;color:#edffee;padding:10px 12px;cursor:pointer}
+button.primary{background:#93e7b0;color:#09251a;border-color:#93e7b0}
+button:disabled{opacity:.45;cursor:not-allowed}button:hover:not(:disabled){filter:brightness(1.13)}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #f8d18b;outline-offset:3px}
+.status{white-space:pre-line;overflow-wrap:anywhere;color:#c8ead1;font-size:12px;line-height:1.7}
+.stage{border-radius:12px;overflow:hidden;border:1px solid #356d49;background:#06180d}.stage svg{display:block;width:100%;max-height:425px;height:auto;min-height:250px}
+.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{background:#193824;border:1px solid #3b6345;border-radius:10px;padding:12px}.metric strong{font-size:22px;display:block;font-variant-numeric:tabular-nums}.metric span{font-size:11px;color:#b7d6c0}
+.scroll{overflow:auto;max-height:500px}table{width:100%;min-width:760px;border-collapse:collapse;font-size:12px}th,td{padding:9px 7px;border-bottom:1px solid #355541;text-align:left;font-variant-numeric:tabular-nums}th{color:var(--gold);font-weight:800}tr:focus-within{background:#1b4030}table button{padding:5px 7px;font-size:11px}
+.full{grid-column:1/-1}.span2{grid-column:1/3}
+pre{font:12px/1.6 ui-monospace,Consolas,monospace;background:#081c10;padding:12px;border:1px solid #376143;border-radius:9px;white-space:pre-wrap;overflow-wrap:anywhere}
+#timeline{display:block;width:100%;height:180px;background:#071b0e;border:1px solid #355d42;border-radius:10px}footer{font-size:12px;color:var(--muted);margin-top:27px}
+@media(max-width:1150px){.layout{grid-template-columns:280px minmax(370px,1fr)}.results{grid-column:1/-1}.span2{grid-column:1/-1}}
+@media(max-width:750px){.layout{grid-template-columns:1fr}.results,.span2,.full{grid-column:auto}.panel{padding:15px}}
+</style></head><body><main>
+<nav><a href="./">← Leaf Morphology Lab</a><a href="./network.html">Network Atlas v0.8</a><a href="./veins.html">Vein Reference Benchmark</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-packet-sim-v09.md">Simulation protocol</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Network algorithms · Simulation rung v0.9</div>
+<h1>Φ <span>BioNetwork Simulator</span></h1>
+<p class="lead">Route synthetic packets through a manually marked image-line graph and compare three routing heuristics over annotated, minimum-spanning-tree, and star-network shapes. Apply congestion and failures while keeping offered traffic, node positions and link capacities the same.</p>
+<div class="notice"><strong>Simulation ≠ nature.</strong> These links are arbitrary network channels, not validated leaf veins or observed vascular transport. One simulation tick is an abstract time step, one packet is an artificial traffic unit, and equal per-edge capacity is a modeling assumption. Results cannot demonstrate that a cannabis leaf is a superior router.</div>
+<div class="layout">
+<section class="panel">
+<h2>1 · Topology source</h2>
+<label for="simImport">Import v0.7 marked-line reference JSON</label><input id="simImport" type="file" accept=".json,application/json">
+<div class="row"><button id="simTree" type="button">Synthetic tree</button><button id="simLoop" type="button">Synthetic loop</button></div>
+<p id="sourceStatus" class="status" aria-live="polite">Select a reference or a labeled synthetic example. Maximum 80 vertices per simulation.</p>
+<h3>Same-demand scenario</h3>
+<div class="fields">
+<div><label for="simTicks">Offered traffic ticks</label><input id="simTicks" type="number" min="10" max="150" step="1" value="75"></div>
+<div><label for="simArrival">Packets offered / tick</label><input id="simArrival" type="number" min="1" max="12" step="1" value="5"></div>
+<div><label for="simCapacity">Packets / link / tick</label><input id="simCapacity" type="number" min="1" max="12" step="1" value="2"></div>
+<div><label for="simQueue">Packets in node queue</label><input id="simQueue" type="number" min="4" max="100" step="1" value="24"></div>
+</div>
+<label for="simSeed">Reproducible traffic seed</label><input id="simSeed" type="number" min="1" max="2147483647" value="369">
+<h3>Fault injection</h3>
+<label for="simFailure">Failure mode</label>
+<select id="simFailure"><option value="none">No outage</option><option value="node" selected>Same node outage on all topologies</option><option value="link">One link outage (one topology only)</option></select>
+<label for="simTopology">Topology for edge-specific failure</label>
+<select id="simTopology"><option value="annotated-network">Annotated network</option><option value="euclidean-minimum-spanning-tree">Euclidean MST</option><option value="best-centered-euclidean-star">Centered star</option></select>
+<label for="simFailureIndex">Failed node / link index</label><select id="simFailureIndex"></select>
+<div class="fields">
+<div><label for="simStart">Outage starts at tick</label><input id="simStart" type="number" min="0" max="149" step="1" value="20"></div>
+<div><label for="simDuration">Outage duration (ticks)</label><input id="simDuration" type="number" min="1" max="150" step="1" value="20"></div>
+</div>
+<div class="row"><button id="simRun" class="primary" type="button" disabled>Run fair comparison</button><button id="simExport" type="button" disabled>Export JSON report</button></div>
+<p class="status" id="scenarioStatus" aria-live="polite">No simulation has been run.</p>
+</section>
+<section class="panel">
+<h2>2 · Network shapes</h2>
+<div class="stage"><svg id="simGraph" viewBox="0 0 100 100" role="img" aria-label="Selected network layout and link positions"></svg></div>
+<p>All three layouts share the same node positions, but they do <strong>not</strong> share every edge. A node outage is a comparable geographic fault; an edge-number outage is only comparable between routing algorithms on the selected shape.</p>
+<label for="simViewTopology">Display network shape</label>
+<select id="simViewTopology"><option value="annotated-network">Annotated topology</option><option value="euclidean-minimum-spanning-tree">Euclidean minimum-spanning tree</option><option value="best-centered-euclidean-star">Best-centered star</option></select>
+<div class="metric-grid">
+<div class="metric"><strong id="simNodes">–</strong><span>Marked nodes</span></div>
+<div class="metric"><strong id="simLinks">–</strong><span>Links on selected shape</span></div>
+</div>
+<p class="status" id="graphHint">Select a graph to begin. Hypothetical MST and star edges may leave the leaf image.</p>
+<h3>Three competing strategies</h3>
+<p><strong>Shortest distance:</strong> minimum 2D sum of link lengths. <strong>Queue-aware:</strong> penalizes occupied links and downstream queues. <strong>Bridge-avoiding:</strong> also penalizes links with no alternate route, if an alternative path exists. Neither adaptive heuristic is guaranteed to win.</p>
+</section>
+<section class="panel results">
+<h2>3 · Compare outcomes</h2>
+<div class="metric-grid">
+<div class="metric"><strong id="simComparisons">–</strong><span>Simulation runs</span></div>
+<div class="metric"><strong id="simTraffic">–</strong><span>Offered packets per run</span></div>
+<div class="metric"><strong id="simFingerprint">–</strong><span>Shared traffic fingerprint</span></div>
+<div class="metric"><strong id="simFailureLabel">–</strong><span>Fault comparison scope</span></div>
+</div>
+<h3>Selected run over time</h3>
+<label for="simSelectRun">View one run</label><select id="simSelectRun" disabled><option>Select a completed scenario</option></select>
+<canvas id="timeline" width="640" height="180" aria-label="Graph of delivered, dropped, and buffered packet counts per simulation tick"></canvas>
+<p>Per-tick chart: green delivered, orange dropped, and pale blue queued. Green showing a short delay can be misleading if packets were dropped, so always inspect delivery, loss and unfinished fractions together.</p>
+<pre id="simDetail">No run selected.</pre>
+</section>
+<section class="panel full">
+<h2>4 · Equal-traffic benchmark matrix</h2>
+<p>Every row receives the same seeded endpoint demands and nominal link capacity. Nine runs compare all three routing strategies over all three topologies for no outage or a shared node outage. A link outage compares only three strategies on a single selected topology.</p>
+<div class="scroll"><table><thead><tr><th>Topology</th><th>Routing</th><th>Delivered</th><th>Lost</th><th>Unfinished</th><th>Mean delay</th><th>95th % delay</th><th>Peak queue</th><th>Inspect</th></tr></thead><tbody id="simRows"></tbody></table></div>
+<p>Demand generation and packet conservation are deterministic. Long-running experiments are bounded by a fixed traffic window, FIFO queues and a bounded drain. No real router, biological vessel or network-interface data is collected.</p>
+</section>
+</div>
+<footer>Φ BioNetwork Simulator v0.9 · Local-only experimental packet models · No network requests, real plant transport claims, or modification of Cannabiverse molecular evidence.</footer>
+</main><script type="module" src="./packet-ui.mjs"></script></body></html>
