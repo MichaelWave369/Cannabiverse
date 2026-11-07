@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Φ LeafLab v1.5: local real-photo identity validation and sparse manual leaf/background labels before revealing a segmentation mask.">
+<title>Cannabiverse | Φ Real-Image QA Lab v1.5</title>
+<style>
+:root{color-scheme:dark;--bg:#08180e;--panel:#132c1e;--border:#416a50;--ink:#eef9f0;--dim:#bfd9c4;--mint:#a0e7ba;--gold:#f0d495}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 45% -10%,#245439,var(--bg) 64%);color:var(--ink);font:14px/1.55 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:1530px;margin:auto;padding:24px 17px 70px}nav{display:flex;flex-wrap:wrap;gap:14px;font-size:13px;margin-bottom:19px}a{color:var(--gold)}h1{font-size:clamp(36px,5vw,60px);letter-spacing:-1.5px;line-height:1.04;margin:7px 0 12px}h1 span{color:var(--mint)}h2{font-size:20px;margin:0 0 13px}h3{font-size:15px;margin:14px 0 6px}
+.eyebrow{font-weight:800;color:var(--gold);letter-spacing:1.5px;text-transform:uppercase;font-size:12px}
+.lead{max-width:1050px;color:#d4e9d8}.notice{background:#2e291b;border:1px solid #978050;color:#f4e2b7;border-radius:11px;padding:14px 17px;margin:17px 0}
+.layout{display:grid;grid-template-columns:300px minmax(360px,1fr) 295px;gap:14px;align-items:start}.panel{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px;min-width:0}.panel p{font-size:12px;color:var(--dim)}
+label{display:block;font-size:12px;font-weight:750;color:#deede2;margin:11px 0 5px}
+input,select{font:14px system-ui;width:100%;background:#081d12;color:var(--ink);border:1px solid #75a084;border-radius:9px;padding:10px}input[type=range]{accent-color:var(--mint);border:0;padding:0}input[type=file]{border-style:dashed}
+button{font:750 12px system-ui;color:#e8fcef;border:1px solid #77a687;background:#1b5031;border-radius:8px;padding:9px 11px;cursor:pointer}
+button.primary{color:#092719;background:var(--mint);border-color:var(--mint)}
+button[aria-pressed=true]{background:#e4d491;color:#122a1a;border-color:#e4d491}
+button:disabled{opacity:.43;cursor:not-allowed}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #f4d48e;outline-offset:3px}
+.actions{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}.status{font-size:12px;color:#d6f4da;white-space:pre-line;overflow-wrap:anywhere}
+.stage{background:#071e12;border:1px solid #4c7657;border-radius:11px;overflow:hidden;display:grid;place-items:center;min-height:220px;touch-action:none}
+.stage canvas{display:block;max-width:100%;width:100%;height:auto;image-rendering:auto;cursor:crosshair;touch-action:none}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}.metric{border:1px solid #406b51;border-radius:9px;background:#1a3927;padding:12px}.metric strong{display:block;font-size:22px;font-variant-numeric:tabular-nums}.metric span{font-size:11px;color:var(--dim)}
+pre{font:12px/1.6 ui-monospace,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#0b2115;border:1px solid #376044;border-radius:9px;padding:12px}
+.bars{display:flex;gap:8px;flex-wrap:wrap}.bars button{flex:1}
+.full{grid-column:1/-1}.legend{font-size:12px;color:var(--dim)}
+footer{font-size:12px;color:var(--dim);margin-top:28px}
+@media(max-width:1190px){.layout{grid-template-columns:300px minmax(340px,1fr)}.results{grid-column:1/-1}}
+@media(max-width:760px){.layout{grid-template-columns:1fr}.results,.full{grid-column:auto}.panel{padding:14px}}
+</style></head><body><main>
+<nav><a href="./">← LeafLab</a><a href="./real-photos.html">Real photo sources v1.4</a><a href="./specimens.html">Source provenance v1.3</a><a href="./evidence.html">Observer agreement v1.2</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-real-qa-v15.md">QA protocol</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Real photos, constrained conclusions · v1.5</div>
+<h1>Φ <span>Real-Image QA Lab</span></h1>
+<p class="lead">Use an actual source photograph, mark leaf and non-leaf sample pixels manually <em>before</em> revealing the algorithm, and record exactly where the color-seeded detector agrees or fails. Unknown/unmarked regions stay out of the score.</p>
+<div class="notice"><strong>Sparse labels ≠ complete ground truth.</strong> Pixel scores apply only to marked regions; they do not measure whole-leaf segmentation quality, independent annotator agreement or authenticated plant anatomy. Brush pixels are correlated. The original photograph is never sent to a server.</div>
+<div class="layout">
+<section class="panel">
+<h2>1 · Source and frozen setup</h2>
+<label for="qaFile">Open original local JPEG or PNG</label><input id="qaFile" type="file" accept="image/*">
+<p>Best start: either of the two verified original JPEGs from the <a href="./real-photos.html">v1.4 library</a>. Original bytes are SHA-256 hashed in this browser before any analysis.</p>
+<pre id="qaSource">Choose a photo to hash and decode locally.</pre>
+<h3>Choose color seeds first</h3>
+<div class="actions">
+<button id="pickLeaf" type="button" aria-pressed="true">Pick leaf color</button>
+<button id="pickBackground" type="button" aria-pressed="false">Pick background</button>
+</div>
+<p>Click a representative interior leaf pixel, then a non-leaf pixel. Color samples are kept separate from the human review marks.</p>
+<div class="actions">
+<button id="markLeaf" type="button" aria-pressed="false">Paint leaf</button>
+<button id="markBackground" type="button" aria-pressed="false">Paint non-leaf</button>
+<button id="eraseLabels" type="button" aria-pressed="false">Erase unknown</button>
+</div>
+<label for="brushSize">Brush radius <output id="brushValue">6</output> px</label>
+<input id="brushSize" type="range" min="1" max="24" value="6" step="1">
+<label for="qaMargin">Color-separation margin <output id="qaMarginVal">0.07</output></label>
+<input id="qaMargin" type="range" min="-0.1" max="0.5" step="0.01" value="0.07">
+<label for="qaContrast">Dark ridge contrast <output id="qaContrastVal">14</output></label>
+<input id="qaContrast" type="range" min="3" max="70" step="1" value="14">
+<label for="qaMinPixels">Smallest ridge component <output id="qaMinPixelsVal">6</output></label>
+<input id="qaMinPixels" type="range" min="2" max="30" step="1" value="6">
+<label for="qaRole">Review role</label>
+<select id="qaRole"><option value="development">Development / exploratory</option><option value="user-declared-holdout">User-declared holdout (not attested)</option></select>
+<div class="actions"><button id="qaEvaluate" class="primary" type="button" disabled>Lock labels &amp; reveal results</button><button id="qaReset" type="button" disabled>Reset evaluation</button></div>
+<p class="status" id="qaInputStatus" aria-live="polite">Mark at least 20 leaf pixels and 20 non-leaf pixels before evaluation. Parameters, masks and input samples lock together.</p>
+</section>
+<section class="panel">
+<h2>2 · Photo, sparse labels and errors</h2>
+<div class="stage"><canvas id="qaCanvas" width="320" height="214" aria-label="Real image: sparse manual strokes before analysis; prediction and labeled-point errors after lock"></canvas></div>
+<div class="actions bars">
+<button id="qaViewPhoto" type="button" aria-pressed="false" disabled>Original photo</button>
+<button id="qaViewSamples" type="button" aria-pressed="true" disabled>Human labels</button>
+<button id="qaViewMask" type="button" aria-pressed="false" disabled>Auto mask</button>
+<button id="qaViewErrors" type="button" aria-pressed="false" disabled>Sample errors</button>
+<button id="qaViewRidges" type="button" aria-pressed="false" disabled>Dark ridges</button>
+</div>
+<p class="legend">Before reveal: green = your leaf marks, orange = your non-leaf marks. After reveal: magenta = automatic mask; red = automatic leaf where you marked background; cyan = missed leaf where you marked leaf. Unmarked pixels are never counted as correct or incorrect.</p>
+<pre id="qaSampleInfo">No manual labeled pixels recorded yet.</pre>
+<p class="status" id="qaCanvasStatus">No photograph loaded.</p>
+</section>
+<section class="panel results">
+<h2>3 · Labeled-pixel agreement only</h2>
+<div class="metrics">
+<div class="metric"><strong id="qaCoverage">–</strong><span>Image pixels manually marked</span></div>
+<div class="metric"><strong id="qaIoU">–</strong><span>IoU on marked pixels only</span></div>
+<div class="metric"><strong id="qaPrecision">–</strong><span>Precision on marked pixels</span></div>
+<div class="metric"><strong id="qaRecall">–</strong><span>Recall on marked pixels</span></div>
+</div>
+<h3>Audit trace</h3>
+<pre id="qaAudit">No segmentation revealed. This panel will only report results after you lock the marks and settings.</pre>
+<div class="actions"><button id="qaExport" type="button" disabled>Export QA report &amp; sparse labels</button></div>
+<p>JSON export includes a run-length encoding of your human labels, source-byte SHA-256, frozen color seeds, exact parameters and confusion counts. The original image bytes are not included.</p>
+</section>
+<section class="panel full">
+<h2>What this test establishes, and what it cannot</h2>
+<p>A correctly matched file hash connects one test to known real photo bytes. Segmentation on those bytes is an actual real-image experiment, but the marked pixels are self-asserted labels, not an independent annotated dataset. To claim reliable whole-image performance we still need a complete, independently checked leaf mask for every test image, multiple physical plants, and a frozen, genuinely untouched holdout. Even perfect leaf-color segmentation does not establish vascular connectivity or real network transport.</p>
+</section></div>
+<footer>Φ LeafLab v1.5 · Real original bytes are hashed locally · No pre-generated accuracy claims · No image upload, cloud inference, independent species authentication or medical claims.</footer>
+</main><script type="module" src="./real-image-qa-ui.mjs"></script></body></html>
