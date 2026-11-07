@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cannabiverse LeafLab v0.5 local measurement reliability and independent external model audit.">
+<title>Cannabiverse | Φ LeafLab Quality Gate v0.5</title>
+<style>
+:root{color-scheme:dark;--bg:#07140c;--surface:#11291b;--line:#406b50;--text:#e9f7ea;--muted:#a9c7b1;--gold:#efd08e;--green:#8feab0}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#224b32,var(--bg) 65%);color:var(--text);font:14px/1.55 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:1350px;margin:auto;padding:22px 18px 80px}nav{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;margin-bottom:25px}a{color:var(--gold)}
+h1{font-size:clamp(33px,5.2vw,55px);line-height:1.06;letter-spacing:-1.7px;margin:12px 0}h2{font-size:22px;margin:0 0 9px}h3{font-size:16px;margin:18px 0 6px}
+.eyebrow{color:var(--gold);font-size:12px;font-weight:750;letter-spacing:1.8px;text-transform:uppercase}
+.lead{font-size:15px;color:#cae1cf;max-width:1000px}.notice{border:1px solid #937b4e;border-radius:12px;background:#302b1d;color:#f8e6b5;padding:16px;margin:20px 0}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.panel{padding:19px;border:1px solid var(--line);background:#12291b;border-radius:15px;min-width:0}.panel p,.muted{color:#bed6c5}
+.field{margin:11px 0}.field label{display:block;margin:0 0 5px;font-size:12px;color:#d2e7d7;font-weight:700}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+input,select{background:#091c11;border:1px solid #668873;color:var(--text);font:14px system-ui;padding:9px 10px;border-radius:9px;width:100%}input[type=file]{border-style:dashed}
+button{cursor:pointer;padding:10px 13px;background:#205036;color:#f3fff6;border:1px solid #669878;border-radius:10px;font-weight:700;font-size:12px}
+button.primary{background:var(--green);border-color:var(--green);color:#082114}button:disabled{opacity:.42;cursor:not-allowed}button:not(:disabled):hover{filter:brightness(1.15)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f8d789;outline-offset:3px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.bar button{max-width:100%}
+.status{min-height:20px;color:#c5e9cf;font-size:12px;white-space:pre-line}
+pre{font-size:12px;line-height:1.65;white-space:pre-wrap;overflow-wrap:anywhere;padding:13px;background:#081b10;border:1px solid #325d3e;border-radius:10px}
+.table-wrap{overflow:auto;max-height:280px}table{border-collapse:collapse;width:100%;min-width:540px;font-size:12px}td,th{padding:9px;text-align:left;border-bottom:1px solid #375743}th{color:var(--gold)}
+small{color:var(--muted)}footer{border-top:1px solid var(--line);padding-top:17px;margin-top:30px;color:var(--muted);font-size:12px}
+@media(max-width:900px){.grid{grid-template-columns:1fr}}@media(max-width:540px){.fields{grid-template-columns:1fr}}
+</style></head><body><main>
+<nav><a href="./">← Leaf Morphology Lab</a><a href="./research.html">Research Audit v0.4</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-quality-v05.md">Quality protocol</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Independent research · Quality gate 0.5</div>
+<h1>LeafLab <span style="color:#8feab0">Quality Gate</span></h1>
+<p class="lead">Track independent marking disagreement on the same leaf photo, then evaluate a fixed mathematical model against a separate collection of plant observations. It all happens locally in your browser.</p>
+<div class="notice"><strong>Research integrity:</strong> Original photos never leave the browser. “Independent observer,” “same image,” and “new external plants” are user assertions the software cannot authenticate. Demonstration samples are synthetic and cannot be promoted to real plant evidence. No Fibonacci or 3-6-9 discovery is claimed.</div>
+<div class="grid">
+<section class="panel">
+<h2>1 · Independent re-annotation</h2>
+<p>Have multiple observers independently mark the same unaltered photo in <a href="./">LeafLab</a>. Each observer exports manual-photo-tip-annotation JSON. Use masked observer codes; the software cannot enforce blinding.</p>
+<div class="field"><label for="rereadFile">Local annotation JSON</label><input id="rereadFile" type="file" accept=".json,application/json"></div>
+<div class="fields">
+<div class="field"><label for="rereadSpecimen">Specimen ID</label><input id="rereadSpecimen" autocomplete="off" maxlength="64" placeholder="Leaf_001"></div>
+<div class="field"><label for="rereadPlant">Plant ID</label><input id="rereadPlant" autocomplete="off" maxlength="64" placeholder="Plant_A"></div>
+<div class="field"><label for="rereadImage">Same-image ID</label><input id="rereadImage" autocomplete="off" maxlength="64" placeholder="Photo_001"></div>
+<div class="field"><label for="observerCode">Masked observer code</label><input id="observerCode" autocomplete="off" maxlength="64" placeholder="Observer_1"></div>
+</div>
+<div class="bar"><button id="addReread" class="primary" type="button">Add independent annotation</button><button id="demoReread" type="button">Load synthetic demo</button></div>
+<div class="field"><label for="rereadImport">Import exported re-annotation collection JSON</label><input id="rereadImport" type="file" accept=".json,application/json"></div>
+<p id="rereadStatus" class="status" aria-live="polite">No annotations loaded.</p>
+<div class="table-wrap"><table><thead><tr><th>Specimen</th><th>Plant</th><th>Source image</th><th>Observer</th><th>Tip count</th></tr></thead><tbody id="rereadRows"></tbody></table></div>
+<div class="bar"><button id="runReliability" class="primary" type="button" disabled>Measure disagreement</button><button id="saveRereads" type="button" disabled>Export raw collection</button><button id="saveReliability" type="button" disabled>Export agreement report</button><button id="clearRereads" type="button">Clear</button></div>
+<pre id="reliabilityResult" hidden></pre>
+<p><small>Length disagreement and angular-gap disagreement are measured only when observers mark equal tip counts. Count mismatches are explicitly reported, never silently dropped.</small></p>
+</section>
+<section class="panel">
+<h2>2 · Truly separate evaluation files</h2>
+<p>Fit four predeclared geometric models using a v0.4 study collection of at least five unique plant IDs, then <strong>export the fixed model snapshot</strong>. Load a different collection containing at least three new plant IDs and evaluate without refitting.</p>
+<div class="fields">
+<div class="field"><label for="externalGroup">Research group</label><select id="externalGroup"><option value="cannabis">Cannabis</option><option value="control">Non-cannabis control</option></select></div>
+<div class="field"><label for="externalCount">Leaflet count</label><select id="externalCount"><option>3</option><option>5</option><option selected>7</option><option>9</option><option>11</option></select></div>
+</div>
+<div class="field"><label for="trainingFile">Training v0.4 study collection JSON</label><input id="trainingFile" type="file" accept=".json,application/json"></div>
+<div class="bar"><button id="trainSnapshot" class="primary" type="button">Fit fixed training snapshot</button><button id="saveSnapshot" type="button" disabled>Export snapshot JSON</button></div>
+<div class="field"><label for="snapshotFile">Or reopen an exported fixed snapshot JSON</label><input id="snapshotFile" type="file" accept=".json,application/json"></div>
+<p id="snapshotStatus" class="status" aria-live="polite">No fixed snapshot loaded.</p>
+<div class="field"><label for="externalFile">External v0.4 collection JSON (new plant IDs only)</label><input id="externalFile" type="file" accept=".json,application/json"></div>
+<div class="bar"><button id="runExternal" class="primary" type="button" disabled>Evaluate external plants</button><button id="saveExternal" type="button" disabled>Export test report JSON</button><button id="demoExternal" type="button">Load synthetic train/test example</button></div>
+<p id="externalStatus" class="status" aria-live="polite">No external test run.</p>
+<div class="table-wrap"><table><thead><tr><th>Predeclared model</th><th>External plant RMSE</th><th>Angular gap RMSE</th><th>Falloff</th><th>Asymmetry</th></tr></thead><tbody id="externalRows"></tbody></table></div>
+<pre id="externalResult" hidden></pre>
+<p><small>The snapshot is an editable JSON file, not a cryptographically signed preregistration. Plant independence and an untouched test set require real collection discipline. A smaller error never proves a mathematical biological law.</small></p>
+</section>
+</div>
+<footer>Φ LeafLab Quality Gate v0.5 · Local-only observation files · Explicit synthetic data labels · Existing governed cannabinoid evidence and chemistry canon unchanged.</footer>
+</main><script type="module" src="./quality-ui.mjs"></script></body></html>

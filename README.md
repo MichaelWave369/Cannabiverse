@@ -234,3 +234,8 @@ Manually calibrate a ruler segment, trace numbered leaflet polygons, obtain appr
 ### LeafLab v0.4 · independent-plant held-out research audit
 
 [Launch Research Audit](https://michaelwave369.github.io/Cannabiverse/app/leaflab/research.html) or read the [analysis protocol](docs/leaf-morphology-research-v04.md). This **separate static local-only application** imports manually marked tip-ray annotations into identified specimen/plant groups, trains only on the training plants, and evaluates conventional and golden-ratio *candidate* leaflet-length models on held-out plant IDs. It includes an exploratory 3-or-9-count comparison against non-cannabis controls, conditional exact label-permutation reference, and resampled uncertainty diagnostics. Labeled synthetic fixtures allow a functional demonstration but are **not real botanical observations**. No model evidence is promoted to the governed chemistry canon. Run npm run validate:leaflab-study.
+
+
+### LeafLab v0.5 · independent marking reliability and truly separate evaluation files
+
+[Open Quality Gate v0.5](https://michaelwave369.github.io/Cannabiverse/app/leaflab/quality.html) · [Read quality protocol](docs/leaf-morphology-quality-v05.md). Compare repeat tip annotations of the *same* image from masked-code observers, explicitly recording count mismatches and observer disagreement. Train a fixed candidate-model snapshot on one v0.4 study collection and score a separately imported collection of new Plant IDs with no refitting. The app rejects repeated training/test IDs and flags all synthetic examples; user-asserted identities and snapshot immutability **cannot be verified by software alone**. No real plant evidence or chemical canon changes. Run npm run validate:leaflab-quality.
