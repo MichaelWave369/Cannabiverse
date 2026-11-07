@@ -300,3 +300,141 @@ export function demoObservations(){
   }
   return studyRecords(out);
 }
+
+
+// Φ LeafLab v0.5: external test collection scored against previously exported
+// fixed predictions. This neither signs a snapshot nor authenticates plants.
+export const EXTERNAL_VERSION="0.5";
+const CANDIDATES=Object.freeze([
+  {name:"uniform-null",mode:"uniform"},
+  {name:"linear-falloff",mode:"linear"},
+  {name:"curved-asymmetric",mode:"curved"},
+  {name:"golden-fixed",mode:"golden-fixed"}
+]);
+function selection(raw,group,count,minPlants,label){
+  if(group!=="cannabis"&&group!=="control")throw new TypeError("Unknown study group");
+  if(!COUNTS.includes(count))throw new RangeError("Unsupported count");
+  const rows=studyRecords(raw);
+  if(rows.some(r=>r.group!==group||r.annotation.tips.length!==count))
+    throw new RangeError(label+" must contain only selected group and same complete leaflet count; no implicit exclusions");
+  const ids=[...new Set(rows.map(r=>r.plantId))].sort();
+  if(ids.length<minPlants)throw new RangeError(label+" requires at least "+minPlants+" distinct plant IDs");
+  return {rows,ids,origin:rows[0].origin};
+}
+export function fitExternalSnapshot(raw,{group="cannabis",count=7}={}){
+  const {rows,ids,origin}=selection(raw,group,count,5,"Training collection");
+  const plants=ids.map(id=>profilesForPlant(rows.filter(r=>r.plantId===id)));
+  const angularGap=mean(plants.flatMap(x=>x.gaps));
+  const models=CANDIDATES.map(m=>{
+    const f=m.mode==="curved"||m.mode==="linear"?fitParams(plants,count,m.mode):
+      {falloff:0,asymmetry:0};
+    return {name:m.name,falloff:round(f.falloff),asymmetry:round(f.asymmetry),
+      expectedRelativeLengths:lengthModel(count,m.mode,f.falloff,f.asymmetry).map(round)};
+  });
+  return {kind:"leaflab-fixed-model-snapshot",version:EXTERNAL_VERSION,
+    group,count,trainingOrigin:origin,trainingPlantIds:ids,
+    trainingSpecimenIds:rows.map(r=>r.specimenId).sort(),
+    trainingPlantCount:ids.length,trainingSpecimenCount:rows.length,
+    learnedMeanAngularGapDegrees:round(angularGap),
+    models,
+    limitations:[
+      "This is an exported model specification, NOT a digitally signed or immutable record.",
+      "User-entered plant IDs and separate-dataset independence are not authenticated.",
+      "Model choice and grid are predefined but users can still rerun and select favorable results.",
+      "Prediction is for relative tip lengths and angular gaps, not photosynthesis or physiology."
+    ]};
+}
+export function validateExternalSnapshot(x){
+  if(!x||x.kind!=="leaflab-fixed-model-snapshot"||x.version!==EXTERNAL_VERSION)
+    throw new TypeError("Expected LeafLab v0.5 fixed-model snapshot JSON");
+  if(!COUNTS.includes(x.count)||!["cannabis","control"].includes(x.group)||
+     !["manual","synthetic-demo"].includes(x.trainingOrigin))
+    throw new TypeError("Invalid snapshot group/count/origin");
+  if(!Array.isArray(x.trainingPlantIds)||x.trainingPlantIds.length<5||
+     x.trainingPlantIds.length>200||
+     new Set(x.trainingPlantIds).size!==x.trainingPlantIds.length||
+     x.trainingPlantIds.some(p=>!/^([A-Za-z0-9][A-Za-z0-9_-]{0,63})$/.test(p)))
+    throw new TypeError("Invalid or duplicate training Plant IDs");
+  if(!Array.isArray(x.trainingSpecimenIds)||x.trainingSpecimenIds.length<x.trainingPlantIds.length||
+     x.trainingSpecimenIds.length>200||new Set(x.trainingSpecimenIds).size!==x.trainingSpecimenIds.length||
+     x.trainingSpecimenIds.some(p=>!/^([A-Za-z0-9][A-Za-z0-9_-]{0,63})$/.test(p)))
+    throw new TypeError("Invalid training specimen IDs");
+  if(x.trainingPlantCount!==x.trainingPlantIds.length||
+     x.trainingSpecimenCount!==x.trainingSpecimenIds.length||
+     !Number.isFinite(x.learnedMeanAngularGapDegrees)||
+     x.learnedMeanAngularGapDegrees<=0||x.learnedMeanAngularGapDegrees>=270)
+    throw new RangeError("Invalid snapshot counts/angle");
+  if(!Array.isArray(x.models)||x.models.length!==4)
+    throw new TypeError("Expected four predeclared snapshot models");
+  for(let i=0;i<CANDIDATES.length;i++){
+    const m=CANDIDATES[i],v=x.models[i];
+    if(!v||v.name!==m.name||!Number.isFinite(v.falloff)||
+       v.falloff<0||v.falloff>.8||!Number.isFinite(v.asymmetry)||
+       v.asymmetry<-.25||v.asymmetry>.25)
+      throw new TypeError("Snapshot contains invalid candidate parameters");
+    if((m.mode==="uniform"||m.mode==="golden-fixed")&&
+       (v.falloff!==0||v.asymmetry!==0)||
+       m.mode==="linear"&&v.asymmetry!==0)
+      throw new RangeError("Fixed/null model parameters cannot be tuned");
+    const expected=lengthModel(x.count,m.mode,v.falloff,v.asymmetry);
+    if(!Array.isArray(v.expectedRelativeLengths)||
+       v.expectedRelativeLengths.length!==x.count||
+       v.expectedRelativeLengths.some((n,j)=>!Number.isFinite(n)||
+         Math.abs(n-expected[j])>1e-5))
+      throw new RangeError("Snapshot predicted values do not match declared model");
+  }
+  return x;
+}
+export function evaluateExternalSnapshot(snapshot,raw){
+  validateExternalSnapshot(snapshot);
+  const {rows,ids,origin}=selection(raw,snapshot.group,snapshot.count,3,"External test collection");
+  if(origin!==snapshot.trainingOrigin)
+    throw new RangeError("External test origin differs from training origin");
+  const trainingIds=new Set(snapshot.trainingPlantIds);
+  const trainingSamples=new Set(snapshot.trainingSpecimenIds);
+  if(ids.some(id=>trainingIds.has(id))||
+     rows.some(r=>trainingSamples.has(r.specimenId)))
+    throw new RangeError("Training/test leakage: overlapping Plant ID or Specimen ID");
+  const grouped=new Map(ids.map(id=>[id,profilesForPlant(rows.filter(r=>r.plantId===id))]));
+  const scored=snapshot.models.map(v=>{
+    const m=CANDIDATES.find(c=>c.name===v.name);
+    const prediction=lengthModel(snapshot.count,m.mode,v.falloff,v.asymmetry);
+    const perPlant=ids.map(plantId=>{
+      const o=grouped.get(plantId);
+      return {plantId,specimenCount:o.specimenCount,
+        tipLengthRMSE:round(Math.sqrt(error(prediction,o.lengths))),
+        angularGapRMSEDegrees:round(Math.sqrt(
+          error(o.gaps.map(()=>snapshot.learnedMeanAngularGapDegrees),o.gaps)))};
+    });
+    return {name:v.name,trainingParameters:{falloff:v.falloff,asymmetry:v.asymmetry},
+      externalMeanPlantLengthRMSE:round(mean(perPlant.map(p=>p.tipLengthRMSE))),
+      externalMeanPlantAngularGapRMSE:round(mean(perPlant.map(p=>p.angularGapRMSEDegrees))),
+      perPlant};
+  });
+  const linear=scored.find(s=>s.name==="linear-falloff");
+  const golden=scored.find(s=>s.name==="golden-fixed");
+  const differences=ids.map((_,i)=>golden.perPlant[i].tipLengthRMSE-linear.perPlant[i].tipLengthRMSE);
+  return {
+    kind:"leaflab-external-model-audit",version:EXTERNAL_VERSION,
+    evidenceLevel:origin==="synthetic-demo"?"SYNTHETIC_DEMONSTRATION":
+      "USER_ASSERTED_UNVERIFIED",
+    design:{group:snapshot.group,count:snapshot.count,
+      trainingPlantIds:[...snapshot.trainingPlantIds],externalPlantIds:ids,
+      externalSpecimenIds:rows.map(r=>r.specimenId).sort(),
+      externalPlantCount:ids.length,externalSpecimenCount:rows.length,
+      dataSeparation:"Distinct user-entered Plant ID and Specimen ID sets enforced; physical independence NOT verified"},
+    models:scored,
+    goldenMinusLinearExternalRMSE:{
+      meanDifference:round(mean(differences)),
+      positiveMeans:"Golden-fixed shape had larger mean tip-length RMSE than linear baseline",
+      exploratoryPlantBootstrap95:bootMeanDifference(differences,
+        "leaflab-v05-external:"+snapshot.group+":"+snapshot.count)
+    },
+    warnings:[
+      "Imported snapshot is not signed or immutable; provenance and pre-registration are user assertions.",
+      "No external observations are used to refit model parameters or angular gap.",
+      "Minimum of 3 external plant IDs is an interface safeguard, not statistical power.",
+      "Repeated comparisons on the same external dataset invalidate a claim of untouched confirmation.",
+      "No specimen identity authentication, blinding, physical-scale or measurement-error correction."
+    ]};
+}
