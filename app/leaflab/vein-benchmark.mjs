@@ -210,6 +210,7 @@ export function validateBenchmarkReport(raw){
      !["SYNTHETIC_DEMONSTRATION","USER_ASSERTED_HUMAN_REFERENCE_NOT_BOTANICAL_TRUTH"].includes(raw.evidenceLevel))
     throw new TypeError("Expected v0.7 vein benchmark report");
   validId(raw.specimenId,"Specimen ID");validId(raw.plantId,"Plant ID");
+  validId(raw.observerCode,"Observer code");
   if(!Array.isArray(raw.detectors)||raw.detectors.length!==2||
      raw.detectors[0]?.detector!=="masked-local-ridge"||
      raw.detectors[1]?.detector!=="global-darkness-baseline")
