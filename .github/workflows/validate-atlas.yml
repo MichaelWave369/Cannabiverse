@@ -53,6 +53,9 @@ jobs:
       - name: Validate LeafLab held-out research and null comparisons
         run: npm run validate:leaflab-study
 
+      - name: Validate LeafLab independent annotation and external test quality
+        run: npm run validate:leaflab-quality
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
