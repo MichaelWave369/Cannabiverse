@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cannabiverse Φ LeafLab v0.6: local seeded segmentation, dark ridge graph and traced-outline agreement audit.">
+<title>Cannabiverse | Φ LeafLab Imaging Lab v0.6</title>
+<style>
+:root{color-scheme:dark;--bg:#08150d;--panel:#13281b;--line:#416d4f;--text:#e9f7ed;--muted:#b6ceb9;--gold:#ecd291;--green:#9fe9b7}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#204631,var(--bg) 67%);color:var(--text);font:15px/1.52 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:1380px;margin:auto;padding:24px 18px 75px}nav{display:flex;flex-wrap:wrap;gap:18px;font-size:13px;margin-bottom:22px}a{color:var(--gold)}h1{font-size:clamp(32px,5vw,55px);letter-spacing:-1.3px;line-height:1.09;margin:7px 0 13px}h2{font-size:21px;margin:0 0 9px}h3{font-size:15px;margin:18px 0 5px}
+.lead{max-width:930px;color:#c7dcca}.eyebrow{font-size:12px;letter-spacing:1.6px;font-weight:750;color:var(--gold);text-transform:uppercase}
+.notice{border-radius:12px;background:#322b1a;border:1px solid #927b4a;color:#f3e4bd;padding:14px 17px;margin:20px 0;font-size:13px}
+.grid{display:grid;grid-template-columns:300px minmax(360px,1fr) 290px;gap:14px;align-items:start}
+.panel{border:1px solid var(--line);border-radius:15px;padding:18px;background:#12291c;min-width:0}
+label{display:block;font-size:12px;font-weight:700;margin:12px 0 5px;color:#d6e8da}input,select{width:100%;color:#e9f8ec;border:1px solid #658c71;border-radius:8px;padding:9px;background:#081d10;font:14px system-ui}
+input[type=file]{border-style:dashed;padding:10px}input[type=range]{accent-color:#94e5aa;padding:0;border:0}
+.control{padding:9px 0;border-bottom:1px solid #2e4f39}.control output{float:right;color:var(--green);font-variant-numeric:tabular-nums}
+button{font:700 13px system-ui;background:#205033;color:#f0fff4;border:1px solid #6b9878;border-radius:9px;padding:9px 12px;cursor:pointer}
+button.primary{background:#9aeab3;color:#082419;border-color:#9aeab3}button[aria-pressed=true]{background:#8be8af;color:#092217}
+button:disabled{cursor:not-allowed;opacity:.45}button:not(:disabled):hover{filter:brightness(1.13)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f4cd75;outline-offset:3px}
+.bar{display:flex;flex-wrap:wrap;gap:7px;margin:14px 0}.status{white-space:pre-line;font-size:13px;color:#d3ebd7}
+.stage{border-radius:12px;overflow:hidden;background:radial-gradient(ellipse,#173c25,#071a0f);border:1px solid #487658;min-height:210px;display:flex;align-items:center;justify-content:center}
+.stage canvas{display:block;max-width:100%;width:100%;height:auto;image-rendering:auto;cursor:crosshair}
+.hint{font-size:12px;color:var(--muted)}.metric{padding:10px;border:1px solid #31593e;border-radius:9px;background:#153721;margin:9px 0;font-size:12px}
+.metric strong{font-size:21px;display:block;color:#ecffee;font-variant-numeric:tabular-nums}pre{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.55 ui-monospace,Consolas,monospace;background:#091e12;padding:13px;border:1px solid #396a48;border-radius:10px}
+footer{font-size:12px;color:var(--muted);margin-top:25px}.hidden{display:none!important}
+@media(max-width:1180px){.grid{grid-template-columns:300px minmax(350px,1fr)}.results{grid-column:1/-1}}
+@media(max-width:730px){.grid{grid-template-columns:1fr}.results{grid-column:auto}.panel{padding:14px}}
+</style></head><body><main>
+<nav><a href="./">← Leaf Morphology Lab</a><a href="./research.html">Research Audit</a><a href="./quality.html">Quality Gate</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-imaging-v06.md">Imaging protocol</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Local-first computer vision · Experimental rung 0.6</div>
+<h1>Φ LeafLab <span style="color:#9aeab3">Imaging Lab</span></h1>
+<p class="lead">Measure what an image algorithm actually sees. Select a leaf-colored pixel and a background pixel, review an experimental connected-region mask, and inspect dark vein-like ridge candidates. Compare the result with a manual leaflet-outline record before treating it as useful data.</p>
+<div class="notice"><strong>These are color and contrast algorithms, not a trained leaf recognizer.</strong> A dark line could be a vein, shadow, fold, serration or camera artifact. The extracted graph measures pixels, not real xylem or vascular flow. No remote image upload or botanical discovery claims.</div>
+<div class="grid">
+<section class="panel">
+<h2>1 · Input &amp; seed colors</h2>
+<label for="imageFile">Your local leaf photo</label>
+<input id="imageFile" type="file" accept="image/*">
+<p class="hint">Use a flat leaf with clear contrast against a plain background, taken perpendicular to the leaf. Image processing downsamples to at most 320 pixels per side. Your original remains local.</p>
+<div class="bar">
+<button type="button" id="foregroundMode" aria-pressed="true">Mark leaf color</button>
+<button type="button" id="backgroundMode" aria-pressed="false">Mark background</button>
+</div>
+<p class="status" id="seedStatus" aria-live="polite">Upload a photo, then click a pixel inside the leaf and another on the background.</p>
+<div class="control">
+<label for="margin">Color separation margin <output id="marginVal">0.07</output></label>
+<input id="margin" type="range" min="-0.1" max="0.5" step="0.01" value="0.07">
+</div>
+<div class="control">
+<label for="contrast">Dark ridge contrast threshold <output id="contrastVal">14</output></label>
+<input id="contrast" type="range" min="3" max="70" step="1" value="14">
+</div>
+<div class="control">
+<label for="minRidge">Minimum ridge candidate pixels <output id="minRidgeVal">6</output></label>
+<input id="minRidge" type="range" min="2" max="40" step="1" value="6">
+</div>
+<div class="bar"><button class="primary" type="button" id="analyze" disabled>Analyze locally</button><button id="clearMasks" type="button">Clear analysis</button></div>
+<p class="hint">Change parameters and analyze again. One connected seed region is retained; other independent leaf fragments can be missed.</p>
+</section>
+<section class="panel">
+<h2>2 · Image preview &amp; candidates</h2>
+<div class="stage"><canvas id="preview" width="320" height="240" aria-label="Local photo preview with optional segmentation and vein candidate overlay"></canvas></div>
+<div class="bar"><button id="showPhoto" type="button" aria-pressed="false">Photo only</button><button id="showMask" type="button" aria-pressed="true">Mask overlay</button><button id="showNetwork" type="button" aria-pressed="false">Vein-like ridges</button></div>
+<p class="hint">Green shows a connected color-similar foreground mask. Magenta shows tentative dark ridge skeleton pixels. Small displayed dots mark the two color sample positions.</p>
+<p class="status" id="analysisStatus" aria-live="polite">No image analyzed.</p>
+<div class="bar"><button id="exportMask" type="button" disabled>Export mask PNG</button><button id="exportReport" type="button" disabled>Export image analysis JSON</button></div>
+</section>
+<section class="panel results">
+<h2>3 · Audit measurements</h2>
+<div class="metric"><strong id="maskCoverage">–</strong>Segmented image coverage</div>
+<div class="metric"><strong id="skeletonPixels">–</strong>Dark ridge skeleton pixels</div>
+<div class="metric"><strong id="junctionPixels">–</strong>Junction-like pixels (8-neighbor)</div>
+<div class="metric"><strong id="graphComponents">–</strong>Separate ridge components</div>
+<h3>Compare with manual contours</h3>
+<label for="manualFile">v0.3 manual-leaf-specimen JSON</label>
+<input id="manualFile" type="file" accept=".json,application/json">
+<p class="hint">Must be traced on the <em>same, unrotated original image</em>. Filename matching is checked but cannot authenticate image identity. Import all traced leaflets for meaningful coverage.</p>
+<div class="bar"><button id="compareManual" type="button" disabled>Calculate outline agreement</button></div>
+<pre id="comparisonStatus">No manual mask comparison yet.</pre>
+<p class="hint">Intersection-over-union and Dice describe overlap between the automatic mask and the union of your traced leaflets. Agreement is not proof of biological correctness.</p>
+</section>
+</div>
+<footer>Imaging Lab v0.6 · Pure JavaScript, local canvas and offline JSON/PNG export · No third-party model, server processing, or chemical evidence modification.</footer>
+</main><script type="module" src="./imaging-ui.mjs"></script></body></html>
