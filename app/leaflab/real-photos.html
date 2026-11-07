@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Φ LeafLab v1.4: curated real cannabis-leaf photographs with original-image download URLs, photographer credits, licenses and research controls.">
+<title>Cannabiverse | Φ Real Leaf Photo Library v1.4</title>
+<style>
+:root{color-scheme:dark;--bg:#07190e;--panel:#112d20;--line:#466e51;--text:#edfaef;--muted:#bbd8c2;--gold:#efd092;--mint:#a2ebbd}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -10%,#245437,var(--bg) 70%);color:var(--text);font:14px/1.58 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+main{max-width:1400px;margin:auto;padding:22px 18px 70px}nav{display:flex;flex-wrap:wrap;gap:15px;font-size:13px;margin-bottom:22px}a{color:var(--gold)}h1{font-size:clamp(34px,5vw,59px);letter-spacing:-1.5px;line-height:1.05;margin:8px 0 13px}h1 span{color:var(--mint)}h2{font-size:19px;margin:0 0 7px}h3{font-size:15px;margin:13px 0 5px}
+.eyebrow{font-weight:800;letter-spacing:1.8px;color:var(--gold);font-size:12px;text-transform:uppercase}.lead{color:#d1e8d5;max-width:1100px}
+.notice{border:1px solid #987c53;background:#302a1d;color:#f6e3b9;border-radius:12px;padding:15px;margin:17px 0}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:19px}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-bottom:18px}
+select,button{font:13px system-ui;border:1px solid #649678;background:#0d2318;color:#eff9f0;border-radius:9px;padding:10px}
+button{font-weight:700;cursor:pointer;background:#1b4d30}button:hover{filter:brightness(1.13)}
+button:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #f1d48b;outline-offset:3px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.card{border:1px solid #527659;background:#143023;border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.photo{position:relative;background:#082316;height:220px;display:grid;place-items:center;overflow:hidden}.photo img{display:block;width:100%;height:100%;object-fit:cover}
+.meta{padding:15px;display:flex;flex-direction:column;gap:8px;flex:1}.meta p{font-size:12px;color:#c3d8c8;margin:0}
+.small{font-size:11px;color:#c0d8c3}.warning{border:1px solid #a28d5b;background:#3a3322;color:#f5e9c9;border-radius:9px;padding:9px;font-size:12px}
+.actions{display:flex;flex-wrap:wrap;gap:7px;margin-top:auto;padding-top:8px}
+.actions a{border:1px solid #6ea17f;border-radius:8px;padding:8px 10px;text-decoration:none;color:#eaffee;font-size:12px;font-weight:700}
+.actions a:first-child{background:#95e7b0;color:#0b2b18;border-color:#95e7b0}
+.protocol{margin-top:18px}.protocol p,.protocol li{color:#c9dece;font-size:13px}
+code{color:#d6f3ce;overflow-wrap:anywhere}.privacy{font-size:12px;color:var(--muted);margin-top:27px}
+@media(max-width:570px){.cards{grid-template-columns:1fr}.toolbar{justify-content:flex-start}}
+</style></head><body><main>
+<nav><a href="./">← Leaf Morphology Lab</a><a href="./specimens.html">Specimen Provenance v1.3</a><a href="./evidence.html">Evidence Gateway v1.2</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-web-photos-v14.md">Source and licensing protocol</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Wikimedia Commons originals · v1.4</div>
+<h1>Φ <span>Real Leaf Photo Library</span></h1>
+<p class="lead">A curated starting set of real photographs with traceable source file pages, individual reuse licenses, photographer credit, original file links, and a reproducible local download/hash workflow. Actual photos, not AI-generated leaves. Their biological identities and annotations still require independent verification.</p>
+<div class="notice"><strong>Research boundary:</strong> These photos are not independent botanical specimens, verified taxonomic vouchers or confirmed vascular masks. One item already includes explanatory annotations and must <strong>not</strong> be used as blinded detector ground truth. Two photos may depict the same plant. Keep source credits and honor the original license.</div>
+<div class="toolbar panel">
+<div><strong id="sourceCount">Five</strong> curated Commons image sources<br><span class="small">Originals under LeafLab v1.3's 16 MiB photo limit</span></div>
+<label for="sourceFilter">View by research role
+<select id="sourceFilter"><option value="all">All photographs</option><option value="ordinary">Exclude pre-annotated teaching image</option><option value="reference">Pre-annotated teaching reference only</option></select></label>
+<button id="downloadCatalog" type="button">Export source metadata JSON</button>
+</div>
+<div class="cards" id="photoCards" aria-live="polite"></div>
+<section class="panel protocol">
+<h2>How to use actual images in LeafLab</h2>
+<ol>
+<li>Choose <strong>Original JPEG</strong> on a photo card. Save the exact original file, not a screenshot or the resized gallery preview. That preserves the published file's byte identity.</li>
+<li>Open <a href="./specimens.html">Specimen Provenance v1.3</a>, select the saved original, and record its SHA-256 plus the capture metadata known from the Commons page. Mark unknown fields as unknown. Source license is not proof of botanical classification.</li>
+<li>Open <a href="./veins.html">Human Vein Reference v0.7</a> and make independent annotations on the same saved original file. Use different masked observer codes. Do not show model predictions to observers intended to be blind.</li>
+<li>Use <a href="./evidence.html">Evidence Gateway v1.2</a> for same-image agreement, plant-ID separation and descriptive development/holdout audits. Do not put two potentially related images in different splits unless independence is documented.</li>
+</ol>
+<p>For command-line acquisition, run <code>npm run fetch:leaflab-photos</code>. The script downloads the original Commons JPEG bytes, checks source-listed byte counts and SHA-1, computes a fresh SHA-256 for each file, and writes a manifest plus license credits to an ignored local directory. The GitHub Actions photo-pack workflow can package the originals as a downloadable artifact when network access permits.</p>
+<p><strong>No verified real-world accuracy numbers are bundled.</strong> The software tests validate the catalog and download guards, not botanical truth. New photographs may have shadows, overlapping leaves, text overlays or capture variability that defeat our existing detector.</p>
+</section>
+<footer class="privacy">This catalog page loads photo previews from Wikimedia Commons, which receives normal web image requests. Downloading originals opens Wikimedia's file server. Specimen analysis in the linked LeafLab tools remains browser-local; no uploaded dataset or remote inference is performed.</footer>
+</main><script type="module" src="./real-photo-ui.mjs"></script></body></html>
