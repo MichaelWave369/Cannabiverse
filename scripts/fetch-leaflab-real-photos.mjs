@@ -44,6 +44,9 @@ async function downloadSource(src){
         throw new Error("Wikimedia source SHA-1 mismatch: do not use altered photo");
       if(bytes.length<4||bytes[0]!==0xff||bytes[1]!==0xd8)
         throw new Error("File is not recognizable as JPEG");
+      const computedSha256=sha(bytes,"sha256");
+      if(src.independentlyFetchedSHA256&&computedSha256!==src.independentlyFetchedSHA256)
+        throw new Error("Original SHA-256 mismatch against independently fetched version");
       const localFile=src.id+".jpg";
       await writeFile(path.join(destination,localFile),bytes,{flag:"w"});
       return {
@@ -52,7 +55,7 @@ async function downloadSource(src){
         attribution:src.author,license:src.license,
         licenseUrl:src.licenseUrl,
         width:src.width,height:src.height,bytes:bytes.length,
-        sourceSHA1:expectedSha1,computedOriginalSHA256:sha(bytes,"sha256"),
+        sourceSHA1:expectedSha1,computedOriginalSHA256:computedSha256,
         use:src.use,annotationOverlay:src.annotationOverlay,
         botanicalIdentity:src.botanicalIdentity,
         caution:src.caution,sourceIdentity:src.sourceIdentity,
