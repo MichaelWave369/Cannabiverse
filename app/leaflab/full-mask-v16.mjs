@@ -106,12 +106,14 @@ export function rasterizeCompletePolygons(polygons,width,height){
 }
 function countMask(mask){let leaf=0;for(const v of mask)leaf+=v;return leaf;}
 function sourceFields(raw){
+  const width=raw?.width??raw?.originalWidth,
+    height=raw?.height??raw?.originalHeight;
   if(!raw||!HASH.test(raw.originalSHA256)||
      !Number.isInteger(raw.originalBytes)||
-     !Number.isInteger(raw.width)||!Number.isInteger(raw.height))
+     !Number.isInteger(width)||!Number.isInteger(height))
     throw new TypeError("Reference needs a source photo with original file SHA-256 and decoded dimensions");
   const identity=identifyPhotoByOriginalHash(raw.originalSHA256,
-    raw.originalBytes,raw.width??raw.originalWidth,raw.height??raw.originalHeight);
+    raw.originalBytes,width,height);
   return {
     originalSHA256:identity.originalSHA256,
     originalBytes:identity.originalBytes,
