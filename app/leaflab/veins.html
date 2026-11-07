@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Φ LeafLab v0.7: independently trace candidate vein lines, compare local detector to global darkness baseline, and export auditable image-matched results.">
+<title>Cannabiverse | Φ LeafLab Vein Reference Benchmark v0.7</title>
+<style>
+:root{color-scheme:dark;--bg:#07140d;--panel:#12291c;--line:#416b4e;--text:#eaf7ed;--muted:#b1cbb8;--gold:#ecd18b;--green:#95eab2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#21462e,var(--bg) 67%);color:var(--text);font:14px/1.55 system-ui,-apple-system,Segoe UI,Arial,sans-serif}main{max-width:1430px;margin:auto;padding:24px 18px 68px}
+nav{display:flex;gap:17px;flex-wrap:wrap;font-size:13px;margin-bottom:23px}a{color:var(--gold)}h1{font-size:clamp(32px,5.2vw,56px);line-height:1.07;margin:8px 0 14px;letter-spacing:-1.6px}h1 span{color:#95eab2}h2{font-size:19px;margin:0 0 10px}h3{font-size:15px;margin:16px 0 6px}
+.lead{max-width:980px;color:#c6deca}.eyebrow{font-size:12px;letter-spacing:1.7px;font-weight:750;text-transform:uppercase;color:var(--gold)}
+.notice{border:1px solid #917b4e;background:#30291b;border-radius:12px;padding:15px;color:#f4e6be;margin:20px 0}
+.grid{display:grid;grid-template-columns:300px minmax(390px,1fr) 320px;gap:14px;align-items:start}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px;min-width:0}.panel p{font-size:12px;color:#b4d0bd}
+label{display:block;margin:12px 0 5px;color:#d5ebda;font-size:12px;font-weight:750}input,select{width:100%;border:1px solid #678c75;background:#0a1d12;color:#eaf7ee;padding:9px;border-radius:9px;font:14px system-ui}input[type=file]{border-style:dashed}input[type=range]{accent-color:#95eab2;padding:0;border:0}
+button{cursor:pointer;border:1px solid #699879;background:#1e4a31;color:#f3fff5;font:700 12px system-ui;padding:10px 11px;border-radius:9px}button.primary{background:#91e9b2;color:#0a2616;border-color:#91e9b2}button[aria-pressed=true]{background:#99eab7;color:#092718}button:disabled{opacity:.45;cursor:not-allowed}button:not(:disabled):hover{filter:brightness(1.14)}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #f9d788;outline-offset:3px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}.status{font-size:12px;color:#ccebd4;white-space:pre-line;line-height:1.55}
+canvas{display:block;width:100%;height:auto;max-width:100%;cursor:crosshair}.stage{border:1px solid #446b4f;border-radius:12px;background:#091d11;overflow:hidden;min-height:200px;display:flex;align-items:center;justify-content:center}
+.panel .dim{font-size:12px;color:var(--muted)}.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{background:#1b3b27;border:1px solid #3c6249;padding:10px;border-radius:10px}.metric strong{font-size:23px;display:block;color:#f0fff5}.metric span{font-size:11px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:12px;min-width:460px}th,td{text-align:left;border-bottom:1px solid #355b40;padding:8px 7px}th{color:var(--gold)}.scroll{overflow:auto;max-height:290px}
+pre{font:12px/1.6 ui-monospace,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere;background:#091e12;border:1px solid #315a40;border-radius:10px;padding:12px}
+footer{font-size:12px;color:var(--muted);margin-top:30px}
+@media(max-width:1190px){.grid{grid-template-columns:300px minmax(330px,1fr)}.right{grid-column:1/-1}}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.right{grid-column:auto}.panel{padding:14px}.fields{grid-template-columns:1fr}}
+</style></head><body><main>
+<nav><a href="./">← Leaf Morphology Lab</a><a href="./imaging.html">Imaging Lab v0.6</a><a href="./quality.html">Quality Gate</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-vein-benchmark-v07.md">Benchmark protocol</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Human references · Pixel-detector benchmark 0.7</div>
+<h1>Φ LeafLab <span>Vein Reference Benchmark</span></h1>
+<p class="lead">Trace visible line features before revealing automated predictions. Compare an experimental local-contrast detector against a simple global-darkness baseline on exactly the same image and foreground mask, then export a reproducible image-hash-matched report.</p>
+<div class="notice"><strong>Important:</strong> Human-drawn “vein references” are uncertain observations, not authenticated vascular structures. Pixel-tolerant precision/recall is agreement with those drawings, not anatomical truth. No real cannabis specimen images ship with this lab. No image upload or remote inference.</div>
+<div class="grid">
+<section class="panel">
+<h2>1 · Source &amp; independent reference</h2>
+<label for="veinImage">Local unmodified photo</label><input id="veinImage" type="file" accept="image/*">
+<p class="dim">Original file bytes are hashed locally (SHA-256). All processing uses an aspect-preserving downsample no larger than 320 pixels per side.</p>
+<div class="fields">
+<div><label for="veinSpecimen">Specimen ID</label><input id="veinSpecimen" maxlength="64" placeholder="Leaf_001"></div>
+<div><label for="veinPlant">Plant ID</label><input id="veinPlant" maxlength="64" placeholder="Plant_A"></div>
+</div>
+<label for="veinObserver">Masked annotator code</label><input id="veinObserver" maxlength="64" placeholder="Observer_1">
+<p class="dim">Have a second observer independently draw lines on the same photo before exposing either person's detector results. The app cannot enforce blinding.</p>
+<div class="bar">
+<button id="modeTrace" type="button" aria-pressed="true">Draw reference line</button>
+<button id="modeLeaf" type="button" aria-pressed="false">Mark leaf color</button>
+<button id="modeBack" type="button" aria-pressed="false">Mark background</button>
+</div>
+<div class="bar">
+<button id="finishVein" type="button">Finish line</button>
+<button id="undoVein" type="button">Undo point</button>
+<button id="removeVein" type="button">Remove last line</button>
+</div>
+<p id="veinStatus" class="status" aria-live="polite">Select an image. Trace at least one complete visible line using successive canvas clicks, then finish the line.</p>
+<div class="bar"><button class="primary" id="saveVeinReference" type="button" disabled>Export reference JSON</button></div>
+<label for="importVeinReference">Or import independent reference JSON</label>
+<input id="importVeinReference" type="file" accept=".json,application/json">
+<p class="dim">Imported reference must match both the exact source-file SHA-256 and processing dimensions. When marked reference lines change, previous benchmark results are cleared.</p>
+</section>
+<section class="panel">
+<h2>2 · Same-image detector comparison</h2>
+<div class="stage"><canvas id="veinCanvas" width="320" height="240" aria-label="Local leaf image with manual reference and optional algorithm overlays"></canvas></div>
+<div class="bar">
+<button id="viewReference" type="button" aria-pressed="true">Reference only</button>
+<button id="viewLocal" type="button" aria-pressed="false">Local ridge</button>
+<button id="viewBaseline" type="button" aria-pressed="false">Global baseline</button>
+</div>
+<p class="dim">Yellow lines are human marks. Magenta pixels indicate automatic detections. Annotate and export reference before revealing algorithms for better blinding.</p>
+<div><label for="veinMargin">Foreground margin <output id="veinMarginVal">0.07</output></label><input id="veinMargin" type="range" min="-0.1" max="0.5" step="0.01" value="0.07"></div>
+<div><label for="veinContrast">Shared contrast threshold <output id="veinContrastVal">14</output></label><input id="veinContrast" type="range" min="3" max="70" step="1" value="14"></div>
+<div><label for="veinMin">Local ridge minimum component <output id="veinMinVal">6</output></label><input id="veinMin" type="range" min="2" max="40" step="1" value="6"></div>
+<div><label for="veinTolerance">Reference matching tolerance in pixels <output id="veinToleranceVal">2</output></label><input id="veinTolerance" type="range" min="0" max="6" step="1" value="2"></div>
+<div class="bar"><button class="primary" id="runVeinBenchmark" type="button" disabled>Compare both detectors</button><button id="saveVeinBenchmark" type="button" disabled>Export benchmark JSON</button></div>
+<p id="benchStatus" class="status" aria-live="polite">Need image, reference lines and both color samples.</p>
+</section>
+<section class="panel right">
+<h2>3 · Results &amp; collection</h2>
+<div class="metric-grid">
+<div class="metric"><strong id="localF1">–</strong><span>Local ridge reference F1</span></div>
+<div class="metric"><strong id="baselineF1">–</strong><span>Global baseline reference F1</span></div>
+</div>
+<div class="scroll"><table><thead><tr><th>Detector</th><th>Precision</th><th>Recall</th><th>F1</th><th>Pixels</th></tr></thead><tbody id="benchRows"></tbody></table></div>
+<pre id="benchmarkDetail">No evaluated reference yet.</pre>
+<h3>Descriptive reports across plants</h3>
+<p class="dim">Import separately exported benchmark JSON files. Repeated images/observers are grouped by user-entered Plant ID, not claimed to be independent biological replicates.</p>
+<label for="importVeinReports">Import report JSON files (multiple)</label>
+<input id="importVeinReports" type="file" accept=".json,application/json" multiple>
+<p id="reportStatus" class="status">No benchmark reports loaded.</p>
+<div class="bar"><button id="summarizeVeinReports" type="button" disabled>Summarize by plant</button><button id="exportVeinSummary" type="button" disabled>Export cohort summary JSON</button><button id="clearVeinReports" type="button">Clear reports</button></div>
+<pre id="aggregateDetail">No aggregate result.</pre>
+</section>
+</div>
+<footer>Φ LeafLab v0.7 · Offline human-line annotation and experimental detector evaluation · SHA-256 image-byte matching · No source photo uploaded or embedded in reports · Nothing promoted into the chemistry evidence canon.</footer>
+</main><script type="module" src="./vein-ui.mjs"></script></body></html>

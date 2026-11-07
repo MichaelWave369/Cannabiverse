@@ -59,6 +59,9 @@ jobs:
       - name: Validate LeafLab local image segmentation and ridge graph
         run: npm run validate:leaflab-imaging
 
+      - name: Validate LeafLab human vein reference and detector comparison
+        run: npm run validate:leaflab-veins
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
