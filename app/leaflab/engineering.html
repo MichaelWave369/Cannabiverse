@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Φ Network Engineering Lab v1.0: multi-seed packet routing, equal capacity budgets, traffic hotspots, topology costs and failure experiments.">
+<title>Cannabiverse | Φ Network Engineering Lab v1.0</title>
+<style>
+:root{color-scheme:dark;--bg:#08170e;--surface:#122b1c;--line:#446b50;--text:#e8f6ec;--muted:#bbd5c1;--gold:#edcf89;--mint:#95eab2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#245238,var(--bg) 62%);color:var(--text);font:14px/1.56 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+main{max-width:1510px;padding:23px 17px 75px;margin:auto}
+nav{display:flex;gap:17px;flex-wrap:wrap;font-size:13px;margin-bottom:22px}a{color:var(--gold)}h1{font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-1.6px;margin:8px 0 12px}h1 span{color:var(--mint)}h2{font-size:20px;margin:0 0 12px}h3{font-size:15px;margin:16px 0 6px}.eyebrow{color:var(--gold);font-size:12px;letter-spacing:1.8px;font-weight:750;text-transform:uppercase}.lead{color:#cee3d2;max-width:1040px}
+.notice{padding:15px 17px;border-radius:11px;border:1px solid #8e794c;background:#302b1e;color:#f4e4b9;margin:18px 0}
+.layout{display:grid;grid-template-columns:minmax(270px,310px) minmax(350px,1fr) minmax(265px,300px);gap:13px;align-items:start}
+.panel{min-width:0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:19px}.panel p,.hint{font-size:12px;color:#bdd7c4}
+label{display:block;font-size:12px;font-weight:750;color:#d7ead8;margin:12px 0 5px}
+input,select{width:100%;padding:9px 10px;border-radius:9px;border:1px solid #679278;background:#081e12;color:var(--text);font:14px system-ui}
+input[type=file]{border-style:dashed}.fields{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+button{font:700 12px system-ui;border:1px solid #719e7c;border-radius:9px;padding:9px 12px;background:#205034;color:#ebfff0;cursor:pointer}
+button.primary{background:var(--mint);border-color:var(--mint);color:#0a2418}
+button:disabled{opacity:.43;cursor:not-allowed}button:not(:disabled):hover{filter:brightness(1.13)}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f6d17f;outline-offset:3px}
+.bar{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}.status{font-size:12px;color:#c7e9ce;white-space:pre-line;overflow-wrap:anywhere}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{background:#1a3927;border:1px solid #426d4b;border-radius:9px;padding:11px}.metric strong{font-size:22px;display:block;font-variant-numeric:tabular-nums}.metric span{font-size:11px;color:var(--muted)}
+.graph{background:#091f13;border:1px solid #365e42;border-radius:10px}.graph svg{width:100%;max-height:300px;min-height:175px;display:block}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#091f13;border:1px solid #356142;border-radius:9px;padding:12px;font:12px/1.6 ui-monospace,Consolas,monospace}
+table{border-collapse:collapse;width:100%;min-width:990px;font-size:12px}th,td{text-align:left;border-bottom:1px solid #355e42;padding:9px 8px;font-variant-numeric:tabular-nums}th{color:var(--gold)}.scroll{overflow:auto;max-height:490px}.full{grid-column:1/-1}
+#engChart{width:100%;height:220px;display:block;background:#081e12;border:1px solid #3b6448;border-radius:10px}
+footer{font-size:12px;color:var(--muted);margin-top:28px}
+@media(max-width:1220px){.layout{grid-template-columns:300px minmax(330px,1fr)}.summary{grid-column:1/-1}}
+@media(max-width:730px){.layout{grid-template-columns:1fr}.summary,.full{grid-column:auto}.panel{padding:14px}.fields{grid-template-columns:1fr}}
+</style></head><body><main>
+<nav><a href="./">← Leaf Morphology Lab</a><a href="./packets.html">Packet Simulator v0.9</a><a href="./network.html">Network Atlas</a><a href="../../">Cannabiverse</a><a href="../../docs/leaf-morphology-engineering-v10.md">Engineering methodology</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Quantified network experiments · v1.0</div>
+<h1>Φ <span>Network Engineering Lab</span></h1>
+<p class="lead">Test whether a routing strategy survives repeated, reproducible synthetic workloads. Allocate an equal number of link-capacity slots across network topologies, then compare throughput, queue losses, latency and the geometry-weighted cost of each capacity allocation.</p>
+<div class="notice"><strong>Network engineering sandbox, not botanical evidence.</strong> All links, queues and packets are synthetic. Pixel-based wire cost is an abstract proxy, not dollars, measured bandwidth or real vascular transport. Equal total capacity slots do not guarantee equal cost or latency. No result establishes natural network superiority.</div>
+<div class="layout">
+<section class="panel">
+<h2>1 · Topology &amp; workload</h2>
+<label for="engFile">Import v0.7 marked-line reference JSON</label><input id="engFile" type="file" accept=".json,application/json">
+<div class="bar"><button id="engDemoTree" type="button">Synthetic branching tree</button><button id="engDemoLoop" type="button">Synthetic loop</button></div>
+<p class="status" id="engSource" aria-live="polite">Choose a source reference or a clearly labeled synthetic demonstration.</p>
+<div class="fields">
+<div><label for="engSeeds">Independent traffic seeds</label><input id="engSeeds" type="number" min="1" max="5" step="1" value="3"></div>
+<div><label for="engSeedBase">First seed</label><input id="engSeedBase" type="number" min="1" max="2147483647" value="369"></div>
+<div><label for="engTicks">Traffic ticks</label><input id="engTicks" type="number" min="10" max="90" value="50"></div>
+<div><label for="engArrivals">Packets / tick</label><input id="engArrivals" type="number" min="1" max="8" value="4"></div>
+<div><label for="engQueue">Node queue limit</label><input id="engQueue" type="number" min="4" max="100" value="24"></div>
+<div><label for="engSlots">Equal link-slot budget</label><input id="engSlots" type="number" min="1" max="3000" value="12"></div>
+</div>
+<p id="engBudgetRange" class="hint">Slot budget range determined after loading a graph.</p>
+<label for="engAllocation">Distribute slots over links</label>
+<select id="engAllocation"><option value="even-slots">Even: round-robin across edges</option><option value="short-link-first">Shortest links first (up to 12 each)</option></select>
+<label for="engTraffic">Endpoint demand pattern</label>
+<select id="engTraffic"><option value="uniform-pairs">Uniform random endpoint pairs</option><option value="hub-hotspot">Hub hotspot (at least half involving selected node)</option></select>
+<label for="engHotspot">Hotspot node</label><select id="engHotspot"></select>
+<h3>Shared fault scenario</h3>
+<label for="engFault">Same fault for all network shapes</label>
+<select id="engFault"><option value="none">No outage</option><option value="node">Same node outage</option></select>
+<label for="engFailedNode">Node affected</label><select id="engFailedNode"></select>
+<div class="fields">
+<div><label for="engFaultStart">Start tick</label><input id="engFaultStart" type="number" min="0" max="89" value="20"></div>
+<div><label for="engFaultDuration">Duration ticks</label><input id="engFaultDuration" type="number" min="1" max="90" value="15"></div>
+</div>
+<div class="bar"><button id="engRun" class="primary" type="button" disabled>Run multi-seed benchmark</button><button id="engExport" type="button" disabled>Export complete JSON</button></div>
+<p id="engStatus" class="status" aria-live="polite">No benchmark run.</p>
+</section>
+<section class="panel">
+<h2>2 · Visualize installed capacity</h2>
+<div class="graph"><svg id="engGraph" viewBox="0 0 100 100" role="img" aria-label="Graph vertices with link width scaled by capacity allocation"></svg></div>
+<label for="engViewTopology">Inspect a network shape</label>
+<select id="engViewTopology"><option value="annotated-network">Annotated network</option><option value="euclidean-minimum-spanning-tree">Euclidean MST</option><option value="best-centered-euclidean-star">Best-centered star</option></select>
+<p class="hint">Wider lines indicate more integer packet slots assigned to that link. All three shapes receive the same total slot count, not necessarily the same weighted wire cost. Red marks a disabled node in the selected outage scenario.</p>
+<div class="metrics">
+<div class="metric"><strong id="engNodes">–</strong><span>Graph nodes</span></div>
+<div class="metric"><strong id="engLinks">–</strong><span>Links on displayed shape</span></div>
+<div class="metric"><strong id="engInstalled">–</strong><span>Installed capacity slots</span></div>
+<div class="metric"><strong id="engCost">–</strong><span>Capacity × pixel length</span></div>
+</div>
+<h3>Engineering boundaries</h3>
+<p>Traffic is identical for every network shape and algorithm within one seed. Repeating seeds measures sensitivity to traffic selections, not uncertainty about real plant physiology. Short-link-first costs less in this proxy but may concentrate resources in the wrong places for network demand.</p>
+</section>
+<section class="panel summary">
+<h2>3 · Across-seed audit</h2>
+<div class="metrics">
+<div class="metric"><strong id="engRunCount">–</strong><span>Deterministic experiment runs</span></div>
+<div class="metric"><strong id="engSeedsUsed">–</strong><span>Distinct offered-traffic seeds</span></div>
+</div>
+<p class="hint">The reported standard deviation and observed range describe the tested seeds only. They are not confidence intervals.</p>
+<label for="engSelectRun">Select an individual run</label><select id="engSelectRun" disabled><option>Run experiment first</option></select>
+<canvas id="engChart" width="650" height="220" aria-label="Selected seed run: per-tick delivered, dropped and queued packets"></canvas>
+<pre id="engRunDetail">No selected run.</pre>
+</section>
+<section class="panel full">
+<h2>4 · Equal-slot comparison matrix</h2>
+<p>Compare each topology with the same total integer packet slots. More physical wiring or longer capacity-weighted links raise the abstract material-cost proxy. Delivered-per-tick / capacity-weighted cost is a derived efficiency *ratio*, not a proof of optimal engineering.</p>
+<div class="scroll"><table><thead><tr><th>Topology</th><th>Routing strategy</th><th>Capacity slots</th><th>Weighted cost</th><th>Delivery % (mean ± SD)</th><th>Drop % (mean)</th><th>Delivered latency (mean)</th><th>Delivered/tick/cost</th><th>Inspect</th></tr></thead><tbody id="engRows"></tbody></table></div>
+<p id="engMatrixStatus" class="status">No comparison yet.</p>
+</section>
+</div>
+<footer>Φ Network Engineering Lab v1.0 · Local deterministic simulations · No network calls or original image transfer · No empirical biological, chemistry, clinical, or infrastructure performance claims.</footer>
+</main><script type="module" src="./engineering-ui.mjs"></script></body></html>

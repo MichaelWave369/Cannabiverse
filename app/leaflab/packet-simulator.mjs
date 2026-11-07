@@ -46,6 +46,11 @@ export function normalizePacketScenario(raw={},nodeCount=0,edgeCount=0){
   const edgeCapacity=integer(raw.edgeCapacity??2,1,12,"Packets per link per tick");
   const queueLimit=integer(raw.queueLimit??24,4,100,"Node queue size");
   const seed=integer(raw.seed??369,1,2147483647,"Traffic seed");
+  const edgeCapacities=raw.edgeCapacities===undefined?null:raw.edgeCapacities;
+  if(edgeCapacities!==null&&(!Array.isArray(edgeCapacities)||
+      edgeCapacities.length!==edgeCount||
+      edgeCapacities.some(v=>!Number.isInteger(v)||v<1||v>12)))
+    throw new RangeError("Explicit link capacities must contain 1–12 slots for every edge");
   const failure=raw.failure||{kind:"none"};
   if(!["none","node","link"].includes(failure.kind))
     throw new TypeError("Failure kind must be none, node or link");
@@ -58,6 +63,7 @@ export function normalizePacketScenario(raw={},nodeCount=0,edgeCount=0){
     normalizedFailure={kind:failure.kind,index,start,duration};
   }
   return {ticks,arrivalsPerTick,edgeCapacity,queueLimit,seed,
+    edgeCapacities:edgeCapacities?[...edgeCapacities]:null,
     failure:normalizedFailure,
     semantics:{
       traffic:"Identical seeded source/destination pairs offered at every tested topology",
@@ -156,7 +162,7 @@ function heapPop(heap){
   heap[i]=last;
   return result;
 }
-function nextHop(adj,source,target,mode,remaining,capacity,queueOccupancy,queueLimit,bridgeSet){
+function nextHop(adj,source,target,mode,remaining,capacities,queueOccupancy,queueLimit,bridgeSet){
   if(source===target)return null;
   const dist=new Float64Array(adj.length).fill(Infinity),
     previousEdge=new Int32Array(adj.length).fill(-1),
@@ -169,7 +175,7 @@ function nextHop(adj,source,target,mode,remaining,capacity,queueOccupancy,queueL
     for(const e of adj[u]){
       let penalty=1;
       if(mode!=="shortest-distance"){
-        const used=1-remaining[e.id]/capacity;
+        const used=1-remaining[e.id]/capacities[e.id];
         const downstream=queueOccupancy[e.to]/queueLimit;
         penalty+=mode==="queue-aware"?
           3*used+1.4*downstream:
@@ -208,7 +214,11 @@ export function simulatePacketRouting(rawGraph,rawScenario,mode="shortest-distan
     availableSlots=0;
   const dropReasons={nodeFailed:0,targetFailed:0,unreachable:0,queueOverflow:0,ttl:0};
   const latencies=[],series=[],nodeCount=graph.nodes.length;
-  const edges=graph.edges.length, edgeTransmissions=new Array(edges).fill(0);
+  const edges=graph.edges.length,edgeTransmissions=new Array(edges).fill(0);
+  const capacities=cfg.edgeCapacities||new Array(edges).fill(cfg.edgeCapacity);
+  const installedWireLength=graph.edges.reduce((sum,e)=>sum+e.length,0);
+  const installedCapacityWireCost=graph.edges.reduce(
+    (sum,e)=>sum+e.length*capacities[e.id],0);
   let queues=Array.from({length:nodeCount},()=>[]);
   const ttl=Math.min(4*nodeCount,140),drainTicks=Math.min(2*nodeCount+cfg.queueLimit,160);
   for(let tick=0;tick<cfg.ticks+drainTicks;tick++){
@@ -218,11 +228,9 @@ export function simulatePacketRouting(rawGraph,rawScenario,mode="shortest-distan
     const failedNode=down&&fail.kind==="node"?fail.index:-1;
     const failedLink=down&&fail.kind==="link"?fail.index:-1;
     const adj=adjacency(graph,failedNode,failedLink),bridgeSet=bridges(adj);
-    const remaining=new Int16Array(edges).fill(cfg.edgeCapacity);
-    let currentlyAvailable=0;
+    const remaining=new Int16Array(capacities);
     for(const e of graph.edges)if(e.id!==failedLink&&
-       e.a!==failedNode&&e.b!==failedNode)currentlyAvailable++;
-    availableSlots+=currentlyAvailable*cfg.edgeCapacity;
+       e.a!==failedNode&&e.b!==failedNode)availableSlots+=capacities[e.id];
     function drop(reason){
       dropped++;roundDropped++;dropReasons[reason]++;
     }
@@ -253,7 +261,7 @@ export function simulatePacketRouting(rawGraph,rawScenario,mode="shortest-distan
       for(const p of queue){
         if(p.destination===failedNode){drop("targetFailed");continue;}
         if(tick-p.created>=ttl){drop("ttl");continue;}
-        const route=nextHop(adj,u,p.destination,mode,remaining,cfg.edgeCapacity,
+        const route=nextHop(adj,u,p.destination,mode,remaining,capacities,
           occupancy,cfg.queueLimit,bridgeSet);
         if(!route){drop("unreachable");continue;}
         if(remaining[route.edge]===0){
@@ -299,13 +307,17 @@ export function simulatePacketRouting(rawGraph,rawScenario,mode="shortest-distan
     p95DeliveredLatencyTicks:p95,meanDeliveredHops:delivered?round(deliveredHops/delivered):null,
     transmissions:hops,linkSlotUtilization:availableSlots?round(usedSlots/availableSlots):null,
     peakNodeQueue:peakQueue,
+    installedLinkSlots:capacities.reduce((sum,v)=>sum+v,0),
+    installedWireLength:round(installedWireLength),
+    installedCapacityWireCost:round(installedCapacityWireCost),
     conservationChecked:true
   };
   return {kind:"leaflab-packet-routing-run",version:PACKET_SIM_VERSION,
     networkLabel:"image-derived abstract packet network",
     mode,scenario:cfg,trafficFingerprint:traffic.trafficFingerprint,
     graph:{nodes:graph.nodes.length,links:edges},
-    metrics,perLinkTransmissions:edgeTransmissions,
+    metrics,perLinkCapacities:[...capacities],
+    perLinkTransmissions:edgeTransmissions,
     timeline:series,
     limitations:[
       "One-hop-per-tick discrete packet model, not TCP, IP, leaf vascular transport, or a live router",

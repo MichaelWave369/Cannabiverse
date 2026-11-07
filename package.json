@@ -15,7 +15,7 @@
     "validate:compare": "node scripts/validate-compare-presets.mjs",
     "validate:correspondence": "node scripts/validate-correspondence.mjs",
     "validate:bond-deltas": "node scripts/validate-bond-deltas.mjs",
-    "validate": "node scripts/build-evidence-graph.mjs --check && node scripts/build-correspondence.mjs --check && node scripts/build-bond-deltas.mjs --check && node scripts/validate-atlas.mjs && node scripts/validate-structures.mjs && node scripts/validate-compare-presets.mjs && node scripts/validate-correspondence.mjs && node scripts/validate-bond-deltas.mjs && node scripts/validate-static-js.mjs && npm run validate:oncology && npm run validate:bridge && npm run validate:pain-ecs && npm run validate:archaeology && npm run validate:discovery && npm run validate:discovery-lab && npm run validate:msms && npm run validate:discovery-provenance && npm run validate:massbank-reference && npm run validate:leaflab && npm run validate:leaflab-study && npm run validate:leaflab-quality && npm run validate:leaflab-imaging && npm run validate:leaflab-veins && npm run validate:leaflab-networks && npm run validate:leaflab-packets",
+    "validate": "node scripts/build-evidence-graph.mjs --check && node scripts/build-correspondence.mjs --check && node scripts/build-bond-deltas.mjs --check && node scripts/validate-atlas.mjs && node scripts/validate-structures.mjs && node scripts/validate-compare-presets.mjs && node scripts/validate-correspondence.mjs && node scripts/validate-bond-deltas.mjs && node scripts/validate-static-js.mjs && npm run validate:oncology && npm run validate:bridge && npm run validate:pain-ecs && npm run validate:archaeology && npm run validate:discovery && npm run validate:discovery-lab && npm run validate:msms && npm run validate:discovery-provenance && npm run validate:massbank-reference && npm run validate:leaflab && npm run validate:leaflab-study && npm run validate:leaflab-quality && npm run validate:leaflab-imaging && npm run validate:leaflab-veins && npm run validate:leaflab-networks && npm run validate:leaflab-packets && npm run validate:leaflab-engineering",
     "test": "npm run validate",
     "validate:static-js": "node scripts/validate-static-js.mjs",
     "validate:oncology": "node scripts/validate-oncology.mjs",
@@ -35,6 +35,7 @@
     "validate:leaflab-imaging": "node scripts/validate-leaflab-imaging.mjs",
     "validate:leaflab-veins": "node scripts/validate-leaflab-veins.mjs",
     "validate:leaflab-networks": "node scripts/validate-leaflab-networks.mjs",
-    "validate:leaflab-packets": "node scripts/validate-leaflab-packets.mjs"
+    "validate:leaflab-packets": "node scripts/validate-leaflab-packets.mjs",
+    "validate:leaflab-engineering": "node scripts/validate-leaflab-engineering.mjs"
   }
 }
