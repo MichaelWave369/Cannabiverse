@@ -83,6 +83,9 @@ jobs:
       - name: Validate real-leaf source catalog, license and original-byte guards
         run: npm run validate:leaflab-real-photos
 
+      - name: Validate real-image sparse labels and frozen QA review gate
+        run: npm run validate:leaflab-real-qa
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
