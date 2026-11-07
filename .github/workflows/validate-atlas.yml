@@ -56,6 +56,9 @@ jobs:
       - name: Validate LeafLab independent annotation and external test quality
         run: npm run validate:leaflab-quality
 
+      - name: Validate LeafLab local image segmentation and ridge graph
+        run: npm run validate:leaflab-imaging
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
