@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Cannabiverse Leaf Morphology Lab: synthetic cannabis leaf geometry and private manual photo measurements.">
+<title>Cannabiverse | Φ Leaf Morphology Lab</title>
+<style>
+:root{color-scheme:dark;--bg:#07120c;--panel:#13261b;--line:#365a42;--text:#edf7ee;--muted:#b3cbb9;--gold:#e8cc87;--green:#79e0a1}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 55% 0,#1d4730,#07120c 62%);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text)}
+a{color:var(--gold)}button,input,select{font:inherit}button{cursor:pointer}button:disabled{cursor:not-allowed;opacity:.45}button:hover:not(:disabled){filter:brightness(1.15)}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #ffdb83;outline-offset:3px}
+main{max-width:1500px;margin:auto;padding:20px clamp(15px,3vw,40px) 60px}nav{display:flex;flex-wrap:wrap;gap:17px;font-size:13px;margin-bottom:18px}h1{font-size:clamp(30px,5vw,48px);margin:5px 0;line-height:1.12;letter-spacing:-1.2px}h1 span{color:var(--green)}.eyebrow{color:var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:1.8px;font-weight:750}.lead{max-width:910px;color:#c9e0cf;font-size:15px;margin:12px 0 18px}.notice{border:1px solid #796c45;background:#2e2a1b;color:#f3dfb0;border-radius:12px;padding:12px 16px;font-size:13px;margin:18px 0}.layout{display:grid;grid-template-columns:270px minmax(360px,1fr) 295px;gap:14px;align-items:start}
+.panel{border:1px solid var(--line);border-radius:16px;background:#11241a;padding:19px;min-width:0}.panel h2{font-size:18px;margin:0 0 14px}.control{padding:8px 0;border-bottom:1px solid #2a4733}.control label{display:flex;justify-content:space-between;gap:10px;font-size:13px;margin-bottom:4px;color:#deeee1}.control output{color:var(--green);font-variant-numeric:tabular-nums}.control input[type=range],.control select{width:100%;accent-color:#79e0a1}.control select{padding:9px;border:1px solid #547963;background:#0b1a12;color:var(--text);border-radius:8px}.check{display:flex;align-items:center;gap:10px;margin:12px 0;font-size:13px}.check input{accent-color:#79e0a1}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:13px 0}.btn{border-radius:9px;padding:9px 12px;color:#e5f4e8;border:1px solid #4f795b;background:#1d3d2a;font-size:13px;font-weight:650}.btn.primary{background:#80dea0;color:#092113;border-color:#80dea0}.seg{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}.seg button[aria-pressed=true]{color:#092314;background:#8fe9aa}
+.stage{border-radius:12px;border:1px solid #315d40;background:radial-gradient(ellipse at 50% 70%,#17402a,#091b11 68%);overflow:hidden}.stage svg{display:block;width:100%;height:auto;touch-action:manipulation}.stage svg.photo{cursor:crosshair}
+.legend{font-size:12px;color:#b8d5c0;margin:11px 2px;min-height:36px}.small{font-size:12px;color:var(--muted)}.metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.metric{background:#1b3625;border:1px solid #375943;padding:12px;border-radius:10px}.metric strong{display:block;color:#f5fff5;font-size:22px;font-variant-numeric:tabular-nums}.metric span{font-size:11px;color:var(--muted)}
+.table-scroll{overflow-x:auto;margin-top:14px}table{width:100%;border-collapse:collapse;white-space:nowrap;font-size:12px}th{text-align:left;color:var(--gold)}th,td{border-bottom:1px solid #32533d;padding:8px 5px}tr.active{color:#9ff1b5}
+input[type=file]{width:100%;max-width:100%;background:#092116;border:1px dashed #5e8b69;border-radius:9px;padding:12px;color:#d2ebd9}.hidden{display:none!important}.help{margin-top:18px;padding-top:10px;border-top:1px solid #35513d}.help p{font-size:12px;color:#b9d1c1}.point-list{font-size:12px;color:#d5eed8;white-space:pre-line;max-height:180px;overflow-y:auto}
+footer{font-size:12px;color:#aec8b7;margin-top:28px}
+@media(max-width:1160px){.layout{grid-template-columns:255px minmax(340px,1fr)}.research{grid-column:1/-1}}@media(max-width:700px){.layout{grid-template-columns:1fr}.research{grid-column:auto}.panel{padding:15px}}
+</style>
+</head>
+<body><main>
+<nav><a href="../../">← Cannabiverse</a><a href="../discovery/">Discovery Lab</a><a href="../explorer/">Research Explorer</a><a href="https://github.com/MichaelWave369/Cannabiverse">Source & governance</a></nav>
+<div class="eyebrow">Φ Cannabiverse · Botanical geometry · Prototype 0.1</div>
+<h1><span>Φ</span> Leaf Morphology Lab</h1>
+<p class="lead">Explore the architecture of a palmately compound cannabis leaf: leaflet fan geometry, serrations, apparent symmetry, and schematic vein branching. Compare generated geometries or annotate your own photograph, entirely in your browser.</p>
+<div class="notice"><strong>Model ≠ measurement ≠ biological mechanism.</strong> Generated leaves are hypothetical silhouettes in arbitrary units. Venation is schematic, not a flow simulation. Neither Fibonacci patterns nor 3-6-9 structure nor an efficient natural design has been established by these drawings.</div>
+<div class="layout">
+<section class="panel" aria-labelledby="geometryTitle">
+<h2 id="geometryTitle">Geometry controls</h2>
+<div class="control"><label for="count">Leaflet count <output id="countVal">7</output></label><select id="count"><option>3</option><option>5</option><option selected>7</option><option>9</option><option>11</option></select></div>
+<div class="control"><label for="fan">Fan angle <output id="fanVal"></output></label><input id="fan" type="range" min="80" max="175" step="1" value="150"></div>
+<div class="control"><label for="falloff">Outer leaflet falloff <output id="falloffVal"></output></label><input id="falloff" type="range" min="0" max=".8" step=".01" value=".54"></div>
+<div class="control"><label for="width">Leaflet width <output id="widthVal"></output></label><input id="width" type="range" min=".5" max="1.8" step=".05" value="1"></div>
+<div class="control"><label for="taper">Taper exponent <output id="taperVal"></output></label><input id="taper" type="range" min=".55" max="2.5" step=".05" value=".95"></div>
+<div class="control"><label for="teeth">Serrations per edge <output id="teethVal"></output></label><input id="teeth" type="range" min="4" max="28" step="1" value="16"></div>
+<div class="control"><label for="depth">Serration depth <output id="depthVal"></output></label><input id="depth" type="range" min="0" max=".5" step=".01" value=".21"></div>
+<div class="control"><label for="asym">Left/right bias <output id="asymVal"></output></label><input id="asym" type="range" min="-.25" max=".25" step=".01" value="0"></div>
+<label class="check"><input type="checkbox" id="veins" checked>Draw schematic veins</label>
+<button class="btn" id="reset" type="button">Reset geometry</button>
+<p class="small">This initial model has no genotype, developmental, light-interception, pressure-flow, or structural-strength parameters.</p>
+</section>
+<section class="panel" aria-label="Interactive leaf model and photo measurement">
+<div class="seg"><button class="btn" id="modelTab" aria-pressed="true" type="button">Synthetic model</button><button class="btn" id="photoTab" aria-pressed="false" type="button">Measure photo</button></div>
+<div id="photoControls" class="hidden">
+<label for="photo">Choose a flat, front-facing leaf photo</label>
+<input type="file" id="photo" accept="image/*">
+<p class="small">Click the leaflet junction first, then each visible leaflet tip. Photos are never uploaded; the browser uses a temporary local object URL.</p>
+<div class="toolbar"><button class="btn" id="undo" type="button">Undo point</button><button class="btn" id="clear" type="button">Clear points</button></div>
+</div>
+<div class="stage"><svg id="figure" viewBox="0 0 850 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Live model of a multi-leaflet leaf"></svg></div>
+<p id="stageNote" class="legend" aria-live="polite">Synthetic geometry.</p>
+<div id="modelExports" class="toolbar"><button class="btn primary" id="svgExport" type="button">Export model SVG</button><button class="btn" id="jsonExport" type="button">Export model JSON</button><button class="btn" id="csvExport" type="button">Compare counts CSV</button></div>
+<div id="photoExports" class="toolbar hidden"><button class="btn primary" id="photoExport" type="button" disabled>Export measurements JSON</button></div>
+</section>
+<section class="panel research">
+<h2 id="metricsTitle">Synthetic metrics</h2>
+<div id="syntheticMetrics">
+<div class="metric-grid">
+<div class="metric"><strong id="area">–</strong><span>Area (model units²)</span></div>
+<div class="metric"><strong id="perimeter">–</strong><span>Boundary (model units)</span></div>
+<div class="metric"><strong id="veinLength">–</strong><span>Vein length proxy</span></div>
+<div class="metric"><strong id="symmetry">–</strong><span>Paired area balance</span></div>
+</div>
+<p class="small" id="normalized"></p>
+<h2 style="margin-top:20px">Count comparison</h2>
+<p class="small">Normalized by √(model area), not matched to real leaf area or growth cost. Lower is not automatically better.</p>
+<div class="table-scroll"><table><thead><tr><th>N</th><th>Boundary / √A</th><th>Veins / √A</th></tr></thead><tbody id="comparison"></tbody></table></div>
+</div>
+<div id="photoMetrics" class="hidden"><p class="small" id="photoSummary">No measurements yet. Mark a hub and at least one tip.</p><div id="photoPoints" class="point-list"></div></div>
+<div class="help"><h2>Research boundaries</h2><p>Photo mode measures hub-to-tip directions and relative lengths only. It does not derive serrations, photosynthesis, vein topology, or real-world units. Perspective and scale must be independently controlled before comparing specimens.</p><p>See the <a href="../../docs/leaf-morphology-lab.md">protocol, equations and falsifiable hypotheses</a>.</p></div>
+</section>
+</div>
+<footer>Cannabiverse LeafLab · MIT code · Local-first, no external dependencies. Claims about a real plant require real specimens, measured uncertainty and independent validation.</footer>
+</main>
+<script type="module">
+import {DEFAULTS, COUNTS, generateLeaf, measureTips} from "./core.mjs";
+const $ = id => document.getElementById(id);
+const svg = $("figure"), NS = "http://www.w3.org/2000/svg", fields = ["count","fan","falloff","width","taper","teeth","depth","asym"];
+let mode = "model", model, photoURL = null, photoInfo = null, marks = [];
+function el(name, attrs={}, parent=svg) {
+  const n = document.createElementNS(NS,name);
+  for (const [k,v] of Object.entries(attrs)) n.setAttribute(k,String(v));
+  parent.append(n); return n;
+}
+function values(){
+  const p={};
+  for(const k of fields)p[k]=Number($(k).value);
+  p.veins=$("veins").checked;return p;
+}
+function download(filename,contents,type){
+  const url=URL.createObjectURL(new Blob([contents],{type}));
+  const a=document.createElement("a");a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();
+  setTimeout(()=>URL.revokeObjectURL(url),2000);
+}
+function grid(){
+  for(let x=25;x<850;x+=50)el("line",{x1:x,y1:0,x2:x,y2:630,stroke:"#31533a",opacity:.25});
+  for(let y=25;y<630;y+=50)el("line",{x1:0,y1:y,x2:850,y2:y,stroke:"#31533a",opacity:.25});
+}
+function renderModel(){
+  model=generateLeaf(values());svg.replaceChildren();svg.classList.remove("photo");grid();
+  const g=el("g",{transform:"translate(425 515) scale(1 -1)"});
+  el("path",{d:"M 0 -100 Q -8 -44 0 0",fill:"none",stroke:"#b0d6a9","stroke-width":7,"stroke-linecap":"round"},g);
+  model.leaves.forEach((l,i)=>{
+    const d=l.polygon.map((p,j)=>(j?"L":"M")+p[0].toFixed(2)+" "+p[1].toFixed(2)).join(" ")+" Z";
+    el("path",{d,fill:i===(model.leaves.length-1)/2?"#4b9866":"#34794f",stroke:"#a9e2ac","stroke-width":1.15,"stroke-linejoin":"round"},g);
+    if(model.params.veins){
+      el("line",{x1:0,y1:0,x2:l.midribTip[0],y2:l.midribTip[1],stroke:"#c0eec1","stroke-width":1.8},g);
+      for(const b of l.branches)el("line",{x1:b.start[0],y1:b.start[1],x2:b.end[0],y2:b.end[1],stroke:"#bae1bd","stroke-width":.8,opacity:.7},g);
+    }
+  });
+  el("circle",{cx:0,cy:0,r:5,fill:"#d6f2d5"},g);
+  el("text",{x:28,y:37,fill:"#c0dfbf","font-size":13}).textContent="SYNTHETIC MORPHOLOGY • N = "+model.params.count;
+  const m=model.metrics;
+  $("area").textContent=Math.round(m.area).toLocaleString();
+  $("perimeter").textContent=Math.round(m.perimeter).toLocaleString();
+  $("veinLength").textContent=Math.round(m.veinLength).toLocaleString();
+  $("symmetry").textContent=m.symmetry.toFixed(1)+"%";
+  $("normalized").textContent="Boundary / √area: "+m.perimeterOverSqrtArea.toFixed(2)+" · Schematic vein length / √area: "+m.schematicVeinOverSqrtArea.toFixed(2);
+  $("comparison").replaceChildren();
+  COUNTS.forEach(count=>{
+    const d=generateLeaf({...values(),count}),tr=document.createElement("tr");
+    if(count===model.params.count)tr.className="active";
+    [count,d.metrics.perimeterOverSqrtArea.toFixed(2),d.metrics.schematicVeinOverSqrtArea.toFixed(2)].forEach(t=>{const td=document.createElement("td");td.textContent=t;tr.append(td);});
+    $("comparison").append(tr);
+  });
+  $("stageNote").textContent="Parametric leaf in arbitrary units. Vary controls and export reproducible geometry.";
+}
+function renderPhoto(){
+  svg.replaceChildren();svg.classList.add("photo");
+  if(photoURL) el("image",{href:photoURL,x:0,y:0,width:850,height:630,preserveAspectRatio:"xMidYMid meet"});
+  else {grid();el("text",{x:425,y:310,fill:"#bce2c4","font-size":20,"text-anchor":"middle"}).textContent="Choose a leaf photograph above";}
+  marks.forEach(([x,y],i)=>{
+    if(i)el("line",{x1:marks[0][0],y1:marks[0][1],x2:x,y2:y,stroke:"#fce7a5","stroke-width":2,"stroke-dasharray":"6 4"});
+    el("circle",{cx:x,cy:y,r:i?5:8,fill:i?"#ffe2a2":"#8df0b0",stroke:"#102a16","stroke-width":2});
+    el("text",{x:x+9,y:y-9,fill:"#fff", "font-size":13}).textContent=i?i:"H";
+  });
+  $("photoExport").disabled=marks.length<2;
+  let info=null;
+  if(marks.length>=2) {
+    try{info=measureTips(marks[0],marks.slice(1),photoInfo||{});}catch(_){}
+  }
+  $("photoSummary").textContent=info
+    ?info.tips.length+" tip(s) · angular spread "+info.angularSpreadDegrees.toFixed(1)+"° · relative to longest marked leaflet"
+    :"Mark the shared leaflet junction (hub) first, then each visible tip.";
+  $("photoPoints").textContent=info ? info.tips.map(t=>"Tip "+t.tip+": "+t.angleDegrees.toFixed(1)+"° / length ratio "+t.relativeLength.toFixed(3)).join("\n") : "";
+  $("stageNote").textContent=photoURL?"Local photo · "+marks.length+" marked point(s) · no biological interpretation": "Photo mode · no photo loaded";
+}
+function refresh(){
+  fields.forEach(k=>$(k+"Val").textContent=$(k).value+(k==="fan"?"°":""));
+  if(mode==="model")renderModel();
+}
+function setMode(next){
+  mode=next;
+  const isModel=mode==="model";
+  $("modelTab").setAttribute("aria-pressed",String(isModel));$("photoTab").setAttribute("aria-pressed",String(!isModel));
+  $("photoControls").classList.toggle("hidden",isModel);$("photoExports").classList.toggle("hidden",isModel);
+  $("modelExports").classList.toggle("hidden",!isModel);$("syntheticMetrics").classList.toggle("hidden",!isModel);
+  $("photoMetrics").classList.toggle("hidden",isModel);$("metricsTitle").textContent=isModel?"Synthetic metrics":"Photo measurements";
+  isModel?refresh():renderPhoto();
+}
+fields.forEach(k=>$(k).addEventListener(k==="count"?"change":"input",refresh));
+$("veins").addEventListener("change",refresh);
+$("reset").addEventListener("click",()=>{fields.forEach(k=>$(k).value=DEFAULTS[k]);$("veins").checked=true;refresh();});
+$("modelTab").addEventListener("click",()=>setMode("model"));
+$("photoTab").addEventListener("click",()=>setMode("photo"));
+$("photo").addEventListener("change",e=>{
+  const f=e.target.files?.[0];if(!f)return;
+  if(!f.type.startsWith("image/")){$("stageNote").textContent="Select an image file.";return;}
+  if(photoURL)URL.revokeObjectURL(photoURL);
+  photoURL=URL.createObjectURL(f);marks=[];
+  const im=new Image();im.onload=()=>{photoInfo={filename:f.name,width:im.naturalWidth,height:im.naturalHeight};renderPhoto();};
+  im.onerror=()=>{$("stageNote").textContent="Could not decode this image.";};
+  im.src=photoURL;
+});
+svg.addEventListener("click",e=>{
+  if(mode!=="photo"||!photoURL||!photoInfo||marks.length>=21)return;
+  const pt=svg.createSVGPoint();pt.x=e.clientX;pt.y=e.clientY;
+  const m=svg.getScreenCTM();if(!m)return;
+  const p=pt.matrixTransform(m.inverse());
+  const ratio=photoInfo.width/photoInfo.height;
+  const frame=850/630;
+  const width=ratio>frame?850:630*ratio, height=ratio>frame?850/ratio:630;
+  if(p.x<(850-width)/2||p.x>(850+width)/2||p.y<(630-height)/2||p.y>(630+height)/2)return;
+  marks.push([p.x,p.y]);renderPhoto();
+});
+$("undo").addEventListener("click",()=>{marks.pop();renderPhoto();});
+$("clear").addEventListener("click",()=>{marks=[];renderPhoto();});
+$("svgExport").addEventListener("click",()=>{
+  const copy=svg.cloneNode(true);copy.setAttribute("xmlns",NS);
+  download("cannabiverse-leaflab-synthetic.svg",new XMLSerializer().serializeToString(copy),"image/svg+xml");
+});
+$("jsonExport").addEventListener("click",()=>{
+  const d={kind:model.kind,modelVersion:model.modelVersion,params:model.params,metrics:model.metrics,
+    leaflets:model.leaves.map(({angle,length,halfWidth,area,perimeter})=>({angle,length,halfWidth,area,perimeter})),limitations:model.limitations};
+  download("cannabiverse-leaflab-model.json",JSON.stringify(d,null,2),"application/json");
+});
+$("csvExport").addEventListener("click",()=>{
+  const rows=["count,fan_degrees,area_model_units2,perimeter_model_units,vein_proxy_model_units,perimeter_over_sqrt_area,vein_proxy_over_sqrt_area"];
+  COUNTS.forEach(count=>{const m=generateLeaf({...values(),count}).metrics;rows.push([count,values().fan,m.area,m.perimeter,m.veinLength,m.perimeterOverSqrtArea,m.schematicVeinOverSqrtArea].join(","));});
+  download("cannabiverse-leaflab-counts.csv",rows.join("\n")+"\n","text/csv");
+});
+$("photoExport").addEventListener("click",()=>{
+  if(marks.length<2)return;
+  let result;
+  try{result=measureTips(marks[0],marks.slice(1),{...photoInfo,coordinateSpace:"SVG 850x630 units, fit xMidYMid meet"});}catch(e){$("stageNote").textContent=e.message;return;}
+  download("cannabiverse-leaflab-photo-measurements.json",JSON.stringify(result,null,2),"application/json");
+});
+window.addEventListener("pagehide",()=>{if(photoURL)URL.revokeObjectURL(photoURL);});
+refresh();
+</script>
+</body></html>
