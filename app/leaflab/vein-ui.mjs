@@ -4,7 +4,7 @@ import {makeVeinReference,parseVeinReference,evaluateVeinBenchmark,
 const $=id=>document.getElementById(id);
 const canvas=$("veinCanvas"),ctx=canvas.getContext("2d",{willReadFrequently:true});
 const MAX_FILE=16*1024*1024,MAX_JSON=1024*1024;
-let image=null,paths=[],draft=[],reference=null,leaf=null,background=null,seed=null;
+let image=null,paths=[],draft=[],leaf=null,background=null,seed=null;
 let mode="trace",view="reference",result=null,reports=[],aggregate=null;
 const status=(id,text)=>{$(id).textContent=text;};
 const pct=v=>v===null?"n/a":(100*v).toFixed(1)+"%";
@@ -127,7 +127,7 @@ $("veinImage").addEventListener("change",async event=>{
     ctx.clearRect(0,0,width,height);ctx.drawImage(bitmap,0,0,width,height);
     const pixels=ctx.getImageData(0,0,width,height);
     image={name:file.name.slice(0,180),sha256,width,height,pixels};
-    paths=[];draft=[];reference=null;leaf=null;background=null;seed=null;
+    paths=[];draft=[];leaf=null;background=null;seed=null;
     mode="trace";clearResult();describe();redraw();
   }catch(error){
     image=null;paths=[];draft=[];leaf=null;background=null;seed=null;
@@ -180,7 +180,8 @@ $("importVeinReference").addEventListener("change",async event=>{
     if(!image||parsed.imageSHA256!==image.sha256||
        parsed.width!==image.width||parsed.height!==image.height)
       throw new RangeError("Wrong source image: SHA-256 or processing dimensions differ");
-    paths=parsed.paths;draft=[];reference=parsed;
+    if(parsed.origin!=="manual")throw new RangeError("This photo workbench only accepts manual human-reference files");
+    paths=parsed.paths;draft=[];
     $("veinSpecimen").value=parsed.specimenId;
     $("veinPlant").value=parsed.plantId;
     $("veinObserver").value=parsed.annotatorCode;
