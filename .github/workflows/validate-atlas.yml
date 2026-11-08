@@ -86,6 +86,9 @@ jobs:
       - name: Validate real-image sparse labels and frozen QA review gate
         run: npm run validate:leaflab-real-qa
 
+      - name: Validate full-frame masks, independent reviewer pairs and plant split guards
+        run: npm run validate:leaflab-full-masks
+
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
