@@ -189,7 +189,7 @@ assert.match(ui,/rasterizeCompletePolygons/);
 assert.match(ui,/compareCompleteReferences/);
 assert.match(ui,/benchmarkCompleteReferencePair/);
 assert.match(ui,/segmentImage/);
-assert.match(ui,/same original/);
+assert.match(ui,/source\.originalSHA256/);
 assert.match(homepage,/full-masks\.html/);
 assert.ok(!/fetch\(|XMLHttpRequest|navigator\.sendBeacon/.test(ui),
   "Real original photo and full reference masks may not be uploaded by the browser");
