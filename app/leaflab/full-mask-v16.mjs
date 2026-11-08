@@ -39,7 +39,7 @@ function validatePolygon(p,width,height){
     throw new TypeError("Each include/exclude polygon needs 3–240 vertices");
   const vertices=p.vertices.map(pt=>{
     if(!Array.isArray(pt)||pt.length!==2||!pt.every(Number.isInteger)||
-      pt[0]<0||pt[1]<0||pt[0]>=width||pt[1]>=height)
+      pt[0]<0||pt[1]<0||pt[0]>width||pt[1]>height)
       throw new RangeError("Polygon vertices must be integer in-frame coordinates");
     return {x:pt[0],y:pt[1]};
   });
