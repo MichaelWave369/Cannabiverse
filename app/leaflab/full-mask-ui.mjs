@@ -176,18 +176,19 @@ $("maskExclude").addEventListener("click",()=>{
 });
 function clickPoint(event){
   const r=canvas.getBoundingClientRect();
-  return [Math.max(0,Math.min(canvas.width-1,Math.floor(
+  return [Math.max(0,Math.min(canvas.width,Math.round(
     (event.clientX-r.left)*canvas.width/r.width))),
-    Math.max(0,Math.min(canvas.height-1,Math.floor(
+    Math.max(0,Math.min(canvas.height,Math.round(
     (event.clientY-r.top)*canvas.height/r.height)))];
 }
 canvas.addEventListener("click",event=>{
   if(!photo||finalized)return;
   const [x,y]=clickPoint(event);
   if(pick){
-    const rgb=Array.from(photo.pixels.data.slice(4*(y*photo.width+x),
-      4*(y*photo.width+x)+3));
-    if(pick==="foreground")fg={x,y,rgb};else bg={x,y,rgb};
+    const px=Math.min(photo.width-1,x),py=Math.min(photo.height-1,y);
+    const rgb=Array.from(photo.pixels.data.slice(4*(py*photo.width+px),
+      4*(py*photo.width+px)+3));
+    if(pick==="foreground")fg={x:px,y:py,rgb};else bg={x:px,y:py,rgb};
     pick=null;draw();status();return;
   }
   if(current.length>=240){
