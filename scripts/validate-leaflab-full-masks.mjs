@@ -55,9 +55,9 @@ assert.throws(()=>rasterizeCompletePolygons([{operation:"include",
 assert.throws(()=>rasterizeCompletePolygons([{operation:"include",
   vertices:[[10,10],[30,10],[30,25],[10,25],[15,10]]}],w,h),
   /Self-intersecting/);
-assert.throws(()=>rasterizeCompletePolygons([square(0,0,w,h)],
+assert.throws(()=>rasterizeCompletePolygons([square(0,0,w+1,h)],
   w,h),/in-frame/);
-assert.throws(()=>rasterizeCompletePolygons([square(0,0,w-1,h-1)],
+assert.throws(()=>rasterizeCompletePolygons([square(0,0,w,h)],
   w,h),/both leaf and non-leaf/);
 assert.throws(()=>rasterizeCompletePolygons([square(1,1,5,5)],
   16,401),/frame/);
