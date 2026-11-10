@@ -31,6 +31,10 @@ Current dataset:
 
 **145 is not a claim that only 145 phytocannabinoids exist.** Different inventories use different inclusion rules; later literature describes broader inventories.
 
+## Interactive human-body ECS map
+
+The [human-body tissue explorer](https://michaelwave369.github.io/Cannabiverse/app/ecs/body.html) adds seven schematic tissue regions and ten receptor-specific evidence records with original scientific sources, model boundaries and upstream claim receipts. The additive source lives in [`data/ecs-network/tissues-v1.json`](data/ecs-network/tissues-v1.json), not in the 145-compound plant chemistry canon. Receptor expression does not establish human therapeutic efficacy. Run `npm run validate:ecs-tissues` and see [the tissue-map protocol](docs/ecs-body-map-v1.md).
+
 ## ECS Network Atlas v1
 
 The [interactive ECS Network Atlas](https://michaelwave369.github.io/Cannabiverse/app/ecs/) explores 12 endogenous-signal, receptor, enzyme, plant-compound and cellular-context nodes; 8 explicitly receipted relationships; and 11 source-bounded claims. The separate [evidence feed](data/ecs-network/evidence-v1.json) is registered as an additive domain of the unchanged Φ Research Bridge v2 contract, and is available to Sacred Medicine as a read-only consumer. See [scientific scope and validation](docs/ecs-network-v1.md), and run `npm run validate:ecs-network`. Mechanism is not human clinical efficacy; receptor presence is not proof of benefit.
