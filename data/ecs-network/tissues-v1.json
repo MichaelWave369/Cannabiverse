@@ -1,0 +1,353 @@
+{
+  "contract_version": "1.0.0",
+  "dataset_id": "cannabiverse-ecs-tissue-map",
+  "release_date": "2026-11-09",
+  "authoritative_parent_dataset": "cannabiverse-ecs-network-evidence",
+  "title": "Human-body ECS signaling atlas — tissue-specific source receipts",
+  "kind": "schematic_educational_anatomy",
+  "representation_warning": "Map pins approximate regions or representative tissue locations. They are not receptor-density measurements, expression quantification, or anatomical diagnostics.",
+  "medical_boundary": "Evidence about receptor location and experimental pathways does not establish treatment benefits, dosing, safety or restoration of homeostasis.",
+  "sources": [
+    {
+      "id": "TISSUE-SRC-BASIC-2024",
+      "title": "The Basic Science of Cannabinoids",
+      "year": 2024,
+      "kind": "peer_reviewed_foundational_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10788142/",
+      "note": "Cell and tissue distribution; research includes human and preclinical observations."
+    },
+    {
+      "id": "TISSUE-SRC-GUT-2022",
+      "title": "Role of the Endocannabinoid System in the Regulation of Intestinal Homeostasis",
+      "year": 2022,
+      "kind": "peer_reviewed_gastrointestinal_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9500439/",
+      "note": "Gastrointestinal receptor localization and signaling; mechanistic and translational research."
+    },
+    {
+      "id": "TISSUE-SRC-GUT-2025",
+      "title": "The Endocannabinoid System: Implications in Gastrointestinal Physiology and Pathology",
+      "year": 2025,
+      "kind": "peer_reviewed_gastrointestinal_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11818434/",
+      "note": "Reviews central and peripheral localization and gut physiology, without universal clinical efficacy."
+    },
+    {
+      "id": "TISSUE-SRC-PAIN-2021",
+      "title": "Cannabinoids, the endocannabinoid system and pain: a review of preclinical studies",
+      "year": 2021,
+      "kind": "preclinical_narrative_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8819673/",
+      "note": "Primary afferents, dorsal horn and brain nociceptive pathways in preclinical models."
+    },
+    {
+      "id": "TISSUE-SRC-SKIN-2023",
+      "title": "Cannabinoids and Their Receptors in Skin Diseases",
+      "year": 2023,
+      "kind": "peer_reviewed_dermatology_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10672037/",
+      "note": "Human skin-cell and dermatological ECS distribution; clinical efficacy of products not implied."
+    },
+    {
+      "id": "TISSUE-SRC-METAB-2024",
+      "title": "The endocannabinoid system in appetite regulation and treatment of obesity",
+      "year": 2024,
+      "kind": "peer_reviewed_metabolic_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11409765/",
+      "note": "Appetite, adipose tissue and metabolism; mechanistic findings not a weight-loss treatment claim."
+    },
+    {
+      "id": "TISSUE-SRC-RECEPTORS-2025",
+      "title": "Advances in cannabinoid receptors pharmacology: from receptor structural insights to ligand discovery",
+      "year": 2025,
+      "kind": "peer_reviewed_receptor_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12098862/",
+      "note": "CB1/CB2 receptor distributions and pharmacology; human expression varies by cell and methodology."
+    },
+    {
+      "id": "TISSUE-SRC-SAFETY-NIH",
+      "title": "Cannabis (Marijuana) and Cannabinoids: What You Need To Know",
+      "year": null,
+      "kind": "living_public_health_summary",
+      "url": "https://www.nccih.nih.gov/health/cannabis-marijuana-and-cannabinoids-what-you-need-to-know",
+      "note": "Clinical outcomes and risks are not inferred from receptor localization."
+    }
+  ],
+  "regions": [
+    {
+      "id": "TISSUE-REG-001",
+      "label": "Brain",
+      "system": "Central nervous system",
+      "marker": {
+        "x": 50,
+        "y": 10
+      },
+      "intro": "The cerebral map is a schematic locator. CB1 distribution is heterogeneous across neurons and brain regions; this is not a receptor density heatmap.",
+      "receptors": [
+        {
+          "receptor": "CB1",
+          "evidence_context": "human_and_preclinical_review",
+          "summary": "CB1 is abundant at many presynaptic neuronal terminals and contributes to locally regulated neurotransmitter release.",
+          "cell_context": "Neural circuits in cortex, hippocampus, basal ganglia and cerebellum; regional densities differ.",
+          "pathway": [
+            "Postsynaptic activity can promote local 2-AG production in some synapses.",
+            "2-AG activates presynaptic CB1 signaling.",
+            "Presynaptic transmitter release probability can fall."
+          ],
+          "model": "Cellular physiology and nervous-system localization from human and preclinical studies.",
+          "boundary": "This local feedback example does not show that cannabis improves brain function, memory, mood or sleep.",
+          "source_ids": [
+            "TISSUE-SRC-BASIC-2024",
+            "TISSUE-SRC-RECEPTORS-2025"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-002",
+            "ECS-CLM-003"
+          ]
+        },
+        {
+          "receptor": "CB2",
+          "evidence_context": "context_dependent_preclinical",
+          "summary": "CB2 has been reported in selected neural and neuroimmune contexts, particularly under injury or inflammation; baseline human brain expression remains method- and cell-dependent.",
+          "cell_context": "Microglia and selected neural populations in experimental studies; not uniformly present across brain cells.",
+          "pathway": [
+            "Experimental injury or inflammatory conditions can change CB2 expression in neuroimmune cells.",
+            "CB2-linked signaling can modulate studied neuroimmune responses."
+          ],
+          "model": "Mostly cellular and animal models with limited human localization data.",
+          "boundary": "Do not infer a general CB2 brain-wide distribution or a proven human neuroprotective treatment.",
+          "source_ids": [
+            "TISSUE-SRC-BASIC-2024",
+            "TISSUE-SRC-RECEPTORS-2025"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-004"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TISSUE-REG-002",
+      "label": "Peripheral nerves",
+      "system": "Sensory and spinal pathways",
+      "marker": {
+        "x": 31,
+        "y": 61
+      },
+      "intro": "Schematic placement on a leg represents sensory pathways rather than one localized 'nerve organ'.",
+      "receptors": [
+        {
+          "receptor": "CB1",
+          "evidence_context": "preclinical_emphasis",
+          "summary": "CB1-related signaling has been identified along nociceptive circuitry, including primary afferents and spinal dorsal-horn pathways.",
+          "cell_context": "Primary sensory neurons, peripheral nerve endings and spinal sensory processing in studied models.",
+          "pathway": [
+            "Sensory input reaches peripheral neurons and the spinal cord.",
+            "Local endocannabinoid–CB1 mechanisms can alter synaptic nociceptive transmission in experimental preparations."
+          ],
+          "model": "Preclinical pain physiology and receptor localization; species and experimental context matter.",
+          "boundary": "Animal nociception is not evidence that a cannabis product relieves a human patient's pain.",
+          "source_ids": [
+            "TISSUE-SRC-PAIN-2021",
+            "TISSUE-SRC-BASIC-2024"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-002",
+            "ECS-CLM-003"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TISSUE-REG-003",
+      "label": "Gut",
+      "system": "Enteric nervous system and intestinal immune tissue",
+      "marker": {
+        "x": 51,
+        "y": 47
+      },
+      "intro": "A gut-region marker groups enteric nerves, epithelial tissues and immune compartments; it does not imply every gut cell carries both receptors.",
+      "receptors": [
+        {
+          "receptor": "CB1",
+          "evidence_context": "human_and_preclinical_review",
+          "summary": "CB1 is described in enteric neuronal circuits and some intestinal non-neuronal cell populations.",
+          "cell_context": "Myenteric and submucosal enteric neurons; selected epithelial or endocrine compartments.",
+          "pathway": [
+            "Local endocannabinoid signaling engages CB1 on relevant enteric neurons.",
+            "Presynaptic neurotransmitter release and intestinal motility can be modulated in studied systems."
+          ],
+          "model": "Cellular, animal and human gastrointestinal distribution/physiology literature.",
+          "boundary": "Receptor involvement in motility does not establish cannabis as safe or effective for IBS, nausea or inflammatory bowel disease.",
+          "source_ids": [
+            "TISSUE-SRC-GUT-2022",
+            "TISSUE-SRC-GUT-2025"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-003"
+          ]
+        },
+        {
+          "receptor": "CB2",
+          "evidence_context": "human_and_preclinical_review",
+          "summary": "CB2 is reported in intestinal immune cells and some enteric compartments, with expression influenced by inflammation.",
+          "cell_context": "Intestinal immune cells and model-dependent enteric/epithelial populations.",
+          "pathway": [
+            "Inflammatory context can change local immune signaling and receptor expression.",
+            "CB2-associated pathways can alter immune mediator responses in experimental gut systems."
+          ],
+          "model": "Gastrointestinal cellular and animal studies with some human tissue observations.",
+          "boundary": "A plausible immunological mechanism is not clinical evidence that a cannabis product treats inflammatory bowel disease.",
+          "source_ids": [
+            "TISSUE-SRC-GUT-2022",
+            "TISSUE-SRC-GUT-2025"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-004"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TISSUE-REG-004",
+      "label": "Immune tissues",
+      "system": "Immune cells, spleen and lymphoid organs",
+      "marker": {
+        "x": 65,
+        "y": 35
+      },
+      "intro": "The marker approximates the splenic/lymphoid region, but mobile immune cells circulate throughout the body.",
+      "receptors": [
+        {
+          "receptor": "CB2",
+          "evidence_context": "human_and_preclinical_review",
+          "summary": "CB2 has comparatively prominent expression in many immune-cell populations and lymphoid tissues; levels vary with cell type and activation.",
+          "cell_context": "B and T lymphocytes, macrophages and tissues such as spleen and thymus, depending on study.",
+          "pathway": [
+            "An immune cell expresses CB2 in a particular context.",
+            "Receptor-linked signaling can alter downstream immune mediator pathways in experimental systems."
+          ],
+          "model": "Human tissue localization, cellular studies and animal immune-signaling models.",
+          "boundary": "This does not establish that consuming cannabis 'boosts immunity', safely suppresses inflammation or treats autoimmune disease.",
+          "source_ids": [
+            "TISSUE-SRC-BASIC-2024",
+            "TISSUE-SRC-RECEPTORS-2025"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-004"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TISSUE-REG-005",
+      "label": "Liver",
+      "system": "Hepatic and metabolic context",
+      "marker": {
+        "x": 43,
+        "y": 39
+      },
+      "intro": "Hepatic expression is context-sensitive; this map does not assign a receptor density to liver tissue.",
+      "receptors": [
+        {
+          "receptor": "CB1",
+          "evidence_context": "human_and_preclinical_review",
+          "summary": "Peripheral CB1 signaling has been studied in liver metabolism and energy-balance pathways.",
+          "cell_context": "Hepatic cell populations and associated metabolic regulation in experimental and translational studies.",
+          "pathway": [
+            "Local peripheral ECS signals can engage hepatic CB1-related pathways.",
+            "Downstream metabolic effects vary across models and physiological states."
+          ],
+          "model": "Mixed human/animal tissue-expression and metabolic mechanism literature.",
+          "boundary": "Not evidence that cannabis consumption cleanses the liver, treats fatty liver disease or improves metabolism.",
+          "source_ids": [
+            "TISSUE-SRC-BASIC-2024",
+            "TISSUE-SRC-METAB-2024"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-003"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TISSUE-REG-006",
+      "label": "Adipose tissue",
+      "system": "Metabolic tissue and energy balance",
+      "marker": {
+        "x": 60,
+        "y": 57
+      },
+      "intro": "The abdominal placement is illustrative. Fat tissue is distributed throughout the body and is biologically heterogeneous.",
+      "receptors": [
+        {
+          "receptor": "CB1",
+          "evidence_context": "human_and_preclinical_review",
+          "summary": "CB1 is reported in adipose and other peripheral metabolic tissues, which participate in energy-balance signaling.",
+          "cell_context": "Adipocytes and metabolic regulatory contexts, not a universal expression level for all fat depots.",
+          "pathway": [
+            "Endocannabinoid signaling can engage local CB1 pathways in studied metabolic tissues.",
+            "Metabolic and endocrine responses depend on physiological context and study model."
+          ],
+          "model": "Human and animal metabolic physiology reviews and cell studies.",
+          "boundary": "Receptor presence does not show that cannabis improves weight, appetite regulation or insulin sensitivity.",
+          "source_ids": [
+            "TISSUE-SRC-METAB-2024",
+            "TISSUE-SRC-BASIC-2024"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-003"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "TISSUE-REG-007",
+      "label": "Skin",
+      "system": "Cutaneous cells, nerves and immune responses",
+      "marker": {
+        "x": 27,
+        "y": 30
+      },
+      "intro": "The arm location represents distributed skin, hair follicles, glands and cutaneous nerves, not an isolated skin organ.",
+      "receptors": [
+        {
+          "receptor": "CB1",
+          "evidence_context": "human_and_preclinical_review",
+          "summary": "CB1 is described in several skin compartments including keratinocytes, nerves and skin appendages.",
+          "cell_context": "Keratinocytes, hair follicles, cutaneous nerves and other skin-cell subtypes.",
+          "pathway": [
+            "Endogenous lipids and local skin cells participate in cutaneous ECS signaling.",
+            "CB1-associated effects on barrier, sensory or cellular processes depend on experimental context."
+          ],
+          "model": "Human skin-cell work and preclinical dermatology research.",
+          "boundary": "Skin receptor expression is not evidence of efficacy for cannabis creams, eczema, psoriasis or wound healing.",
+          "source_ids": [
+            "TISSUE-SRC-SKIN-2023"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-003"
+          ]
+        },
+        {
+          "receptor": "CB2",
+          "evidence_context": "human_and_preclinical_review",
+          "summary": "CB2 has been reported in skin immune populations and other cutaneous cell compartments.",
+          "cell_context": "Immune cells, keratinocytes and skin appendages; distribution differs by cell type.",
+          "pathway": [
+            "Local immunological and tissue cues can engage cutaneous CB2-linked signaling.",
+            "Experimental responses involve multiple receptors and cell types, not only CB2."
+          ],
+          "model": "Human skin expression and experimental dermatology studies.",
+          "boundary": "Mechanistic skin biology does not establish safe or effective clinical use of topical cannabis preparations.",
+          "source_ids": [
+            "TISSUE-SRC-SKIN-2023"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-004"
+          ]
+        }
+      ]
+    }
+  ]
+}
