@@ -1,0 +1,427 @@
+{
+  "contract_version": "1.0.0",
+  "dataset_id": "cannabiverse-ecs-network-evidence",
+  "release_date": "2026-11-09",
+  "topic": "ECS Network Atlas",
+  "description": "Source-scoped biology and clinical context. Endogenous ECS entities are separate from plant phytocannabinoid canon.",
+  "medical_boundary": "ECS biology does not establish that cannabis restores homeostasis or treats all conditions. No individual medical or dosing advice.",
+  "doctrine": "RECEPTOR PRESENCE ≠ BENEFIT; MECHANISM ≠ HUMAN EFFICACY; EXPOSURE ≠ HOMEOSTASIS; NATURAL ≠ SAFE",
+  "sources": [
+    {
+      "id": "ECS-SRC-BASIC-2024",
+      "title": "The Basic Science of Cannabinoids",
+      "year": 2024,
+      "kind": "peer_reviewed_foundational_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10788142/",
+      "note": "Foundational review of retrograde signaling, CB1, metabolic enzymes; mechanism is not treatment efficacy."
+    },
+    {
+      "id": "ECS-SRC-REVIEW-2025",
+      "title": "The Role of Endocannabinoids in Physiological Processes and Disease Pathology: A Comprehensive Review",
+      "year": 2025,
+      "kind": "peer_reviewed_narrative_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12027566/",
+      "note": "Broad review of ECS components, distribution, and physiological associations."
+    },
+    {
+      "id": "ECS-SRC-DRUG-2020",
+      "title": "A Guide to Targeting the Endocannabinoid System in Drug Design",
+      "year": 2020,
+      "kind": "peer_reviewed_pharmacology_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7216112/",
+      "note": "Discusses 2-AG/AEA synthesis and breakdown, caveats about other targets."
+    },
+    {
+      "id": "ECS-SRC-AHRQ-2025",
+      "title": "Living Systematic Review on Cannabis and Other Plant-Based Treatments for Chronic Pain: 2025 Update",
+      "year": 2025,
+      "kind": "human_systematic_review",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK618040/",
+      "note": "Adult noncancer chronic pain, mostly neuropathic, formulation-level clinical outcomes."
+    },
+    {
+      "id": "ECS-SRC-NCCIH",
+      "title": "Cannabis (Marijuana) and Cannabinoids: What You Need To Know",
+      "year": null,
+      "kind": "living_government_health_summary",
+      "url": "https://www.nccih.nih.gov/health/cannabis-marijuana-and-cannabinoids-what-you-need-to-know",
+      "note": "Living NIH safety and indication summary; recheck prior to public medical claim updates."
+    }
+  ],
+  "entities": [
+    {
+      "id": "ECS-ENT-001",
+      "kind": "endocannabinoid",
+      "label": "Anandamide (AEA)",
+      "summary": "Endogenous lipid signal; distinct from plant-derived cannabinoids."
+    },
+    {
+      "id": "ECS-ENT-002",
+      "kind": "endocannabinoid",
+      "label": "2-arachidonoylglycerol (2-AG)",
+      "summary": "Endogenous lipid messenger involved in activity-dependent retrograde signaling."
+    },
+    {
+      "id": "ECS-ENT-003",
+      "kind": "receptor",
+      "label": "CB1 receptor",
+      "summary": "G-protein-coupled receptor prominent in many neuronal circuits; distribution is tissue-dependent."
+    },
+    {
+      "id": "ECS-ENT-004",
+      "kind": "receptor",
+      "label": "CB2 receptor",
+      "summary": "G-protein-coupled receptor associated with immune-cell and context-dependent neuroimmune signaling."
+    },
+    {
+      "id": "ECS-ENT-005",
+      "kind": "enzyme",
+      "label": "FAAH",
+      "summary": "Major enzyme involved in anandamide breakdown; not the sole metabolic route."
+    },
+    {
+      "id": "ECS-ENT-006",
+      "kind": "enzyme",
+      "label": "MAGL",
+      "summary": "Major enzyme involved in 2-AG breakdown; additional enzymes also contribute."
+    },
+    {
+      "id": "ECS-ENT-007",
+      "kind": "enzyme",
+      "label": "DAGL",
+      "summary": "Diacylglycerol lipase contributes to formation of 2-AG."
+    },
+    {
+      "id": "ECS-ENT-008",
+      "kind": "enzyme",
+      "label": "NAPE-PLD",
+      "summary": "One of the established pathways contributing to anandamide biosynthesis."
+    },
+    {
+      "id": "ECS-ENT-009",
+      "kind": "phytocannabinoid",
+      "label": "Delta-9 THC",
+      "summary": "Exogenous plant cannabinoid; interacts with CB1 and can cause impairment."
+    },
+    {
+      "id": "ECS-ENT-010",
+      "kind": "phytocannabinoid",
+      "label": "CBD",
+      "summary": "Exogenous plant cannabinoid with complex target pharmacology; not equivalent to THC."
+    },
+    {
+      "id": "ECS-ENT-011",
+      "kind": "context",
+      "label": "Neural synapse",
+      "summary": "Cellular context for certain retrograde endocannabinoid signaling processes."
+    },
+    {
+      "id": "ECS-ENT-012",
+      "kind": "context",
+      "label": "Immune signaling",
+      "summary": "Biological context for CB2-linked responses; not itself proof of a treatment effect."
+    }
+  ],
+  "relationships": [
+    {
+      "id": "ECS-REL-001",
+      "from": "ECS-ENT-002",
+      "to": "ECS-ENT-003",
+      "predicate": "retrograde_modulates",
+      "claim_id": "ECS-CLM-002"
+    },
+    {
+      "id": "ECS-REL-002",
+      "from": "ECS-ENT-001",
+      "to": "ECS-ENT-005",
+      "predicate": "metabolized_by",
+      "claim_id": "ECS-CLM-005"
+    },
+    {
+      "id": "ECS-REL-003",
+      "from": "ECS-ENT-002",
+      "to": "ECS-ENT-006",
+      "predicate": "metabolized_by",
+      "claim_id": "ECS-CLM-006"
+    },
+    {
+      "id": "ECS-REL-004",
+      "from": "ECS-ENT-007",
+      "to": "ECS-ENT-002",
+      "predicate": "contributes_to_synthesis_of",
+      "claim_id": "ECS-CLM-007"
+    },
+    {
+      "id": "ECS-REL-005",
+      "from": "ECS-ENT-008",
+      "to": "ECS-ENT-001",
+      "predicate": "contributes_to_synthesis_of",
+      "claim_id": "ECS-CLM-007"
+    },
+    {
+      "id": "ECS-REL-006",
+      "from": "ECS-ENT-009",
+      "to": "ECS-ENT-003",
+      "predicate": "engages",
+      "claim_id": "ECS-CLM-008"
+    },
+    {
+      "id": "ECS-REL-007",
+      "from": "ECS-ENT-003",
+      "to": "ECS-ENT-011",
+      "predicate": "participates_in",
+      "claim_id": "ECS-CLM-003"
+    },
+    {
+      "id": "ECS-REL-008",
+      "from": "ECS-ENT-004",
+      "to": "ECS-ENT-012",
+      "predicate": "participates_in",
+      "claim_id": "ECS-CLM-004"
+    }
+  ],
+  "claims": [
+    {
+      "id": "ECS-CLM-001",
+      "title": "The ECS includes ligands, receptors and metabolic enzymes",
+      "lane": "foundational_physiology",
+      "summary": "ECS signaling involves endogenous lipid messengers including AEA and 2-AG, CB1/CB2 receptors and multiple synthesis and degradation pathways.",
+      "model": "Narrative and basic-science reviews; variable tissue and species contexts.",
+      "boundary": "A component list is not a clinical diagnosis, treatment indication or claim that cannabis is required for health.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "endogenous_or_context_only",
+      "related_entities": [
+        "ECS-ENT-001",
+        "ECS-ENT-002",
+        "ECS-ENT-003",
+        "ECS-ENT-004",
+        "ECS-ENT-005",
+        "ECS-ENT-006"
+      ],
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-BASIC-2024",
+        "ECS-SRC-REVIEW-2025"
+      ]
+    },
+    {
+      "id": "ECS-CLM-002",
+      "title": "2-AG can act as a retrograde synaptic messenger",
+      "lane": "mechanistic_physiology",
+      "summary": "At some synapses, postsynaptic activity promotes 2-AG signaling to presynaptic CB1 receptors, reducing neurotransmitter-release probability.",
+      "model": "Neuronal circuit and experimental physiological models.",
+      "boundary": "Not all ECS signaling is retrograde; this mechanism does not establish clinical benefit from consuming cannabis.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "endogenous_or_context_only",
+      "related_entities": [
+        "ECS-ENT-002",
+        "ECS-ENT-003",
+        "ECS-ENT-011"
+      ],
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-BASIC-2024"
+      ]
+    },
+    {
+      "id": "ECS-CLM-003",
+      "title": "CB1 distribution is broad but tissue-specific",
+      "lane": "foundational_physiology",
+      "summary": "CB1 is particularly prominent in neuronal systems and participates in signaling in peripheral tissues as well.",
+      "model": "Receptor expression and physiological research.",
+      "boundary": "Receptor presence does not imply that THC improves the function of an organ.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "endogenous_or_context_only",
+      "related_entities": [
+        "ECS-ENT-003",
+        "ECS-ENT-011"
+      ],
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-BASIC-2024",
+        "ECS-SRC-REVIEW-2025"
+      ]
+    },
+    {
+      "id": "ECS-CLM-004",
+      "title": "CB2 is studied in immune and neuroimmune signaling",
+      "lane": "mechanistic_physiology",
+      "summary": "CB2 receptors are associated with immune and inflammatory signaling in context-dependent biological models.",
+      "model": "Cellular and animal models; receptor distribution varies.",
+      "boundary": "Anti-inflammatory pathway observations are not proof that any cannabis product treats inflammatory disease in humans.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "endogenous_or_context_only",
+      "related_entities": [
+        "ECS-ENT-004",
+        "ECS-ENT-012"
+      ],
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-REVIEW-2025"
+      ]
+    },
+    {
+      "id": "ECS-CLM-005",
+      "title": "FAAH contributes to anandamide breakdown",
+      "lane": "mechanistic_physiology",
+      "summary": "FAAH is a major enzyme that hydrolyzes AEA and helps terminate local lipid signaling.",
+      "model": "Biochemical and cellular studies.",
+      "boundary": "FAAH activity does not establish a universal clinical 'ECS deficiency' or a cannabis treatment requirement.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "endogenous_or_context_only",
+      "related_entities": [
+        "ECS-ENT-001",
+        "ECS-ENT-005"
+      ],
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-DRUG-2020",
+        "ECS-SRC-BASIC-2024"
+      ]
+    },
+    {
+      "id": "ECS-CLM-006",
+      "title": "MAGL contributes to 2-AG breakdown",
+      "lane": "mechanistic_physiology",
+      "summary": "MAGL is a major 2-AG hydrolase; other enzymes can also participate in 2-AG metabolism.",
+      "model": "Biochemical and cellular studies.",
+      "boundary": "The diagram simplifies overlapping metabolic routes and is not a treatment algorithm.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "endogenous_or_context_only",
+      "related_entities": [
+        "ECS-ENT-002",
+        "ECS-ENT-006"
+      ],
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-DRUG-2020"
+      ]
+    },
+    {
+      "id": "ECS-CLM-007",
+      "title": "Endogenous synthesis uses multiple biochemical routes",
+      "lane": "mechanistic_physiology",
+      "summary": "DAGL contributes to 2-AG production and NAPE-PLD to one AEA synthesis pathway, alongside alternative metabolic routes.",
+      "model": "Biochemistry, cultured cells and animal systems.",
+      "boundary": "A simplified pathway is not an exhaustive pathway inventory or proof of a single controlling enzyme.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "endogenous_or_context_only",
+      "related_entities": [
+        "ECS-ENT-007",
+        "ECS-ENT-002",
+        "ECS-ENT-008",
+        "ECS-ENT-001"
+      ],
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-DRUG-2020",
+        "ECS-SRC-REVIEW-2025"
+      ]
+    },
+    {
+      "id": "ECS-CLM-008",
+      "title": "THC receptor action does not equal restored balance",
+      "lane": "clinical_safety_context",
+      "summary": "Delta-9 THC engages cannabinoid receptors, especially CB1, and can affect cognition, memory, coordination and perception.",
+      "model": "Human pharmacology and safety summaries.",
+      "boundary": "Receptor activation does not prove restored homeostasis, universal benefit or safety for driving and vulnerable groups.",
+      "evidence_strength": "clinical_safety_context",
+      "link_scope": "referenced_phytocannabinoid_not_standalone_clinical_proof",
+      "related_entities": [
+        "ECS-ENT-009",
+        "ECS-ENT-003"
+      ],
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Delta-9 THC"
+        }
+      ],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-BASIC-2024",
+        "ECS-SRC-NCCIH"
+      ]
+    },
+    {
+      "id": "ECS-CLM-009",
+      "title": "CBD is not simply a non-intoxicating THC",
+      "lane": "pharmacology_context",
+      "summary": "CBD has different, complex interactions with cannabinoid-associated and other molecular targets; simple CB1 agonism does not explain its action.",
+      "model": "Pharmacology reviews and studies of differing experimental models.",
+      "boundary": "Mechanistic activity alone does not establish general clinical efficacy, safety, or an equivalence to THC.",
+      "evidence_strength": "mechanistic_review",
+      "link_scope": "referenced_phytocannabinoid_not_standalone_clinical_proof",
+      "related_entities": [
+        "ECS-ENT-010"
+      ],
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0047",
+          "name": "CBD"
+        }
+      ],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-DRUG-2020",
+        "ECS-SRC-REVIEW-2025"
+      ]
+    },
+    {
+      "id": "ECS-CLM-010",
+      "title": "Chronic pain results depend on studied formulation",
+      "lane": "human_clinical_context",
+      "summary": "AHRQ 2025 found small short-term pain benefits for certain studied THC-containing formulations in mostly neuropathic chronic pain; pooled oral CBD-alone trials did not improve pain or function.",
+      "model": "Adult noncancer chronic pain human studies, specific standardized formulations, mostly short-term.",
+      "boundary": "Do not transfer formulation outcomes to an isolated molecule, any dispensary product, every pain condition, or long-term use.",
+      "evidence_strength": "clinical_systematic_review",
+      "link_scope": "referenced_phytocannabinoid_not_standalone_clinical_proof",
+      "related_entities": [
+        "ECS-ENT-009",
+        "ECS-ENT-010"
+      ],
+      "related_compounds": [
+        {
+          "atlas_id": "CPA-CAN-0001",
+          "name": "Delta-9 THC"
+        },
+        {
+          "atlas_id": "CPA-CAN-0047",
+          "name": "CBD"
+        }
+      ],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-AHRQ-2025"
+      ]
+    },
+    {
+      "id": "ECS-CLM-011",
+      "title": "Homeostasis is not a universal optimization claim",
+      "lane": "evidence_boundary",
+      "summary": "Physiological roles of ECS components are established, but that does not demonstrate a uniform beneficial direction from exogenous cannabinoid exposure across people, organs or doses.",
+      "model": "Cross-domain research interpretation and human safety context.",
+      "boundary": "Do not diagnose an 'endocannabinoid deficiency' from nonspecific symptoms or claim that more cannabis necessarily produces better regulation.",
+      "evidence_strength": "evidence_boundary",
+      "link_scope": "endogenous_or_context_only",
+      "related_entities": [
+        "ECS-ENT-001",
+        "ECS-ENT-002",
+        "ECS-ENT-009"
+      ],
+      "related_compounds": [],
+      "mechanism_steps": [],
+      "source_ids": [
+        "ECS-SRC-REVIEW-2025",
+        "ECS-SRC-NCCIH"
+      ]
+    }
+  ]
+}

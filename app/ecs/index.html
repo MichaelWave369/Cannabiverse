@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cannabiverse · ECS Network Atlas</title><meta name="description" content="Explore source-backed endocannabinoid signals, receptors, enzymes, and the limits of clinical evidence.">
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:#091510;color:#eff9f2}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% 0,#1c3e2c,#091510 68%);min-height:100vh}
+main{width:min(1250px,calc(100% - 34px));margin:auto;padding:26px 0 70px}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.03;margin:16px 0}h2{font-size:22px}p{line-height:1.6}
+a{color:#f4d88b}.muted{color:#c1d7c9;font-size:14px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:2px;color:#f4d88b}
+.notice{background:#302717;border:1px solid #ad8c50;border-radius:16px;padding:16px;margin:24px 0;line-height:1.55}
+.columns{display:grid;grid-template-columns:minmax(290px,1fr) minmax(0,1.4fr);gap:20px}
+.panel{border-radius:17px;border:1px solid #3b624b;padding:20px;background:#11271b;min-width:0}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+button{font:inherit;cursor:pointer;border:1px solid #567f65;background:#1b3928;color:#f0f8f1;border-radius:11px;padding:9px 12px;text-align:left}
+button:hover,button:focus-visible{border-color:#f1d48a;outline:2px solid transparent}
+button[aria-pressed="true"]{border-color:#f1d48a;background:#425c36}
+.nodeGrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.node{min-height:75px;width:100%;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.node small{font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:#d7bf7f}.node strong{font-size:14px}
+.count{color:#c9d7c9;font-size:12px}.detail{background:#172f21;border-left:3px solid #e3c77e;border-radius:10px;padding:14px;margin:12px 0}
+.edge{border-bottom:1px solid #3b624b;padding:9px 0;font-size:14px}.edge strong{color:#f5d58e}
+.claim{border-top:1px solid #42614e;padding:17px 0}.claim h3{font-size:17px;margin:7px 0}
+.tag{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#f5d58e}
+.sources{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;font-size:12px}
+.footer{margin-top:28px;font-size:13px;color:#bfcebf}
+#status{min-height:20px}
+@media(max-width:800px){.columns{grid-template-columns:1fr}.nodeGrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:400px){.nodeGrid{grid-template-columns:1fr}}
+</style></head><body><main>
+<header><a href="../../">Cannabiverse</a> · <a href="../bridge/">Research Bridge</a> · <a href="https://michaelwave369.github.io/cannabis-as-sacred-medicine/#ecs-network">Sacred Medicine</a></header>
+<p class="eyebrow">Φ Research Bridge · ECS Network · Source-governed release v1</p>
+<h1>Endocannabinoid<br>Network Atlas</h1>
+<p class="muted">Explore how endogenous messengers, receptors, enzymes and cell contexts relate. Select a node to inspect only the relationships and claims that have explicit scientific receipts. Plant compounds are labeled separately from signals produced by the human body.</p>
+<div class="notice"><strong>Evidence boundary:</strong> Receptor presence does not imply benefit. Biological mechanism does not establish human clinical efficacy, and THC exposure is not automatically restored homeostasis. No dosing, diagnosis, or treatment instructions.</div>
+<p id="status" role="status" class="muted">Loading source-governed ECS data…</p>
+<div class="columns">
+<section class="panel" aria-labelledby="network-title">
+<h2 id="network-title">Explore the network</h2><p class="muted">Filter by node type, then select a node.</p>
+<div class="toolbar" id="filters" aria-label="Node types"></div>
+<div class="nodeGrid" id="nodes"></div>
+</section>
+<section class="panel" aria-labelledby="evidence-title">
+<h2 id="evidence-title">Evidence and connections</h2>
+<div id="selected" class="detail">Select a node to inspect its source-backed connections.</div>
+<h3>Explicit network relationships</h3><div id="edges" aria-live="polite"></div>
+<h3>Related scientific claims</h3><div id="claims"></div>
+</section>
+</div>
+<p class="footer">Source of record: <a href="../../data/ecs-network/evidence-v1.json">ECS evidence JSON</a> · <a href="../../docs/ecs-network-v1.md">Methods &amp; boundaries</a>. Read-only educational navigator. Visualization cannot create scientific authority.</p>
+</main>
+<script>
+(function(){
+"use strict";
+const nodes=document.getElementById('nodes'),filters=document.getElementById('filters'),selected=document.getElementById('selected'),edges=document.getElementById('edges'),claims=document.getElementById('claims'),status=document.getElementById('status');
+const names={all:'All',endocannabinoid:'Endogenous signals',receptor:'Receptors',enzyme:'Enzymes',phytocannabinoid:'Plant compounds',context:'Cell contexts'};
+let feed=null,type='all',active=null;
+function el(tag,value,cls){const x=document.createElement(tag);if(value!==undefined&&value!==null)x.textContent=value;if(cls)x.className=cls;return x;}
+function sourcesFor(ids){const row=el('div',null,'sources');for(const id of ids){const src=feed.sources.find(s=>s.id===id);if(!src)continue;const a=el('a',src.title);a.href=src.url;a.target='_blank';a.rel='noopener noreferrer';row.append(a);}return row;}
+function render(){
+nodes.replaceChildren();edges.replaceChildren();claims.replaceChildren();
+const visible=feed.entities.filter(n=>type==='all'||n.kind===type);
+for(const n of visible){const b=el('button',null,'node');b.type='button';b.setAttribute('aria-pressed',String(n.id===active));b.append(el('small',names[n.kind]),el('strong',n.label));b.addEventListener('click',()=>{active=n.id;render();});nodes.append(b);}
+const current=feed.entities.find(n=>n.id===active);
+selected.replaceChildren();selected.append(el('strong',current?current.label:'Whole-network overview'),el('p',current?current.summary:'Select any node to inspect its bounded scientific evidence. Endogenous signals are not plant cannabinoids.','muted'));
+const rels=feed.relationships.filter(e=>!active||e.from===active||e.to===active);
+if(!rels.length)edges.append(el('p','No source-receipted relationships for this selection. This is not evidence of no biological effects.','muted'));
+for(const r of rels){const a=feed.entities.find(x=>x.id===r.from),b=feed.entities.find(x=>x.id===r.to),c=feed.claims.find(x=>x.id===r.claim_id);const item=el('div',null,'edge');item.append(el('strong',a.label+' → '+b.label),el('p',r.predicate.replaceAll('_',' ')+' · '+c.id,'muted'));edges.append(item);}
+const relevant=feed.claims.filter(c=>!active||c.related_entities.includes(active));
+for(const c of relevant){const card=el('article',null,'claim');card.append(el('span',c.lane.replaceAll('_',' ')+' · '+c.evidence_strength.replaceAll('_',' '),'tag'),el('h3',c.title),el('p',c.summary),el('p','Study context: '+c.model,'muted'),el('p','Limit: '+c.boundary,'muted'));card.append(sourcesFor(c.source_ids));claims.append(card);}
+status.textContent=visible.length+' nodes shown · '+rels.length+' receipted relationships · '+relevant.length+' claims · curated '+feed.release_date;
+}
+async function load(){
+try{const r=await fetch('../../data/ecs-network/evidence-v1.json',{cache:'no-cache'});if(!r.ok)throw new Error('HTTP '+r.status);const x=await r.json();
+if(x.dataset_id!=='cannabiverse-ecs-network-evidence'||x.contract_version!=='1.0.0'||!Array.isArray(x.entities)||!Array.isArray(x.relationships)||!Array.isArray(x.claims)||!Array.isArray(x.sources))throw new Error('Unexpected scientific contract');
+const ids=new Set(x.entities.map(e=>e.id)),cids=new Set(x.claims.map(c=>c.id)),sids=new Set(x.sources.map(s=>s.id));
+if(ids.size!==x.entities.length||cids.size!==x.claims.length||sids.size!==x.sources.length||x.claims.some(c=>!Array.isArray(c.source_ids)||!c.source_ids.length||c.source_ids.some(s=>!sids.has(s))||c.related_entities.some(id=>!ids.has(id)))||x.relationships.some(e=>!ids.has(e.from)||!ids.has(e.to)||!cids.has(e.claim_id)))throw new Error('Unverifiable source relationships');
+feed=x;
+for(const [key,title] of Object.entries(names)){const b=el('button',title);b.type='button';b.setAttribute('aria-pressed',String(key===type));b.addEventListener('click',()=>{type=key;if(active&&!feed.entities.some(n=>n.id===active&&(type==='all'||n.kind===type)))active=null;filters.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render();});filters.append(b);}
+render();
+}catch(e){status.textContent='Verified evidence unavailable or incompatible: '+e.message+'. No fallback medical assertions are displayed.';nodes.replaceChildren();edges.replaceChildren();claims.replaceChildren();}
+}
+load();
+})();
+</script></body></html>
