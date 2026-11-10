@@ -31,6 +31,10 @@ Current dataset:
 
 **145 is not a claim that only 145 phytocannabinoids exist.** Different inventories use different inclusion rules; later literature describes broader inventories.
 
+## ECS Signal Journey Lab v1
+
+[Explore the guided pathway lab](https://michaelwave369.github.io/Cannabiverse/app/ecs/journeys.html) for source-receipted 2-AG retrograde synaptic signaling, AEA formation/breakdown and context-dependent immune-cell CB2 mechanisms. The additive [journeys-v1 data](data/ecs-network/journeys-v1.json) includes 3 journeys, 13 steps, original citations, permanent references to the existing ECS entities/claims, and explicit experimental and human clinical boundaries. `npm run validate:ecs-journeys` verifies the upstream links; [methods and limits](docs/ecs-signal-journeys-v1.md).
+
 ## Interactive human-body ECS map
 
 The [human-body tissue explorer](https://michaelwave369.github.io/Cannabiverse/app/ecs/body.html) adds seven schematic tissue regions and ten receptor-specific evidence records with original scientific sources, model boundaries and upstream claim receipts. The additive source lives in [`data/ecs-network/tissues-v1.json`](data/ecs-network/tissues-v1.json), not in the 145-compound plant chemistry canon. Receptor expression does not establish human therapeutic efficacy. Run `npm run validate:ecs-tissues` and see [the tissue-map protocol](docs/ecs-body-map-v1.md).

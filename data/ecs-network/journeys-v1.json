@@ -1,0 +1,313 @@
+{
+  "contract_version": "1.0.0",
+  "dataset_id": "cannabiverse-ecs-signal-journeys",
+  "release_date": "2026-11-10",
+  "parent_dataset_id": "cannabiverse-ecs-network-evidence",
+  "representation": "stepwise educational schematic; no pharmacokinetic or physiologic simulation",
+  "medical_boundary": "Mechanism and receptor engagement do not establish human therapeutic benefit, dosing, clinical safety or restored homeostasis. Not medical advice.",
+  "sources": [
+    {
+      "id": "JOUR-SRC-RETRO-2021",
+      "title": "Mechanisms of Endocannabinoid Transport in the Brain",
+      "year": 2021,
+      "kind": "peer_reviewed_mechanistic_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8481389/",
+      "note": "Reviews model of 2-AG retrograde synaptic signaling, DAGL, presynaptic CB1 and MAGL."
+    },
+    {
+      "id": "JOUR-SRC-ENZYME-2008",
+      "title": "Enzymatic Pathways That Regulate Endocannabinoid Signaling in the Nervous System",
+      "year": 2008,
+      "kind": "peer_reviewed_mechanistic_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3150828/",
+      "note": "Foundational neuronal synthesis/degradation review, including DAGL/FAAH/MAGL."
+    },
+    {
+      "id": "JOUR-SRC-METAB-2023",
+      "title": "Goods and Bads of the Endocannabinoid System as a Therapeutic Target: Lessons Learned after 30 Years",
+      "year": 2023,
+      "kind": "peer_reviewed_narrative_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10441647/",
+      "note": "Anandamide has alternative synthesis and degradation pathways; metabolic diagrams are simplified."
+    },
+    {
+      "id": "JOUR-SRC-IMMUNE-2025",
+      "title": "Advances in cannabinoid receptors pharmacology: from receptor structural insights to ligand discovery",
+      "year": 2025,
+      "kind": "peer_reviewed_receptor_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12098862/",
+      "note": "CB2 distribution and immune/receptor pharmacology varies by cell and research context."
+    },
+    {
+      "id": "JOUR-SRC-PAIN-2021",
+      "title": "Cannabinoids, the endocannabinoid system and pain: a review of preclinical studies",
+      "year": 2021,
+      "kind": "preclinical_review",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8819673/",
+      "note": "Preclinical CB1/CB2 mechanisms are not efficacy claims for human pain patients."
+    }
+  ],
+  "journeys": [
+    {
+      "id": "ECS-JOUR-001",
+      "name": "2-AG at a neural synapse",
+      "subtitle": "A documented example of retrograde signaling",
+      "lane": "preclinical_physiology",
+      "model": "Cellular and neuronal circuit experiments, reviewed in synaptic physiology literature.",
+      "summary": "A locally produced endocannabinoid can travel backward across a synapse, adjust presynaptic signaling and then be degraded.",
+      "boundary": "This schematic describes one studied mechanism, not every neuron, a real-time simulation, human cognition improvement, or a cannabis treatment outcome.",
+      "steps": [
+        {
+          "id": "ECS-STEP-001",
+          "phase": "trigger",
+          "title": "Activity at a synapse",
+          "description": "In some neuronal circuits, postsynaptic activity triggers local signaling that can mobilize endocannabinoid production.",
+          "entity_ids": [
+            "ECS-ENT-011",
+            "ECS-ENT-002"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-002"
+          ],
+          "source_ids": [
+            "JOUR-SRC-RETRO-2021"
+          ],
+          "context_note": "The initiating signals and contributing pathways differ among synapses."
+        },
+        {
+          "id": "ECS-STEP-002",
+          "phase": "synthesis",
+          "title": "DAGL contributes to 2-AG synthesis",
+          "description": "Diacylglycerol lipase helps convert diacylglycerol precursors into 2-arachidonoylglycerol (2-AG).",
+          "entity_ids": [
+            "ECS-ENT-007",
+            "ECS-ENT-002"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-007"
+          ],
+          "source_ids": [
+            "JOUR-SRC-RETRO-2021",
+            "JOUR-SRC-ENZYME-2008"
+          ],
+          "context_note": "This is a simplified enzyme route, not the only route regulating 2-AG."
+        },
+        {
+          "id": "ECS-STEP-003",
+          "phase": "signaling",
+          "title": "2-AG engages presynaptic CB1",
+          "description": "2-AG can signal across the synaptic cleft toward CB1 receptors on a presynaptic terminal.",
+          "entity_ids": [
+            "ECS-ENT-002",
+            "ECS-ENT-003",
+            "ECS-ENT-011"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-002"
+          ],
+          "source_ids": [
+            "JOUR-SRC-RETRO-2021"
+          ],
+          "context_note": "This specific retrograde organization is documented in selected synapses."
+        },
+        {
+          "id": "ECS-STEP-004",
+          "phase": "response",
+          "title": "Neurotransmitter release can be reduced",
+          "description": "Presynaptic CB1 activation can modulate calcium-channel activity and suppress transmitter release in relevant experimental circuits.",
+          "entity_ids": [
+            "ECS-ENT-003",
+            "ECS-ENT-011"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-002"
+          ],
+          "source_ids": [
+            "JOUR-SRC-RETRO-2021",
+            "JOUR-SRC-ENZYME-2008"
+          ],
+          "context_note": "Direction and significance depend on circuit context; less transmission is not automatically healthier."
+        },
+        {
+          "id": "ECS-STEP-005",
+          "phase": "termination",
+          "title": "MAGL helps end the signal",
+          "description": "Monoacylglycerol lipase (MAGL) is a major enzyme involved in the breakdown of 2-AG.",
+          "entity_ids": [
+            "ECS-ENT-002",
+            "ECS-ENT-006"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-006"
+          ],
+          "source_ids": [
+            "JOUR-SRC-RETRO-2021",
+            "JOUR-SRC-ENZYME-2008"
+          ],
+          "context_note": "Other metabolic processes also participate; this is not a quantitative timeline."
+        }
+      ]
+    },
+    {
+      "id": "ECS-JOUR-002",
+      "name": "Anandamide: formation and breakdown",
+      "subtitle": "An endogenous lipid with multiple metabolic routes",
+      "lane": "mechanistic_physiology",
+      "model": "Biochemical, cellular and animal pathway studies summarized in review literature.",
+      "summary": "Anandamide (AEA) is produced from endogenous precursors and broken down through enzyme-regulated routes; simplified diagrams are not the full biochemistry.",
+      "boundary": "The existence of anandamide pathways does not diagnose an 'ECS deficiency', establish an individualized target, or show that consuming cannabis improves health.",
+      "steps": [
+        {
+          "id": "ECS-STEP-006",
+          "phase": "synthesis",
+          "title": "One AEA production route uses NAPE-PLD",
+          "description": "NAPE-PLD participates in the biosynthesis of anandamide (AEA) from membrane-derived N-acylphosphatidylethanolamine precursors.",
+          "entity_ids": [
+            "ECS-ENT-008",
+            "ECS-ENT-001"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-007"
+          ],
+          "source_ids": [
+            "JOUR-SRC-METAB-2023"
+          ],
+          "context_note": "Alternative synthesis routes exist; this is not a unique enzyme for all AEA formation."
+        },
+        {
+          "id": "ECS-STEP-007",
+          "phase": "signaling",
+          "title": "AEA acts as an endogenous messenger",
+          "description": "Anandamide belongs to the body's endocannabinoid signaling system; its local actions depend on receptor, cell and physiological context.",
+          "entity_ids": [
+            "ECS-ENT-001"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-001"
+          ],
+          "source_ids": [
+            "JOUR-SRC-METAB-2023",
+            "JOUR-SRC-ENZYME-2008"
+          ],
+          "context_note": "AEA is not a plant phytocannabinoid; its downstream actions are not uniform throughout the body."
+        },
+        {
+          "id": "ECS-STEP-008",
+          "phase": "termination",
+          "title": "FAAH contributes to AEA hydrolysis",
+          "description": "Fatty acid amide hydrolase (FAAH) is a major enzyme that breaks down anandamide and participates in signal termination.",
+          "entity_ids": [
+            "ECS-ENT-001",
+            "ECS-ENT-005"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-005"
+          ],
+          "source_ids": [
+            "JOUR-SRC-METAB-2023",
+            "JOUR-SRC-ENZYME-2008"
+          ],
+          "context_note": "FAAH is important but not the only degradative enzyme or route."
+        },
+        {
+          "id": "ECS-STEP-009",
+          "phase": "boundary",
+          "title": "Redundant pathways prevent a one-switch story",
+          "description": "Alternative synthesis and degradation routes mean that a single arrow or enzyme label cannot explain every AEA response.",
+          "entity_ids": [
+            "ECS-ENT-008",
+            "ECS-ENT-001"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-007"
+          ],
+          "source_ids": [
+            "JOUR-SRC-METAB-2023"
+          ],
+          "context_note": "The atlas is an explanatory diagram, not a control panel for manipulating a patient's biochemistry."
+        }
+      ]
+    },
+    {
+      "id": "ECS-JOUR-003",
+      "name": "CB2 in immune-cell contexts",
+      "subtitle": "A receptor pathway, not an immune-boosting promise",
+      "lane": "preclinical_physiology",
+      "model": "Immune-cell receptor characterization and mainly preclinical inflammatory signaling studies.",
+      "summary": "CB2-linked signaling is researched in immune cells, where receptor expression and downstream effects can change with cell type and activation.",
+      "boundary": "A CB2 pathway is not proof that cannabis boosts immunity, cures inflammation or treats autoimmune disease in people.",
+      "steps": [
+        {
+          "id": "ECS-STEP-010",
+          "phase": "context",
+          "title": "Immune cell identity matters",
+          "description": "CB2 receptors are prominently associated with immune-cell populations; expression depends on the cell type and its activation state.",
+          "entity_ids": [
+            "ECS-ENT-004",
+            "ECS-ENT-012"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-004"
+          ],
+          "source_ids": [
+            "JOUR-SRC-IMMUNE-2025"
+          ],
+          "context_note": "The same CB2 distribution is not assumed for every cell, organ or person."
+        },
+        {
+          "id": "ECS-STEP-011",
+          "phase": "signaling",
+          "title": "Receptor-linked signaling is investigated",
+          "description": "Researchers examine how CB2-linked G-protein signaling affects immune-cell responses in specific experimental systems.",
+          "entity_ids": [
+            "ECS-ENT-004",
+            "ECS-ENT-012"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-004"
+          ],
+          "source_ids": [
+            "JOUR-SRC-IMMUNE-2025",
+            "JOUR-SRC-PAIN-2021"
+          ],
+          "context_note": "Results may vary by experimental agonist, species, tissue and inflammatory condition."
+        },
+        {
+          "id": "ECS-STEP-012",
+          "phase": "response",
+          "title": "Inflammatory mediator pathways may change",
+          "description": "In selected cell and animal models, CB2-related signaling can modulate immune mediators and neuroimmune processes.",
+          "entity_ids": [
+            "ECS-ENT-004",
+            "ECS-ENT-012"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-004"
+          ],
+          "source_ids": [
+            "JOUR-SRC-IMMUNE-2025",
+            "JOUR-SRC-PAIN-2021"
+          ],
+          "context_note": "An immune signaling change is not inherently beneficial and cannot establish human clinical effectiveness."
+        },
+        {
+          "id": "ECS-STEP-013",
+          "phase": "boundary",
+          "title": "A pathway is not a patient outcome",
+          "description": "The mechanistic result must not be promoted into evidence that a cannabis product treats human inflammatory or autoimmune disease.",
+          "entity_ids": [
+            "ECS-ENT-004",
+            "ECS-ENT-012"
+          ],
+          "related_claim_ids": [
+            "ECS-CLM-004"
+          ],
+          "source_ids": [
+            "JOUR-SRC-PAIN-2021"
+          ],
+          "context_note": "Controlled human trials for a specified intervention and condition are needed to assess efficacy and safety."
+        }
+      ]
+    }
+  ]
+}

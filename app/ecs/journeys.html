@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cannabiverse · ECS Signal Journey Lab</title>
+<meta name="description" content="Follow source-governed endocannabinoid pathways step by step. Mechanism is not clinical efficacy.">
+<style>
+:root{color-scheme:dark;--bg:#09160f;--panel:#142c20;--panel2:#193626;--line:#446953;--ink:#eff8f2;--muted:#c7dbce;--gold:#f0d588;--sea:#80e4bb;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 0,#1d4030,var(--bg) 73%);color:var(--ink)}
+main{width:min(1180px,calc(100% - 32px));margin:auto;padding:27px 0 65px}
+a{color:var(--gold)}header{display:flex;gap:9px;flex-wrap:wrap;font-size:13px}
+h1{font-size:clamp(38px,6vw,68px);line-height:1.05;letter-spacing:-.035em;margin:15px 0}
+h2{font-size:24px;margin:0 0 12px}h3{font-size:18px;margin:8px 0}
+p{line-height:1.65}.intro{max-width:860px;color:#d9e8df}
+.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.16em;font-size:11px;font-weight:750}
+.notice{margin:20px 0 27px;border:1px solid #ac8b49;background:#302a1b;border-radius:14px;padding:16px 18px;line-height:1.55}
+.shell{display:grid;grid-template-columns:minmax(260px,.36fr) minmax(0,.64fr);gap:18px;align-items:start}
+.panel{min-width:0;background:linear-gradient(180deg,#173626,#0e2419);border:1px solid var(--line);border-radius:18px;padding:20px}
+.selectors{display:grid;gap:10px;margin-top:15px}
+button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid #f5dfaa;outline-offset:3px}
+.route{width:100%;text-align:left;border:1px solid #4c7159;background:#193b29;border-radius:12px;padding:16px;min-height:83px}
+.route strong{display:block;font-size:15px}.route small{display:block;font-size:12px;color:#cbded0;margin-top:5px;line-height:1.45}
+.route[aria-pressed="true"]{border:2px solid var(--gold);background:#35533b;padding:15px}
+.muted{font-size:13px;color:var(--muted)}
+.pill{border:1px solid #63816a;background:#244831;padding:4px 10px;border-radius:20px;font-size:11px;color:#dcece0}
+.board{border-radius:15px;background:radial-gradient(circle at top,#28513b,#0b2619 80%);border:1px solid #4e755c;padding:22px 16px;margin:18px 0}
+.diagram-title{text-align:center;font-size:11px;letter-spacing:.16em;color:#f5dfb2;text-transform:uppercase;margin:0 0 14px}
+.diagram{display:flex;gap:8px;align-items:stretch;justify-content:center;flex-wrap:wrap}
+.diagram .stage{min-height:75px;min-width:84px;flex:1 1 92px;border:1px solid #4d7860;border-radius:12px;padding:10px 7px;background:#173323;display:grid;place-items:center;gap:4px;text-align:center}
+.diagram .stage.active{border:2px solid var(--gold);box-shadow:0 0 0 3px #d5b97726;background:#34543a}
+.diagram .stage b{font-size:11px}.diagram .stage span{font-size:10px;color:#b8cebd}
+.progress{display:flex;gap:7px;flex-wrap:wrap;margin:13px 0 0}
+.step{border:1px solid #57755e;background:#172f21;border-radius:10px;padding:9px 12px;font-size:12px;min-height:42px;flex:1 1 135px;text-align:left}
+.step[aria-current="step"]{border:2px solid var(--gold);background:#3b5437;padding:8px 11px}
+.step small{display:block;color:#c7d7ca;font-size:10px;margin-bottom:3px;text-transform:uppercase}
+.panel-step{border-left:3px solid var(--gold);border-radius:8px;background:#152f20;padding:18px;margin:18px 0}
+.panel-step h3{font-size:clamp(20px,3vw,28px)}
+.context{border:1px solid #7c6945;border-radius:11px;background:#292719;padding:13px;color:#f0e5c7;font-size:13px;line-height:1.55}
+.row{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.controls{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.control{border:1px solid #8aa992;background:#234530;border-radius:10px;padding:11px 18px;min-width:105px;font-weight:650}
+.control.primary{border-color:#e4c783;color:#f9e9bb;background:#33553b}
+.control:disabled{opacity:.4;cursor:not-allowed}
+.entities{display:flex;flex-wrap:wrap;gap:7px;margin:8px 0 16px}
+.entity{border:1px solid #66856d;border-radius:100px;background:#244532;color:#dcefe2;padding:4px 10px;font-size:12px}
+.sources{display:flex;gap:8px 16px;flex-wrap:wrap;margin:10px 0}
+.sources a{font-size:12px}
+hr{border:0;border-top:1px solid #476952;margin:16px 0}
+footer{margin:35px 0 0;color:var(--muted);font-size:12px}
+#live-status{min-height:22px}
+@media(max-width:860px){.shell{grid-template-columns:1fr}}
+@media(max-width:480px){.panel{padding:15px}.diagram .stage{flex-basis:82px}.control{flex:1 1 100px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main>
+<header><a href="../../">Cannabiverse</a> · <a href="./">ECS Network Atlas</a> · <a href="./body.html">Human-Body Map</a> · <a href="https://michaelwave369.github.io/cannabis-as-sacred-medicine/#ecs-network">Sacred Medicine</a></header>
+<p class="eyebrow">Φ Research infrastructure · source-governed pathways</p>
+<h1>ECS Signal<br>Journey Lab</h1>
+<p class="intro">Move through a researched signaling sequence, one stage at a time. Each explanation is linked to an existing Cannabiverse scientific claim and its original cited literature. This is a learning tool, not a real-time cellular simulation.</p>
+<div class="notice"><strong>Scientific boundaries:</strong> A local signaling mechanism does not demonstrate that cannabis restores homeostasis, improves a person's health, or safely treats a disease. These examples are simplified and often rely on preclinical biology.</div>
+<p id="live-status" role="status" class="muted">Verifying versioned pathway records…</p>
+<div class="shell">
+<section class="panel" aria-labelledby="choose-title">
+<h2 id="choose-title">Choose a journey</h2>
+<p class="muted">The endogenous ECS is not identical to the effects of THC or CBD. These routes focus on normal biological signaling and its research limitations.</p>
+<div id="journey-picker" class="selectors"></div>
+</section>
+<section class="panel" aria-labelledby="journey-title">
+<div class="row"><h2 id="journey-title">Guided pathway</h2><span id="step-counter" class="pill">Loading</span></div>
+<p id="journey-summary" class="muted"></p>
+<div class="board" aria-label="Pathway stage overview">
+<p class="diagram-title">Educational sequence · not elapsed time</p>
+<div class="diagram" id="diagram"></div>
+</div>
+<div id="step-picker" class="progress" aria-label="Choose a pathway step"></div>
+<article class="panel-step" aria-live="polite" aria-atomic="true" id="step-detail"></article>
+<div class="controls">
+<button id="previous" class="control" type="button" disabled>Previous</button>
+<button id="next" class="control primary" type="button" disabled>Next step</button>
+<button id="restart" class="control" type="button" disabled>Start over</button>
+</div>
+<div class="context" id="journey-boundary">A biological mechanism is not a clinical efficacy result.</div>
+<hr>
+<p class="eyebrow">Evidence receipts</p>
+<div id="step-entities" class="entities" aria-label="Canonical ECS entities"></div>
+<div id="step-sources" class="sources"></div>
+<p id="claim-ids" class="muted"></p>
+</section>
+</div>
+<footer><a href="../../data/ecs-network/journeys-v1.json">Inspect journey source JSON</a> · <a href="../../data/ecs-network/evidence-v1.json">Canonical ECS research ledger</a> · <a href="../../docs/ecs-signal-journeys-v1.md">Methods and data boundaries</a>. No accounts, analytics, or user data collection.</footer>
+</main>
+<script>
+(function(){
+'use strict';
+const sourcePath='../../data/ecs-network/journeys-v1.json', parentPath='../../data/ecs-network/evidence-v1.json';
+const els=Object.fromEntries(['live-status','journey-picker','step-counter','journey-summary','diagram','step-picker','step-detail','previous','next','restart','journey-boundary','step-entities','step-sources','claim-ids'].map(id=>[id,document.getElementById(id)]));
+const phases={trigger:'Trigger',synthesis:'Synthesis',context:'Cell context',signaling:'Signaling',response:'Response',termination:'Termination',boundary:'Evidence limit'};
+let data=null,upstream=null,selectedJourney=0,selectedStep=0;
+function el(tag,value,cls){const e=document.createElement(tag);if(value!=null)e.textContent=value;if(cls)e.className=cls;return e;}
+function verify(feed,parent){
+ if(!feed||feed.contract_version!=='1.0.0'||feed.dataset_id!=='cannabiverse-ecs-signal-journeys'||!feed.medical_boundary||
+  !parent||parent.contract_version!=='1.0.0'||parent.dataset_id!==feed.parent_dataset_id||
+  !Array.isArray(feed.journeys)||!feed.journeys.length||!Array.isArray(feed.sources)||!Array.isArray(parent.entities)||!Array.isArray(parent.claims))throw Error('Incompatible ECS evidence contract');
+ const sid=new Set(feed.sources.map(s=>s.id)), eid=new Set(parent.entities.map(e=>e.id)), cid=new Map(parent.claims.map(c=>[c.id,c])), seen=new Set();
+ if(sid.size!==feed.sources.length||!feed.sources.every(s=>s.title&&/^https:\/\/[^/]+/.test(s.url)))throw Error('Unverifiable source ledger');
+ for(const journey of feed.journeys){
+  if(!journey.id||seen.has(journey.id)||!journey.boundary||!journey.model||!Array.isArray(journey.steps)||!journey.steps.length)throw Error('Invalid journey');
+  seen.add(journey.id);
+  for(const step of journey.steps){
+   if(!phases[step.phase]||!step.title||!step.description||!step.context_note||
+    !Array.isArray(step.entity_ids)||!step.entity_ids.length||!step.entity_ids.every(id=>eid.has(id))||
+    !Array.isArray(step.related_claim_ids)||!step.related_claim_ids.length||!step.related_claim_ids.every(id=>cid.has(id))||
+    !step.entity_ids.every(id=>step.related_claim_ids.some(c=>cid.get(c).related_entities.includes(id)))||
+    !Array.isArray(step.source_ids)||!step.source_ids.length||!step.source_ids.every(id=>sid.has(id)))throw Error('Unreceipted pathway step');
+  }
+ }
+}
+function chooseJourney(index){selectedJourney=index;selectedStep=0;render();}
+function chooseStep(index){selectedStep=index;render();}
+function render(){
+ if(!data||!upstream)return;
+ const journey=data.journeys[selectedJourney],step=journey.steps[selectedStep];
+ els['journey-picker'].replaceChildren();
+ data.journeys.forEach((j,i)=>{
+  const b=el('button',null,'route');b.type='button';b.setAttribute('aria-pressed',String(i===selectedJourney));
+  b.append(el('strong',j.name),el('small',j.subtitle));
+  b.addEventListener('click',()=>chooseJourney(i));els['journey-picker'].append(b);
+ });
+ els['step-counter'].textContent='Step '+(selectedStep+1)+' of '+journey.steps.length;
+ els['journey-summary'].textContent=journey.summary+' Study context: '+journey.model;
+ els['diagram'].replaceChildren();els['step-picker'].replaceChildren();
+ journey.steps.forEach((s,i)=>{
+  const d=el('div',null,'stage'+(i===selectedStep?' active':''));d.append(el('b',(i+1)+'. '+phases[s.phase]),el('span',s.title));els['diagram'].append(d);
+  const b=el('button',null,'step');b.type='button';if(i===selectedStep)b.setAttribute('aria-current','step');
+  b.append(el('small',(i+1)+' · '+phases[s.phase]),el('span',s.title));
+  b.addEventListener('click',()=>chooseStep(i));els['step-picker'].append(b);
+ });
+ els['step-detail'].replaceChildren();
+ els['step-detail'].append(el('p',phases[step.phase],'eyebrow'),el('h3',step.title),el('p',step.description));
+ els['step-detail'].append(el('p','Research context: '+step.context_note,'muted'));
+ els['previous'].disabled=selectedStep===0;
+ els['next'].disabled=selectedStep===journey.steps.length-1;
+ els['restart'].disabled=selectedStep===0;
+ els['journey-boundary'].textContent='Study model: '+journey.model+' | Evidence limit: '+journey.boundary;
+ els['step-entities'].replaceChildren();
+ step.entity_ids.forEach(id=>{
+  const entry=upstream.entities.find(e=>e.id===id);
+  const span=el('span',entry.label,'entity');span.title=entry.summary;
+  els['step-entities'].append(span);
+ });
+ els['step-sources'].replaceChildren();
+ step.source_ids.forEach(id=>{
+  const src=data.sources.find(s=>s.id===id);
+  const a=el('a',src.title+(src.year?' ('+src.year+')':''));
+  a.href=src.url;a.target='_blank';a.rel='noopener noreferrer';
+  els['step-sources'].append(a);
+ });
+ els['claim-ids'].textContent='Canonical ECS claim receipts: '+step.related_claim_ids.join(', ');
+ els['live-status'].textContent=data.journeys.length+' source-backed journeys · '+data.journeys.reduce((sum,j)=>sum+j.steps.length,0)+' verified steps · '+data.sources.length+' research sources · curated '+data.release_date;
+}
+els['previous'].addEventListener('click',()=>{if(selectedStep>0)chooseStep(selectedStep-1);});
+els['next'].addEventListener('click',()=>{if(data&&selectedStep<data.journeys[selectedJourney].steps.length-1)chooseStep(selectedStep+1);});
+els['restart'].addEventListener('click',()=>chooseStep(0));
+async function load(){
+ try{
+  const r=await Promise.all([fetch(sourcePath,{cache:'no-cache'}),fetch(parentPath,{cache:'no-cache'})]);
+  if(r.some(x=>!x.ok))throw Error('HTTP source unavailable');
+  const [a,b]=await Promise.all(r.map(x=>x.json()));verify(a,b);data=a;upstream=b;render();
+ }catch(e){
+  els['live-status'].textContent='Source-verified journeys unavailable: '+e.message+'. No unsourced pathways will be displayed.';
+  els['journey-picker'].replaceChildren();els['step-picker'].replaceChildren();els['diagram'].replaceChildren();
+  els['step-detail'].textContent='Unable to verify the canonical ECS evidence receipts.';
+ }
+}
+load();
+})();
+</script>
+</body>
+</html>

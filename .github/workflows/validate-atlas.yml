@@ -104,6 +104,9 @@ jobs:
       - name: Validate ECS human-body tissue evidence
         run: npm run validate:ecs-tissues
 
+      - name: Validate ECS source-governed signal journeys
+        run: npm run validate:ecs-journeys
+
       - name: Validate archaeology evidence and source boundaries
         run: npm run validate:archaeology
 
