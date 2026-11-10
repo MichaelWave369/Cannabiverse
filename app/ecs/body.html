@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cannabiverse · Human-Body ECS Map</title>
+<meta name="description" content="Explore evidence-scoped CB1 and CB2 receptor signaling contexts across tissues. Anatomical pins are schematic, not measurements.">
+<style>
+:root{color-scheme:dark;--bg:#08140f;--panel:#11281c;--line:#3d6550;--text:#eff8f2;--muted:#c3d3c9;--gold:#f0d48e;--cb1:#76dfab;--cb2:#c6a6ff;font-family:system-ui,-apple-system,Segoe UI,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--text);background:radial-gradient(circle at 50% 0,#1d4130 0,var(--bg) 68%);min-height:100vh}
+a{color:var(--gold)}button{font:inherit;color:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+main{width:min(1330px,calc(100% - 36px));margin:auto;padding:28px 0 90px}
+header{display:flex;gap:12px;flex-wrap:wrap;font-size:13px}
+h1{font-size:clamp(38px,5.9vw,67px);line-height:1.06;margin:14px 0 18px;letter-spacing:-.03em}
+h2{font-size:clamp(20px,2.4vw,26px);margin:0 0 10px}
+h3{font-size:18px;margin:16px 0 8px}p{line-height:1.6}
+.lead{color:#d2e4d7;max-width:850px}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.notice{border:1px solid #95763a;background:#2a271b;border-radius:15px;padding:16px 18px;line-height:1.55;margin:22px 0}
+.layout{display:grid;grid-template-columns:minmax(320px,.9fr) minmax(0,1.2fr);gap:20px;align-items:start}
+.panel{background:linear-gradient(180deg,#143121,#0e2318);border:1px solid var(--line);border-radius:20px;padding:20px;min-width:0}
+.muted{color:var(--muted);font-size:13px}.small{font-size:12px}.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.filter{border:1px solid var(--line);background:#183b29;border-radius:11px;padding:9px 14px;min-height:42px;font-weight:650}
+.filter[aria-pressed="true"]{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold);background:#34513b}
+.filter .swatch{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:7px;background:var(--gold)}
+.filter.cb1 .swatch{background:var(--cb1)}.filter.cb2 .swatch{background:var(--cb2)}
+.body-stage{position:relative;aspect-ratio:320 / 680;width:min(100%,342px);margin:10px auto 14px;border:1px solid #3b5847;border-radius:26px;background:radial-gradient(ellipse at center,#193d2b 0,#0c2217 74%);overflow:hidden}
+.body-stage svg{width:100%;height:100%;display:block}
+.pin{position:absolute;transform:translate(-50%,-50%);width:41px;height:41px;border:2px solid var(--gold);border-radius:50%;background:#263c2ce8;box-shadow:0 0 0 5px #08160da8,0 0 23px #ffedaf55;display:grid;place-items:center;font-size:11px;font-weight:800;letter-spacing:.04em;transition:transform .15s,background .15s}
+.pin:hover{transform:translate(-50%,-50%) scale(1.1)}
+.pin[data-receptor="CB1"]{border-color:var(--cb1);color:var(--cb1)}
+.pin[data-receptor="CB2"]{border-color:var(--cb2);color:var(--cb2)}
+.pin[aria-pressed="true"]{background:#bda264;color:#07170e;border-color:#f6e1aa;box-shadow:0 0 0 5px #f6e1aa45,0 0 22px #f6e1aa99}
+.region-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}
+.region-choice{font-size:12px;min-height:42px;border:1px solid #476a53;border-radius:10px;background:#1c3c29;padding:9px 10px;text-align:left}
+.region-choice[aria-pressed="true"]{border-color:var(--gold);color:var(--gold);background:#3a4b2a}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.pill{border-radius:999px;background:#244733;border:1px solid #4f7961;padding:4px 9px;font-size:11px}
+.card{margin-top:13px;padding:17px;border:1px solid #456c53;border-radius:14px;background:#0e2218}
+.card h3{margin:0 0 7px}.card p{margin:7px 0}
+.receptor{display:inline-flex;align-items:center;padding:4px 10px;border-radius:999px;font-weight:800;font-size:12px}
+.receptor.cb1{background:#184c32;color:#b5f6d1;border:1px solid #4b9e71}
+.receptor.cb2{background:#392c56;color:#e2d1ff;border:1px solid #8e75c3}
+.boundary{border-left:3px solid var(--gold);background:#2a281b;padding:11px 13px;border-radius:4px;color:#f0e1b9}
+.step-list{margin:10px 0 0;padding-left:22px;color:#daeade;line-height:1.7;font-size:13px}
+.sources{display:flex;flex-wrap:wrap;gap:9px 15px;margin-top:12px}
+.sources a{font-size:12px;word-break:break-word}
+.evidence-type{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--gold)}
+.empty{padding:16px;border:1px dashed #63866d;border-radius:12px;color:var(--muted)}
+footer{margin-top:30px;color:var(--muted);font-size:12px;line-height:1.6}
+@media(max-width:870px){.layout{grid-template-columns:1fr}.body-stage{width:min(100%,320px)}}
+@media(max-width:420px){.region-list{grid-template-columns:1fr}.panel{padding:15px}.pin{width:37px;height:37px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pin{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<header>
+<a href="../../">Cannabiverse home</a> · <a href="./">ECS Network Atlas</a> · <a href="../bridge/">Research Bridge</a> · <a href="https://michaelwave369.github.io/cannabis-as-sacred-medicine/#ecs-network">Sacred Medicine</a>
+</header>
+<p class="eyebrow">Φ Cannabiverse · Tissue evidence explorer</p>
+<h1>The endocannabinoid system<br>across the human body</h1>
+<p class="lead">Select a location to explore researched CB1 and CB2 receptor contexts, model-specific pathways, and original sources. The illustration is a locator only: it is <strong>not</strong> a receptor-density scan, proof of treatment benefit, or a complete map of every human tissue.</p>
+<div class="notice"><strong>Scientific boundary:</strong> Receptor expression is cell-, state- and study-dependent. Pathway research, including animal and cellular studies, cannot automatically be translated into clinical efficacy. No diagnosis, dosing, or treatment advice is provided.</div>
+<p id="status" role="status" class="muted">Checking versioned source receipts…</p>
+<div class="layout">
+  <section class="panel" aria-labelledby="map-title">
+    <h2 id="map-title">Explore by tissue</h2>
+    <p class="muted">Filter the receptor evidence, then select an anatomical marker or its matching text button.</p>
+    <div id="mode" class="toolbar" aria-label="Receptor evidence filter">
+      <button type="button" class="filter" data-mode="all" aria-pressed="true"><span class="swatch" aria-hidden="true"></span> Both</button>
+      <button type="button" class="filter cb1" data-mode="CB1" aria-pressed="false"><span class="swatch" aria-hidden="true"></span> CB1</button>
+      <button type="button" class="filter cb2" data-mode="CB2" aria-pressed="false"><span class="swatch" aria-hidden="true"></span> CB2</button>
+    </div>
+    <div class="body-stage" id="body-stage">
+      <svg viewBox="0 0 320 680" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="person" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#2f6648"/><stop offset=".95" stop-color="#1d4932"/>
+          </linearGradient>
+          <linearGradient id="organ" x1="0" x2="1"><stop offset="0" stop-color="#d3b86b" stop-opacity=".32"/><stop offset="1" stop-color="#d3b86b" stop-opacity=".09"/></linearGradient>
+        </defs>
+        <g stroke="#6eaa82" stroke-width="2.5" fill="url(#person)" opacity=".93">
+          <circle cx="160" cy="68" r="43"/>
+          <path d="M139 111 L138 121 C115 118 94 127 77 146 L49 256 C45 268 46 289 53 309 L72 360 Q82 369 90 363 L96 350 L78 291 L99 217 L112 205 L119 330 C119 361 117 391 125 411 L124 515 L120 624 Q120 651 135 653 L148 651 L160 450 L172 651 L185 653 Q200 650 200 625 L196 515 L195 411 Q202 359 201 329 L209 205 L222 217 L244 291 L226 350 L232 363 Q240 369 248 360 L267 309 C274 289 275 268 271 256 L243 146 C225 127 205 118 182 121 L181 111 Z"/>
+        </g>
+        <g fill="none" stroke="#b7d9b1" stroke-width="1.4" opacity=".44">
+          <path d="M160 121 L160 422 M127 176 L193 176 M129 201 L191 201 M131 226 L189 226 M133 251 L187 251"/>
+          <path d="M160 421 L139 557 L134 637 M160 421 L181 557 L186 637"/>
+          <path d="M160 140 L109 184 L77 315 M160 140 L211 184 L243 315"/>
+        </g>
+        <g stroke="#d1b879" stroke-width="1.5" fill="url(#organ)" opacity=".85">
+          <path d="M158 45 C139 37 129 61 135 74 C137 88 152 94 158 86 C163 93 181 89 186 76 C196 53 180 41 164 45 Q158 48 158 45Z"/>
+          <path d="M149 169 Q117 164 111 213 Q117 242 143 235 Q157 230 149 169Z"/>
+          <path d="M171 169 Q202 161 209 213 Q201 243 175 235 Q164 225 171 169Z"/>
+          <path d="M129 260 Q149 246 181 256 Q203 275 187 290 L139 289 Q121 280 129 260Z"/>
+          <path d="M131 296 C147 283 178 290 187 304 C194 319 184 340 163 345 C143 351 121 331 131 313Z"/>
+        </g>
+        <g fill="#e0d296" opacity=".5">
+          <circle cx="160" cy="269" r="5"/>
+          <circle cx="154" cy="315" r="4"/>
+          <circle cx="177" cy="315" r="3"/>
+        </g>
+      </svg>
+    </div>
+    <div id="regions" class="region-list" aria-label="Text alternatives to anatomical markers"></div>
+    <p class="muted small">Pins represent selected research contexts, not exact receptor location, receptor amount, or anatomical proportions.</p>
+  </section>
+  <section class="panel" id="details" aria-labelledby="details-title">
+    <div class="row"><h2 id="details-title">Source-backed signaling</h2><span id="counter" class="pill">No region selected</span></div>
+    <div id="region-summary" class="empty" aria-live="polite">Choose a tissue on the map to see receptor-specific mechanisms and their limits.</div>
+    <div id="evidence-cards"></div>
+  </section>
+</div>
+<footer>
+Source: <a href="../../data/ecs-network/tissues-v1.json">Tissue evidence JSON</a> ·
+<a href="../../data/ecs-network/evidence-v1.json">Canonical ECS claims</a> ·
+<a href="../../docs/ecs-body-map-v1.md">Tissue map governance &amp; methods</a>.
+Visualizations do not confer scientific authority. Human and preclinical findings remain explicitly distinguished.
+</footer>
+</main>
+<script>
+(function(){
+'use strict';
+const pathTissues='../../data/ecs-network/tissues-v1.json',pathCore='../../data/ecs-network/evidence-v1.json';
+const status=document.getElementById('status'), stage=document.getElementById('body-stage'),
+  modeButtons=[...document.querySelectorAll('[data-mode]')],regionButtons=document.getElementById('regions'),
+  summary=document.getElementById('region-summary'),cards=document.getElementById('evidence-cards'),counter=document.getElementById('counter');
+let tissue=null,core=null,filter='all',active=null;
+function el(tag,text,cls){const e=document.createElement(tag);if(text!=null)e.textContent=text;if(cls)e.className=cls;return e;}
+function sourceLinks(ids){
+  const wrap=el('div',null,'sources');
+  for(const id of ids){
+    const s=tissue.sources.find(x=>x.id===id);
+    const a=el('a',s.title+' ('+(s.year??'living')+')');
+    a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';wrap.append(a);
+  }
+  return wrap;
+}
+function kinds(region){return region.receptors.filter(x=>filter==='all'||x.receptor===filter);}
+function setupSelection(region){
+  active=region.id;render();
+  if(window.matchMedia('(max-width:870px)').matches){
+    document.getElementById('details').scrollIntoView({behavior:'smooth',block:'start'});
+  }
+}
+function render(){
+  regionButtons.replaceChildren();
+  stage.querySelectorAll('.pin').forEach(n=>n.remove());
+  const available=tissue.regions.filter(r=>kinds(r).length);
+  if(!available.some(r=>r.id===active))active=available[0]?.id||null;
+  for(const r of available){
+    const isActive=r.id===active;
+    const pin=el('button',String(tissue.regions.indexOf(r)+1),'pin');
+    pin.type='button';pin.style.left=r.marker.x+'%';pin.style.top=r.marker.y+'%';
+    pin.dataset.receptor=kinds(r).length===1?kinds(r)[0].receptor:'both';
+    pin.setAttribute('aria-label',r.label+': '+kinds(r).map(e=>e.receptor).join(' and ')+' evidence');
+    pin.setAttribute('aria-pressed',String(isActive));pin.title=r.label;
+    pin.addEventListener('click',()=>setupSelection(r));stage.append(pin);
+    const button=el('button',r.label+' · '+kinds(r).map(e=>e.receptor).join(' / '),'region-choice');
+    button.type='button';button.setAttribute('aria-pressed',String(isActive));
+    button.addEventListener('click',()=>setupSelection(r));regionButtons.append(button);
+  }
+  summary.replaceChildren();cards.replaceChildren();
+  const r=tissue.regions.find(x=>x.id===active);
+  if(!r){counter.textContent='No compatible region';summary.append(el('p','No source-backed records for this filter.','muted'));return;}
+  counter.textContent=kinds(r).length+' receptor context'+(kinds(r).length===1?'':'s');
+  summary.className='card';
+  summary.append(el('p',r.system,'eyebrow'),el('h3',r.label),el('p',r.intro,'muted'));
+  for(const evidence of kinds(r)){
+    const item=el('article',null,'card');
+    item.append(el('span',evidence.receptor,'receptor '+evidence.receptor.toLowerCase()),
+      el('p',evidence.evidence_context.replaceAll('_',' '),'evidence-type'),
+      el('h3',evidence.summary));
+    item.append(el('p','Cell / tissue context: '+evidence.cell_context,'muted'));
+    const h=el('h3','Research pathway (not a treatment result)');
+    item.append(h);
+    const steps=el('ol',null,'step-list');
+    evidence.pathway.forEach(step=>steps.append(el('li',step)));
+    item.append(steps,el('p','Study model: '+evidence.model,'muted'),
+      el('p','Evidence limit: '+evidence.boundary,'boundary'));
+    const linked=el('p','Canonical ECS claims: '+evidence.related_claim_ids.join(', '),'small muted');
+    item.append(linked,sourceLinks(evidence.source_ids));cards.append(item);
+  }
+  status.textContent=available.length+' tissue regions available · '+tissue.regions.length+' total regions · original study links attached · curated '+tissue.release_date;
+}
+function verify(data,parent){
+  if(!data||data.contract_version!=='1.0.0'||data.dataset_id!=='cannabiverse-ecs-tissue-map'||
+    !parent||parent.contract_version!=='1.0.0'||parent.dataset_id!==data.authoritative_parent_dataset||
+    !Array.isArray(data.sources)||!Array.isArray(data.regions)||!Array.isArray(parent.claims))throw Error('Unsupported evidence contract');
+  const sources=new Set(data.sources.map(s=>s.id)),claims=new Set(parent.claims.map(c=>c.id)),ids=new Set();
+  if(sources.size!==data.sources.length||!data.sources.every(s=>s.id&&s.title&&/^https:\/\//.test(s.url)))throw Error('Invalid source receipts');
+  for(const r of data.regions){
+    if(!r.id||ids.has(r.id)||!r.label||!r.system||!r.intro||!Number.isFinite(r.marker?.x)||!Number.isFinite(r.marker?.y)||
+      r.marker.x<5||r.marker.x>95||r.marker.y<3||r.marker.y>97||!Array.isArray(r.receptors)||!r.receptors.length)throw Error('Invalid tissue record');
+    ids.add(r.id);const types=new Set();
+    for(const e of r.receptors){
+      if(!['CB1','CB2'].includes(e.receptor)||types.has(e.receptor)||!e.summary||!e.model||!e.boundary||
+        !e.evidence_context||!e.cell_context||!Array.isArray(e.pathway)||!e.pathway.length||
+        !Array.isArray(e.source_ids)||!e.source_ids.length||!e.source_ids.every(id=>sources.has(id))||
+        !Array.isArray(e.related_claim_ids)||!e.related_claim_ids.length||!e.related_claim_ids.every(id=>claims.has(id)))
+        throw Error('Invalid receptor evidence');
+      types.add(e.receptor);
+    }
+  }
+  if(!data.regions.length||!data.medical_boundary||!data.representation_warning)throw Error('Missing evidence boundaries');
+}
+async function load(){
+ try{
+  const responses=await Promise.all([fetch(pathTissues,{cache:'no-cache'}),fetch(pathCore,{cache:'no-cache'})]);
+  if(responses.some(r=>!r.ok))throw Error('HTTP evidence unavailable');
+  const [t,c]=await Promise.all(responses.map(r=>r.json()));
+  verify(t,c);tissue=t;core=c;
+  for(const b of modeButtons)b.addEventListener('click',()=>{
+    filter=b.dataset.mode;modeButtons.forEach(x=>x.setAttribute('aria-pressed',String(x===b)));
+    render();
+  });
+  active=tissue.regions[0]?.id;render();
+ }catch(e){
+  status.textContent='Source-verified tissue atlas unavailable or incompatible: '+e.message+'. No replacement medical claims will be shown.';
+  stage.querySelectorAll('.pin').forEach(n=>n.remove());regionButtons.replaceChildren();
+  summary.textContent='Evidence unavailable. Inspect the versioned source feed or try again later.';
+  cards.replaceChildren();
+ }
+}
+load();
+})();
+</script>
+</body>
+</html>
