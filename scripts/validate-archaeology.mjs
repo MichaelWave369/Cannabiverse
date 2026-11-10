@@ -39,5 +39,5 @@ assert.ok(d,'Archaeology not registered in Bridge');
 assert.equal(d.expected_dataset_id,feed.dataset_id);
 assert.equal(d.expected_contract_version,feed.contract_version);
 assert.equal(d.evidence_url,'../archaeology/evidence-v1.json');
-assert.equal(manifest.content_release,'4.0.0');
+assert.ok(Number(manifest.content_release.split('.')[0]) >= 4,'Archaeology requires bridge content release v4 or later');
 console.log('PASS archaeology: '+sites.size+' contexts, '+sources.size+' sources, '+claims.size+' claims, '+linked+' contextual chemical references');
