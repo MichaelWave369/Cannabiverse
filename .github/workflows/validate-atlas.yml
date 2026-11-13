@@ -92,6 +92,9 @@ jobs:
       - name: Validate oncology evidence contract
         run: node scripts/validate-oncology.mjs
 
+      - name: Validate Oncology BioDesign research concepts
+        run: npm run validate:oncology-biodesign
+
       - name: Validate Phi Research Bridge v2
         run: npm run validate:bridge
 

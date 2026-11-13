@@ -311,3 +311,10 @@ Manually calibrate a ruler segment, trace numbered leaflet polygons, obtain appr
 ### LeafLab v1.6 · Complete Human Reference Masks
 
 [Open Full-Reference Mask Lab](https://michaelwave369.github.io/Cannabiverse/app/leaflab/full-masks.html) · [Full-mask protocol](docs/leaf-morphology-full-masks-v16.md). Trace **complete human-asserted foreground leaf masks** on original locally SHA-256-hashed photos with multiple included polygons and subtractive regions, declaring the target leaf scope and complete-frame review. Export separate self-asserted masked-observer JSON references. Import two distinct observers on the **same original photo/hash, same frame, plant/specimen, target and declared study role**; show reviewer disagreement and IoU/Dice instead of silently declaring one reference correct. Run the unchanged v0.6 color-seeded segmentation only after reference pairing and score it separately against reviewer A and B. Audit multi-image reference cohorts for missing second reviewers, duplicate observer/image identities and obvious plant-level development/holdout role leakage. Whole-frame labeling is based entirely on human polygons, **not confirmed botanical truth**, and self-attested blinding or holdout roles are not preregistration. Run npm run validate:leaflab-full-masks; governed molecular/medical evidence is unchanged.
+
+
+## Oncology BioDesign Lab v1 · evidence-first combinations
+
+[Launch Oncology BioDesign Lab](https://michaelwave369.github.io/Cannabiverse/app/oncology/biodesign.html) · [Source ledger](data/oncology/biodesign-v1.json) · [Scientific boundaries](docs/oncology-biodesign-v1.md).
+
+A read-only explorer separates published **cannabis-cell production**, **plant extracellular-vesicle delivery** and **engineered probiotic cancer immunotherapy** from **unvalidated cannabis-plus-carrier hypotheses**, with clinical cautions from the ASCO guideline. Compare tracks and export an offline source-linked research memo. It provides no wet-lab instructions, dosing, treatment claims or prediction of human efficacy. Run `npm run validate:oncology-biodesign`; the original oncology ledger and Φ Research Bridge stay unchanged.
