@@ -1,0 +1,187 @@
+{
+  "contract_version": "1.0.0",
+  "dataset_id": "cannabiverse-oncology-biodesign",
+  "release_date": "2026-11-13",
+  "purpose": "Evidence-bounded comparison of cannabis cell production, plant extracellular vesicles, engineered bacterial cancer research, and untested combination hypotheses.",
+  "clinical_boundary": "No combination here is a validated cancer therapy. Cannabis and cannabinoids are not established antineoplastic treatments in humans; none of these tracks is a clinical protocol, dosage recommendation, manufacturing instruction or patient treatment advice.",
+  "status_vocabulary": [
+    "published_component",
+    "hypothesis_only",
+    "clinical_guidance"
+  ],
+  "source_types": [
+    "primary_preclinical_study",
+    "primary_biomanufacturing_study",
+    "peer_reviewed_review",
+    "clinical_guideline"
+  ],
+  "sources": [
+    {
+      "id": "BIO-SRC-BACTERIA-2024",
+      "title": "Probiotic neoantigen delivery vectors for precision cancer immunotherapy",
+      "year": 2024,
+      "kind": "primary_preclinical_study",
+      "doi": "10.1038/s41586-024-08033-4",
+      "url": "https://www.nature.com/articles/s41586-024-08033-4",
+      "limitation": "Engineered probiotic vaccine preclinical work, not a cannabis-derived payload or a demonstrated human oncology therapy."
+    },
+    {
+      "id": "BIO-SRC-CELLS-2025",
+      "title": "Bioreactor-Based Suspension Cultures of Cannabis sativa for Enhanced Production of Anti-Inflammatory Cannabinoid Derivatives",
+      "year": 2025,
+      "kind": "primary_biomanufacturing_study",
+      "doi": "10.1021/acs.jafc.5c10683",
+      "url": "https://doi.org/10.1021/acs.jafc.5c10683",
+      "limitation": "Demonstrates cell suspension production and anti-inflammatory assay findings, not selective tumor killing or delivery."
+    },
+    {
+      "id": "BIO-SRC-VE-2025",
+      "title": "Plant-derived extracellular vesicles as a novel tumor-targeting delivery system for cancer treatment",
+      "year": 2025,
+      "kind": "peer_reviewed_review",
+      "doi": "10.3389/fcell.2025.1589550",
+      "url": "https://doi.org/10.3389/fcell.2025.1589550",
+      "limitation": "Review of plant-derived vesicles broadly; does not establish a cannabis-specific vesicle cancer treatment."
+    },
+    {
+      "id": "BIO-SRC-ASCO-2024",
+      "title": "Cannabis and Cannabinoids in Adults With Cancer: ASCO Guideline",
+      "year": 2024,
+      "kind": "clinical_guideline",
+      "doi": "10.1200/JCO.23.02596",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11730458/",
+      "limitation": "Clinical recommendations about cannabis use in people with cancer; no cancer-directed cannabinoid use outside clinical trials."
+    }
+  ],
+  "tracks": [
+    {
+      "id": "BIO-TRK-001",
+      "title": "Cannabis cell cultures as molecular factories",
+      "lane": "production",
+      "status": "published_component",
+      "system": "Cannabis sativa plant-cell suspension",
+      "evidence_summary": "Published bioreactor work reports scalable cultured cannabis biomass, putative cannabinoid derivatives, and anti-inflammatory assays.",
+      "not_demonstrated": "No demonstrated tumor selectivity, anticancer clinical efficacy, or cancer-directed biomanufactured product.",
+      "research_question": "Can reproducible chemical identity and batch purity be established for a specific molecule before studying biological effects?",
+      "readouts": [
+        "Compound identity and purity",
+        "Batch reproducibility",
+        "Independent activity replication"
+      ],
+      "source_ids": [
+        "BIO-SRC-CELLS-2025"
+      ],
+      "cannabis_specific": true,
+      "direct_combo_evidence": false,
+      "clinical_efficacy": false
+    },
+    {
+      "id": "BIO-TRK-002",
+      "title": "Plant extracellular vesicles as delivery vehicles",
+      "lane": "delivery",
+      "status": "published_component",
+      "system": "Vesicles investigated across multiple non-cannabis plant species",
+      "evidence_summary": "A 2025 review describes experimental interest in plant-derived vesicles for oncology drug delivery.",
+      "not_demonstrated": "Cannabis-specific vesicle tumor targeting and efficacy are not established by this source.",
+      "research_question": "Would any candidate vesicle show selective biodistribution and acceptable consistency compared with a standard carrier?",
+      "readouts": [
+        "Characterization and batch variation",
+        "Off-target distribution",
+        "Cargo stability"
+      ],
+      "source_ids": [
+        "BIO-SRC-VE-2025"
+      ],
+      "cannabis_specific": false,
+      "direct_combo_evidence": false,
+      "clinical_efficacy": false
+    },
+    {
+      "id": "BIO-TRK-003",
+      "title": "Engineered probiotic cancer-vaccine research",
+      "lane": "delivery",
+      "status": "published_component",
+      "system": "Engineered probiotic Escherichia coli neoantigen vectors",
+      "evidence_summary": "Nature published preclinical engineered probiotic antigen-delivery research for cancer immunotherapy.",
+      "not_demonstrated": "The cited system did not test cannabis compounds or prove that a cannabis-microbial combination treats patients.",
+      "research_question": "What evidence demonstrates tumor-context specificity, immune effect, and systemic safety in published models?",
+      "readouts": [
+        "Preclinical model and endpoint",
+        "Host immune effects",
+        "Containment and safety limitations"
+      ],
+      "source_ids": [
+        "BIO-SRC-BACTERIA-2024"
+      ],
+      "cannabis_specific": false,
+      "direct_combo_evidence": false,
+      "clinical_efficacy": false
+    },
+    {
+      "id": "BIO-TRK-004",
+      "title": "Cannabis-derived molecule plus microbial carrier",
+      "lane": "combination",
+      "status": "hypothesis_only",
+      "system": "Conceptual combination of purified plant-derived molecule and an experimental microbial delivery platform",
+      "evidence_summary": "This combines ideas from separate literature streams; no direct combined efficacy evidence is asserted.",
+      "not_demonstrated": "No published validation in these cited sources that this specific combination targets tumors, remains safe, or works in people.",
+      "research_question": "Is there a compelling rationale beyond combining two interesting technologies, and what comparative evidence would falsify it?",
+      "readouts": [
+        "Direct versus indirect evidence",
+        "Immune interference risk",
+        "Non-microbial comparator"
+      ],
+      "source_ids": [
+        "BIO-SRC-CELLS-2025",
+        "BIO-SRC-BACTERIA-2024",
+        "BIO-SRC-ASCO-2024"
+      ],
+      "cannabis_specific": true,
+      "direct_combo_evidence": false,
+      "clinical_efficacy": false
+    },
+    {
+      "id": "BIO-TRK-005",
+      "title": "Cannabis-derived vesicles carrying plant compounds",
+      "lane": "combination",
+      "status": "hypothesis_only",
+      "system": "Hypothetical cannabis-cell vesicle source and cannabis-derived molecular cargo",
+      "evidence_summary": "Plant-cell cultures and plant-derived vesicle delivery appear in separate lines of research; this cannabis-specific carrier concept is unverified.",
+      "not_demonstrated": "No cannabis-vesicle cancer delivery, tumor selectivity, patient safety, or therapeutic efficacy shown by the cited sources.",
+      "research_question": "Can cannabis-derived vesicles even be reproducibly characterized, and would they outperform established delivery controls?",
+      "readouts": [
+        "Evidence that vesicles exist in characterized samples",
+        "Carrier comparison",
+        "Normal-tissue toxicity"
+      ],
+      "source_ids": [
+        "BIO-SRC-CELLS-2025",
+        "BIO-SRC-VE-2025"
+      ],
+      "cannabis_specific": true,
+      "direct_combo_evidence": false,
+      "clinical_efficacy": false
+    },
+    {
+      "id": "BIO-TRK-006",
+      "title": "Immune interference and clinical reality check",
+      "lane": "safety",
+      "status": "clinical_guidance",
+      "system": "People with cancer receiving oncology care, especially immunotherapy",
+      "evidence_summary": "ASCO recommends against cannabis or cannabinoids as cancer-directed treatment outside clinical trials and advises caution around immunotherapy.",
+      "not_demonstrated": "In vitro cell effects are not a basis for human cancer treatment; the potential interaction profile is not resolved for proposed combinations.",
+      "research_question": "Could immune-modulating effects undermine the intended antitumor immune response, and what human evidence exists?",
+      "readouts": [
+        "Human clinical evidence status",
+        "Immune directionality",
+        "Drug-interaction evidence"
+      ],
+      "source_ids": [
+        "BIO-SRC-ASCO-2024"
+      ],
+      "cannabis_specific": true,
+      "direct_combo_evidence": false,
+      "clinical_efficacy": false
+    }
+  ]
+}

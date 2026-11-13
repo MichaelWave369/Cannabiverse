@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Evidence-bounded cannabis cell biomanufacturing, engineered bacteria and cancer delivery research.">
+<title>Cannabiverse | Oncology BioDesign Lab</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,Segoe UI,sans-serif;background:#08120e;color:#edf8ef}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 20% 0%,#193e2c,#08120e 65%);min-height:100vh}
+main{max-width:1160px;margin:0 auto;padding:28px 18px 72px}
+a{color:#e9ce85}h1{font-size:clamp(35px,6vw,61px);letter-spacing:-1.7px;line-height:1.03;margin:14px 0}
+h2{font-size:22px;margin:4px 0 12px}h3{font-size:18px;margin:4px 0 8px}p{line-height:1.6}
+nav{display:flex;flex-wrap:wrap;gap:12px;font-size:14px}.eyebrow{color:#e7c778;letter-spacing:1.8px;font-size:12px;font-weight:800;text-transform:uppercase}
+.lead{font-size:17px;max-width:850px;color:#b6d5c3}
+.notice,.panel,.track,.comparison{background:#11251b;border:1px solid #365740;border-radius:15px;padding:18px}
+.notice{border-color:#937844;background:#2a2517;line-height:1.6;margin:24px 0}
+.controls{display:flex;flex-wrap:wrap;gap:14px;margin:20px 0}
+.control{display:flex;flex-direction:column;gap:7px;font-weight:650;font-size:13px;min-width:190px}
+select,button{background:#173226;border:1px solid #528067;color:#f0f7f2;padding:10px 12px;border-radius:9px;font:inherit}
+button{cursor:pointer}button:hover{border-color:#d6bd78}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px}
+.track{min-width:0}.track p{font-size:14px;margin:9px 0}.meta{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tag{display:inline-block;font-size:11px;font-weight:800;color:#e4d29a;background:#352b18;padding:5px 9px;border-radius:50px}
+.tag.published_component{background:#143c35;color:#b9f3e3}.tag.hypothesis_only{background:#47311c;color:#ffe1ae}
+.tag.clinical_guidance{background:#392735;color:#ffd6ed}
+.label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:#a9c7b4}
+.small,.muted{color:#aec5b8}.small{font-size:12px}
+.sources a{display:block;margin:6px 0;font-size:12px;overflow-wrap:anywhere}
+.compare{margin-top:32px}.compare-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:14px}
+.comparison{margin-top:12px;min-height:160px}.comparison p{font-size:14px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}#status{font-size:13px;color:#b6d4c2}
+footer{margin-top:35px;color:#b6c7ba;font-size:13px;line-height:1.6}
+</style>
+</head>
+<body>
+<main>
+<nav><a href="../../">← Cannabiverse</a><a href="./">Oncology Evidence Explorer</a><a href="../../app/bridge/">Φ Research Bridge</a></nav>
+<p class="eyebrow">Research-only · evidence receipts · no wet-lab procedures</p>
+<h1>Oncology BioDesign Lab</h1>
+<p class="lead">Can cannabis-cell biomanufacturing connect with experimental tumor-targeted delivery? Explore what individual research components have demonstrated, what the combinations have not, and what would need independent verification.</p>
+<div class="notice"><strong>Clinical boundary:</strong> Nothing here is a cancer treatment, engineering protocol, dosing guide, or safety endorsement. Cannabinoids have not been established as antineoplastic treatments in humans. Do not replace cancer care. Published component research does not validate a proposed combined system.</div>
+<section aria-labelledby="tracks-title">
+<h2 id="tracks-title">Evidence tracks</h2>
+<div class="controls">
+<label class="control">Research lane<select id="lane"><option value="">All lanes</option></select></label>
+<label class="control">Evidence status<select id="status-filter"><option value="">All statuses</option><option value="published_component">Published component</option><option value="hypothesis_only">Hypothesis only</option><option value="clinical_guidance">Clinical guidance</option></select></label>
+</div>
+<p id="status" role="status">Loading versioned research ledger…</p>
+<div id="tracks" class="grid"></div>
+</section>
+<section class="compare panel" aria-labelledby="compare-title">
+<h2 id="compare-title">Compare two research tracks</h2>
+<p class="muted">Comparison is descriptive, not a prediction, efficacy score, or ranking of treatments.</p>
+<div class="controls"><label class="control">First track<select id="first"></select></label><label class="control">Second track<select id="second"></select></label></div>
+<div id="comparison" class="compare-grid"></div>
+<div class="actions"><button id="export" type="button" disabled>Export research comparison (JSON)</button></div>
+</section>
+<footer>Source: <a href="../../data/oncology/biodesign-v1.json">versioned BioDesign evidence ledger</a> · <a href="../../docs/oncology-biodesign-v1.md">scope &amp; validation</a> · <a href="../../GOVERNANCE.md">governance</a>. The existing <a href="./">Oncology Evidence Explorer</a> remains the source of cannabinoid oncology claims.</footer>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const el=(tag,text,cls)=>{const x=document.createElement(tag);if(cls)x.className=cls;if(text!==undefined)x.textContent=text;return x;};
+let ledger=null;
+function sourceLinks(target,sourceIds,lookup){
+ const area=el('div',undefined,'sources');area.append(el('p','Source receipts','label'));
+ sourceIds.forEach(id=>{const src=lookup.get(id);if(!src)return;
+ const a=el('a',src.title+' ('+src.year+')');a.href=src.url;a.target='_blank';a.rel='noopener noreferrer';area.append(a);});
+ target.append(area);
+}
+function renderCards(){
+ const lane=$('lane').value,stage=$('status-filter').value,root=$('tracks');root.replaceChildren();
+ const entries=ledger.tracks.filter(t=>(!lane||t.lane===lane)&&(!stage||t.status===stage));
+ const sources=new Map(ledger.sources.map(s=>[s.id,s]));
+ entries.forEach(t=>{
+  const card=el('article',undefined,'track');
+  const tags=el('div',undefined,'meta');tags.append(el('span',t.status.replaceAll('_',' '),'tag '+t.status),el('span',t.lane,'tag'));card.append(tags);
+  card.append(el('h3',t.title),el('p',t.evidence_summary),el('p','System: '+t.system,'muted'));
+  card.append(el('p','Not demonstrated','label'),el('p',t.not_demonstrated));
+  card.append(el('p','Research question','label'),el('p',t.research_question));
+  const points=el('ul');t.readouts.forEach(p=>points.append(el('li',p)));card.append(el('p','Evidence gaps / audit dimensions','label'),points);
+  if(t.status==='hypothesis_only')card.append(el('p','No direct combination evidence. Hypothesis, not result.','small'));
+  sourceLinks(card,t.source_ids,sources);root.append(card);
+ });
+ $('status').textContent=entries.length+' of '+ledger.tracks.length+' source-linked tracks · version '+ledger.contract_version+' · no clinical efficacy claims';
+}
+function chosen(id){return ledger.tracks.find(t=>t.id===$(id).value);}
+function compareContent(t){
+ const card=el('article',undefined,'comparison');
+ if(!t)return card;
+ card.append(el('h3',t.title),el('p','Status: '+t.status.replaceAll('_',' ')),
+ el('p','What is known: '+t.evidence_summary),
+ el('p','Not established: '+t.not_demonstrated),
+ el('p','Question: '+t.research_question));
+ return card;
+}
+function renderCompare(){
+ const a=chosen('first'),b=chosen('second');
+ $('comparison').replaceChildren(compareContent(a),compareContent(b));
+ $('export').disabled=!(a&&b);
+}
+function downloadComparison(){
+ const a=chosen('first'),b=chosen('second');if(!a||!b)return;
+ const payload={export_type:'research-comparison-not-treatment-guidance',dataset_id:ledger.dataset_id,version:ledger.contract_version,clinical_boundary:ledger.clinical_boundary,selected:[a,b],sources:ledger.sources.filter(s=>[...a.source_ids,...b.source_ids].includes(s.id))};
+ const blob=new Blob([JSON.stringify(payload,null,2)+'\n'],{type:'application/json'});
+ const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download='cannabiverse-biodesign-comparison.json';document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+async function boot(){
+ try{
+  const response=await fetch('../../data/oncology/biodesign-v1.json',{cache:'no-cache'});
+  if(!response.ok)throw new Error('HTTP '+response.status);
+  const data=await response.json();
+  if(data.contract_version!=='1.0.0'||data.dataset_id!=='cannabiverse-oncology-biodesign'||!Array.isArray(data.tracks)||!Array.isArray(data.sources))throw new Error('Unsupported ledger');
+  ledger=data;
+  [...new Set(data.tracks.map(t=>t.lane))].sort().forEach(l=>{const o=el('option',l);o.value=l;$('lane').append(o);});
+  data.tracks.forEach(t=>['first','second'].forEach(id=>{const o=el('option',t.title);o.value=t.id;$(id).append(o);}));
+  $('first').value='BIO-TRK-001';$('second').value='BIO-TRK-004';
+  $('lane').addEventListener('change',renderCards);$('status-filter').addEventListener('change',renderCards);
+  $('first').addEventListener('change',renderCompare);$('second').addEventListener('change',renderCompare);
+  $('export').addEventListener('click',downloadComparison);
+  renderCards();renderCompare();
+ }catch(error){$('status').textContent='Ledger unavailable ('+error.message+'). No claims displayed without validated source data.';$('comparison').textContent='Research comparison unavailable.';}
+}
+boot();
+</script>
+</body>
+</html>
