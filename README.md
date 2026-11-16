@@ -31,6 +31,10 @@ Current dataset:
 
 **145 is not a claim that only 145 phytocannabinoids exist.** Different inventories use different inclusion rules; later literature describes broader inventories.
 
+## Φ Ancestral Cannabis Simulator v0.1
+
+[Launch the Ancestral Cannabis Simulator](https://michaelwave369.github.io/Cannabiverse/app/evolution/) to explore four synthetic populations descending from an identical ancestral gene pool. A seeded local-first model demonstrates genetic drift and stylized fiber-, T-, and B-selection trajectories; T/B are **fictional allele labels**, not THC/CBD measurements or real genetic loci. Results export to JSON, and [methods and limits](docs/evolution-simulator-v0.1.md) make the distinction between modeled values, modern genomics, authenticated ancient DNA, and Eden speculation explicit. Run `npm run validate:evolution`; no canonical chemistry, evidence, or archaeology records are changed.
+
 ## ECS Signal Journey Lab v1
 
 [Explore the guided pathway lab](https://michaelwave369.github.io/Cannabiverse/app/ecs/journeys.html) for source-receipted 2-AG retrograde synaptic signaling, AEA formation/breakdown and context-dependent immune-cell CB2 mechanisms. The additive [journeys-v1 data](data/ecs-network/journeys-v1.json) includes 3 journeys, 13 steps, original citations, permanent references to the existing ECS entities/claims, and explicit experimental and human clinical boundaries. `npm run validate:ecs-journeys` verifies the upstream links; [methods and limits](docs/ecs-signal-journeys-v1.md).
